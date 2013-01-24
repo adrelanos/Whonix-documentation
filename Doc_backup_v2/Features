@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-3 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / Features</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css"
+                >
+    
+      <style>
+            input.label_edit{ float: left; }
+            .tagEditor{
+                margin: 4px 0;
+                padding: 0;
+                float: left;
+            }
+
+            .tagEditor li, .removable{
+                display: inline;
+                background-image: url('http://a.fsdn.com/allura/nf/1358968642/_static_/images/minus_small.png');
+                background-color: #eef;
+                background-position: right center;
+                background-repeat: no-repeat;
+                list-style-type: none;
+                padding: 0 18px 0 6px;
+                margin: 0 4px;
+                cursor: pointer;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+            }
+
+            .tagEditor li:hover{
+                background-color: #ebebeb;
+            }</style>
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XVzBGEKPjPWbSVCprdWoFaTMG { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-Features" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="/jobs?source=header">Jobs</a>
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">Features
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="http://whonix.sourceforge.net/videos.html">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Hidden%20Services/">Hidden Service Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorBOX/Dev" rel="nofollow">Development</a> | <a class="" href="https://github.com/adrelanos/Whonix" rel="nofollow">Source Code</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BuildDocumentation/">Build Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#whonix-features">Whonix Features</a></li>
+<li><a href="#feature-list">Feature List</a></li>
+<li><a href="#advantages-of-whonix">Advantages of Whonix</a></li>
+<li><a href="#disadvantages-of-whonix">Disadvantages of Whonix</a></li>
+<li><a href="#footnotes">Footnotes</a></li>
+<li><a href="#vpn-tunnel-support">VPN / Tunnel support</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</div>
+<h2 id="whonix-features">Whonix Features</h2>
+<p>Whonix is an Anonymous Operating System. It hides your IP/location and uses Tor to anonymize your data traffic. This means that neither the contacted server, nor any eavesdropper on your connections, nor the operators of the Tor network themselves can realize which webservice you use.</p>
+<p>Basically all programs can used together with Whonix.</p>
+<ul>
+<li>For web browsing, Tor Browser is included.</li>
+<li>Messengers, like Pidgin, with the Jabber protocol and the OTR plugin.</li>
+<li>Privacy friendly e-mail client: Mozilla Thunderbird with TorBirdy</li>
+<li>scp for secure data transfer from and to a server.</li>
+<li>Unobserved administration of servers via SSH</li>
+<li>Web servers: Apache, ngnix, IRC servers, etc. via Hidden Services</li>
+<li>Other programs...</li>
+</ul>
+<p>It is possible, with the help of Whonix, to use applications via Tor, which are not capable of proxy support by themselves.</p>
+<p>Everything is explained in <a class="alink" href="/p/whonix/wiki/Documentation/">[Documentation]</a>.</p>
+<h2 id="feature-list">Feature List</h2>
+<div class="codehilite"><pre><span class="n">Adobe</span> <span class="n">Flash</span> <span class="n">anonymously</span>
+<span class="n">browse</span> <span class="n">the</span> <span class="n">web</span> <span class="n">anonymously</span>
+<span class="n">Anonymous</span> <span class="n">IRC</span>
+<span class="n">Anonymous</span> <span class="n">Publishing</span>
+<span class="n">Anonymous</span> <span class="n">E</span><span class="o">-</span><span class="n">Mail</span> <span class="n">with</span> <span class="n">Mozilla</span> <span class="n">Thunderbird</span> <span class="n">and</span> <span class="n">TorBirdy</span>
+<span class="n">Add</span> <span class="n">a</span> <span class="n">proxy</span> <span class="n">behind</span> <span class="n">Tor</span> <span class="p">(</span><span class="n">Tor</span> <span class="o">-&gt;</span> <span class="n">proxy</span><span class="p">)</span>
+<span class="n">Based</span> <span class="n">on</span> <span class="n">Debian</span> <span class="n">GNU</span><span class="o">/</span><span class="n">Linux</span><span class="p">.</span>
+<span class="n">Based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Tor</span> <span class="n">anonymity</span> <span class="n">network</span><span class="p">.</span>
+<span class="n">Based</span> <span class="n">on</span> <span class="n">Virtual</span> <span class="n">Box</span><span class="p">.</span>
+<span class="n">Can</span> <span class="n">torify</span> <span class="n">almost</span> <span class="n">any</span> <span class="n">application</span><span class="p">.</span>
+<span class="n">Can</span> <span class="n">torify</span> <span class="n">any</span> <span class="n">operating</span> <span class="n">system</span>
+<span class="n">Can</span> <span class="n">torify</span> <span class="n">Windows</span><span class="p">.</span>
+<span class="n">Chat</span> <span class="n">anonymously</span><span class="p">.</span>
+<span class="n">Circumvent</span> <span class="n">Censorship</span><span class="p">.</span>
+<span class="n">DNSSEC</span> <span class="n">over</span> <span class="n">Tor</span> ¹
+<span class="n">Encrypted</span> <span class="n">DNS</span> ¹
+<span class="n">Encrypted</span> <span class="n">Communication</span>
+<span class="n">Full</span> <span class="n">IP</span><span class="o">/</span><span class="n">DNS</span> <span class="n">protocol</span> <span class="n">leak</span> <span class="n">protection</span><span class="p">.</span>
+<span class="n">Hide</span> <span class="n">the</span> <span class="n">fact</span> <span class="n">that</span> <span class="n">you</span> <span class="n">are</span> <span class="n">using</span> <span class="n">Tor</span> ¹
+<span class="n">Hide</span> <span class="n">the</span> <span class="n">fact</span> <span class="n">you</span> <span class="n">are</span> <span class="n">using</span> <span class="n">Whonix</span>
+<span class="n">Isolating</span> <span class="n">Proxy</span>
+<span class="n">Java</span> <span class="n">anonymously</span>
+<span class="n">Javascript</span> <span class="n">anonymously</span>
+<span class="n">Location</span><span class="o">/</span><span class="n">IP</span> <span class="n">hidden</span> <span class="n">servers</span>
+<span class="n">Prevents</span> <span class="n">anyone</span> <span class="n">from</span> <span class="n">learning</span> <span class="n">your</span> <span class="n">IP</span><span class="p">.</span>
+<span class="n">Prevents</span> <span class="n">anyone</span> <span class="n">from</span> <span class="n">learning</span> <span class="n">your</span> <span class="n">physical</span> <span class="n">location</span><span class="p">.</span>
+<span class="n">Private</span> <span class="n">obfuscated</span> <span class="n">bridges</span> <span class="n">supported</span><span class="p">.</span>
+<span class="n">Protects</span> <span class="n">your</span> <span class="n">privacy</span><span class="p">.</span>
+<span class="n">Protocol</span><span class="o">-</span><span class="n">Leak</span><span class="o">-</span><span class="n">Protection</span> <span class="n">and</span> <span class="n">Fingerprinting</span><span class="o">-</span><span class="n">Protection</span>
+<span class="n">Secure</span> <span class="n">And</span> <span class="n">Distributed</span> <span class="n">Time</span> <span class="n">Synchronization</span> <span class="n">Mechanism</span>
+<span class="n">Security</span> <span class="n">by</span> <span class="n">Isolation</span>
+<span class="n">Stream</span> <span class="n">isolation</span> <span class="n">to</span> <span class="n">prevent</span> <span class="n">identity</span> <span class="n">correlation</span> <span class="n">through</span> <span class="n">circuit</span> <span class="n">sharing</span>
+<span class="n">Virtual</span> <span class="n">Machine</span> <span class="n">Images</span>
+<span class="n">VPN</span><span class="o">/</span><span class="n">Tunnel</span> <span class="n">Support</span>
+<span class="n">Whonix</span> <span class="n">is</span> <span class="n">produced</span> <span class="n">independently</span> <span class="n">from</span> <span class="n">the</span> <span class="n">Tor</span> <span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="n">anonymity</span> <span class="n">software</span> <span class="n">and</span> <span class="n">carries</span> <span class="n">no</span> <span class="n">guarantee</span> <span class="n">from</span> <span class="n">The</span> <span class="n">Tor</span> <span class="n">Project</span> <span class="n">about</span> <span class="n">quality</span><span class="p">,</span> <span class="n">suitability</span> <span class="n">or</span> <span class="n">anything</span> <span class="k">else</span><span class="p">.</span>
+<span class="n">Transparent</span> <span class="n">Proxy</span>
+<span class="n">Tunnel</span> <span class="n">Freenet</span> <span class="n">through</span> <span class="n">Tor</span>
+<span class="n">Tunnel</span> <span class="n">i2p</span> <span class="n">through</span> <span class="n">Tor</span>
+<span class="n">Tunnel</span> <span class="n">JonDonym</span> <span class="n">through</span> <span class="n">Tor</span>
+<span class="n">Tunnel</span> <span class="n">Proxy</span> <span class="n">through</span> <span class="n">Tor</span>
+<span class="n">Tunnel</span> <span class="n">Retroshare</span> <span class="n">through</span> <span class="n">Tor</span>
+<span class="n">Tunnel</span> <span class="n">SSH</span> <span class="n">through</span> <span class="n">Tor</span>
+<span class="n">Tunnel</span> <span class="n">UDP</span> <span class="n">over</span> <span class="n">Tor</span> ¹
+<span class="n">Tunnel</span> <span class="n">VPN</span> <span class="n">through</span> <span class="n">Tor</span>
+<span class="n">Tor</span> <span class="n">enforcement</span>
+<span class="n">Free</span> <span class="n">Software</span><span class="p">,</span> <span class="n">Libre</span> <span class="n">Software</span><span class="p">,</span> <span class="n">Open</span> <span class="n">Source</span>
+¹ <span class="n">via</span> <span class="n">Optional</span> <span class="n">Configuration</span>
+</pre></div>
+<h2 id="advantages-of-whonix">Advantages of Whonix</h2>
+<ul>
+<li>All applications, including those, which do not support proxy settings, will automatically be routed through Tor.^1^ ^2^ ^3^ ^4^</li>
+<li>Installation of any software package possible.^12^</li>
+<li>Safe hosting of <a class="" href="https://sourceforge.net/p/whonix/wiki/Hidden%20Services/">Hidden services</a> possible. ^13^</li>
+<li>Protection against side channel attacks, no IP or DNS leaks possible. ^16^</li>
+<li>Advantage over Live CD's: Tor's data directory is still available after reboot, due to persistent storage. Tor requires persistent storage to save it's <a class="" href="https://www.torproject.org/docs/faq.html.en#EntryGuards" rel="nofollow">Entry Guards</a>.</li>
+<li>Java / JavaScript^15^ / flash / <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Browser Plugins</a>^9^ / misconfigured applications cannot leak your real external IP. See <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20in%20Real%20World/">Whonix security in real world</a>.</li>
+<li>Whonix does even protect against root exploits (<a class="" href="https://en.wikipedia.org/wiki/Malware" rel="nofollow">Malware</a> with root rights) on the Workstation^17^, but you really should not test it and read footnote ^1^ ^a^ and follow links.</li>
+<li>Uses only <a class="" href="https://en.wikipedia.org/wiki/Free_software" rel="nofollow">Free Software</a>.</li>
+<li>Building Whonix from source is easy, see <a class="alink" href="/p/whonix/wiki/BuildDocumentation/">[BuildDocumentation]</a>.</li>
+<li><a class="" href="https://www.torproject.org" rel="nofollow">Tor</a>+<a class="" href="https://www.torproject.org/projects/vidalia.html.en" rel="nofollow">Vidalia</a>^10^ and <a class="" href="https://www.torproject.org/projects/torbrowser.html.en" rel="nofollow">Tor Browser</a> are not running inside the same machine. That means that for example an exploit in the browser can't affect the integrity of the Tor process.</li>
+<li>It is possible to use Whonix in conjunction with VPNs, ssh and other proxies. But see <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorPlusVPN" rel="nofollow">Tor plus VPN/proxies Warning</a>. Everything possible, as first chain or last chain, or both.</li>
+<li>Loads of <a class="alink" href="/p/whonix/wiki/Features/">[Features]</a>.</li>
+<li>Loads of <a class="" href="http://sourceforge.net/p/whonix/wiki/OptionalConfigurations/">Optional Configurations</a> (additional features / Add-Ons) available.</li>
+<li>Best possible <a class="" href="https://sourceforge.net/p/whonix/wiki/Whonix%27s%20Protocol-Leak-Protection%20and%20Fingerprinting-Protection/">Protocol-Leak-Protection and Fingerprinting-Protection</a>.</li>
+<li>Private obfuscated <a class="alink" href="/p/whonix/wiki/Bridges/">[Bridges]</a> can be added to <em>/etc/tor/torrc</em>.</li>
+<li>Whonix-Gateway can also torify Windows, see <a class="alink" href="/p/whonix/wiki/OtherOperatingSystems/">[OtherOperatingSystems]</a>.</li>
+</ul>
+<h2 id="disadvantages-of-whonix">Disadvantages of Whonix</h2>
+<ul>
+<li>More difficult to set up compared to the regular Tor Browser Bundle.</li>
+<li>Needs virtual machines or spare hardware.</li>
+<li>Updating OS and applications behind the Tor proxy is slow.</li>
+<li>Higher maintenance required.^14^</li>
+<li>Tor Button's New Identity button is not supported with Whonix, see <a class="" href="https://sourceforge.net/p/whonix/wiki/TorBrowser/#new-identity-button">Tor Browser</a> for a workaround.</li>
+</ul>
+<h2 id="footnotes">Footnotes</h2>
+<p><font size="-3"><br />
+,, <br />
+^1^ For application warnings, see <a class="alink" href="/p/whonix/wiki/Documentation/">[Documentation]</a>.<br />
+^2^ IPv6 is not yet supported by Tor. Limited workaround: ^6^<br />
+^3^ UDP ^5^ <a class="" href="https://trac.torproject.org/projects/tor/ticket/7830" rel="nofollow">is not supported by Tor</a>, thus will not work in Whonix as well. Limited workaround: ^6^; ^7^<br />
+^4^ Services that need to listen on publicly reachable ports (open/forwarded ports) are also not supported. However you may run <a class="" href="https://sourceforge.net/p/whonix/wiki/Hidden%20Services/">Hidden services</a> which are reachable via Tor or tor2web (<a class="" href="[https://trac.torproject.org/projects/tor/wiki/doc/tor2web" rel="nofollow">be careful</a>).<br />
+^5^ ICMP, ping, VOIP calls^11^ over UDP, etc...<br />
+^6^ <a class="" href="https://sourceforge.net/p/whonix/wiki/OnionCat/">OnionCat</a><br />
+^7^ <a class="" href="https://sourceforge.net/p/whonix/wiki/TunnelUDPoverTor/">Tunnel UDP over Tor</a> <br />
+^8^ The operating system and applications behind the isolated Tor proxy (gateway) cannot determine the real external IP. Therefore they also cannot leak it as long as the network, gateway server, virtual machine or host system are not compromised as well. See whole Security And Hardening page footnote ^1^ ^a^ and follow links. To test for leaks, see <a class="" href="https://sourceforge.net/p/whonix/wiki/LeakTests/">LeakTests</a>.<br />
+^9^ This is still not recommended as they may decrease anonymity (e.g. flash cookies) and often have security vulnerabilities. Most popular plugins are closed source. See <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Browser Plugins</a> for more information. <br />
+^10^ <a class="" href="http://sourceforge.net/p/whonix/wiki/OptionalConfigurations/#vidalia-for-whonix">Vidalia</a> is optional; <a class="" href="https://sourceforge.net/p/whonix/wiki/TorController/">Arm</a> is installed as alternative <br />
+^11^ Skype over TCP does work, but it's not recommend, because it's proprietary, closed source and there is no control over the encryption keys. Skype authority can compromise you out any moment. A secure encryption/authentication design looks different. For example GPG and OTR are secure, because the user has control over the keys, not the server. See <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/#does-this-mean-that-for-example-is-my-ip-and-location-safe-when-using-skype">Skype FAQ entry</a> for details.<br />
+^12^ Must be able to run on Debian GNU/Linux or you can use <a class="alink" href="/p/whonix/wiki/OtherOperatingSystems/">[OtherOperatingSystems]</a>. See also <a class="" href="https://sourceforge.net/p/whonix/wiki/Install%20Software/">Software installation on Whonix-Workstation</a> for details. <br />
+^13^ Even if someone hacks your hidden server software (lighttpd, thttpd, apache, etc.), he can not steal your hidden service key. The key is stored on the Whonix-Gateway. Once you cleaned your Whonix-Workstation, no one can impersonate your hidden service anymore. <br />
+^14^ You need to maintain three instead of one OS. You need to remember several passwords and update at least three systems. <br />
+^15^ There is no difference compared to using JavaScript directly within the <a class="" href="https://www.torproject.org/projects/torbrowser.html.en" rel="nofollow">Tor Browser Bundle</a>. Of course JavaScript within TBB inside Whonix will also not leak your IP. Decide yourself. Browser fingerprinting still applies. For more information see <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers" rel="nofollow">Web-browser</a>! <br />
+^16^ Whonix protects against IP and DNS leaks. Other possible leaks (such as username; time zone; etc.) and how to mitigate them see <a class="alink" href="/p/whonix/wiki/Documentation/">[Documentation]</a>. Additionally <a class="" href="https://sourceforge.net/p/whonix/wiki/Whonix%27s%20Protocol-Leak-Protection%20and%20Fingerprinting-Protection/">Whonix's Protocol-Leak-Protection and Fingerprinting-Protection</a> mitigates many possible fingerprinting attacks by using common, non-identifying defaults. (username set to user; timezone set to UTC; etc.) <br />
+^17^ The Workstation is the place where the browser, IRC client and so on is running. The Gateway is the place where Tor and the firewall is running.<br />
+</font></p>
+<h2 id="vpn-tunnel-support">VPN / Tunnel support</h2>
+<p>All kinds of tunnels is possible and tested. Route something Tor through or route through something before connecting to Tor.</p>
+<ul>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">Tunnel Support</a><ul>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/">Tunnel Tor through proxy, VPN or SSH (proxy/VPN/SSH -&gt; Tor)</a><ul>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/">Tunnel Tor through proxy (proxy -&gt; Tor)</a></li>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/">Tunnel Tor through SSH (SSH -&gt; Tor)</a></li>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/">Tunnel Tor through VPN (VPN -&gt; Tor)</a></li>
+</ul>
+</li>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">Tunnel Proxy/SSH/VPN through Tor (Tor -&gt; Proxy/SSH/VPN)</a><ul>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">Tunnel proxy through Tor (Tor -&gt; proxy)</a></li>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">Tunnel SSH through Tor (Tor -&gt; SSH)</a></li>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">Tunnel VPN through Tor (Tor -&gt; VPN)</a></li>
+</ul>
+</li>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/TestVPN/">A Free example VPN working with Whonix for testing purposes</a></li>
+</ul>
+</li>
+</ul>
+<p><font size="-3"><br />
+Replacing Tor with something is possible as well, although only for some combinations and networks. It's partially done but don't hold your breath for seeing those features finished, see <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherAnonymizingNetworks/">OtherAnonymizingNetworks</a>.<br />
+</font></p>
+<h2 id="license">License</h2>
+<p>Thanks to <a class="" href="https://anonymous-proxy-servers.net/" rel="nofollow">JonDos</a> (<a class="" href="https://anonymous-proxy-servers.net/forum/viewtopic.php?p=31220&amp;sid=ac8a6ca16eb768b3322be30b20375c97#p31220" rel="nofollow">Permission</a>). The "Whonix Features" chapter of the Whonix Features wiki page contains content from the JonDonym documentation <a class="" href="https://anonymous-proxy-servers.net/en/help/about.html" rel="nofollow">Features</a> page.</p></div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/Documentation/">Wiki: Documentation</a><br>
+    
+      <a href="/p/whonix/wiki/OtherOperatingSystems/">Wiki: OtherOperatingSystems</a><br>
+    
+      <a href="/p/whonix/wiki/BuildDocumentation/">Wiki: BuildDocumentation</a><br>
+    
+      <a href="/p/whonix/wiki/Features/">Wiki: Features</a><br>
+    
+      <a href="/p/whonix/wiki/Bridges/">Wiki: Bridges</a><br>
+    
+      <a href="/p/whonix/wiki/BrowserPlugins/">Wiki: BrowserPlugins</a><br>
+    
+      <a href="/p/whonix/wiki/About/">Wiki: About</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="/apps/trac/sourceforge/wiki/WikiStart">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="https://sourceforge.net/p/forge/documentation/Support%20via%20IRC/">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://geeknetmedia.com/terms-of-use">Terms</a>
+            <a href="http://geeknetmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://geeknetmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://geeknetmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1358968642/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tag.editor.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post, .delete_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagEditor({
+            confirmRemoval: false,
+            completeOnSeparator: true,
+            completeOnBlur: true
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

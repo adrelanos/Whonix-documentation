@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-3 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / TrustingWhonixSigningKey</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css"
+                >
+    
+      <style>
+            input.label_edit{ float: left; }
+            .tagEditor{
+                margin: 4px 0;
+                padding: 0;
+                float: left;
+            }
+
+            .tagEditor li, .removable{
+                display: inline;
+                background-image: url('http://a.fsdn.com/allura/nf/1358968642/_static_/images/minus_small.png');
+                background-color: #eef;
+                background-position: right center;
+                background-repeat: no-repeat;
+                list-style-type: none;
+                padding: 0 18px 0 6px;
+                margin: 0 4px;
+                cursor: pointer;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+            }
+
+            .tagEditor li:hover{
+                background-color: #ebebeb;
+            }</style>
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XUbszVRZFdcuEJoHUxfCteAQ { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-TrustingWhonixSigningKey" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="/jobs?source=header">Jobs</a>
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">TrustingWhonixSigningKey
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><!--<!--
+Copyright:
+
+   Copyright (C) Amnesia <amnesia at boum dot org>
+   Portions Copyright (C) 2012 adrelanos <adrelanos at riseup dot net>
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to:
+
+    Free Software Foundation, Inc. 
+    51 Franklin St, Fifth Floor
+    Boston, MA 02110-1301, USA.
+
+On Debian GNU/Linux systems, the complete text of the GNU General Public
+License can be found in the /usr/share/common-licenses' directory.
+
+The complete text of the GNU General Public License can also be found online on gnu.org <https://www.gnu.org/licenses/gpl.html>, in Whonix virtual machine images in /usr/share/common-licenses/GPL-3 file or in Whonix wiki on <https://sourceforge.net/p/whonix/wiki/GPLv3></https://sourceforge.net/p/whonix/wiki/GPLv3>.
+-->-->
+<!--<!--
+This wiki page is a fork of the Tails Trusting Tails signing key page, from this exact source <http://git.immerda.ch/?p=amnesia.git;a=blob;f=wiki/src/doc/get/trusting_tails_signing_key.mdwn;hb=63b68fb4970361131cbd1713b40521244e88c204>.
+-->-->
+<div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="http://whonix.sourceforge.net/videos.html">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Hidden%20Services/">Hidden Service Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorBOX/Dev" rel="nofollow">Development</a> | <a class="" href="https://github.com/adrelanos/Whonix" rel="nofollow">Source Code</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BuildDocumentation/">Build Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#correlates-several-downloads-of-whonix-signing-key">Correlates several downloads of Whonix signing key</a></li>
+<li><a href="#the-openpgp-web-of-trust">The OpenPGP Web of Trust</a></li>
+<li><a href="#further-reading-on-openpgp">Further reading on OpenPGP</a></li>
+<li><a href="#see-also">See Also</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</div>
+<h1 id="introduction">Introduction</h1>
+<p>Note that since all Whonix releases are signed with the same key, you will not have to verify the key every time and the trust you might progressively build in it will be built once and for all. Still, you will have to check the virtual machine images every time you download a new ones!</p>
+<p>This page is strongly related to the <a class="alink" href="/p/whonix/wiki/Trust/">[Trust]</a> page.</p>
+<h1 id="correlates-several-downloads-of-whonix-signing-key">Correlates several downloads of Whonix signing key</h1>
+<p>A simple technique to increase the trust you can put in Whonix signing key would be to download it several times, from several locations, several computers, possibly several countries, etc.</p>
+<p>For example you could save them every time with a different name in the same directory on a USB stick. Then run the following command from a terminal to check whether all the keys are identical:</p>
+<div class="codehilite"><pre><span class="n">cd</span> <span class="p">[</span><span class="n">your</span> <span class="n">download</span> <span class="n">directory</span><span class="p">]</span>
+<span class="n">sha512sum</span> <span class="n">adrelanos</span><span class="p">.</span><span class="n">asc</span><span class="o">*</span>
+</pre></div>
+<p>This command would output something like this:</p>
+<div class="codehilite"><pre><span class="n">c2cf82a7f18b6f04856c5fb9e6813b4aadec6cbd329996bb00d3394f16849551eac12df06859128c57ed2a8fd88ff23944d96832550809cf6e1fad2cefae1c37</span>  <span class="n">adrelanos</span><span class="p">.</span><span class="n">asc</span>
+<span class="n">c2cf82a7f18b6f04856c5fb9e6813b4aadec6cbd329996bb00d3394f16849551eac12df06859128c57ed2a8fd88ff23944d96832550809cf6e1fad2cefae1c37</span>  <span class="n">adrelanos</span><span class="p">.</span><span class="n">asc</span><span class="p">.</span>1                                  
+<span class="n">c2cf82a7f18b6f04856c5fb9e6813b4aadec6cbd329996bb00d3394f16849551eac12df06859128c57ed2a8fd88ff23944d96832550809cf6e1fad2cefae1c37</span>  <span class="n">adrelanos</span><span class="p">.</span><span class="n">asc</span><span class="p">.</span>2                                  
+<span class="n">c2cf82a7f18b6f04856c5fb9e6813b4aadec6cbd329996bb00d3394f16849551eac12df06859128c57ed2a8fd88ff23944d96832550809cf6e1fad2cefae1c37</span>  <span class="n">adrelanos</span><span class="p">.</span><span class="n">asc</span><span class="p">.</span>3
+</pre></div>
+<p>You would then need to visually check that all the checksums of the first column are the same, meaning that the keys are identical.</p>
+<p>You could also use this technique to compare keys downloaded by your friends or other people you trust.</p>
+<p>Downloading the key from the same server lowers the possibility of a man in the middle attack only for a part of the route as the following figure explains best.</p>
+<div class="codehilite"><pre>user <span class="o">&lt;-&gt;</span> user ISP <span class="o">&lt;-&gt;</span> internet <span class="o">&lt;-&gt;</span> sourceforge.org ISP <span class="o">&lt;-&gt;</span> sourceforge.org server
+MITM less likely for this route <span class="o">|</span>  no help for this route
+</pre></div>
+<p>For this reasons adrelanos GPG key is mirrored at five different places.</p>
+<p>(1.) <a class="" href="https://github.com/adrelanos/Whonix" rel="nofollow">github</a></p>
+<p>Github.com is accessible over SSL. ^1^</p>
+<p>(2.) <a class="" href="https://sourceforge.net/p/whonix/code/ci/b5e205ccb19a11e901124fe7f101fcb0c71b0c8c/tree/adrelanos.asc">sourceforge</a></p>
+<p>SSL ^1^ available for users logged into sourceforge.net.</p>
+<p>(3.) <a class="" href="http://su6ephfi7dtxnbtb.onion/" rel="nofollow">Free Onion Hosting Service</a> </p>
+<p>Encrypted end-to-end ^2^, because it's a Tor hidden service.<br />
+Anonymous admin.<br />
+Absolutely no control over the server.</p>
+<p>(4.) <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/proper" rel="nofollow">torproject.org wiki</a></p>
+<p>SSL available. ^1^<br />
+Anyone can edit the torproject.org wiki and exchange content with malicious one. Therefore check the history feature. Obviously, I do trust Tor and torproject.org. My wiki account "<em>proper</em>" should be genuine, therefore changes by "<em>proper</em>" should be legit.</p>
+<p>(5.) <a class="" href="https://savannah.gnu.org/people/viewgpg.php?user_id=89289" rel="nofollow">savannah.gnu.org profile page</a></p>
+<p>SSL available. ^1^<br />
+The following command is recommend to enforce downloading the key over SSL.</p>
+<div class="codehilite"><pre><span class="n">curl</span> <span class="o">--</span><span class="n">tlsv1</span> <span class="o">--</span><span class="n">proto</span> <span class="p">=</span><span class="n">https</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">savannah</span><span class="p">.</span><span class="n">gnu</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">people</span><span class="o">/</span><span class="n">viewgpg</span><span class="p">.</span><span class="n">php</span>?<span class="n">user_id</span><span class="p">=</span>89289 <span class="o">&gt;</span> <span class="n">adrelanos</span><span class="p">.</span><span class="n">asc</span><span class="p">.</span>4
+</pre></div>
+<p><font size="-3"><br />
+,,<br />
+^1^ See <a class="alink" href="/p/whonix/wiki/SSL/">[SSL]</a> for comments on SSL (in)security.<br />
+^2^ Not exactly end-to-end, see <a class="" href="https://sourceforge.net/p/whonix/wiki/Threat%20Model/#notes-about-end-to-end-security-of-hidden-services">Notes about End-to-end security of Hidden Services</a> for details.<br />
+</font></p>
+<h1 id="the-openpgp-web-of-trust">The OpenPGP Web of Trust</h1>
+<p><strong>Just theory. Practically impossible because Whonix developer adrelanos prefers to stay anonymous, see <a class="alink" href="/p/whonix/wiki/Trust/">[Trust]</a> page.</strong></p>
+<p><font size="-3"><br />
+If you want to be extra cautious and really authenticate Whonix signing key in a stronger way than what standard HTTPS offers you, you theoretically could use the OpenPGP Web of Trust.</font></p>
+<p>One of the inherent problems of standard HTTPS is that the trust we usually put on a website is defined by certificate authorities: a hierarchical and closed set of companies and governmental institutions approved by web browser vendors. This model of trust has long been criticized and proved several times to be vulnerable to attacks <a class="" href="https://sourceforge.net/p/whonix/wiki/Warning/">as explained on our warning page</a>.</p>
+<p>We believe instead that users should be given the final say when trusting a website, and that designation of trust should be done on the basis of human interaction.</p>
+<p>The OpenPGP <a class="" href="https://en.wikipedia.org/wiki/Web_of_trust" rel="nofollow">Web of Trust</a> is a decentralized trust model based on OpenPGP keys. Let's see that with an example.</p>
+<p><em>You're a friend of Alice and really trust her way of managing OpenPGP keys. You're trusting Alice's key.</em></p>
+<p><em>Furthermore, Alice met Bob, a Whonix developer, in a conference, and signed Bob's key. Alice is trusting Bob's key.</em></p>
+<p><em>Bob is a Whonix developer who directly owns the Whonix signing key. Bob fully trusts Whonix signing key.</em></p>
+<p>This scenario creates a trust path from you to Whonix signing key that could allow you to trust it without having to depend on certificate authorities.</p>
+<p>This trust model is not perfect either and requires both caution and intelligent supervision by users. The technical details of creating, managing and trusting OpenPGP keys is outside of the scope of this document.</p>
+<p>We also acknowledge that not everybody might be able to create good trust path to Whonix signing key since it based on a network of direct human relationships and the knowledge of quite complex tools such as OpenPGP.<br />
+</p>
+<h1 id="further-reading-on-openpgp">Further reading on OpenPGP</h1>
+<ul>
+<li><a class="" href="https://en.wikipedia.org/wiki/GNU_Privacy_Guard" rel="nofollow">GnuPG wikipedia</a>, a free OpenPGP software</li>
+<li><a class="" href="http://www.apache.org/dev/openpgp.html" rel="nofollow">Apache: How To OpenPGP</a></li>
+<li><a class="" href="http://www.debian.org/events/keysigning" rel="nofollow">Debian: Keysigning</a>, a tutorial on signing keys of other people</li>
+<li><a class="" href="http://www.rubin.ch/pgp/weboftrust.en.html" rel="nofollow">rubin.ch: Explanation of the web of trust of PGP</a></li>
+</ul>
+<h1 id="see-also">See Also</h1>
+<ul>
+<li><a class="alink" href="/p/whonix/wiki/Trust/">[Trust]</a></li>
+</ul>
+<h1 id="license">License</h1>
+<div class="codehilite"><pre><span class="n">Whonix</span> <span class="n">Trusting</span> <span class="n">Whonix</span> <span class="n">Signing</span> <span class="n">Key</span> <span class="n">wiki</span> <span class="n">page</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">Amnesia</span> <span class="o">&lt;</span><span class="n">amnesia</span> <span class="n">at</span> <span class="n">boum</span> <span class="nb">dot</span> <span class="n">org</span><span class="o">&gt;</span>
+<span class="n">Whonix</span> <span class="n">Trusting</span> <span class="n">Whonix</span> <span class="n">Signing</span> <span class="n">Key</span> <span class="n">wiki</span> <span class="n">page</span> <span class="n">Portions</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> 2012 <span class="n">adrelanos</span> <span class="o">&lt;</span><span class="n">adrelanos</span> <span class="n">at</span> <span class="n">riseup</span> <span class="nb">dot</span> <span class="n">net</span><span class="o">&gt;</span>
+
+<span class="n">This</span> <span class="n">program</span> <span class="n">comes</span> <span class="n">with</span> <span class="n">ABSOLUTELY</span> <span class="n">NO</span> <span class="n">WARRANTY</span><span class="p">;</span> <span class="k">for</span> <span class="n">details</span> <span class="n">see</span> <span class="n">the</span> <span class="n">wiki</span> <span class="n">source</span> <span class="n">code</span><span class="p">.</span>
+<span class="n">This</span> <span class="n">is</span> <span class="n">free</span> <span class="n">software</span><span class="p">,</span> <span class="n">and</span> <span class="n">you</span> <span class="n">are</span> <span class="n">welcome</span> <span class="n">to</span> <span class="n">redistribute</span> <span class="n">it</span>
+<span class="n">under</span> <span class="n">certain</span> <span class="n">conditions</span><span class="p">;</span> <span class="n">see</span> <span class="n">the</span> <span class="n">wiki</span> <span class="n">source</span> <span class="n">code</span> <span class="k">for</span> <span class="n">details</span><span class="p">.</span>
+</pre></div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/Trust/">Wiki: Trust</a><br>
+    
+      <a href="/p/whonix/wiki/SSL/">Wiki: SSL</a><br>
+    
+      <a href="/p/whonix/wiki/DownloadSecurity/">Wiki: DownloadSecurity</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="/apps/trac/sourceforge/wiki/WikiStart">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="https://sourceforge.net/p/forge/documentation/Support%20via%20IRC/">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://geeknetmedia.com/terms-of-use">Terms</a>
+            <a href="http://geeknetmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://geeknetmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://geeknetmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1358968642/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tag.editor.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post, .delete_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagEditor({
+            confirmRemoval: false,
+            completeOnSeparator: true,
+            completeOnBlur: true
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

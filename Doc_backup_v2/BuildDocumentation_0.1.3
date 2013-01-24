@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-4 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / BuildDocumentation_0.1.3</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css"
+                >
+    
+      <style>
+            input.label_edit{ float: left; }
+            .tagEditor{
+                margin: 4px 0;
+                padding: 0;
+                float: left;
+            }
+
+            .tagEditor li, .removable{
+                display: inline;
+                background-image: url('http://a.fsdn.com/allura/nf/1358968642/_static_/images/minus_small.png');
+                background-color: #eef;
+                background-position: right center;
+                background-repeat: no-repeat;
+                list-style-type: none;
+                padding: 0 18px 0 6px;
+                margin: 0 4px;
+                cursor: pointer;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+            }
+
+            .tagEditor li:hover{
+                background-color: #ebebeb;
+            }</style>
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XxkeEWqOEqYkVRkFUewVsHV { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-BuildDocumentation_0.1.3" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="/jobs?source=header">Jobs</a>
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">BuildDocumentation_0.1.3
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div class="toc">
+<ul>
+<li><a href="#deprecated">Deprecated</a></li>
+<li><a href="#obsolete">Obsolete</a></li>
+<li><a href="#build-security">Build Security</a></li>
+<li><a href="#host-preparation">Host preparation</a></li>
+<li><a href="#create-tor-gatewayova">Create Tor-Gateway.ova</a><ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#final-steps">Final Steps</a></li>
+</ul>
+</li>
+<li><a href="#create-tor-workstationova">Create Tor-Workstation.ova</a><ul>
+<li><a href="#installation_1">Installation</a></li>
+<li><a href="#configuration_1">Configuration</a></li>
+<li><a href="#final-steps_1">Final Steps</a></li>
+</ul>
+</li>
+<li><a href="#how-to-use-the-ova-images">How to use the ova images</a></li>
+<li><a href="#testing-and-troubleshooting">Testing and Troubleshooting</a></li>
+</ul>
+</div>
+<h1 id="deprecated">Deprecated</h1>
+<p>Source code archived on github for historical reasons. Signed (by adrelanos) tag 0.1.3 available. <br />
+<a href="https://github.com/adrelanos/Whonix" rel="nofollow">https://github.com/adrelanos/Whonix</a> <br />
+<a href="https://github.com/adrelanos/Whonix/zipball/0.1.3" rel="nofollow">https://github.com/adrelanos/Whonix/zipball/0.1.3</a></p>
+<p>0.1.3 does not work anymore, because Tor 0.2.3 was released and changes to torrc are required.</p>
+<h1 id="obsolete">Obsolete</h1>
+<p>This page documents how the <a class="alink notfound" href="../Download%20binary%20distribution%20images">[Download binary distribution images]</a> are built. </p>
+<p>Following these instructions will always build the latest available version. The scripts used to build a certain version of a Tor-Gateway or Tor-Workstation image can be found in the VM at /usr/share/doc/torbox and through the wiki history. If you only want to build images for your own use you can type any password you want right away during installation instead of first using "changeme" (but you must choose the username "user"), same goes for the keyboard layout. </p>
+<p>If you have any questions or need help let us know <a class="alink notfound" href="/Dev%23Questions%20here">[/Dev#Questions here]</a>.</p>
+<p>Knowledge assumed: Virtualization and networking basic principles; operation of your platform; Linux knowledge: how to install Ubuntu and basic command line knowledge.</p>
+<p>Only two prerequisites: you need to have VirtualBox installed and you need a working internet connection.</p>
+<p>For discussion related to the development and build process of TorBOX images go <a class="alink notfound" href="/Dev/ClientVM%20here">[/Dev/ClientVM here]</a>.</p>
+<h1 id="build-security">Build Security</h1>
+<ul>
+<li>Build on a dedicated build system, install security updates...</li>
+<li>All install media and all downloaded/used code must be verified (including all software on the host)</li>
+<li>Hashes or fingerprints listed on the wiki are not to be trusted, same goes for the scripts, verify them (and make use of the history feature)</li>
+</ul>
+<h1 id="host-preparation">Host preparation</h1>
+<p>We recommend you use a dedicated OS installation just for hosting the TorBOX VMs (See <a class="alink notfound" href="/SecurityAndHardening%20TorBOX/SecurityAndHardening">[/SecurityAndHardening TorBOX/SecurityAndHardening]</a>)</p>
+<p>Install the latest security updates, install VirtualBox and reboot to apply kernel updates.</p>
+<p>'''Read and apply if necessary <a class="alink notfound" href="/Readme%23NetworkTimeSyncing%20%22Network%20Time%20Syncing%22">[/Readme#NetworkTimeSyncing "Network Time Syncing"]</a>!</p>
+<p>''' If you use Debian/Ubuntu:<br />
+{{{<br />
+sudo apt-get update &amp;&amp; sudo apt-get dist-upgrade<br />
+sudo apt-get install virtualbox<br />
+sudo reboot<br />
+}}}</p>
+<p>'''If you use Windows as the host'''</p>
+<p>Download all security updates, install an antivirus... usual security recommendations apply.</p>
+<p>Download and verify required software:<br />
+ * <a class="alink notfound" href="../https%3A//www.virtualbox.org/%20VirtualBoX"></a><a href="https://www.virtualbox.org/" rel="nofollow"></a><a href="https://www.virtualbox.org/" rel="nofollow">https://www.virtualbox.org/</a> VirtualBoX<br />
+ * SSH and SCP, we recommend <a class="alink notfound" href="../http%3A//www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html%20PuTTY%20and%20PSCP"></a><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" rel="nofollow"></a><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" rel="nofollow">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a> PuTTY and PSCP</p>
+<h1 id="create-tor-gatewayova">Create Tor-Gateway.ova</h1>
+<h2 id="installation">Installation</h2>
+<p>Download and verify <a class="alink notfound" href="../http%3A//www.ubuntu.com/download/server/download%20ubuntu-11.10-server-i386.iso"></a><a href="http://www.ubuntu.com/download/server/download" rel="nofollow"></a><a href="http://www.ubuntu.com/download/server/download" rel="nofollow">http://www.ubuntu.com/download/server/download</a> ubuntu-11.10-server-i386.iso ^1^</p>
+<p>,,^1^ Other Linux flavors will also work such as Debian stable, Debian testing, etc. This is untested and will require slight changes to the shell script (see comments in the script).</p>
+<p>Following settings are used (if nothing is specified choose default settings/selections)</p>
+<div class="codehilite"><pre><span class="n">VM</span> <span class="n">Settings</span><span class="p">:</span>
+<span class="n">Name</span><span class="p">:</span> <span class="n">Tor</span><span class="o">-</span><span class="n">Gateway</span>
+<span class="n">Ubuntu</span><span class="p">,</span> 2 <span class="n">GB</span> <span class="n">Disk</span><span class="p">,</span> 128 <span class="n">MB</span> <span class="n">RAM</span>
+<span class="n">Leave</span> <span class="n">Adapter</span> 1 <span class="n">as</span> <span class="n">NAT</span>
+<span class="n">Add</span> <span class="n">port</span> <span class="n">forwarding</span> <span class="k">for</span> <span class="n">ssh</span><span class="p">:</span> <span class="n">within</span> <span class="n">the</span> &quot;<span class="n">Adapter</span> 1&quot; <span class="n">tab</span> <span class="n">click</span> &quot;<span class="n">Advanced</span>&quot;<span class="p">,</span> <span class="n">then</span> <span class="n">Port</span> <span class="n">Forwarding</span><span class="p">.</span> <span class="n">Insert</span> <span class="n">a</span> <span class="n">new</span> <span class="n">rule</span> <span class="n">as</span> <span class="n">follows</span><span class="p">:</span> 
+<span class="n">Name</span><span class="p">:</span> <span class="n">SSH</span><span class="p">;</span> <span class="n">Protocol</span><span class="p">:</span> <span class="n">TCP</span><span class="p">;</span> <span class="n">Host</span> <span class="n">IP</span><span class="p">:</span> 127<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>1<span class="p">;</span> <span class="n">Host</span> <span class="n">Port</span><span class="p">:</span> 2222<span class="p">;</span> <span class="n">Guest</span> <span class="n">IP</span><span class="p">:</span> <span class="n">leave</span> <span class="n">blank</span><span class="p">;</span> <span class="n">Guest</span> <span class="n">Port</span><span class="p">:</span> 22 
+<span class="n">Enable</span> <span class="n">Adapter</span> 2<span class="p">,</span> <span class="n">set</span> <span class="n">to</span> &quot;<span class="n">Internal</span> <span class="n">Network</span>&quot;
+<span class="n">Disable</span> &quot;<span class="n">System</span><span class="o">-&gt;</span><span class="n">Enable</span> <span class="n">absolute</span> <span class="n">pointing</span> <span class="n">device</span>&quot;<span class="p">,</span> <span class="n">then</span> <span class="n">disable</span> &quot;<span class="n">USB</span><span class="o">-&gt;</span> <span class="n">Enable</span> <span class="n">USB</span> <span class="n">Controller</span>&quot;
+<span class="n">Close</span> <span class="n">Settings</span> <span class="n">window</span> <span class="n">and</span> <span class="n">start</span> <span class="n">the</span> <span class="n">VM</span><span class="p">:</span>
+<span class="n">In</span> <span class="n">the</span> <span class="n">boot</span> <span class="n">menu</span> <span class="n">press</span> <span class="n">F4</span> <span class="n">and</span> <span class="n">select</span> &quot;<span class="n">Install</span> <span class="n">a</span> <span class="n">minimal</span> <span class="n">system</span>&quot;
+<span class="n">Language</span> <span class="n">English</span>
+<span class="n">United</span> <span class="n">States</span>
+<span class="n">keyboard</span> <span class="n">layout</span> <span class="n">English</span> <span class="p">(</span><span class="n">US</span><span class="p">)</span> <span class="p">(</span><span class="n">don</span><span class="o">'</span><span class="n">t</span> <span class="n">autodetect</span><span class="p">)</span>
+<span class="n">Primary</span> <span class="n">network</span> <span class="n">interface</span><span class="p">:</span> <span class="n">eth0</span>
+<span class="n">Hostname</span><span class="p">:</span> <span class="n">ubuntu</span>
+<span class="n">Timezone</span><span class="p">:</span><span class="n">UTC</span>
+<span class="n">Partitioning</span><span class="p">:</span> <span class="n">Guided</span> <span class="o">-</span> <span class="n">use</span> <span class="n">entire</span> <span class="n">disk</span> <span class="p">(</span><span class="n">Not</span> <span class="n">LVM</span>!<span class="p">)</span>
+<span class="n">Username</span><span class="p">:</span> <span class="n">user</span>
+<span class="n">Password</span><span class="p">:</span> <span class="n">changeme</span>
+<span class="n">encrypt</span> <span class="n">home</span> <span class="n">folder</span><span class="p">:</span> <span class="n">No</span>
+<span class="n">No</span> <span class="n">automatic</span> <span class="n">updates</span> 
+<span class="n">tasksel</span><span class="p">:</span> <span class="n">select</span> <span class="n">nothing</span>
+</pre></div>
+<h2 id="configuration">Configuration</h2>
+<p>Log in and install the latest security updates and reboot to apply kernel upgrades. (run on the guest)</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">--</span><span class="n">yes</span> <span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
+<span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+<p>It is recommended that you install a ssh server at this point so you can copy and paste commands from host: (run on the guest)</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+<p>Transfer <a class="alink notfound" href="/Dev/TGScript%20tor-gateway.sh">[/Dev/TGScript tor-gateway.sh]</a> to /home/user (run on the host)</p>
+<div class="codehilite"><pre><span class="n">scp</span> <span class="o">-</span><span class="n">P</span> 2222 <span class="n">tor</span><span class="o">-</span><span class="n">gateway</span><span class="p">.</span><span class="n">sh</span> <span class="n">user</span><span class="p">@</span>127<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>1<span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span>
+</pre></div>
+<p>(Instead of using scp you can also log in via ssh, open nano and copy and paste the script, save as tor-gateway.sh; exit) </p>
+<p>Now you can log in from the host with (run on the host)</p>
+<div class="codehilite"><pre><span class="n">ssh</span> <span class="o">-</span><span class="n">p</span> 2222 <span class="n">user</span><span class="p">@</span>127<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>1
+</pre></div>
+<p>Import GPG key for the Torproject repository: Do not simply trust the <a class="alink notfound" href="../https%3A//www.torproject.org/docs/signing-keys.html.en%20fingerprint"></a><a href="https://www.torproject.org/docs/signing-keys.html.en" rel="nofollow"></a><a href="https://www.torproject.org/docs/signing-keys.html.en" rel="nofollow">https://www.torproject.org/docs/signing-keys.html.en</a> fingerprint you found here. <a class="alink notfound" href="../https%3A//www.torproject.org/docs/debian.html.en%23ubuntu%20Verify"></a><a href="https://www.torproject.org/docs/debian.html.en#ubuntu" rel="nofollow"></a><a href="https://www.torproject.org/docs/debian.html.en#ubuntu" rel="nofollow">https://www.torproject.org/docs/debian.html.en#ubuntu</a> Verify that it is correct! (run on the guest)</p>
+<div class="codehilite"><pre><span class="n">gpg</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">x</span><span class="o">-</span><span class="n">hkp</span><span class="p">:</span><span class="o">//</span><span class="n">pool</span><span class="p">.</span><span class="n">sks</span><span class="o">-</span><span class="n">keyservers</span><span class="p">.</span><span class="n">net</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> 886<span class="n">DDD89</span>
+<span class="n">gpg</span> <span class="o">--</span><span class="n">export</span> <span class="n">A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">add</span> <span class="o">-</span>
+</pre></div>
+<p>Before executing read through the script to check for errors (or malicious edits)!</p>
+<div class="codehilite"><pre><span class="n">nano</span> <span class="n">tor</span><span class="o">-</span><span class="n">gateway</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+<p>Run tor-gateway.sh directly on a terminal, not through ssh! (run on the guest)</p>
+<div class="codehilite"><pre><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">tor</span><span class="o">-</span><span class="n">gateway</span><span class="o">*</span><span class="p">.</span><span class="n">sh</span>
+<span class="n">sudo</span> <span class="o">./</span><span class="n">tor</span><span class="o">-</span><span class="n">gateway</span><span class="p">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">vm</span>
+</pre></div>
+<p>If you install on bare metal omit the "-vm".</p>
+<p>Wait till it says "Tor-Gateway configuration successful." If the script fails you probably forgot to attach the second adapter or to import the gpg key or your internet connection is down. After fixing that simply run the script again. If it still fails please let us know on <a class="alink notfound" href="/Dev%20TorBOX/Dev">[/Dev TorBOX/Dev]</a>!</p>
+<h2 id="final-steps">Final Steps</h2>
+<ul>
+<li>remove port forwarding</li>
+<li>Poweroff. In Network-&gt;Adapter 2: rename the network to "torbox"</li>
+</ul>
+<p>Skip the following if you build for your own use and not for redistribution. (run on the guest)<br />
+ * sudo mv ./tor-gateway.sh /usr/share/doc/torbox<br />
+ * set password to "changeme" if a different one was used before (use the command passwd)<br />
+ * rm .bash_history (you need to log out and back in first for this to have any effect)<br />
+ * Export the VM, save as Tor-Gateway.ova<br />
+ * <a class="alink notfound" href="/TestAndTroubleshoot%20Test">[/TestAndTroubleshoot Test]</a> the image before release!</p>
+<h1 id="create-tor-workstationova">Create Tor-Workstation.ova</h1>
+<h2 id="installation_1">Installation</h2>
+<p>Download and verify ubuntu-11.10-server-i386.iso </p>
+<p>Following settings are used (if nothing is specified choose default settings)</p>
+<div class="codehilite"><pre><span class="n">VM</span> <span class="n">Settings</span><span class="p">:</span> 
+<span class="n">Name</span><span class="p">:</span> <span class="n">Tor</span><span class="o">-</span><span class="n">Workstation</span>
+<span class="n">Ubuntu</span><span class="p">,</span> 8 <span class="n">GB</span> <span class="n">Disk</span><span class="p">,</span> 512 <span class="n">MB</span> <span class="n">RAM</span>
+<span class="n">In</span> <span class="n">Settings</span><span class="o">-&gt;</span><span class="n">Network</span> <span class="n">Leave</span> <span class="n">Adapter</span> 1 <span class="n">as</span> <span class="n">NAT</span> <span class="p">(</span><span class="n">faster</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">downloads</span> <span class="n">during</span> <span class="n">set</span> <span class="n">up</span><span class="p">)</span>
+<span class="n">Enter</span> <span class="n">following</span> <span class="n">MAC</span> <span class="n">address</span><span class="p">:</span> 080027070<span class="n">b08</span>
+<span class="n">Add</span> <span class="n">port</span> <span class="n">forwarding</span> <span class="k">for</span> <span class="n">ssh</span><span class="p">:</span> <span class="n">within</span> <span class="n">the</span> &quot;<span class="n">Adapter</span> 1&quot; <span class="n">tab</span> <span class="n">click</span> &quot;<span class="n">Advanced</span>&quot;<span class="p">,</span> <span class="n">then</span> <span class="n">Port</span>     <span class="n">Forwarding</span><span class="p">.</span> <span class="n">Insert</span> <span class="n">a</span> <span class="n">new</span> <span class="n">rule</span> <span class="n">as</span> <span class="n">follows</span><span class="p">:</span> 
+<span class="n">Name</span><span class="p">:</span> <span class="n">SSH</span><span class="p">;</span> <span class="n">Protocol</span><span class="p">:</span> <span class="n">TCP</span><span class="p">;</span> <span class="n">Host</span> <span class="n">IP</span><span class="p">:</span> 127<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>1<span class="p">;</span> <span class="n">Host</span> <span class="n">Port</span><span class="p">:</span> 4444<span class="p">;</span> <span class="n">Guest</span> <span class="n">IP</span><span class="p">:</span> <span class="n">leave</span> <span class="n">blank</span><span class="p">;</span> <span class="n">Guest</span> <span class="n">Port</span><span class="p">:</span> 22
+<span class="n">In</span> <span class="n">the</span> <span class="n">boot</span> <span class="n">menu</span> <span class="n">press</span> <span class="n">F4</span> <span class="n">and</span> <span class="n">select</span> &quot;<span class="n">Install</span> <span class="n">a</span> <span class="n">minimal</span> <span class="n">system</span>&quot;
+<span class="n">Language</span> <span class="n">English</span>
+<span class="n">United</span> <span class="n">States</span>
+<span class="n">Keyboard</span> <span class="n">layout</span> <span class="n">English</span> <span class="p">(</span><span class="n">US</span><span class="p">)</span>
+<span class="n">Hostname</span><span class="p">:</span> <span class="n">ubuntu</span>
+<span class="n">Timezone</span><span class="p">:</span> <span class="n">UTC</span>
+<span class="n">Partitioning</span><span class="p">:</span> <span class="n">Guided</span> <span class="o">-</span> <span class="n">use</span> <span class="n">entire</span> <span class="n">disk</span> <span class="p">(</span><span class="n">Not</span> <span class="n">LVM</span>!<span class="p">)</span>
+<span class="n">Username</span><span class="p">:</span> <span class="n">user</span>
+<span class="n">Password</span><span class="p">:</span> <span class="n">changeme</span>
+<span class="n">encrypt</span> <span class="n">home</span> <span class="n">folder</span><span class="p">:</span> <span class="n">No</span>
+<span class="n">No</span> <span class="n">automatic</span> <span class="n">updates</span> 
+<span class="n">tasksel</span><span class="p">:</span> <span class="n">select</span> <span class="n">nothing</span>
+</pre></div>
+<h2 id="configuration_1">Configuration</h2>
+<p>Log in and install the latest security updates and reboot to apply kernel upgrades. (run on the guest)</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">--</span><span class="n">yes</span> <span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
+<span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+<p>It is recommended that you install a ssh server at this point so you can copy and paste commands from host: (run on the guest)</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+<p>Transfer <a class="alink notfound" href="/Dev/TWScript%20tor-workstation.sh">[/Dev/TWScript tor-workstation.sh]</a> to /home/user (run on the host)</p>
+<div class="codehilite"><pre><span class="n">scp</span> <span class="o">-</span><span class="n">P</span> 4444 <span class="n">tor</span><span class="o">-</span><span class="n">workstation</span><span class="p">.</span><span class="n">sh</span> <span class="n">user</span><span class="p">@</span>127<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>1<span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span>
+</pre></div>
+<p>(Instead of using scp you can also log in via ssh, open nano and copy and paste the script, save as tor-workstation.sh and exit) </p>
+<p>Now you can log in from the host with (run on the host)</p>
+<div class="codehilite"><pre><span class="n">ssh</span> <span class="o">-</span><span class="n">p</span> 4444 <span class="n">user</span><span class="p">@</span>127<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>1
+</pre></div>
+<p>Before executing read through the script to check for errors (or malicious edits)!</p>
+<div class="codehilite"><pre><span class="n">nano</span> <span class="n">tor</span><span class="o">-</span><span class="n">workstation</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+<p>Make the script executable and run it (You need to run it directly on a terminal, not through ssh!) (run on the guest)</p>
+<div class="codehilite"><pre><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">tor</span><span class="o">-</span><span class="n">workstation</span><span class="p">.</span><span class="n">sh</span>
+<span class="n">sudo</span> <span class="o">./</span><span class="n">tor</span><span class="o">-</span><span class="n">workstation</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+<h2 id="final-steps_1">Final Steps</h2>
+<ul>
+<li>remove port forwarding</li>
+<li>Poweroff. Set Adapter 1 to internal, rename the network to "torbox"</li>
+</ul>
+<p>Skip the following if you build for your own use and not for redistribution. (run on the guest)<br />
+ * mv ./tor-workstation.sh /usr/share/doc/torbox #This script<br />
+ * set password to "changeme" if a different one was used before (use the command passwd)<br />
+ * rm .bash_history (you need to log out and back in first for this to have any effect)<br />
+ * Export the VM, save as Tor-Workstation.ova<br />
+ * <a class="alink notfound" href="/TestAndTroubleshoot%20Test">[/TestAndTroubleshoot Test]</a> the image before release!</p>
+<h1 id="how-to-use-the-ova-images">How to use the ova images</h1>
+<p>Reboot both VMs. Please read the <a class="alink notfound" href="/Readme%20Readme">[/Readme Readme]</a>!</p>
+<h1 id="testing-and-troubleshooting">Testing and Troubleshooting</h1>
+<p><a class="alink notfound" href="/TestAndTroubleshoot%20TorBOX/TestAndTroubleshoot">[/TestAndTroubleshoot TorBOX/TestAndTroubleshoot]</a></p></div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="/apps/trac/sourceforge/wiki/WikiStart">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="https://sourceforge.net/p/forge/documentation/Support%20via%20IRC/">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://geeknetmedia.com/terms-of-use">Terms</a>
+            <a href="http://geeknetmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://geeknetmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://geeknetmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1358968642/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tag.editor.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post, .delete_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagEditor({
+            confirmRemoval: false,
+            completeOnSeparator: true,
+            completeOnBlur: true
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

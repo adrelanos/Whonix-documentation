@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-2 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / OptionalConfigurations</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1358968642/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css"
+                >
+    
+      <style>
+            input.label_edit{ float: left; }
+            .tagEditor{
+                margin: 4px 0;
+                padding: 0;
+                float: left;
+            }
+
+            .tagEditor li, .removable{
+                display: inline;
+                background-image: url('http://a.fsdn.com/allura/nf/1358968642/_static_/images/minus_small.png');
+                background-color: #eef;
+                background-position: right center;
+                background-repeat: no-repeat;
+                list-style-type: none;
+                padding: 0 18px 0 6px;
+                margin: 0 4px;
+                cursor: pointer;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+            }
+
+            .tagEditor li:hover{
+                background-color: #ebebeb;
+            }</style>
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XfdcrlCCTmMbaKJeuDJYeo { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-OptionalConfigurations" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="/jobs?source=header">Jobs</a>
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">OptionalConfigurations
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="http://whonix.sourceforge.net/videos.html">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Hidden%20Services/">Hidden Service Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorBOX/Dev" rel="nofollow">Development</a> | <a class="" href="https://github.com/adrelanos/Whonix" rel="nofollow">Source Code</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BuildDocumentation/">Build Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#using-tors-socksproxy-in-whonix-workstation">Using Tor's SocksProxy in Whonix-Workstation</a></li>
+<li><a href="#best-possible-protection-against-identity-correlation-through-circuit-sharing">Best possible protection against Identity correlation through circuit sharing</a></li>
+<li><a href="#more-than-one-whonix-workstation">More than one Whonix-Workstation</a></li>
+<li><a href="#vpn-tunnel-support">VPN / Tunnel support</a></li>
+<li><a href="#tunnel-tor-through-proxy-vpn-or-ssh">Tunnel Tor through proxy, VPN or SSH</a><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#tunnel-tor-through-proxy">Tunnel Tor through proxy</a></li>
+<li><a href="#tunnel-tor-through-ssh">Tunnel Tor through SSH</a></li>
+<li><a href="#tunnel-tor-through-vpn">Tunnel Tor through VPN</a></li>
+</ul>
+</li>
+<li><a href="#tunnel-proxysshvpn-through-tor">Tunnel Proxy/SSH/VPN through Tor</a><ul>
+<li><a href="#introduction_1">Introduction</a></li>
+<li><a href="#tunnel-proxy-through-tor">Tunnel proxy through Tor</a><ul>
+<li><a href="#proxy-settings-method">Proxy Settings Method</a><ul>
+<li><a href="#tor-browser-special-case">Tor Browser Special Case</a></li>
+<li><a href="#proxychains">proxychains</a></li>
+</ul>
+</li>
+<li><a href="#transparent-proxying">Transparent Proxying</a><ul>
+<li><a href="#introduction_2">Introduction</a><ul>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#dns-resolution">DNS resolution</a></li>
+</ul>
+</li>
+<li><a href="#howto">HowTo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tunnel-ssh-through-tor">Tunnel SSH through Tor</a></li>
+<li><a href="#tunnel-vpn-through-tor">Tunnel VPN through Tor</a><ul>
+<li><a href="#notes">Notes</a><ul>
+<li><a href="#udp">UDP</a></li>
+<li><a href="#using-transport-instead-of-socksport-is-required-for-tor-vpn">Using TransPort instead of SocksPort is required for Tor -&gt; VPN</a></li>
+<li><a href="#vpn-and-stream-isolation">VPN and stream isolation</a></li>
+<li><a href="#vpn-breakdown">VPN breakdown</a></li>
+<li><a href="#vpn-and-malware">VPN and malware</a></li>
+<li><a href="#identity-correlation">Identity correlation</a></li>
+</ul>
+</li>
+<li><a href="#how">How</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#a-free-example-vpn-working-with-whonix-for-testing-purposes">A Free example VPN working with Whonix for testing purposes</a></li>
+<li><a href="#connect-to-a-tor-gateway-on-your-local-network-using-pptp-vpn">Connect to a Tor Gateway on your local network using PPTP VPN</a></li>
+<li><a href="#hosting-hidden-services">Hosting hidden services</a><ul>
+<li><a href="#hidden-webserver">Hidden webserver</a></li>
+</ul>
+</li>
+<li><a href="#vidalia-for-whonix">Vidalia for Whonix</a><ul>
+<li><a href="#introduction_3">Introduction</a></li>
+<li><a href="#1-vidalia-on-the-host">1. Vidalia on the Host</a></li>
+<li><a href="#2-vidalia-on-the-whonix-gateway">2. Vidalia on the Whonix-Gateway</a></li>
+</ul>
+</li>
+<li><a href="#how-to-safely-transfer-files-between-host-whonix-gateway-and-whonix-workstation">How to safely transfer files between Host, Whonix-Gateway and Whonix-Workstation</a></li>
+<li><a href="#whonix-implementation-with-just-a-single-vm-tor-runs-on-host">Whonix implementation with just a single VM (Tor runs on host)</a></li>
+<li><a href="#hosting-a-private-obfuscated-bridge-or-exit-relay">Hosting a (private) (obfuscated) bridge or (exit) relay</a><ul>
+<li><a href="#introduction_4">Introduction</a></li>
+<li><a href="#inside-the-whonix-gateway">Inside the Whonix-Gateway</a></li>
+<li><a href="#on-the-host">On the host</a></li>
+</ul>
+</li>
+<li><a href="#hide-the-fact-that-you-are-using-torwhonix">Hide the fact, that you are using Tor/Whonix</a><ul>
+<li><a href="#introduction_5">Introduction</a></li>
+<li><a href="#warnings">Warnings</a></li>
+<li><a href="#using-a-proxy">Using a Proxy</a></li>
+<li><a href="#using-ssh-or-vpn">Using SSH or VPN</a></li>
+<li><a href="#using-private-and-obfuscated-bridges">Using private and obfuscated bridges</a></li>
+</ul>
+</li>
+<li><a href="#whonix-on-bare-metal">Whonix on Bare Metal</a></li>
+<li><a href="#leak-testing">Leak Testing</a></li>
+<li><a href="#anonymous-3g-modem">Anonymous 3G modem</a></li>
+<li><a href="#anonymous-wifi-adapter">Anonymous wifi adapter</a></li>
+<li><a href="#other-anonymizing-networks">Other Anonymizing Networks</a></li>
+<li><a href="#other-operating-systems">Other Operating Systems</a></li>
+<li><a href="#tunnel-udp-over-tor">Tunnel UDP over Tor</a></li>
+<li><a href="#secondary-dns-resolver">Secondary DNS resolver</a><ul>
+<li><a href="#introduction_6">Introduction</a></li>
+<li><a href="#authenticated-dns-over-tor">Authenticated DNS over Tor</a><ul>
+<li><a href="#dnssec-over-tor">DNSSEC over Tor</a><ul>
+<li><a href="#example-with-cznic-labs-dns-resolver">Example with CZ.NIC Labs DNS resolver</a><ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#starting">Starting</a></li>
+<li><a href="#using">Using</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#encrypted-dns-over-tor">Encrypted DNS over Tor</a><ul>
+<li><a href="#dnscrypt-by-opendns">DNSCrypt by OpenDNS</a></li>
+<li><a href="#httpsdnsd-by-jondos">httpsdnsd by JonDos</a><ul>
+<li><a href="#installation_1">Installation</a></li>
+<li><a href="#starting_1">Starting</a></li>
+<li><a href="#using_1">Using</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#onioncat">OnionCat</a><ul>
+<li><a href="#introduction_7">Introduction</a></li>
+<li><a href="#over-tor">Over Tor</a></li>
+<li><a href="#over-i2p">Over i2p</a></li>
+</ul>
+</li>
+<li><a href="#mozilla-thunderbird-with-torbirdy">Mozilla Thunderbird with TorBirdy</a></li>
+<li><a href="#virtualbox-guest-additions">VirtualBox Guest Additions</a><ul>
+<li><a href="#installing-virtualbox-guest-additions">Installing VirtualBox Guest Additions</a><ul>
+<li><a href="#new-instructions-for-debian-wheezy">New Instructions for Debian Wheezy</a></li>
+<li><a href="#old-instructions-for-ubuntu-precise">Old instructions for Ubuntu Precise</a></li>
+</ul>
+</li>
+<li><a href="#shared-folder">Shared Folder</a><ul>
+<li><a href="#permanently-mount-shared-folder">Permanently mount Shared Folder</a></li>
+</ul>
+</li>
+<li><a href="#temporary-disable-guest-additions">Temporary disable Guest Additions</a></li>
+</ul>
+</li>
+<li><a href="#restrict-transport">Restrict TransPort</a></li>
+<li><a href="#using-private-obfuscated-bridges">Using (private) (obfuscated) bridges</a></li>
+<li><a href="#isolate-streams-by-destination-port-andor-destination-address">Isolate streams by destination port and/or destination address</a></li>
+<li><a href="#grow-virtual-harddisk">Grow Virtual Harddisk</a></li>
+<li><a href="#ssh-into-whonix-gateway">SSH into Whonix-Gateway</a></li>
+<li><a href="#mount-and-inspect-images">Mount and inspect images</a></li>
+<li><a href="#tuning">Tuning</a><ul>
+<li><a href="#introduction_8">Introduction</a></li>
+<li><a href="#increase-virtual-machine-ram">Increase Virtual Machine RAM</a></li>
+<li><a href="#more-cpu-cores">More CPU cores</a></li>
+<li><a href="#removing-packages">Removing packages</a></li>
+<li><a href="#replacing-desktop-environment">Replacing desktop environment</a></li>
+<li><a href="#synthetic-cpu">Synthetic CPU</a></li>
+<li><a href="#nested-paging-and-vpids">Nested paging and VPIDs</a></li>
+<li><a href="#guest-additions">Guest Additions</a></li>
+<li><a href="#hardware-accelerated-graphics">Hardware-accelerated graphics</a></li>
+<li><a href="#memory-ballooning-page-fusion-memory-overcommitment">Memory ballooning, Page Fusion, Memory overcommitment</a></li>
+<li><a href="#64-bit-architecture">64 bit architecture</a></li>
+<li><a href="#optimized-builds">Optimized builds</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="using-tors-socksproxy-in-whonix-workstation">Using Tor's SocksProxy in Whonix-Workstation</h1>
+<div class="codehilite"><pre><span class="c">#OptionalFeatureNr.4#</span>
+</pre></div>
+<p>Moved to <a class="" href="https://sourceforge.net/p/whonix/wiki/Stream%20Isolation/">Stream Isolation</a>.</p>
+<h1 id="best-possible-protection-against-identity-correlation-through-circuit-sharing">Best possible protection against Identity correlation through circuit sharing</h1>
+<div class="codehilite"><pre><span class="c">#OptionalFeatureNr.5#</span>
+</pre></div>
+<p>Moved to <a class="" href="https://sourceforge.net/p/whonix/wiki/Stream%20Isolation/">Stream Isolation</a>.</p>
+<h1 id="more-than-one-whonix-workstation">More than one Whonix-Workstation</h1>
+<p>Moved to <a class="" href="https://sourceforge.net/p/whonix/wiki/Multiple%20Whonix-Workstations/">Using multiple Whonix-Workstations</a>.</p>
+<h1 id="vpn-tunnel-support">VPN / Tunnel support</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support</a></p>
+<h1 id="tunnel-tor-through-proxy-vpn-or-ssh">Tunnel Tor through proxy, VPN or SSH</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/">https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/</a></p>
+<h2 id="tunnel-tor-through-proxy">Tunnel Tor through proxy</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/">https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/</a></p>
+<h2 id="tunnel-tor-through-ssh">Tunnel Tor through SSH</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/">https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/</a></p>
+<h2 id="tunnel-tor-through-vpn">Tunnel Tor through VPN</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/">https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/</a></p>
+<h1 id="tunnel-proxysshvpn-through-tor">Tunnel Proxy/SSH/VPN through Tor</h1>
+<h2 id="introduction_1">Introduction</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h2 id="tunnel-proxy-through-tor">Tunnel proxy through Tor</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h3 id="proxy-settings-method">Proxy Settings Method</h3>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="tor-browser-special-case">Tor Browser Special Case</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="proxychains">proxychains</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h3 id="transparent-proxying">Transparent Proxying</h3>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="introduction_2">Introduction</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h5 id="tools">Tools</h5>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h5 id="dns-resolution">DNS resolution</h5>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="howto">HowTo</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h2 id="tunnel-ssh-through-tor">Tunnel SSH through Tor</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h2 id="tunnel-vpn-through-tor">Tunnel VPN through Tor</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h3 id="notes">Notes</h3>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="udp">UDP</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="using-transport-instead-of-socksport-is-required-for-tor-vpn">Using TransPort instead of SocksPort is required for Tor -&gt; VPN</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="vpn-and-stream-isolation">VPN and stream isolation</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="vpn-breakdown">VPN breakdown</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="vpn-and-malware">VPN and malware</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h4 id="identity-correlation">Identity correlation</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h3 id="how">How</h3>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/</a></p>
+<h1 id="a-free-example-vpn-working-with-whonix-for-testing-purposes">A Free example VPN working with Whonix for testing purposes</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/TestVPN/">https://sourceforge.net/p/whonix/wiki/TestVPN/</a></p>
+<h1 id="connect-to-a-tor-gateway-on-your-local-network-using-pptp-vpn">Connect to a Tor Gateway on your local network using PPTP VPN</h1>
+<p>Moved to <a class="alink" href="/p/whonix/wiki/PPTP/">[PPTP]</a>.</p>
+<h1 id="hosting-hidden-services">Hosting hidden services</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hidden%20Services/">https://sourceforge.net/p/whonix/wiki/Hidden%20Services/</a></p>
+<h2 id="hidden-webserver">Hidden webserver</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hidden%20Services/">https://sourceforge.net/p/whonix/wiki/Hidden%20Services/</a></p>
+<h1 id="vidalia-for-whonix">Vidalia for Whonix</h1>
+<h2 id="introduction_3">Introduction</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Vidalia/">https://sourceforge.net/p/whonix/wiki/Vidalia/</a></p>
+<h2 id="1-vidalia-on-the-host">1. Vidalia on the Host</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Vidalia/">https://sourceforge.net/p/whonix/wiki/Vidalia/</a></p>
+<h2 id="2-vidalia-on-the-whonix-gateway">2. Vidalia on the Whonix-Gateway</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Vidalia/">https://sourceforge.net/p/whonix/wiki/Vidalia/</a></p>
+<h1 id="how-to-safely-transfer-files-between-host-whonix-gateway-and-whonix-workstation">How to safely transfer files between Host, Whonix-Gateway and Whonix-Workstation</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/File%20Transfer/">https://sourceforge.net/p/whonix/wiki/File%20Transfer/</a></p>
+<h1 id="whonix-implementation-with-just-a-single-vm-tor-runs-on-host">Whonix implementation with just a single VM (Tor runs on host)</h1>
+<p>More info on <a class="alink" href="/p/whonix/wiki/OneVM/">[OneVM]</a>.</p>
+<h1 id="hosting-a-private-obfuscated-bridge-or-exit-relay">Hosting a (private) (obfuscated) bridge or (exit) relay</h1>
+<h2 id="introduction_4">Introduction</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hosting%20a%20%28private%29%20%28obfuscated%29%20bridge%20or%20%28exit%29%20relay/">https://sourceforge.net/p/whonix/wiki/Hosting%20a%20%28private%29%20%28obfuscated%29%20bridge%20or%20%28exit%29%20relay/</a></p>
+<h2 id="inside-the-whonix-gateway">Inside the Whonix-Gateway</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hosting%20a%20%28private%29%20%28obfuscated%29%20bridge%20or%20%28exit%29%20relay/">https://sourceforge.net/p/whonix/wiki/Hosting%20a%20%28private%29%20%28obfuscated%29%20bridge%20or%20%28exit%29%20relay/</a></p>
+<h2 id="on-the-host">On the host</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hosting%20a%20%28private%29%20%28obfuscated%29%20bridge%20or%20%28exit%29%20relay/">https://sourceforge.net/p/whonix/wiki/Hosting%20a%20%28private%29%20%28obfuscated%29%20bridge%20or%20%28exit%29%20relay/</a></p>
+<h1 id="hide-the-fact-that-you-are-using-torwhonix">Hide the fact, that you are using Tor/Whonix</h1>
+<h2 id="introduction_5">Introduction</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/">https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/</a></p>
+<h2 id="warnings">Warnings</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/">https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/</a></p>
+<h2 id="using-a-proxy">Using a Proxy</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/">https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/</a></p>
+<h2 id="using-ssh-or-vpn">Using SSH or VPN</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/">https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/</a></p>
+<h2 id="using-private-and-obfuscated-bridges">Using private and obfuscated bridges</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/">https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/</a></p>
+<h1 id="whonix-on-bare-metal">Whonix on Bare Metal</h1>
+<p>Using hardware instead of virtual machines. More secure. See <a class="alink" href="/p/whonix/wiki/PhysicalIsolation/">[PhysicalIsolation]</a>.</p>
+<h1 id="leak-testing">Leak Testing</h1>
+<div class="codehilite"><pre><span class="c">#OptionalFeatureNr.6#</span>
+</pre></div>
+<p>See <a class="alink" href="/p/whonix/wiki/LeakTests/">[LeakTests]</a>.</p>
+<h1 id="anonymous-3g-modem">Anonymous 3G modem</h1>
+<p>Improves anonymity. See <a class="" href="https://sourceforge.net/p/whonix/wiki/Security/#anonymous-3g-modem">Anonymous 3G modem</a>.</p>
+<h1 id="anonymous-wifi-adapter">Anonymous wifi adapter</h1>
+<p>Improves anonymity. See <a class="" href="https://sourceforge.net/p/whonix/wiki/Security/#anonymous-wifi-adapter">Anonymous WiFi adapter</a>.</p>
+<h1 id="other-anonymizing-networks">Other Anonymizing Networks</h1>
+<p>It's possible to use other anonymizing networks in together with Whonix. Either in addition (tunneled through Tor) or as a replacement for Tor. See <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherAnonymizingNetworks/">Other Anonymizing Networks</a>.</p>
+<h1 id="other-operating-systems">Other Operating Systems</h1>
+<p>Whonix-Gateway can torify any operating system, see <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Other Operating Systems</a>.</p>
+<h1 id="tunnel-udp-over-tor">Tunnel UDP over Tor</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/TunnelUDPoverTor/">https://sourceforge.net/p/whonix/wiki/TunnelUDPoverTor/</a></p>
+<h1 id="secondary-dns-resolver">Secondary DNS resolver</h1>
+<h2 id="introduction_6">Introduction</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h2 id="authenticated-dns-over-tor">Authenticated DNS over Tor</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h3 id="dnssec-over-tor">DNSSEC over Tor</h3>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h4 id="example-with-cznic-labs-dns-resolver">Example with CZ.NIC Labs DNS resolver</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h5 id="installation">Installation</h5>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h5 id="starting">Starting</h5>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h5 id="using">Using</h5>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h2 id="encrypted-dns-over-tor">Encrypted DNS over Tor</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h3 id="dnscrypt-by-opendns">DNSCrypt by OpenDNS</h3>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h3 id="httpsdnsd-by-jondos">httpsdnsd by JonDos</h3>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h4 id="installation_1">Installation</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h4 id="starting_1">Starting</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h4 id="using_1">Using</h4>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/">https://sourceforge.net/p/whonix/wiki/Secondary%20DNS%20Resolver/</a></p>
+<h1 id="onioncat">OnionCat</h1>
+<h2 id="introduction_7">Introduction</h2>
+<p><a href="https://sourceforge.net/p/whonix/wiki/OnionCat/">https://sourceforge.net/p/whonix/wiki/OnionCat/</a></p>
+<h2 id="over-tor">Over Tor</h2>
+<p><a href="https://sourceforge.net/p/whonix/wiki/OnionCat/">https://sourceforge.net/p/whonix/wiki/OnionCat/</a></p>
+<h2 id="over-i2p">Over i2p</h2>
+<p><a href="https://sourceforge.net/p/whonix/wiki/OnionCat/">https://sourceforge.net/p/whonix/wiki/OnionCat/</a></p>
+<h1 id="mozilla-thunderbird-with-torbirdy">Mozilla Thunderbird with TorBirdy</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/E-Mail/">https://sourceforge.net/p/whonix/wiki/E-Mail/</a></p>
+<h1 id="virtualbox-guest-additions">VirtualBox Guest Additions</h1>
+<h2 id="installing-virtualbox-guest-additions">Installing VirtualBox Guest Additions</h2>
+<h3 id="new-instructions-for-debian-wheezy">New Instructions for Debian Wheezy</h3>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/VirtualBox%20Guest%20Additions/">https://sourceforge.net/p/whonix/wiki/VirtualBox%20Guest%20Additions/</a></p>
+<h3 id="old-instructions-for-ubuntu-precise">Old instructions for Ubuntu Precise</h3>
+<p>Moved to <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/#guest-additions-for-ubuntu-precise">Guest additions for Ubuntu Precise</a>.</p>
+<h2 id="shared-folder">Shared Folder</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/VirtualBox%20Guest%20Additions/">https://sourceforge.net/p/whonix/wiki/VirtualBox%20Guest%20Additions/</a></p>
+<h3 id="permanently-mount-shared-folder">Permanently mount Shared Folder</h3>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/VirtualBox%20Guest%20Additions/">https://sourceforge.net/p/whonix/wiki/VirtualBox%20Guest%20Additions/</a></p>
+<h2 id="temporary-disable-guest-additions">Temporary disable Guest Additions</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/VirtualBox%20Guest%20Additions/">https://sourceforge.net/p/whonix/wiki/VirtualBox%20Guest%20Additions/</a></p>
+<h1 id="restrict-transport">Restrict TransPort</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Install%20Software/#whonix-workstation-is-firewalled">https://sourceforge.net/p/whonix/wiki/Install%20Software/#whonix-workstation-is-firewalled</a></p>
+<h1 id="using-private-obfuscated-bridges">Using (private) (obfuscated) bridges</h1>
+<p>Moved to <a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges</a>.</p>
+<h1 id="isolate-streams-by-destination-port-andor-destination-address">Isolate streams by destination port and/or destination address</h1>
+<p>Moved to <a class="" href="https://sourceforge.net/p/whonix/wiki/Stream%20Isolation/">Stream Isolation</a>.</p>
+<h1 id="grow-virtual-harddisk">Grow Virtual Harddisk</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Grow%20Virtual%20Harddisk/">https://sourceforge.net/p/whonix/wiki/Grow%20Virtual%20Harddisk/</a></p>
+<h1 id="ssh-into-whonix-gateway">SSH into Whonix-Gateway</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/File%20Transfer/">https://sourceforge.net/p/whonix/wiki/File%20Transfer/</a></p>
+<h1 id="mount-and-inspect-images">Mount and inspect images</h1>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/File%20Transfer/#mount-and-inspect-images">https://sourceforge.net/p/whonix/wiki/File%20Transfer/#mount-and-inspect-images</a></p>
+<h1 id="tuning">Tuning</h1>
+<h2 id="introduction_8">Introduction</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="increase-virtual-machine-ram">Increase Virtual Machine RAM</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="more-cpu-cores">More CPU cores</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="removing-packages">Removing packages</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="replacing-desktop-environment">Replacing desktop environment</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="synthetic-cpu">Synthetic CPU</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="nested-paging-and-vpids">Nested paging and VPIDs</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="guest-additions">Guest Additions</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="hardware-accelerated-graphics">Hardware-accelerated graphics</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="memory-ballooning-page-fusion-memory-overcommitment">Memory ballooning, Page Fusion, Memory overcommitment</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="64-bit-architecture">64 bit architecture</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p>
+<h2 id="optimized-builds">Optimized builds</h2>
+<p>Moved to <a href="https://sourceforge.net/p/whonix/wiki/Tuning/">https://sourceforge.net/p/whonix/wiki/Tuning/</a></p></div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/PPTP/">Wiki: PPTP</a><br>
+    
+      <a href="/p/whonix/wiki/OneVM/">Wiki: OneVM</a><br>
+    
+      <a href="/p/whonix/wiki/PhysicalIsolation/">Wiki: PhysicalIsolation</a><br>
+    
+      <a href="/p/whonix/wiki/LeakTests/">Wiki: LeakTests</a><br>
+    
+      <a href="/p/whonix/wiki/FAQ/">Wiki: FAQ</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="/apps/trac/sourceforge/wiki/WikiStart">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="https://sourceforge.net/p/forge/documentation/Support%20via%20IRC/">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://geeknetmedia.com/terms-of-use">Terms</a>
+            <a href="http://geeknetmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://geeknetmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://geeknetmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1358968642/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tag.editor.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post, .delete_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagEditor({
+            confirmRemoval: false,
+            completeOnSeparator: true,
+            completeOnBlur: true
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>
