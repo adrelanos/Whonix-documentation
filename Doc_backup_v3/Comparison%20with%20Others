@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-10 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / Comparison with Others</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XKKeelKAEwrSWFaDmgzaI { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-Comparison_with_Others" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">Comparison with Others
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#comparison-of-whonix-tails-tor-browser-bundle-and-qubes-os-torvm">Comparison of Whonix, Tails, Tor Browser Bundle and Qubes OS TorVM</a><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#different-views">Different views</a></li>
+<li><a href="#general">General</a></li>
+<li><a href="#security">Security</a><ul>
+<li><a href="#general_1">General</a></li>
+<li><a href="#fingerprint">Fingerprint</a></li>
+<li><a href="#flash-browser-plugin-security">Flash / Browser Plugin security</a></li>
+</ul>
+</li>
+<li><a href="#attacks">Attacks</a><ul>
+<li><a href="#circumventing-proxy-obedience-design">Circumventing Proxy Obedience Design</a></li>
+<li><a href="#network-time-related">Network Time related</a></li>
+</ul>
+</li>
+<li><a href="#usability">Usability</a></li>
+<li><a href="#many-other-differences">Many other differences</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#part-2">Part 2</a></li>
+</ul>
+<li><a href="#footer">Footer</a></li>
+</div>
+<h2 id="comparison-of-whonix-tails-tor-browser-bundle-and-qubes-os-torvm">Comparison of Whonix, Tails, Tor Browser Bundle and Qubes OS TorVM</h2>
+<h3 id="introduction">Introduction</h3>
+<p>Quick comparison of Whonix and Tails key virtues. If ever anything in this table is incorrect/outdated feel free to contact Whonix developers, we'll correct as fast as possible.</p>
+<p><strong>Last update</strong></p>
+<p>Comparing:</p>
+<ul>
+<li>Whonix 0.4.5</li>
+<li>Tails 0.1.6.</li>
+<li>Qubes OS TorVM 0.1.beta1</li>
+</ul>
+<h3 id="different-views">Different views</h3>
+<p>One has always to be very careful, when talking about others. Especially, when talking about advantages and disadvantages. Different opinions are accepted and listed here.</p>
+<ul>
+<li><a class="" href="https://mailman.boum.org/pipermail/tails-dev/2012-September/001704.html" rel="nofollow">Tails-dev: please look at Comparison of Whonix, Tails and TBB</a></li>
+<li><a class="" href="https://mailman.boum.org/pipermail/tails-dev/2013-February/002563.html" rel="nofollow">Tails-dev: please look at Comparison of Whonix, Tails and TBB #2</a></li>
+<li><a class="" href="https://groups.google.com/forum/?fromgroups#!topic/qubes-devel/GT8LyE-la-o" rel="nofollow">qubes-devel: please look at Comparison of Whonix, Tails, TBB and Qubes OS TorVM</a></li>
+</ul>
+<h3 id="general">General</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Whonix</th>
+<th>Tails</th>
+<th>Tor Browser Bundle</th>
+<th>Qubes OS TorVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Focus on anonymity, privacy and security</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>general purpose os available as VM images and physical isolation</td>
+<td>LiveCD/DVD/USB</td>
+<td>portable browser</td>
+<td>general purpose os, VM plugin for Qubes OS,</td>
+</tr>
+<tr>
+<td>Supported hardware</td>
+<td>any ^1^</td>
+<td>x86 compatible and/or and Virtual Machines</td>
+<td>Windows, Linux, Mac and Virtual Machines</td>
+<td>any capable of running Qubes OS</td>
+</tr>
+<tr>
+<td>Based on</td>
+<td>Tor, Debian ^2^ and a Virtualizer ^3^ [Virtual Box] when not using Physical Isolation</td>
+<td>Tor, Debian</td>
+<td>Tor, Firefox</td>
+<td>Tor, Qubes OS, Fedora</td>
+</tr>
+<tr>
+<td>Gateway and torify any operating system (advanced users)</td>
+<td>Yes ^4^</td>
+<td>Not a Gateway.</td>
+<td>Not a Gateway.</td>
+<td>Probable (?) yes, when using <a class="" href="http://wiki.qubes-os.org/trac/wiki/HvmCreate" rel="nofollow">HVM</a></td>
+</tr>
+<tr>
+<td>Live CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Live USB</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>USB bootable</td>
+<td>Yes ^5^</td>
+<td>Yes</td>
+<td>Yes ^5^</td>
+<td>Yes ^5^</td>
+</tr>
+<tr>
+<td>Requires Virtual Box</td>
+<td>If not using Physical Isolation, yes. ^3^</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Requires Qubes OS</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>System requirements</td>
+<td>higher</td>
+<td>lower</td>
+<td>lowest</td>
+<td>highest</td>
+</tr>
+<tr>
+<td>Can run in VM</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Persistence</td>
+<td>Full</td>
+<td>Optional for Live USB</td>
+<td>Yes ^6^</td>
+<td>Full (?)</td>
+</tr>
+<tr>
+<td>Number of developers</td>
+<td>one with lots of anonymous contributions</td>
+<td>multiple</td>
+<td>multiple</td>
+<td>One (?)</td>
+</tr>
+<tr>
+<td>Maturity</td>
+<td>project since 2012</td>
+<td>established, respected project for many years</td>
+<td>established, respected project for many years</td>
+<td>project since 2012 (?)</td>
+</tr>
+<tr>
+<td>Open Source</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Anonymous developers</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>(?)</td>
+</tr>
+</tbody>
+</table>
+<p><font size="-3"><br />
+,,<br />
+^1^ <em>Whonix Framework</em> workstation: self made builds can run on any real or virtual hardware. Intel VT-x or AMD-V will greatly speed up Virtual Machines. <em>Whonix Framework</em> gateway: anonymizer (Tor) must support that platform. <br />
+^2^ Whonix-Workstation: also <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">OtherOperatingSystems</a> are supported.; Whonix-Gateway: In long term we are also agnostic about any other secure distributions. The concept is agnostic, you could use another operating system as base, but it requires effort.<br />
+^3^ Default downloads are for Virtual Box. (Subject for change in future.) <a class="alink" href="/p/whonix/wiki/PhysicalIsolation/">[PhysicalIsolation]</a> is an security optional feature for advancend users. Experimental optional support for <a class="alink" href="/p/whonix/wiki/VMware/">[VMware]</a>. You can build your own images for other virtualizers, but it requires effort.<br />
+^4^ See <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">OtherOperatingSystems</a>.<br />
+^5^ You can install your host operating system on USB. <br />
+^6^ You can download files and keep them, save bookmarks and passwords depending on your settings.<br />
+</font></p>
+<h3 id="security">Security</h3>
+<h4 id="general_1">General</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Whonix</th>
+<th>Tails</th>
+<th>Tor Browser Bundle</th>
+<th>Qubes OS TorVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amnesic</td>
+<td>No ^7^</td>
+<td>Yes</td>
+<td>No ^12^</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Protection against IP/location discovery through root exploits (<a class="" href="https://en.wikipedia.org/wiki/Malware" rel="nofollow">Malware</a> with root rights) on the Workstation ^18^.</td>
+<td>Yes ^a^</td>
+<td>No ^2^</td>
+<td>No ^2^</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>IP/DNS protocol leak protection</td>
+<td>Full ^1^</td>
+<td>Depends ^5^</td>
+<td>Depends ^5^</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>Takes advantage of Entry Guards</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes (?)</td>
+</tr>
+<tr>
+<td>Operating System Updates</td>
+<td>persist once updated</td>
+<td>are lost after reboot</td>
+<td>persist once updated</td>
+<td>persist once updated (?)</td>
+</tr>
+<tr>
+<td>Hides hardware serials from malicious software</td>
+<td>Yes ^16^</td>
+<td>No ^17^</td>
+<td>No ^17^</td>
+<td>(?)</td>
+</tr>
+<tr>
+<td>Collects hardware serials</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Includes Tor Browser</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Stream isolation to prevent identity correlation through circuit sharing</td>
+<td>Yes</td>
+<td>Yes ^13^</td>
+<td>See ^14^ ^15^</td>
+<td>Manually (?)</td>
+</tr>
+<tr>
+<td>Stream isolates Tor Browser</td>
+<td>No ^14^</td>
+<td>No ^14^</td>
+<td>No ^14^</td>
+<td>No ^14^</td>
+</tr>
+<tr>
+<td>Encryption</td>
+<td>Should be applied on host.</td>
+<td>Yes, for persistent USB.</td>
+<td>Should be applied on host.</td>
+<td>Should be applied on host.</td>
+</tr>
+<tr>
+<td>Cold Boot Attack Protection ^8^</td>
+<td>No, planed.</td>
+<td>Yes</td>
+<td>No</td>
+<td>No (?)</td>
+</tr>
+<tr>
+<td>Secure Distributed Network Time Synchronization</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Hides your time zone (set to UTC)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Hides your operating system account name</td>
+<td>Yes, set to user.</td>
+<td>Yes, set to amnesia.</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Hides your MAC address from websites</td>
+<td>Invalid ^19^</td>
+<td>Invalid ^19^</td>
+<td>Invalid ^19^</td>
+<td>Invalid ^19^</td>
+</tr>
+<tr>
+<td>Secures your MAC address from local LAN (sometimes ISP) ^20^</td>
+<td>No, planed, see. ^21^</td>
+<td>No, planed. ^22^</td>
+<td>No</td>
+<td>(?)</td>
+</tr>
+<tr>
+<td>Hides your MAC address from applications</td>
+<td>Yes ^24^</td>
+<td>No</td>
+<td>No</td>
+<td>(?)</td>
+</tr>
+<tr>
+<td>Secure gpg.conf</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Not an operating system.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Privacy enhanced IRC client configuration.</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Not an IRC client.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><font size="-3"><br />
+,,<br />
+^a^ Whonix has Protection against IP/location discovery through root exploits (<a class="" href="https://en.wikipedia.org/wiki/Malware" rel="nofollow">Malware</a> with root rights) inside Whonix-Workstation. But you really should not test it. In case Whonix-Workstation gets rooted, the adversary can not find out the users real IP/location. This is because Whonix-Workstation can only connect through the Whonix-Gateway. How difficult is it to compromise Whonix? See <a class="" href="https://sourceforge.net/p/whonix/wiki/Comparison%20with%20Others/#attacks">Attack on Whonix</a> and <a class="alink" href="/p/whonix/wiki/Design/">[Design]</a>. More skill is required.<br />
+^1^ Such kinds of leaks are impossible ^a^ in Whonix, since the Whonix-Workstation is unaware of it's external IP.<br />
+^2^ In case Tails or TBB gets rooted, the adversary can simply bypass the firewall and get the user's real IP.<br />
+^5^ See first example of <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20in%20Real%20World/">Whonix security in real world</a>. When applications in Tails are configured wrong, due to a bug in Tails or the application, IP can leak. Quoted from the <a class="" href="https://tails.boum.org/security/index.en.html" rel="nofollow">Tails Security Page</a>: <em>"Until an <a class="" href="https://tails.boum.org/todo/applications_audit/" rel="nofollow">audit</a> of the bundled network applications is done, information leakages at the protocol level should be considered as − at the very least − possible."</em><br />
+^7^ There are no special measures to limit what is written to disk. This includes (non exclusive list) user created files, backup files, temporary files, swap, chat history, browser history and so on. Whonix acts like an ordinary installed operating system. It can also not be prevented, that the host memory <a class="" href="https://en.wikipedia.org/wiki/Swap" rel="nofollow">swaps</a> to the host disk. There is a <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/#recommendation-to-use-multiple-vm-snapshots">Recommendation to use multiple VM Snapshots</a> and it is is <a class="" href="https://sourceforge.net/p/whonix/wiki/Advanced%20Security%20Guide/#full-disk-encryption">recommend</a> to apply Full Disk Encryption on the host.<br />
+^8^ See <a class="" href="https://en.wikipedia.org/wiki/Cold_boot_attack" rel="nofollow">Cold boot attack</a>. <br />
+^12^ Although it does not try to store to disk, swap can still leak. <br />
+^13^ <a class="" href="https://tails.boum.org/todo/separate_Tor_streams/" rel="nofollow">Tails separate Tor streams</a><br />
+^14^ <a class="" href="https://trac.torproject.org/projects/tor/ticket/3455" rel="nofollow">Tor Browser should set SOCKS username for a request based on referer</a><br />
+^15^ Tor Browser comes with it's own Tor instance. It's just a browser, not a live system or operating system. <br />
+^16^ See <a class="" href="https://sourceforge.net/p/whonix/wiki/Whonix%27s%20Protocol-Leak-Protection%20and%20Fingerprinting-Protection/">Whonix's Protocol-Leak-Protection and Fingerprinting-Protection</a> for details.<br />
+^17^ By default there get of course not send to anyone. This is only at risk in case the machine gets compromised by malware. See also, <a class="" href="https://tails.boum.org/forum/Are_hardware_serial_numbers_hidden_in_TAILS__63__/" rel="nofollow">Are hardware serial numbers hidden in TAILS?</a>.<br />
+^18^ The Workstation is the place where the browser, IRC client and so on is running. The Gateway is the place where Tor and the firewall is running.<br />
+^19^ It is in the nature of the MAC addresses, that destination servers can not see them. Therefore yes, always hidden from destination servers.<br />
+^20^ Most ISPs do not see the MAC addresses of their clients. Some ISPs are based on LANs, in that case they can see the MAC address. Also hotspots can see the MAC address.<br />
+^21^ Please read <a class="" href="https://sourceforge.net/p/whonix/wiki/Whonix%20in%20public%20networks%20-%20MAC%20Address/">Whonix in public networks / MAC Address</a>.<br />
+^22^ <a class="" href="https://tails.boum.org/todo/macchanger/" rel="nofollow">Tails Todo: machanger</a><br />
+^23^ Placeholder.<br />
+^24^ The virtual MAC address of Whonix-Workstation and Whonix-Gateway ^25^ is shared among all Whonix users. If any (malicious) applications would spill it ^26^, it would only be known that it's from a Whonix user.<br />
+^25^ The virtual MAC address for Whonix-Gateway's internal network interface (eth1) is shared among all Whonix users, because Whonix-Workstation can see it. However, Whonix-Workstation can not see Whonix-Gateway's external network cards (eth0) MAC address.<br />
+^26^ Which they usually won't do. Sometimes anti cheat or copyright protection tools do it.<br />
+</font></p>
+<h4 id="fingerprint">Fingerprint</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Whonix</th>
+<th>Tails</th>
+<th>Tor Browser Bundle</th>
+<th>Qubes OS TorVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Network/Web Fingerprint</td>
+<td><a class="" href="https://sourceforge.net/p/whonix/wiki/Fingerprint/">Whonix Fingerprint Page</a></td>
+<td><a class="" href="https://tails.boum.org/doc/about/fingerprint/index.en.html" rel="nofollow">Tails Fingerprint Page</a></td>
+<td>TBB traffic is tunneled through Tor. Host traffic passes clearnet.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Network fingerprint: ISP can trivially guess project type ^27^</td>
+<td>No.</td>
+<td>No.</td>
+<td>No.</td>
+<td>(?)</td>
+</tr>
+<tr>
+<td>Network fingerprint: ISP can guess a non-persistent Tor directory is being used</td>
+<td>No.</td>
+<td>Yes, because <a class="" href="https://tails.boum.org/todo/persistence_preset_-_tor/" rel="nofollow">not yet</a> supporting persistent entry guards.</td>
+<td>No.</td>
+<td>(?)</td>
+</tr>
+<tr>
+<td>clearnet traffic</td>
+<td>All Whonix-Gateway and Whonix-Workstation traffic is tunneled through Tor. Host traffic (operating system updates, eventually host browser etc.) uses clearnet.</td>
+<td>None, unless other users sharing the same internet connection are not using Tails.</td>
+<td>TBB traffic is tunneled through Tor. Host traffic (operating system updates, eventually untorified second browser etc.) uses clearnet.</td>
+<td>Yes, Gateway is not torified.</td>
+</tr>
+<tr>
+<td>Network fingerprint: ISP can guess which anonymity software is being used because of ratio of Tor and clearnet traffic</td>
+<td>Unknown. ^33^</td>
+<td>Can guess a Tor Live CD is being used, unless Unsafe Browser is in use or other people sharing same internet connections not using Tails.</td>
+<td>?</td>
+<td>(?)</td>
+</tr>
+<tr>
+<td>Network fingerprint: ISP can guess which anonymity software is being used because of <a class="" href="https://tails.boum.org/contribute/design/Time_syncing/" rel="nofollow">tordate</a> ^34^</td>
+<td>No, does not include tordate.</td>
+<td>Yes, if clock is too much off when booting. ^34^</td>
+<td>No, not an operating system.</td>
+<td>No, does not include tordate.</td>
+</tr>
+<tr>
+<td>web fingerprint ^28^</td>
+<td>Same as TBB. ^29^</td>
+<td>Tails specific. ^30^</td>
+<td>TBB. ^31^</td>
+<td>Does not include Tor Browser.</td>
+</tr>
+</tbody>
+</table>
+<p><font size="-3"><br />
+^27^ Find out if Whonix, Tails or TBB is running.<br />
+^28^ Fingerprint for the websites that you are visiting<br />
+^29^ Uses the original Tor Browser from torproject.org with the only difference, that Tor runs on Whonix-Gateway instead the locally shipped Tor.<br />
+^30^ See <a class="" href="https://tails.boum.org/todo/evaluate_web_fingerprint/" rel="nofollow">evaluate web fingerprint</a>.<br />
+^31^ Is the original Tor Browser Bundle from torproject.org.<br />
+^32^ Live CD without persistent USB storage for the Tor data directory.^^ <br />
+^33^ Whonix users might tend to have more traffic than TBB users, due to operating system updates of Whonix-Workstation and Whonix-Gateway through Tor. Unknown if this is specific enough to guess a transparent or isolating proxy is being used or if enough other Tor users run big enough amounts of traffic through Tor. Research before Whonix was created has shown that big amounts of filesharing traffic were run through Tor. Classical filesharing tends to have more upload than Whonix, but it's also unknown how many people disabled upload or moved to methods which do not involve much upload, such as file hosters.<br />
+^34^ Quoted from the <a class="" href="https://tails.boum.org/contribute/design/Time_syncing/#index5h1" rel="nofollow">Tails Design about Time syncing</a>: "<em>Our initial time guess based on the Tor consensus is probably easier to fingerprint, though: a fresh Tor is started, and restarted again right after the consensus has been downloaded.</em>"<br />
+</font></p>
+<h4 id="flash-browser-plugin-security">Flash / Browser Plugin security</h4>
+<p><strong>Note</strong>: Whonix developer adrelanos recommend due to anonymity, privacy and security issues against using Adobe Flash when anonymity is the goal. As far I know, Tails and Tor developers recommend against it as well.</p>
+<table>
+<thead>
+<tr>
+<th>Flash Tracking Technique</th>
+<th>Whonix-Workstation</th>
+<th>Tor on host</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proxy bypass IP leak</td>
+<td>Protected.</td>
+<td>Insecure, leads to deanonymization.</td>
+<td></td>
+</tr>
+<tr>
+<td>Protocol IP leak</td>
+<td>Protected.</td>
+<td>Insecure, leads to deanonymization.</td>
+<td></td>
+</tr>
+<tr>
+<td>Flash Cookies</td>
+<td>Reduce anonymity to pseudonymity. Recommend to delete Flash Cookies.</td>
+<td>Can link your clearnet Flash activity to your Flash activity over Tor, which leads to deanonymization (or at least a good guess) if the skew is big and rare. Also useful for fingerprinting, which is bad. ^1^</td>
+<td></td>
+</tr>
+<tr>
+<td>Number of installed fonts.</td>
+<td>The number of fonts inside Whonix-Workstation and your clearnet/host operating system will differ, which is good.</td>
+<td>Same fonts are reported for your clearnet and your Tor Flash activity, which is bad. ^1^</td>
+<td></td>
+</tr>
+<tr>
+<td>Exact flash player version.</td>
+<td>Shared among all up to date Debian users. Not very useful for fingerprinting. Probable different from your clearnet/host operating system, which is good.</td>
+<td>Same version is reported for your clearnet and for your Flash activity over Tor, which is bad. ^1^</td>
+<td></td>
+</tr>
+<tr>
+<td>GNU/Linux Kernel version.</td>
+<td>Shared among all up to date Debian users. Not very useful for fingerprinting.</td>
+<td>Same version is reported for your clearnet and for your Flash activity over Tor. ^1^</td>
+<td></td>
+</tr>
+<tr>
+<td>Language.</td>
+<td>Set to en_US for all Whonix users.</td>
+<td>Your local language setting. Useful for fingerprinting and anonymity set reduction, which is bad. ^1^</td>
+<td></td>
+</tr>
+<tr>
+<td>Exact date and time.</td>
+<td>Differs from your clearnet/host operating system, which is good. (See <a class="" href="https://sourceforge.net/p/whonix/wiki/TimeSync/">Whonix's Secure And Distributed Time Synchronization Mechanism</a> for details.)</td>
+<td>Same time/clockskew is reported for your clearnet and your Tor Flash activity, which is bad. ^1^</td>
+<td></td>
+</tr>
+<tr>
+<td>Exact screen resolution and DPI.</td>
+<td>Shared among all Whonix users. (See <a class="" href="https://sourceforge.net/p/whonix/wiki/Whonix%27s%20Protocol-Leak-Protection%20and%20Fingerprinting-Protection/">Whonix's Protocol-Leak-Protection and Fingerprinting-Protection</a> for details.) Even if you changed it, the screen resolution and DPI it will differ from your clearnet/host operating system.</td>
+<td>Same screen resolution and DPI is reported for your clearnet and Tor use, which is bad. ^1^</td>
+<td></td>
+</tr>
+<tr>
+<td>Full path to your flash plugin.</td>
+<td>Shared among all Debian users.</td>
+<td>Depends on your clearnet/host operating system. In worst case it could contain your operating system user name, which is even worse if that is your real name. Same path to your flash plugin is reported for your clearnet and Tor use, which is bad. ^1^</td>
+<td></td>
+</tr>
+<tr>
+<td>Anything else. <font size="-3">(You can check that yourself offsite on <a href="https://ip-check.info" rel="nofollow">https://ip-check.info</a>.)</font></td>
+<td>Assume reduction from anonymity to pseudonymity.</td>
+<td>Even more possibilties for fingerprinting and linking, which is bad. ^1^</td>
+<td></td>
+</tr>
+<tr>
+<td>Conclusion</td>
+<td>IP/location/identity will still be hidden inside Whonix-Workstation. Assume it to be <a class="" href="https://sourceforge.net/p/whonix/wiki/DoNot/#do-not-confuse-anonymity-with-pseudonymity">pseudonymous rather than anonymous</a>.</td>
+<td>Flash over Tor (on the host, without something like Whonix) is totally unsafe. In case you also ever use(ed) Flash over clearnet, linkability is possible. Assume the Flash fingerprint to be that strong, that your clearnet and your Tor Flash activity can be linked together, which leads to deanonymization.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>^1^ Which is bad, because it could be used for fingerprinting, linking and also deanonymization (or at least a good guess) if the fingerprint is detailed enough.</p>
+<p>For more information about Flash and Browser Plugins in Whonix, see also <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Browser Plugins</a>.</p>
+<h3 id="attacks">Attacks</h3>
+<h4 id="circumventing-proxy-obedience-design">Circumventing Proxy Obedience Design</h4>
+<p>Knowledge assumed:</p>
+<ul>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Comparison%20of%20different%20Whonix%20variants/">Comparison of different Whonix variants</a>.</li>
+<li>Unsafe Browser: Tails and Liberte Linux contain a so called Unsafe Browser. The Unsafe Browser does not use Tor. Connects in the clear. It is useful to register on hotspots or to view content in the clear without Tor.</li>
+<li>Exploit against physically isolated Whonix-Gateway: difficult against a bare metal physical isolated Whonix-Gateway. This is because Whonix-Workstation can only access Tor running on Whonix-Gateway. We minimized attack surface, hardening etc. See the whole Security and Hardening page for details.</li>
+<li>TBB stands for Tor Browser Bundle.</li>
+<li>In the following table,<ul>
+<li>"fail" is defined as "IP/location of user is compromised.".</li>
+<li>"safe" is defined as "IP/location of user is hidden behind Tor.".</li>
+</ul>
+</li>
+<li>The numbers (1) to (10) are used to numerate various attacks. Those attacks are described in more details below.</li>
+</ul>
+<p>Whonix protects against IP/location discovery through root exploits (<a class="" href="https://en.wikipedia.org/wiki/Malware" rel="nofollow">Malware</a> with root rights) on the Workstation^1^. This does not mean, risk to get infected with malware. Do not! It would still make all data inside Whonix-Workstation available to the attacker. Like said at other places as well, Whonix is not a perfect system. It can not be. Whonix is not unbreakable. What Whonix does, it higher the effort for an attacker to find out the user's real IP address, thus de-anonymizing the user. The following table shall visualize the various defense layers provided by Whonix.</p>
+<p><font size="-3"><br />
+,,<br />
+^1^ The Workstation is the place where the browser, IRC client and so on is running. The Gateway is the place where Tor and the firewall is running.<br />
+</font></p>
+<table>
+<thead>
+<tr>
+<th>attack</th>
+<th>Whonix Standard Download version host+vm+vm</th>
+<th>Whonix Physical Isolation</th>
+<th>Tails</th>
+<th>Tails in a VM</th>
+<th>TBB</th>
+<th>TBB in a VM</th>
+<th>Qubes OS TorVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(1) Proxy Bypass IP leak</td>
+<td>safe ^5^</td>
+<td>safe ^5^</td>
+<td>safe ^5^</td>
+<td>safe ^5^</td>
+<td>fail</td>
+<td>fail</td>
+<td>safe</td>
+</tr>
+<tr>
+<td>(2) Protocol IP leak</td>
+<td>safe ^4^</td>
+<td>safe ^4^</td>
+<td>fail</td>
+<td>safe ^6^</td>
+<td>fail</td>
+<td>safe ^6^</td>
+<td>safe</td>
+</tr>
+<tr>
+<td>(3) exploit + Unsafe Browser</td>
+<td>safe</td>
+<td>safe</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>safe</td>
+</tr>
+<tr>
+<td>(4) exploit + root exploit + Unsafe Browser</td>
+<td>safe</td>
+<td>safe</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>safe</td>
+</tr>
+<tr>
+<td>(5) root exploit + Unsafe Browser</td>
+<td>safe</td>
+<td>safe</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>safe</td>
+</tr>
+<tr>
+<td>(6) exploit + vm exploit + Unsafe Browser</td>
+<td>fail</td>
+<td>safe</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+</tr>
+<tr>
+<td>(7) exploit + vm exploit + exploit against physically isolated Whonix-Gateway</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+</tr>
+<tr>
+<td>(8) vm exploit</td>
+<td>fail</td>
+<td>safe</td>
+<td>safe</td>
+<td>fail</td>
+<td>safe</td>
+<td>fail</td>
+<td>fail</td>
+</tr>
+<tr>
+<td>(9) vm exploit + exploit against physically isolated Whonix-Gateway</td>
+<td>fail</td>
+<td>fail</td>
+<td>safe</td>
+<td>fail</td>
+<td>safe</td>
+<td>fail</td>
+<td>fail</td>
+</tr>
+<tr>
+<td>(10) exploit against Tor process</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+</tr>
+<tr>
+<td>(11) attack against the Tor network</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+<td>fail</td>
+</tr>
+</tbody>
+</table>
+<p>(1) An application doesn't honor proxy settings. Example: <a class="" href="https://blog.torproject.org/blog/firefox-security-bug-proxy-bypass-current-tbbs" rel="nofollow">Tor Browser Bundle: Firefox security bug (proxy-bypass)</a>.</p>
+<p>(2) For example proxy bypass bugs, where the application spills the users real IP. See <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20in%20Real%20World/">Whonix security in real world</a>, for examples where Whonix circumvented them. It gets circumvented by Whonix because Whonix-Workstation does not know the users real IP address.</p>
+<p>(3) Example: user visits a website over Tor with a torified Browser. The website uses known or zero day vulnerability to gain remote code execution on the users machine. Remote cod execution is used to install malware on the users machine. The used vulnerability allows the adversary to get "only" user rights, not root. The adversary could remotely start the Unsafe Browser and therefore find out the users real IP address. This attack gets circumvented by Whonix, because any applications inside Whonix, including malware, can only connect through Tor.</p>
+<p>(4) Example: user visits a website over Tor with a torified Browser. The website uses known or zero day vulnerability to gain remote code execution on the users machine. Remote cod execution is used to install malware on the users machine. The used vulnerability allows the adversary to get "only" user rights, not root. The adversary gains root through escalate privileges using a second vulnerability. This allows the adversary to tamper with iptables rules, to make non-Tor connections and so on. This attack gets circumvented by Whonix, because Whonix's Firewall runs on another (virtual) machine. This attack gets circumvented by Whonix, because any root applications inside Whonix, including malware with root rights, can only connect through Tor.</p>
+<p>(5) Example: user visits a website over Tor with a torified Browser. The website uses known or zero day vulnerability to gain remote code execution on the users machine. Remote cod execution is used to install malware on the users machine. The used vulnerability allows the adversary to get root rights. This allows the adversary to tamper with iptables rules, to make non-Tor connections and so on. This attack gets circumvented by Whonix, because Whonix's Firewall runs on another (virtual) machine. This attack gets circumvented by Whonix, because any root applications inside Whonix, including malware with root rights, can only connect through Tor.</p>
+<p>(6)  Example: user visits a website over Tor with a torified Browser. The website uses known or zero day vulnerability to gain remote code execution on the users machine. Remote cod execution is used to install malware on the users machine. A second exploit is being used to break out of the Virtual Machine. Whonix Standard Download version host+vm+vm is broken against this attack. Whonix Physical Isolation defeats this attack, because the Whonix-Workstation's host does not know it's real IP address, only Whonix-Gateway, running on an other physical machine knows it.</p>
+<p>(7) Same as attack (5). But the adversary uses an extra vulnerability to break into Whonix-Gateway. Whonix is broken against this attack.</p>
+<p>(8) Example: user visits a website over Tor with a torified Browser. The website uses known or zero day vulnerability to gain remote code execution on the host. Whonix Standard Download version host+vm+vm: fail, same as attack (5). Physical Isolation defeats this attack, same as attack (5).</p>
+<p>(9) Example: user visits a website over Tor with a torified Browser. The website uses known or zero day vulnerability to gain remote code execution on the host. The adversary uses an extra vulnerability to break Whonix-Gateway. Whonix is broken against this attack.</p>
+<p>(10) Example: user visits a website over Tor with a torified Browser. Tor processes the traffic. The adversary uses a vulnerability to gain remote code execution. The machine were Tor is running always ^2^ knows the users real IP address. Whonix is broken against this attack.</p>
+<p>(11) Example: end to end correlation attack, but there are much more attacks where Tor is known to be broken against. Any successful attack against Tor on a Tor based anonymity operating system will naturally deanonymize the user. ^2^ ^3^</p>
+<p><font size="-3"><br />
+,,<br />
+^1^ Placeholder. <br />
+^2^ Unless you are using Multiple Gateways. (Optional Whonix feature in progress.) <br />
+^3^ Whonix defeats some attacks against Tor (and components such as Tor Browser), for example, see <a class="" href="https://sourceforge.net/p/whonix/wiki/TimeSync/">Whonix's Secure And Distributed Time Synchronization Mechanism</a> and <a class="" href="https://sourceforge.net/p/whonix/wiki/Whonix%27s%20Protocol-Leak-Protection%20and%20Fingerprinting-Protection/">Whonix's Protocol-Leak-Protection and Fingerprinting-Protection</a> and the rest of the Security and Hardening page.<br />
+^4^ Workstation doesn't know it's own external IP address.<br />
+^5^ Prevented by firewall.<br />
+^6^ VM replaces the IP with an internal LAN IP, which is safe.<br />
+</font></p>
+<h4 id="network-time-related">Network Time related</h4>
+<p>Knowledge assumed:</p>
+<ul>
+<li><a class="" href="https://tails.boum.org/contribute/design/Time_syncing/" rel="nofollow">Tails Design: Time synching</a></li>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/TimeSync/">Whonix Design: TimeSync</a></li>
+<li>In the following table,<ul>
+<li>"(VM host) update/crypto block" is defined as: Can prevent (VM host) operating system updates and cryptographic verification such as for SSL verification in (VM host) browser.</li>
+<li>"u/c-block" is defined as: update/crypto block</li>
+<li>"Tor blocked" is defined as: Can prevent connections to the Tor network until clock gets manually fixed.</li>
+<li>"big clock skew" is defined as: more than 1 hour in past or more than 3 hour in future. ^13^</li>
+<li>"small clock skew" is defined as: less then 1 hour in past or less than 3 hour in future. ^13^</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>_</th>
+<th>Whonix Standard Download version host+vm+vm</th>
+<th>Whonix Physical Isolation</th>
+<th>Tails</th>
+<th>Tails in a VM</th>
+<th>TBB</th>
+<th>TBB in a VM</th>
+<th>Qubes OS TorVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Info: VM host time synchronization mechanism</td>
+<td>NTP</td>
+<td>Gateway: There is no VM host.; Workstation host: NTP</td>
+<td>There is no VM host. Same as operating system synchronization mechanism</td>
+<td>NTP</td>
+<td>There is no VM host.</td>
+<td>NTP</td>
+<td>NTP</td>
+</tr>
+<tr>
+<td>Info: operating system synchronization mechanism</td>
+<td>tails_htp</td>
+<td>tails_htp</td>
+<td>tordate and tails_htp</td>
+<td>tordate and tails_htp</td>
+<td>NTP</td>
+<td>NTP</td>
+<td>(?)</td>
+</tr>
+<tr>
+<td>if clock is too much off</td>
+<td>Tor blocked</td>
+<td>Tor blocked</td>
+<td>tordate will fix it.</td>
+<td>tordate will fix it.</td>
+<td>Tor blocked</td>
+<td>Tor blocked</td>
+<td>Tor blocked</td>
+</tr>
+<tr>
+<td>VM host time differs from operating system time</td>
+<td>Yes, ^2^</td>
+<td>Yes, ^2^</td>
+<td>There is no VM host.</td>
+<td>Yes. ^11^</td>
+<td>No. ^5^</td>
+<td>Maybe. ^6^</td>
+<td>No</td>
+</tr>
+<tr>
+<td>unsafe browser time differs from torified browser time. ^1^</td>
+<td>Yes. ^2^</td>
+<td>Yes. ^3^</td>
+<td>No. ^10^</td>
+<td>No. ^10^</td>
+<td>No. ^5^</td>
+<td>Maybe. ^6^</td>
+<td>No</td>
+</tr>
+<tr>
+<td>big clock skew attack against NTP ^8^: VM host effects</td>
+<td>u/c-block</td>
+<td>VM host u/c-block</td>
+<td>There is no VM host.</td>
+<td>VM host u/c-block</td>
+<td>There is no VM host.</td>
+<td>VM host u/c-block</td>
+<td>u/c-block</td>
+</tr>
+<tr>
+<td>big clock skew attack against NTP ^8^: operating system effects</td>
+<td>Tor blocked</td>
+<td>Tor blocked</td>
+<td>^7^; tordate will fix it.</td>
+<td>^7^; tordate will fix it.</td>
+<td>Tor blocked; u/c block</td>
+<td>Tor blocked; u/c block</td>
+<td>Tor blocked</td>
+</tr>
+<tr>
+<td>Fingerprintable reaction ^12^ when big clock skew attack was used</td>
+<td>No, fails the same way TBB fails.</td>
+<td>No, fails the same way TBB fails.</td>
+<td>Probable yes, see Fingerprint section above.</td>
+<td>Probable yes, see Fingerprint section above.</td>
+<td>TBB</td>
+<td>TBB</td>
+<td>No</td>
+</tr>
+<tr>
+<td>small clock skew attack against NTP ^8^, VM host effects:</td>
+<td>VM host u/c block</td>
+<td>VM host u/c block</td>
+<td>There is no VM host.</td>
+<td>VM host u/c block</td>
+<td>VM host u/c block</td>
+<td>VM host u/c block</td>
+<td>VM host u/c block</td>
+</tr>
+<tr>
+<td>small clock skew attack against NTP ^8^, operating system effects:</td>
+<td>Whonix VMs: tails_htp will fix it.</td>
+<td>tails_htp will fix it.</td>
+<td>VM: tails_htp will fix it.</td>
+<td>tails_htp will fix it.</td>
+<td>If users visits a page which is under observation by the adversary, the adversary knows who is connecting. ^9^</td>
+<td>If users visits a page which is under observation by the adversary, the adversary knows who is connecting. ^9^</td>
+<td>If users visits a page which is under observation by the adversary, the adversary knows who is connecting. ^9^</td>
+</tr>
+</tbody>
+</table>
+<p><font size="-3"><br />
+,,<br />
+^1^ This is important because otherwise non-anonymous activity could be linked to anonymous activity if the clock skew is too big and/or too unique.<br />
+^2^ Because unsafe browser runs on the VM host (NTP) and torified browser runs inside Whonix-Workstation. (tails_htp)<br />
+^3^ Whonix-Workstation (tails_htp) and Whonix-Gateway (separate tails_htp) time differ.<br />
+^4^ VM host time gets synchronized with NTP and VM time gets synchronized with tails_htp.<br />
+^5^ Untorified host browser uses the same clock as TBB.<br />
+^6^ Host and VM clock both get synchronized with NTP, but it could still make a difference, because they are synchronized independently.<br />
+^7^ Assumed an installed regular operating system using NTP was used earlier and the adversary introduced a clock skew.<br />
+^8^ Introduced by ISP level adversary attack.<br />
+^9^ Due to unique clock skew.<br />
+^10^ Unsafe browser and torified browser share the same clock. (tails_htp)<br />
+^11^ VM Host time gets synchronized with NTP and operating system time gets synchronized with tails_htp.<br />
+^12^ Such as running tordate.<br />
+^13^ <a class="" href="https://lists.torproject.org/pipermail/tor-talk/2012-February/023264.html" rel="nofollow">source of information</a><br />
+</font></p>
+<h3 id="usability">Usability</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Whonix</th>
+<th>Tails</th>
+<th>Tor on the host</th>
+<th>Qubes OS TorVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Difficulty to install additional software while IP remains hidden ^1^</td>
+<td>easy ^2^</td>
+<td>medium ^3^</td>
+<td>hard ^4^</td>
+<td>easy</td>
+</tr>
+<tr>
+<td>Difficulty to initially install the anonymity software</td>
+<td>medium ^5^</td>
+<td>easy</td>
+<td>easy</td>
+<td>easy (?)</td>
+</tr>
+<tr>
+<td>Required knowledge to prevent the user shooting it's own feet ^7^</td>
+<td>hard</td>
+<td>hard</td>
+<td>hard</td>
+<td>hard</td>
+</tr>
+<tr>
+<td>Pre-installed applications</td>
+<td>Not many. ^6^</td>
+<td>Nice selection.</td>
+<td>None.</td>
+<td>Not many. (?)</td>
+</tr>
+<tr>
+<td>Host clock too much off</td>
+<td>No connection to the Tor network until clock gets manually fixed.</td>
+<td>Uses <a class="" href="https://tails.boum.org/contribute/design/Time_syncing/" rel="nofollow">tordate</a> to fix it.</td>
+<td>No connection to the Tor network until clock gets manually fixed.</td>
+<td>No connection to the Tor network until clock gets manually fixed.</td>
+</tr>
+</tbody>
+</table>
+<p><font size="-3"><br />
+,,<br />
+^1^ To do it safely.<br />
+^2^ Easy: In Whonix one could also install an <a class="" href="https://blog.torproject.org/blog/bittorrent-over-tor-isnt-good-idea" rel="nofollow">Tor-unsafe</a> BitTorrent client. In worst case it would be pseudonymous (IP still hidden) rather than anonymous.<br />
+^3^ Medium: Tails has a firewall to block non-Tor traffic, but an <a class="" href="https://tails.boum.org/todo/applications_audit/" rel="nofollow">audit</a> at protocol level is still required. Quoted from the <a class="" href="https://tails.boum.org/security/index.en.html" rel="nofollow">Tails Security Page</a>: <em>"Until an <a class="" href="https://tails.boum.org/todo/applications_audit/" rel="nofollow">audit</a> of the bundled network applications is done, information leakages at the protocol level should be considered as − at the very least − possible."</em><br />
+^4^ Hard: It's left to the user to prevent non-Tor traffic, DNS leaks and protocol level leaks.<br />
+^5^ Text, screenshot or video instructions <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#install-whonix">available</a>.<br />
+^6^ This and the whole documentation will be improved in next Whonix version.<br />
+^7^ Examples what not to do: <a class="" href="https://sourceforge.net/p/whonix/wiki/DoNot/">DoNot</a>.<br />
+</font></p>
+<h3 id="many-other-differences">Many other differences</h3>
+<p>Please also read <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/#why-dont-you-merge-with-tails-and-join-efforts">Why don't you merge with Tails and join efforts?</a>.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Conclusion: different threat model, different implementation, different use cases, although some overlap. Different political and design decisions.</p>
+<h2 id="part-2">Part 2</h2>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/ComparisonOfTorProxiesCGIproxiesAndProxyChains/">Comparison Of Tor, Proxies, CGI proxies and Proxy Chains</a></p>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/PhysicalIsolation/">Wiki: PhysicalIsolation</a><br>
+    
+      <a href="/p/whonix/wiki/VMware/">Wiki: VMware</a><br>
+    
+      <a href="/p/whonix/wiki/Design/">Wiki: Design</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

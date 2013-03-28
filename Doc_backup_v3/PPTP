@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-6 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / PPTP</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XLgKoPYJhzohBCbTmZXrfzIQ { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-PPTP" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">PPTP
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<p>For what this is useful: PPTP is used because it's very easy to configure and well supported by all kind of devices. Compared to a proper set up with a hardware gateway between the internet and the devices you want to torify it's less secure but doesn't require any kind of hardware or network layout changes.</p>
+<p><strong>This article has not been checked since latest Whonix release. May require update. </strong></p>
+<div class="toc">
+<ul>
+<li><a href="#install-pptpd">Install PPTPd</a></li>
+<li><a href="#configure-pptp">Configure PPTP</a></li>
+<li><a href="#configure-pptp-options">Configure PPTP Options</a></li>
+<li><a href="#configure-iptables-rules-for-client-connect-and-disconnect">Configure IPtables rules for client connect and disconnect</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<p><strong><em></em><em>Description</em></strong></p>
+<p>VPN (<a class="alink notfound" href="../http%3A//en.wikipedia.org/wiki/Vpn%20Virtual%20private%20network">[http://en.wikipedia.org/wiki/Vpn Virtual private network]</a>) is a method for users to connect to another network and access resources that can be seen from that network.</p>
+<p>In this case, VPN is used to allow other users on your local LAN to connect and use your TorBox to connect to Tor with minimal configuration. Unlike Tor-VM where all network connections are forced through Tor or rejected workstations connected over PPTP are NOT automatically protected against network level leaks and application layer exploits.</p>
+<p>We use <a class="alink notfound" href="../http%3A//en.wikipedia.org/wiki/Pptp%20PPTP">[http://en.wikipedia.org/wiki/Pptp PPTP]</a> here due to its wide install base (every installation of Windows since Windows 95 includes a client) and ease of installation.  Be aware of the <a class="alink notfound" href="../http%3A//en.wikipedia.org/wiki/Pptp%23Security_of_the_PPTP_protocol%20enormous%20security%20issues%20with%20PPTP">[http://en.wikipedia.org/wiki/Pptp#Security_of_the_PPTP_protocol enormous security issues with PPTP]</a>.</p>
+<p><strong>Warning</strong>, PPTP should <strong>NOT</strong> be used with TorBox over the Internet, only for local trusted sources.  See below for an OpenVPN implementation that allows use of Tor with minimal client configuration and should be secure enough to allow Internet connections (coming soon).</p>
+<p><strong><em></em><em>VPN: Bypassing Censorship &amp; Enabling Free Speech</em></strong></p>
+<p>Ref: (<a class="alink notfound" href="../http%3A//en.flossmanuals.net/bypassing-censorship/ch025_what-is-vpn/%20How%20to%20Bypass%20Internet%20Censorship%20%40%20Flossmanuals.net">[http://en.flossmanuals.net/bypassing-censorship/ch025_what-is-vpn/ How to Bypass Internet Censorship @ Flossmanuals.net]</a>)</p>
+<div class="codehilite"><pre><span class="n">Because</span> <span class="n">VPN</span> <span class="n">services</span> <span class="p">[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">en</span><span class="p">.</span><span class="n">wikipedia</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">wiki</span><span class="o">/</span><span class="n">IP_tunnel</span> <span class="n">tunnel</span><span class="p">]</span> <span class="n">all</span> <span class="n">Internet</span> <span class="n">traffic</span><span class="p">,</span> <span class="n">they</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">e</span><span class="o">-</span><span class="n">mail</span><span class="p">,</span> <span class="n">instant</span> <span class="n">messaging</span><span class="p">,</span>
+</pre></div>
+<p>Voice over IP (VoIP) and any other Internet service in addition to Web browsing, making everything that travels through the tunnel<br />
+unreadable to anyone along the way.</p>
+<div class="codehilite"><pre><span class="n">If</span> <span class="n">the</span> <span class="n">tunnel</span> <span class="n">ends</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">area</span> <span class="n">where</span> <span class="n">the</span> <span class="n">Internet</span> <span class="n">is</span> <span class="n">being</span> <span class="n">restricted</span><span class="p">,</span> <span class="n">this</span> <span class="n">can</span> <span class="n">be</span> <span class="n">an</span> <span class="n">effective</span> <span class="n">method</span> <span class="n">of</span> <span class="n">circumvention</span><span class="p">,</span>
+</pre></div>
+<p>since the filtering entity/server sees only encrypted data, and has no way of knowing what data is passing through the tunnel.<br />
+    It has the additional effect of making all your different kinds of traffic look similar to an eavesdropper.</p>
+<p>We use VPN here for its “tunnel” capabilities, so that others that you allow access, can take advantage of Tor via TorBox with a single connection.</p>
+<h1 id="install-pptpd">Install PPTPd</h1>
+<p>(Whonix-Gateway)</p>
+<p>From your Whonix-Gateway:</p>
+<div class="codehilite"><pre><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">pptpd</span>
+</pre></div>
+<p>This will install and start the <code>pptpd</code> daemon on your Whonix-Gateway.  Verify its running:</p>
+<div class="codehilite"><pre><span class="n">ps</span> <span class="n">aux</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">pptpd</span>
+</pre></div>
+<p>Should show something similar to:</p>
+<div class="codehilite"><pre><span class="n">root</span>      8357  0<span class="p">.</span>0  0<span class="p">.</span>5  10512   696 ?        <span class="n">Ss</span>   17<span class="p">:</span>26   0<span class="p">:</span>00 <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">pptpd</span>
+</pre></div>
+<p>Stop it for the time being, while we configure it.</p>
+<div class="codehilite"><pre><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">pptpd</span> <span class="n">stop</span>
+</pre></div>
+<h1 id="configure-pptp">Configure PPTP</h1>
+<p>(Whonix-Gateway)</p>
+<p>Configure PPTP settings:</p>
+<div class="codehilite"><pre><span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">pptpd</span><span class="p">.</span><span class="n">conf</span>
+</pre></div>
+<p>Setup your <code>localip</code> and <code>remoteip</code> settings:</p>
+<div class="codehilite"><pre><span class="n">localip</span> 192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>1 #<span class="n">your</span> <span class="n">eth1</span> <span class="n">address</span>
+<span class="n">remoteip</span> 192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>200<span class="o">-</span>250 #<span class="n">a</span> <span class="n">range</span> <span class="n">of</span> <span class="n">unassigned</span> <span class="n">IP</span><span class="o">'</span><span class="n">s</span>
+</pre></div>
+<p>See the <a class="alink notfound" href="../http%3A//poptop.sourceforge.net/dox/pptpd.conf.txt%20official%20documentation%20here">[http://poptop.sourceforge.net/dox/pptpd.conf.txt official documentation here]</a>.</p>
+<p><strong>Discussion:</strong></p>
+<p>This can be potentially confusing, as the documentation in the configuration files are not the best.  When you setup a PPTP connection, your Whonix-Gateway will setup a virtual adapter (e.g. ppp0) which will output traffic sent from your client computer (those that connect to your server from your local LAN) to the Whonix-Gateway and allow it to be routed through Tor. So if we want to use this virtual adapter just like a real adapter (e.g. eth0), we need to give it an IP address.  That's what the <code>localip</code> option is.</p>
+<p><code>remoteip</code> is a bit simpler.  It's the IP address (or addresses) that are assigned to the client's computer when they connect.  They get their own virtual adapter, which needs its own IP address.</p>
+<p>See the <a class="alink notfound" href="../http%3A//poptop.sourceforge.net/dox/qna.html%2319%20FAQ%20here%20for%20information">[http://poptop.sourceforge.net/dox/qna.html#19 FAQ here for information]</a>.  For a simple overview of the VPN process see <a class="alink notfound" href="../https%3A//help.ubuntu.com/community/VPNClient%23Extra_credit%3A_how_VPN_works%20VPNClient%20%40%20Ubuntu%20Community%20Documentation">[https://help.ubuntu.com/community/VPNClient#Extra_credit:_how_VPN_works VPNClient @ Ubuntu Community Documentation]</a>.</p>
+<p><strong>localip</strong>, for simplicity should be the IP of your eth1, as Tor is already configured to listen here and we don't actually do any routing creating an IP address conflict.<br />
+<strong>remoteip</strong>, should be several IP's on your internal network (you should have as many IP's as potential clients, for example the “192.168.0.200-250” range above defines IP's for 50 clients)</p>
+<p>(Advanced: <code>localip</code> and <code>remoteip</code> can be set to other networks, other subnets, etc.  With our approach it doesn't matter what their IP's are, simply that they exist.  It is in fact encouraged that such clients be assigned to a “quarantine” network.  Since we don't have routing enabled, other subnets would prevent your client's from seeing each other and your already established “safe” LAN; where your Whonix-Workstation lives.  But!  The <code>torrc</code> would need to be updated to listen on said addresses as well.  Subneting in this fashion is beyond the scope of this document.)</p>
+<h1 id="configure-pptp-options">Configure PPTP Options</h1>
+<p>(Whonix-Gateway)</p>
+<div class="codehilite"><pre><span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ppp</span><span class="o">/</span><span class="n">pptpd</span><span class="o">-</span><span class="n">options</span>
+</pre></div>
+<p>Verify the following settings are configured as shown:</p>
+<div class="codehilite"><pre><span class="n">refuse</span><span class="o">-</span><span class="n">pap</span>
+<span class="n">refuse</span><span class="o">-</span><span class="n">chap</span>
+<span class="n">refuse</span><span class="o">-</span><span class="n">mschap</span>
+<span class="n">require</span><span class="o">-</span><span class="n">mschap</span><span class="o">-</span><span class="n">v2</span>
+<span class="n">require</span><span class="o">-</span><span class="n">mppe</span><span class="o">-</span>128
+<span class="n">ms</span><span class="o">-</span><span class="n">dns</span> <span class="o">&lt;</span><span class="n">eth1</span> <span class="n">address</span><span class="o">&gt;</span>
+</pre></div>
+<p><strong>Discussion:</strong> <a class="alink notfound" href="../http%3A//poptop.sourceforge.net/dox/options.pptpd.txt%20See%20official%20documentation%20here">[http://poptop.sourceforge.net/dox/options.pptpd.txt See official documentation here]</a>.</p>
+<p><strong>refuse-pap</strong>: <a class="alink notfound" href="../http%3A//en.wikipedia.org/wiki/Password_authentication_protocol%20PAP%20style%20authentication">[http://en.wikipedia.org/wiki/Password_authentication_protocol PAP style authentication]</a>, insecure, so we don't want to use it if we can help it. <strong>refuse-chap</strong>: <a class="alink notfound" href="../http%3A//en.wikipedia.org/wiki/Challenge-Handshake_Authentication_Protocol%20CHAP%20authentication">[http://en.wikipedia.org/wiki/Challenge-Handshake_Authentication_Protocol CHAP authentication]</a>, insecure. <strong>refuse-mschap</strong>: <a class="alink notfound" href="../http%3A//en.wikipedia.org/wiki/MSCHAP%20MS-CHAP">[http://en.wikipedia.org/wiki/MSCHAP MS-CHAP]</a>, insecure <strong>require-mschap-v2</strong>: <a class="alink notfound" href="../http%3A//en.wikipedia.org/wiki/MSCHAPv2%20MS-CHAPv2">[http://en.wikipedia.org/wiki/MSCHAPv2 MS-CHAPv2]</a>, make sure that any connecting client must use this.  It's as secure a we can get for a supported authentication method for PPTP. <strong>require-mppe-128</strong>: <a class="alink notfound" href="../http%3A//en.wikipedia.org/wiki/MPPE%20Microsoft%20Point-to-Point%20Encryption">[http://en.wikipedia.org/wiki/MPPE Microsoft Point-to-Point Encryption]</a>, as secure encryption as we can get over PPTP, 128 bit is the maximum supported. <strong>ms-dns</strong>: Use this address as the DNS server for connecting (Windows) clients.</p>
+<h1 id="configure-iptables-rules-for-client-connect-and-disconnect">Configure IPtables rules for client connect and disconnect</h1>
+<p>(Whonix-Gateway)</p>
+<p>The <code>ip-up</code> script is called on each connection by a PPTP client, so we can put special firewall rules here to help with Torifying the traffic through this interface.</p>
+<div class="codehilite"><pre><span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ppp</span><span class="o">/</span><span class="n">ip</span><span class="o">-</span><span class="n">up</span>
+</pre></div>
+<p>Add to the end:</p>
+<div class="codehilite"><pre><span class="c">#Firewall rules to add to route PPTP through TOR</span>
+<span class="c">#Tor's TransPort</span>
+<span class="n">TRANS_PORT</span><span class="c">#&quot;9040&quot;</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">A</span> <span class="n">PREROUTING</span> <span class="o">-</span><span class="n">i</span> $<span class="n">PPP_IFACE</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">--</span><span class="n">dport</span> 53 <span class="o">-</span><span class="n">j</span> <span class="n">REDIRECT</span> <span class="o">--</span><span class="n">to</span><span class="o">-</span><span class="n">ports</span> 53
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">A</span> <span class="n">PREROUTING</span> <span class="o">-</span><span class="n">i</span> $<span class="n">PPP_IFACE</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">syn</span> <span class="o">-</span><span class="n">j</span> <span class="n">REDIRECT</span> <span class="o">--</span><span class="n">to</span><span class="o">-</span><span class="n">ports</span> $<span class="n">TRANS_PORT</span>
+</pre></div>
+<p>The variable “$PPP_IFACE” is defined in the script (see the documentation at the beginning of the ip-up script) and resolves to the name of the interface established after a PPTP connection (e.g. ppp0).</p>
+<p>Similarly the <code>ip-down</code> script is called when tearing down the connection.  To prevent your iptables from getting polluted with redundant rules, we remove the previously configured rules here:</p>
+<div class="codehilite"><pre><span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ppp</span><span class="o">/</span><span class="n">ip</span><span class="o">-</span><span class="n">down</span>
+</pre></div>
+<p>Add to the end:</p>
+<div class="codehilite"><pre><span class="c">#Firewall rules to add to route PPTP through TOR</span>
+<span class="c">#Tor's TransPort</span>
+<span class="n">TRANS_PORT</span><span class="c">#&quot;9040&quot;</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">D</span> <span class="n">PREROUTING</span> <span class="o">-</span><span class="n">i</span> $<span class="n">PPP_IFACE</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">--</span><span class="n">dport</span> 53 <span class="o">-</span><span class="n">j</span> <span class="n">REDIRECT</span> <span class="o">--</span><span class="n">to</span><span class="o">-</span><span class="n">ports</span> 53
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">D</span> <span class="n">PREROUTING</span> <span class="o">-</span><span class="n">i</span> $<span class="n">PPP_IFACE</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">syn</span> <span class="o">-</span><span class="n">j</span> <span class="n">REDIRECT</span> <span class="o">--</span><span class="n">to</span><span class="o">-</span><span class="n">ports</span> $<span class="n">TRANS_PORT</span>
+</pre></div>
+<p>Notice the addition of the <strong>-D</strong> instead of <strong>-A</strong> to the rule definitions.  This tells <code>iptables</code> to Delete a rule with those parameters rather than Add one.</p>
+<p>(<a class="alink notfound" href="../http%3A//manpages.ubuntu.com/manpages/karmic/man8/iptables.8.html%20See%20IPTables%20documentation">[http://manpages.ubuntu.com/manpages/karmic/man8/iptables.8.html See IPTables documentation]</a>)</p>
+<h1 id="testing">Testing</h1>
+<p>(Whonix-Gateway)</p>
+<p>Start up your PPTP server:</p>
+<div class="codehilite"><pre><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">pptpd</span> <span class="n">start</span>
+</pre></div>
+<p>(Client)</p>
+<p>From a client on your network (preferably one outside of your Tor network, e.g. not your Whonix-Workstation) connect to your VPN server.</p>
+<p>Instructions for a variety of clients:</p>
+<p><a class="alink notfound" href="../http%3A//pptpclient.sourceforge.net/documentation.phtml%20Linux%20%28many%20flavors%2C%20direct%20from%20the%20pptp-client%20site%29">[http://pptpclient.sourceforge.net/documentation.phtml Linux (many flavors, direct from the pptp-client site)]</a> <a class="alink notfound" href="../http%3A//support.microsoft.com/kb/314076%20How%20to%20configure%20a%20connection%20to%20a%20virtual%20private%20network%20%28VPN%29%20in%20Windows%20XP">[http://support.microsoft.com/kb/314076 How to configure a connection to a virtual private network (VPN) in Windows XP]</a> <a class="alink notfound" href="../https%3A//help.ubuntu.com/community/VPNClient%20VPNClient%20%40%20Ubuntu%20Community%20Documentation">[https://help.ubuntu.com/community/VPNClient VPNClient @ Ubuntu Community Documentation]</a> <a class="alink notfound" href="../http%3A//www.pcworld.com/article/210562/how_to_set_up_vpn_in_windows_7.html%20Windows%207%20VPN%20step%20by%20step%20guide">[http://www.pcworld.com/article/210562/how_to_set_up_vpn_in_windows_7.html Windows 7 VPN step by step guide]</a></p>
+<p>Now verify the connection on the gateway, after successfully connecting:  (Whonix-Gateway)</p>
+<div class="codehilite"><pre><span class="n">ifconfig</span>
+</pre></div>
+<p>Should show something like:</p>
+<div class="codehilite"><pre><span class="n">ppp0</span>      <span class="n">Link</span> <span class="n">encap</span><span class="p">:</span><span class="n">Point</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">Point</span> <span class="n">Protocol</span>
+    <span class="n">inet</span> <span class="n">addr</span><span class="p">:</span>192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>1  <span class="n">P</span><span class="o">-</span><span class="n">t</span><span class="o">-</span><span class="n">P</span><span class="p">:</span>192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>200  <span class="n">Mask</span><span class="p">:</span>255<span class="p">.</span>255<span class="p">.</span>255<span class="p">.</span>255
+    <span class="n">UP</span> <span class="n">POINTOPOINT</span> <span class="n">RUNNING</span> <span class="n">NOARP</span> <span class="n">MULTICAST</span>  <span class="n">MTU</span><span class="p">:</span>1496  <span class="n">Metric</span><span class="p">:</span>1
+    <span class="n">RX</span> <span class="n">packets</span><span class="p">:</span>91 <span class="n">errors</span><span class="p">:</span>0 <span class="n">dropped</span><span class="p">:</span>0 <span class="n">overruns</span><span class="p">:</span>0 <span class="n">frame</span><span class="p">:</span>0
+    <span class="n">TX</span> <span class="n">packets</span><span class="p">:</span>71 <span class="n">errors</span><span class="p">:</span>0 <span class="n">dropped</span><span class="p">:</span>0 <span class="n">overruns</span><span class="p">:</span>0 <span class="n">carrier</span><span class="p">:</span>0
+    <span class="n">collisions</span><span class="p">:</span>0 <span class="n">txqueuelen</span><span class="p">:</span>3
+    <span class="n">RX</span> <span class="n">bytes</span><span class="p">:</span>10080 <span class="p">(</span>10<span class="p">.</span>0 <span class="n">KB</span><span class="p">)</span>  <span class="n">TX</span> <span class="n">bytes</span><span class="p">:</span>3622 <span class="p">(</span>3<span class="p">.</span>6 <span class="n">KB</span><span class="p">)</span>
+</pre></div>
+<p>.</p>
+<div class="codehilite"><pre><span class="n">iptables</span> <span class="o">-</span><span class="n">vnL</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span>
+</pre></div>
+<p>Should show:</p>
+<div class="codehilite"><pre><span class="n">Chain</span> <span class="n">PREROUTING</span> <span class="p">(</span><span class="n">policy</span> <span class="n">ACCEPT</span> 103 <span class="n">packets</span><span class="p">,</span> 14589 <span class="n">bytes</span><span class="p">)</span>
+<span class="n">pkts</span> <span class="n">bytes</span> <span class="n">target</span>     <span class="n">prot</span> <span class="n">opt</span> <span class="n">in</span>     <span class="n">out</span>     <span class="n">source</span>                   <span class="n">destination</span>                                          
+    0     0 <span class="n">REDIRECT</span>   <span class="n">udp</span>  <span class="o">--</span>  <span class="n">ppp0</span>  <span class="o">*</span>       0<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>0<span class="o">/</span>0            0<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>0<span class="o">/</span>0 <span class="n">udp</span> <span class="n">dpt</span><span class="p">:</span>53     <span class="n">redir</span> <span class="n">ports</span> 53
+   22  1320 <span class="n">REDIRECT</span>   <span class="n">tcp</span>  <span class="o">--</span>  <span class="n">ppp0</span>  <span class="o">*</span>       0<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>0<span class="o">/</span>0            0<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>0<span class="o">/</span>0 <span class="n">tcp</span>     <span class="n">flags</span><span class="p">:</span>0<span class="n">x17</span><span class="o">/</span>0<span class="n">x02</span> <span class="n">redir</span> <span class="n">ports</span> 9040
+</pre></div>
+<p>(You may have more information displayed here depending on configuration, but the lines above should at least appear in your PREROUTING chain)</p>
+<p>(Client)</p>
+<p>On the client you should then be able to connect via Tor.</p>
+<ul>
+<li>Browse to <code>check.torproject.org</code> and verify the “congratulations” message</li>
+</ul>
+<p>Next disconnect from the VPN.  On the server you should see several changes:  (Whonix-Gateway)</p>
+<ul>
+<li><code>ifconfig</code> should no longer show any ppp interfaces</li>
+<li><code>iptables -vnL -t nat</code> should show no rules that involve any ppp interfaces</li>
+</ul>
+<p>You can in fact test several client connections in this way.  Each should get a new IP address (192.168.0.201, 192.168.0.202, etc), create a new virtual adapter (ppp1, ppp2, etc) and route through Tor via the Iptables commands (as above).</p>
+<p>You can also attempt <a class="alink notfound" href="../LeakTests%20Leak%20Testing">[LeakTests Leak Testing]</a> to verify that no packets are leaking through your VPN connection.</p>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/OptionalConfigurations/">Wiki: OptionalConfigurations</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

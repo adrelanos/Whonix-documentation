@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-3 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / HardenedGentooTG</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XomTjSPpmyPFUBlVYTWdTXegw { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-HardenedGentooTG" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">HardenedGentooTG
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#draft">DRAFT!</a></li>
+<li><a href="#how-to-create-a-hardened-gentoo-based-whonix-gateway">How to create a Hardened Gentoo based Whonix-Gateway</a><ul>
+<li><a href="#overview">Overview</a></li>
+</ul>
+</li>
+<li><a href="#install-gentoo-build-environment">Install Gentoo build environment</a><ul>
+<li><a href="#build-a-kernel-for-whonix-gateway">Build a Kernel for Whonix-Gateway</a></li>
+<li><a href="#build-whonix-gateway-environment">Build Whonix-Gateway environment</a></li>
+<li><a href="#install-whonix-gateway-to-a-hard-disk-or-sd-card">Install Whonix-Gateway to a hard disk or sd card:</a></li>
+</ul>
+</li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<h1 id="draft">DRAFT!</h1>
+<p><strong>Draft! Development for Hardened Gentoo based Whonix-Gateway stalled. Debian based gateway still under active development and other operating systems are being considered.</strong></p>
+<h1 id="how-to-create-a-hardened-gentoo-based-whonix-gateway">How to create a Hardened Gentoo based Whonix-Gateway</h1>
+<h2 id="overview">Overview</h2>
+<ul>
+<li>Install Gentoo build environment (how-to is for installation in a chroot but you can also use a full gentoo installation)</li>
+<li>Build Whonix-Gateway kernel and userland</li>
+<li>Install on media/export to iso/ova (TODO)</li>
+</ul>
+<p>Advantages/disadvantages compared to the default Debian/Ubuntu based T-G:</p>
+<ul>
+<li>Updating is much more complicated:</li>
+<li>You need to keep a build system around, keep that updated using emerge-webrsync &amp;&amp; emerge --update --newuse --deep -av world (and probably etc-update)</li>
+<li>you need to update the t-g system on the build system (append --update --newuse --deep to that long emerge command <a class="alink notfound" href="/Dev/HardenedGentooTG%23BuildWhonix-Gatewayenvironment%20below">[/Dev/HardenedGentooTG#BuildWhonix-Gatewayenvironment below]</a>)</li>
+<li>you need to build new kernels manually</li>
+<li>then you need to copy the new files over your current installation (simple but inefficient: 'cd path/to/torgateway &amp;&amp; tar zcvf update.tgz .' extract: 'tar xvzpf update.tgz')</li>
+<li>emerge is not apt-get, updates often require a bit of manual configuration, review  /var/log/portage/elog/summary.log</li>
+<li>
+<p>Grsec, full pie, no RBAC (hardly necessary considering the threat model of the gateway), no disk encryption, no RAM wipe on shutdown (help would be welcome). When not using hidden services, tor log and cache files can be put into tmpfs so we don't need FDE at all. Otherwise we can still use partial disk encryption (loop file or /var). Evil maid attacks apply anyway as long as there's an unencryped /boot (and BIOS, and firmware...) and no TPM.</p>
+</li>
+<li>
+<p>Size: &lt;50 MB compressed.</p>
+</li>
+</ul>
+<h1 id="install-gentoo-build-environment">Install Gentoo build environment</h1>
+<p>Read Upstream Documentation: <a class="" href="http://www.gentoo.org/doc/en/handbook/" rel="nofollow">Gentoo Handbook</a>!</p>
+<div class="codehilite"><pre><span class="c"># If you use a grsec kernel on the host:</span>
+
+<span class="n">echo</span> <span class="s">&quot;0&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">kernel</span><span class="o">/</span><span class="n">grsecurity</span><span class="o">/</span><span class="n">chroot_deny_chmod</span>
+<span class="n">echo</span> <span class="s">&quot;0&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">kernel</span><span class="o">/</span><span class="n">grsecurity</span><span class="o">/</span><span class="n">chroot_caps</span>
+
+<span class="nb">mkdir</span> <span class="n">gentoodev</span>
+<span class="n">cd</span> <span class="n">gentoodev</span>
+<span class="c"># verify fingerprints!</span>
+<span class="n">gpg</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">subkeys</span><span class="p">.</span><span class="n">pgp</span><span class="p">.</span><span class="n">net</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> 96<span class="n">D8BF6D</span> 2<span class="n">D182910</span> 17072058
+
+<span class="c"># fetch stage3 and portage snapshot</span>
+<span class="n">LATESTDL</span><span class="p">=</span>`<span class="n">wget</span> <span class="o">-</span><span class="n">q</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">distfiles</span><span class="p">.</span><span class="n">gentoo</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">x86</span><span class="o">/</span><span class="n">autobuilds</span><span class="o">/</span><span class="n">latest</span><span class="o">-</span><span class="n">stage3</span><span class="o">-</span><span class="n">i686</span><span class="p">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span> <span class="o">|</span> <span class="n">tail</span> <span class="o">-</span>1`
+<span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">distfiles</span><span class="p">.</span><span class="n">gentoo</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">x86</span><span class="o">/</span><span class="n">autobuilds</span><span class="o">/</span>$<span class="n">LATESTDL</span><span class="p">{,.</span><span class="n">DIGESTS</span><span class="p">.</span><span class="n">asc</span><span class="p">,.</span><span class="n">DIGESTS</span><span class="p">}</span>
+<span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">distfiles</span><span class="p">.</span><span class="n">gentoo</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="n">portage</span><span class="o">-</span><span class="n">latest</span><span class="p">.</span><span class="nb">tar</span><span class="p">.</span><span class="n">bz2</span><span class="p">{,.</span><span class="n">gpgsig</span><span class="p">,.</span><span class="n">md5sum</span><span class="p">}</span>
+
+<span class="n">gpg</span> <span class="o">--</span><span class="n">verify</span> <span class="n">stage3</span><span class="o">-*</span><span class="p">.</span><span class="nb">tar</span><span class="p">.</span><span class="n">bz2</span><span class="p">.</span><span class="n">DIGESTS</span><span class="p">.</span><span class="n">asc</span>
+<span class="n">sha1sum</span> <span class="o">-</span><span class="n">c</span> <span class="n">stage3</span><span class="o">*</span><span class="p">.</span><span class="nb">tar</span><span class="p">.</span><span class="n">bz2</span><span class="p">.</span><span class="n">DIGESTS</span>
+
+<span class="n">gpg</span> <span class="o">--</span><span class="n">verify</span> <span class="n">portage</span><span class="o">-</span><span class="n">latest</span><span class="p">.</span><span class="nb">tar</span><span class="p">.</span><span class="n">bz2</span><span class="p">.</span><span class="n">gpgsig</span> <span class="n">portage</span><span class="o">-</span><span class="n">latest</span><span class="p">.</span><span class="nb">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">md5sum</span> <span class="o">-</span><span class="n">c</span> <span class="n">portage</span><span class="o">-</span><span class="n">latest</span><span class="p">.</span><span class="nb">tar</span><span class="p">.</span><span class="n">bz2</span><span class="p">.</span><span class="n">md5sum</span>
+
+<span class="nb">tar</span> <span class="n">xvjpf</span> <span class="n">stage3</span><span class="o">-*</span><span class="p">.</span><span class="nb">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="nb">tar</span> <span class="n">xvjf</span> <span class="n">portage</span><span class="o">-</span><span class="n">latest</span><span class="p">.</span><span class="nb">tar</span><span class="p">.</span><span class="n">bz2</span> <span class="o">-</span><span class="n">C</span> <span class="n">usr</span>
+
+<span class="c"># edit makeopts according to your CPU count (cores+1); add a nearby mirror (when using a gentoo install disk use #mirrorselect -i -o &gt;&gt; etc/make.conf</span>
+<span class="n">echo</span> <span class="s">'</span>
+<span class="s">MAKEOPTS=&quot;-j3&quot;</span>
+<span class="s">USE=&quot;unicode minimal crypt ssl gpm ncurses fbcon -X -pam -cracklib -git -extensions     -glib -opengl \</span>
+<span class="s">-icu -readline -xcb -fts3 -png -policykit -gtk -crashreporter -startup-notification \</span>
+<span class="s">-dbus -introspection -libnotify -webm -gnome -qt4 -qt3support -kde -bluetooth -nls     -ipv6 \</span>
+<span class="s">-cups -zeroconf -encode -recode -acl -iconv -tcpd -berkdb -pcre -net -cramfs -sqlite -gdbm&quot;</span>
+<span class="s">FEATURES=&quot;webrsync-gpg nodoc noinfo noman&quot;</span>
+<span class="s">PORTAGE_GPG_DIR=&quot;/etc/portage/gpg&quot;</span>
+<span class="s">SYNC=&quot;&quot;</span>
+<span class="s">#GENTOO_MIRRORS=&quot;&quot;'</span> <span class="o">&gt;&gt;</span> <span class="n">etc</span><span class="o">/</span><span class="n">make</span><span class="p">.</span><span class="n">conf</span>
+
+<span class="n">cp</span> <span class="o">-</span><span class="n">L</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">resolv</span><span class="p">.</span><span class="n">conf</span> <span class="n">etc</span><span class="o">/</span>
+<span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">proc</span> <span class="n">none</span> <span class="n">proc</span><span class="o">/</span>
+<span class="n">chroot</span> <span class="p">.</span> <span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="n">env</span><span class="o">-</span><span class="n">update</span>
+<span class="nb">source</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span>
+<span class="n">export</span> <span class="n">PS1</span><span class="p">=</span><span class="s">&quot;(build-chroot) $PS1&quot;</span>
+
+<span class="c"># set root passwd (just used in the development environment, probably not necessary?)</span>
+<span class="n">passwd</span>
+
+<span class="n">eselect</span> <span class="n">profile</span> <span class="n">list</span>
+<span class="c"># select hardened/linux/x86</span>
+<span class="n">eselect</span> <span class="n">profile</span> <span class="k">set</span> 8
+
+<span class="n">echo</span> <span class="s">&quot;en_US ISO-8859-1&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">locale</span><span class="p">.</span><span class="n">gen</span>
+<span class="n">locale</span><span class="o">-</span><span class="n">gen</span>
+<span class="n">cp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">zoneinfo</span><span class="o">/</span><span class="n">UTC</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="nb">localtime</span>
+
+<span class="c"># get a hardened toolchain</span>
+<span class="n">emerge</span> <span class="o">--</span><span class="n">oneshot</span> <span class="n">binutils</span> <span class="n">gcc</span> <span class="n">virtual</span><span class="o">/</span><span class="n">libc</span>
+<span class="nb">source</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span>
+<span class="n">export</span> <span class="n">PS1</span><span class="p">=</span><span class="s">&quot;(build-chroot) $PS1&quot;</span>
+
+<span class="c"># Configure emerge-webrsync. Verify fingerprints!</span>
+<span class="n">emerge</span> <span class="n">gnupg</span>
+<span class="nb">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">portage</span><span class="o">/</span><span class="n">gpg</span>
+<span class="n">chmod</span> 0700 <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">portage</span><span class="o">/</span><span class="n">gpg</span>
+<span class="n">gpg</span> <span class="o">--</span><span class="n">homedir</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">portage</span><span class="o">/</span><span class="n">gpg</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">subkeys</span><span class="p">.</span><span class="n">pgp</span><span class="p">.</span><span class="n">net</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> 0<span class="n">x239C75C4</span> 0<span class="n">x96D8BF6D</span>
+<span class="n">gpg</span> <span class="o">--</span><span class="n">homedir</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">portage</span><span class="o">/</span><span class="n">gpg</span> <span class="o">--</span><span class="n">edit</span><span class="o">-</span><span class="n">key</span> <span class="n">AE5454F967B56AB09AE160640838C26E239C75C4</span> <span class="n">trust</span>
+<span class="n">gpg</span> <span class="o">--</span><span class="n">homedir</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">portage</span><span class="o">/</span><span class="n">gpg</span> <span class="o">--</span><span class="n">edit</span><span class="o">-</span><span class="n">key</span> <span class="n">DCD05B71EAB94199527F44ACDB6B8C1F96D8BF6D</span> <span class="n">trust</span>
+
+<span class="c"># update portage with</span>
+<span class="n">emerge</span><span class="o">-</span><span class="n">webrsync</span>
+</pre></div>
+<h2 id="build-a-kernel-for-whonix-gateway">Build a Kernel for Whonix-Gateway</h2>
+<div class="codehilite"><pre><span class="n">emerge</span> <span class="n">hardened</span><span class="o">-</span><span class="n">sources</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">linux</span>
+<span class="n">make</span> <span class="n">menuconfig</span>
+<span class="n">make</span> 
+# <span class="n">or</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">use</span> <span class="n">loadable</span> <span class="n">modules</span><span class="p">:</span>
+# <span class="n">make</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">modules_install</span> 
+<span class="n">cd</span>
+</pre></div>
+<p>Some hints:</p>
+<ul>
+<li>when using modules make sure that stuff needed to mount root is built in:</li>
+<li>SCSI disk support</li>
+<li>ext4</li>
+<li>
+<p>SATA BDMA (you need to know your hardware)</p>
+</li>
+<li>
+<p>enable netfilter support (use advanced and enable pretty much everything, save to exclude: protocol specific connection trackers)</p>
+</li>
+<li>
+<p>enable grsecurity</p>
+</li>
+<li>security level? (I've only tested workstation, server should work, maybe even High</li>
+<li>
+<p>disable ipv6</p>
+</li>
+<li>
+<p>save to disable (always depending on hardware)</p>
+</li>
+<li>pci express, pcmcia</li>
+<li>wifi, bluetooth</li>
+<li>amateur radio, RF</li>
+<li>RAID/LVM</li>
+<li>AGP graphics</li>
+<li>sound</li>
+<li>File systems (ext2,3, xfs, jfs, ntfs, nfs...)</li>
+<li>graphic drivers (DRI...)</li>
+</ul>
+<h2 id="build-whonix-gateway-environment">Build Whonix-Gateway environment</h2>
+<div class="codehilite"><pre><span class="n">mkdir</span> <span class="o">/</span><span class="n">torgateway</span>
+
+<span class="n">emerge</span> <span class="n">gzip</span> <span class="n">baselayout</span> <span class="n">coreutils</span> <span class="n">debianutils</span> <span class="n">diffutils</span> <span class="n">ed</span> <span class="n">file</span> <span class="n">findutils</span> <span class="n">gawk</span> <span class="n">grep</span> <span class="n">groff</span> <span class="n">kbd</span> <span class="n">less</span> <span class="n">iptables</span> <span class="o">\</span>
+<span class="n">module</span><span class="o">-</span><span class="n">init</span><span class="o">-</span><span class="n">tools</span> <span class="n">net</span><span class="o">-</span><span class="n">tools</span> <span class="n">openrc</span> <span class="n">sed</span> <span class="n">shadow</span> <span class="n">sysvinit</span> <span class="n">sys</span><span class="o">-</span><span class="n">apps</span><span class="o">/</span><span class="n">texinfo</span> <span class="n">util</span><span class="o">-</span><span class="n">linux</span>     <span class="n">which</span> <span class="n">e2fsprogs</span> <span class="n">udev</span> <span class="n">procps</span> <span class="n">psmisc</span> <span class="n">iputils</span>  <span class="o">\</span>
+<span class="n">bash</span> <span class="n">nano</span> <span class="n">tor</span> <span class="n">torsocks</span> <span class="n">localepurge</span> <span class="n">grub</span> <span class="n">dhcpcd</span> <span class="o">\</span>
+<span class="o">-</span><span class="n">v</span> <span class="o">--</span><span class="n">root</span> <span class="o">/</span><span class="n">torgateway</span>
+
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">torgateway</span><span class="o">/</span><span class="p">{</span><span class="n">sys</span><span class="p">,</span><span class="n">proc</span><span class="p">,</span><span class="n">dev</span><span class="p">,</span><span class="n">boot</span><span class="p">,</span><span class="n">root</span><span class="p">,</span><span class="n">home</span><span class="p">,</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="p">,</span><span class="n">var</span><span class="o">/</span><span class="nb">log</span><span class="p">,</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">tor</span><span class="p">,</span><span class="n">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">tor</span><span class="p">}</span>
+
+<span class="n">echo</span> &quot;<span class="n">tor</span><span class="p">:</span><span class="n">x</span><span class="p">:</span>101<span class="p">:</span>246<span class="p">:</span><span class="n">added</span> <span class="n">by</span> <span class="n">portage</span> <span class="k">for</span> <span class="n">tor</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">tor</span><span class="p">:</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>&quot; <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">torgateway</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">passwd</span>
+<span class="n">echo</span> &quot;<span class="n">tor</span><span class="p">:</span><span class="n">x</span><span class="p">:</span>246<span class="p">:</span>&quot; <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">torgateway</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">group</span>
+
+# <span class="n">Don</span><span class="o">'</span><span class="n">t</span> <span class="n">know</span> <span class="k">if</span> <span class="n">etc</span><span class="o">-</span><span class="n">update</span> <span class="n">works</span> <span class="n">in</span> <span class="n">Whonix</span><span class="o">-</span><span class="n">Gateway</span>? <span class="n">you</span> <span class="n">need</span> <span class="n">at</span> <span class="n">least</span> <span class="n">modify</span> <span class="n">the</span> <span class="n">script</span> <span class="n">and</span> <span class="n">remove</span> <span class="n">any</span> <span class="n">reference</span> <span class="n">to</span> &quot;<span class="n">portageq</span>&quot;
+<span class="n">cp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">etc</span><span class="o">-</span><span class="n">update</span> <span class="o">/</span><span class="n">torgateway</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">etc</span><span class="o">-</span><span class="n">update</span>
+<span class="n">cp</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">etc</span><span class="o">-</span><span class="n">update</span><span class="p">.</span><span class="n">conf</span> <span class="o">/</span><span class="n">torgateway</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">etc</span><span class="o">-</span><span class="n">update</span><span class="p">.</span><span class="n">conf</span>
+
+<span class="n">cp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">arch</span><span class="o">/</span><span class="n">x86</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">bzImage</span> <span class="o">/</span><span class="n">torgateway</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">kernel</span>
+# <span class="n">I</span> <span class="n">didn</span><span class="o">'</span><span class="n">t</span> <span class="n">use</span> <span class="n">modules</span> <span class="n">so</span> <span class="n">that</span> <span class="n">part</span> <span class="n">is</span> <span class="n">missing</span><span class="p">,</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">gentoo</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">handbook</span><span class="o">/</span><span class="n">handbook</span><span class="o">-</span><span class="n">x86</span><span class="p">.</span><span class="n">xml</span>?<span class="n">full</span><span class="p">=</span>1#<span class="n">kernel_modules</span>
+
+<span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">proc</span> <span class="n">none</span> <span class="o">/</span><span class="n">torgateway</span><span class="o">/</span><span class="n">proc</span><span class="o">/</span>
+
+# <span class="n">enter</span> <span class="n">target</span> <span class="n">chroot</span>
+<span class="n">chroot</span> <span class="o">/</span><span class="n">torgateway</span>
+<span class="n">source</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span>
+<span class="n">export</span> <span class="n">PS1</span><span class="p">=</span>&quot;<span class="p">(</span><span class="n">target</span><span class="o">-</span><span class="n">chroot</span><span class="p">)</span> $<span class="n">PS1</span>&quot;
+
+# <span class="n">set</span> <span class="n">root</span> <span class="n">password</span> <span class="k">for</span> <span class="n">Whonix</span><span class="o">-</span><span class="n">Gateway</span>
+<span class="n">passwd</span>
+
+<span class="n">chown</span> <span class="n">tor</span><span class="p">:</span><span class="n">tor</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">tor</span>
+<span class="n">chown</span> <span class="n">tor</span><span class="p">:</span><span class="n">tor</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">tor</span>
+
+<span class="n">echo</span> &quot;192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>1&quot; <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">resolv</span><span class="p">.</span><span class="n">conf</span>
+
+<span class="n">echo</span> &quot;<span class="n">en_US</span> <span class="n">ISO</span><span class="o">-</span>8859<span class="o">-</span>1&quot; <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">locale</span><span class="p">.</span><span class="n">gen</span>
+<span class="n">locale</span><span class="o">-</span><span class="n">gen</span>
+<span class="n">cp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">zoneinfo</span><span class="o">/</span><span class="n">UTC</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">localtime</span>
+
+# <span class="n">untested</span>
+<span class="n">mv</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">net</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">net</span><span class="p">.</span><span class="n">old</span>
+<span class="n">echo</span> <span class="s">'# see /usr/share/doc/openrc*/net.example*</span>
+<span class="s">config_eth0=&quot;dhcp&quot;</span>
+<span class="s">config_eth1=&quot;192.168.0.1  netmask 255.255.255.0 brd 192.168.0.255&quot;</span>
+<span class="s">#routes_eth1=&quot;default via 192.168.0.1&quot;'</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">net</span>
+
+<span class="n">cd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">net</span><span class="p">.</span><span class="n">lo</span> <span class="n">net</span><span class="p">.</span><span class="n">eth0</span>
+<span class="n">rc</span><span class="o">-</span><span class="n">update</span> <span class="n">add</span> <span class="n">net</span><span class="p">.</span><span class="n">eth0</span> <span class="n">default</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">net</span><span class="p">.</span><span class="n">lo</span> <span class="n">net</span><span class="p">.</span><span class="n">eth1</span>
+<span class="n">rc</span><span class="o">-</span><span class="n">update</span> <span class="n">add</span> <span class="n">net</span><span class="p">.</span><span class="n">eth1</span> <span class="n">default</span>
+<span class="n">cd</span>
+
+<span class="n">rc</span><span class="o">-</span><span class="n">update</span> <span class="n">add</span> <span class="n">udev</span> <span class="n">sysinit</span>
+<span class="n">rc</span><span class="o">-</span><span class="n">update</span> <span class="n">add</span> <span class="n">udev</span><span class="o">-</span><span class="n">postmount</span> <span class="n">default</span>
+<span class="n">rc</span><span class="o">-</span><span class="n">update</span> <span class="n">add</span> <span class="n">gpm</span> <span class="n">default</span>
+<span class="n">rc</span><span class="o">-</span><span class="n">update</span> <span class="n">add</span> <span class="n">tor</span> <span class="n">default</span>
+
+# <span class="n">TODO</span><span class="p">:</span>
+# <span class="n">copy</span> <span class="n">iptables</span> <span class="n">and</span> <span class="n">torrc</span> <span class="n">from</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">tg</span>
+<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">iptables</span> <span class="n">save</span>
+<span class="n">rc</span><span class="o">-</span><span class="n">update</span> <span class="n">add</span> <span class="n">iptables</span> <span class="n">boot</span>
+
+<span class="n">ed</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">locale</span><span class="p">.</span><span class="n">nopurge</span>  <span class="o">&lt;&lt;&lt;</span> $<span class="s">',s/NEEDSCONFIGFIRST/#NEEDSCONFIGFIRST/g\nw'</span>
+<span class="n">localepurge</span>
+</pre></div>
+<h2 id="install-whonix-gateway-to-a-hard-disk-or-sd-card">Install Whonix-Gateway to a hard disk or sd card:</h2>
+<p>Using Grub:</p>
+<div class="codehilite"><pre><span class="n">fdisk</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span>
+<span class="n">mkfs</span><span class="p">.</span><span class="n">ext4</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span>
+<span class="n">mkdir</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">target</span>
+<span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">target</span>
+
+# <span class="n">edit</span> <span class="n">according</span> <span class="n">to</span> <span class="n">partition</span> <span class="n">and</span> <span class="n">disc</span> <span class="n">layout</span>! <span class="n">sda</span><span class="o">/</span><span class="n">sdb</span><span class="o">/</span><span class="n">hd</span> <span class="n">are</span> <span class="n">just</span> <span class="n">examples</span>!
+# <span class="n">The</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sd</span><span class="o">*</span> <span class="n">name</span> <span class="n">will</span> <span class="n">probably</span> <span class="n">be</span> <span class="n">different</span> <span class="n">on</span> <span class="n">your</span> <span class="n">build</span> <span class="n">system</span> <span class="n">and</span> <span class="n">on</span> <span class="n">your</span> <span class="n">target</span>     <span class="n">system</span><span class="p">.</span>
+# <span class="n">in</span> <span class="n">this</span> <span class="n">example</span> <span class="n">the</span> <span class="n">host</span> <span class="n">got</span> <span class="n">two</span> <span class="n">hard</span> <span class="n">disks</span><span class="p">,</span> <span class="n">you</span> <span class="n">install</span> <span class="n">to</span> <span class="n">the</span> <span class="n">second</span> <span class="n">one</span><span class="p">,</span> &quot;<span class="n">sdb</span>&quot;
+# <span class="n">this</span> <span class="n">drive</span> <span class="n">is</span> <span class="n">attached</span> <span class="n">to</span> <span class="n">the</span> <span class="n">gateway</span> <span class="n">system</span> <span class="n">and</span> <span class="k">if</span> <span class="n">it</span><span class="o">'</span><span class="n">s</span> <span class="n">the</span> <span class="n">only</span> <span class="n">drive</span> <span class="n">it</span> <span class="n">becomes</span> &quot;<span class="n">sda</span>&quot;
+# <span class="n">same</span> <span class="n">goes</span> <span class="k">for</span> <span class="n">grub</span><span class="p">:</span> <span class="n">hd1</span> <span class="o">==</span> <span class="n">sdb</span><span class="p">,</span> <span class="n">hd0</span> <span class="o">==</span> <span class="n">sda</span>
+
+<span class="n">echo</span> &quot;
+<span class="n">title</span> <span class="n">TorGateway</span>
+<span class="n">root</span> <span class="p">(</span><span class="n">hd0</span><span class="p">,</span>0<span class="p">)</span>
+<span class="n">kernel</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">kernel</span> <span class="n">root</span><span class="p">=</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda1</span>&quot; <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub</span><span class="o">/</span><span class="n">grub</span><span class="p">.</span><span class="n">conf</span>
+
+<span class="n">grep</span> <span class="o">-</span><span class="n">v</span> <span class="n">rootfs</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">mounts</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">mtab</span>
+
+<span class="n">echo</span> &quot;<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda1</span>               <span class="o">/</span>               <span class="n">ext4</span>            <span class="n">noatime</span>         0 1&quot; <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span>
+
+## <span class="n">outside</span> <span class="n">the</span> <span class="n">chroot</span> <span class="p">(</span><span class="n">open</span> <span class="n">a</span> <span class="n">new</span> <span class="n">terminal</span> <span class="n">on</span> <span class="n">the</span> <span class="n">host</span><span class="p">)</span>
+<span class="n">cd</span> <span class="n">gentoodev</span>
+<span class="n">rsync</span> <span class="o">-</span><span class="n">a</span> <span class="n">dev</span><span class="o">/</span> <span class="n">torgateway</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="n">torgateway</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">db</span><span class="o">/*</span> <span class="n">torgateway</span><span class="o">/</span><span class="n">tmp</span><span class="o">/*</span>
+<span class="n">rsync</span> <span class="o">-</span><span class="n">a</span> <span class="n">torgateway</span><span class="o">/</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">target</span><span class="o">/</span>
+
+## <span class="n">then</span><span class="p">,</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">target</span><span class="o">-</span><span class="n">chroot</span>
+
+<span class="n">grub</span>
+# <span class="n">then</span> <span class="n">manually</span> <span class="n">configure</span><span class="p">:</span>
+# <span class="n">grub</span><span class="o">&gt;</span> <span class="n">root</span> <span class="p">(</span><span class="n">hd1</span><span class="p">,</span>0<span class="p">)</span>
+# <span class="n">grub</span><span class="o">&gt;</span> <span class="n">setup</span> <span class="p">(</span><span class="n">hd1</span><span class="p">)</span>
+
+# <span class="n">alternatively</span><span class="p">,</span> <span class="n">may</span> <span class="n">not</span> <span class="n">work</span> <span class="n">properly</span>
+#<span class="n">grub</span><span class="o">-</span><span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">floppy</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span> <span class="o">--</span><span class="n">recheck</span>
+
+<span class="n">exit</span> #<span class="n">target</span><span class="o">-</span><span class="n">chroot</span>
+<span class="n">exit</span> #<span class="n">build</span><span class="o">-</span><span class="n">chroot</span>
+</pre></div>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/Tuning/">Wiki: Tuning</a><br>
+    
+      <a href="/p/whonix/wiki/Gateway/">Wiki: Gateway</a><br>
+    
+      <a href="/p/whonix/wiki/Advanced%20Security%20Guide/">Wiki: Advanced Security Guide</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

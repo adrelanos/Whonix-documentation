@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-16 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / Stream Isolation</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XJhNQnPFhBpzKSAAljpLiBI { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-Stream_Isolation" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">Stream Isolation
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#stream-isolation">Stream Isolation</a><ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#tor-browser">Tor Browser</a></li>
+<li><a href="#custom-software">Custom Software</a></li>
+<li><a href="#hidden-services">Hidden Services</a></li>
+<li><a href="#footnotes">Footnotes</a></li>
+</ul>
+</li>
+<li><a href="#how-to-mitigate-identity-correlation">How to mitigate identity correlation</a><ul>
+<li><a href="#basic-protection">Basic Protection</a></li>
+<li><a href="#better-protection">Better Protection</a></li>
+<li><a href="#total-protection">Total protection</a></li>
+<li><a href="#limited-workarounds-for-tor-browser">Limited workarounds for Tor Browser</a><ul>
+<li><a href="#second-tor-browser-with-its-own-socksport">Second Tor Browser with its own SocksPort</a></li>
+<li><a href="#isolatedestaddr-and-isolatedestport-for-tor-browser-recommend-against">IsolateDestAddr and IsolateDestPort for Tor Browser (Recommend against!)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<h1 id="stream-isolation">Stream Isolation</h1>
+<h2 id="introduction">Introduction</h2>
+<p>If you are not careful and install custom applications, you risk, that different activities, let's say Web (Chromium or similar) or IRC (mIRC or similar) go through the same circuit and exit node. Even though, the exit node would still not know your real IP/location, they can easily correlate those activities to the same pseudonym.</p>
+<p>Whonix 0.2.1 and above implement protection against <em>identity correlation through circuit sharing</em>, but you are still advised understand a bit of the technical background. Since Tor version 0.2.3, different Socks,- Dns-, or TransPorts go through different circuits, therefore preventing <em>identity correlation</em>. Whonix configures most applications, that come preinstalled with Whonix, to use different SocksPort, thus no <em>identity correlation</em> is at risk. Whonix uses either socks proxy settings to direct various applications to different SocksPorts or uwt (more information below).</p>
+<p>Any other traffic (i.e. custom installed applications, misc applications, such as <em>nslookup</em>, go through Tor's Dns-, and/or TransPort (can be optionally disabled, see below).</p>
+<p>Applications in Whonix 0.2.1 and above configured to prevent <em>identity correlation through circuit sharing</em>:</p>
+<ul>
+<li>Tor Browser (socks proxy settings) </li>
+<li>XChat (socks proxy settings)</li>
+<li>Thunderbird with TorBirdy (not preinstalled, socks proxy settings, follow <a class="" href="https://sourceforge.net/p/whonix/wiki/E-Mail">Mozilla Thunderbird with TorBirdy</a>).</li>
+<li>Instant Messenger (none preinstalled, port prepared, IP 192.168.0.10, port 9103)</li>
+<li>apt-get (uwt wrapper)</li>
+<li>gpg (uwt wrapper)</li>
+<li>ssh (uwt wrapper) </li>
+<li>git (not preinstalled, uwt wrapper prepared)</li>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_timesync/">htpdate</a> (socks proxy settings)</li>
+<li>wget (uwt wrapper)</li>
+<li>whonixcheck script (uses uwt and separate SocksPorts for wget)</li>
+<li>BitCoin (not preinstalled, socks proxy settings, port prepared, port 9111)</li>
+<li>privoxy (not preinstalled, socks proxy settings, port prepared, port 9112)</li>
+<li>polipo (not preinstalled, socks proxy settings, port prepared, port 9113)</li>
+<li>torbrowser update script (uses uwt and separate SocksPorts for wget and gpg)</li>
+<li>apt-cacher-ng (not preinstalled, uses apt-get port, helper script with comments prepared, see <em>/usr/local/bin/apt-cacher-ng_uwt</em>)</li>
+</ul>
+<p>The required socks proxy settings were setup by the Whonix build scripts. uwt wrappers and are located on Whonix-Gateway and on Whonix-Workstation under <em>/usr/local/bin/</em>. <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/torsocks" rel="nofollow">uwt</a> is a wrapper around torsocks, which is also already installed to /usr/local/bin/uwt.</p>
+<ul>
+<li>Example, each time you run a uwt wrapped application, i.e. simply type <em>apt-get</em> in console, the uwt wrapper /usr/local/bin/apt-get will run. It adds uwt before apt-get. For curiosity check <em>nano /usr/local/bin/apt-get</em>. The uwt wrapper then runs <em>/usr/local/bin/uwt /usr/bin/apt-get</em>. That is also the case for all other uwt wrapped applications.</li>
+<li>If you ever want or must run a uwt wrapped application without uwt, do not run for example <em>apt-get</em> in console, do run <em>/usr/bin/apt-get</em>. Use cases could be if you connect to localhost. If you know what you are doing, you should also be able to deactivate any uwt wrappers you dislike with <em>chmod -x /usr/bin/apt-get</em>.</li>
+<li>When running <em>/usr/bin/apt-get</em> directly it goes through Tor's DnsPort and through Tor's TransPort and not through it's own SocksPort.</li>
+<li>uwt looks if the command contains the words <em>localhost</em> or <em>127.0.0.1</em>, if that is the case, uwt will not be used. The command will be run without uwt. Thus, if a localhost connection is falsely detected it will leak, but only leak through Tor's DnsPort and through Tor's TransPort, which should be ok.</li>
+</ul>
+<p>Isolate by destination address:<br />
+Let's assume SSH goes over port 22 and you want to connect to different SSH servers and do not want an observer to be able to correlate that activity to the same pseudonym. If the SSH servers run on different IP's isolate by destination address might help.</p>
+<p>Isolate by destination port:<br />
+This doesn't seem to be useful for anything in Whonix, applications using different protocols (and therefore different ports) are already isolated through using different SOCKSPorts.</p>
+<p>Isolate by destination port doesn't really achieve anything for web browsing: <a class="" href="https://lists.torproject.org/pipermail/tor-talk/2012-May/024403.html" rel="nofollow">tor-talk Tor's stream isolation features defaults</a>.</p>
+<p>For more information about stream isolation refer to the Tor manual.</p>
+<ul>
+<li><a class="" href="https://www.torproject.org/docs/tor-manual.html.en" rel="nofollow">Tor stable manual</a></li>
+<li><a class="" href="https://www.torproject.org/docs/tor-manual-dev.html.en" rel="nofollow">Tor alpha manual</a></li>
+</ul>
+<h3 id="tor-browser">Tor Browser</h3>
+<p>Different tabs and websites in Tor Browser are not isolated until Tor upstream feature "<a class="" href="https://trac.torproject.org/projects/tor/ticket/3455" rel="nofollow">Tor Browser should set SOCKS username for a request based on referer</a>" gets implemented. A limited workarounds are described below.</p>
+<h3 id="custom-software">Custom Software</h3>
+<p>If you install custom software on Whonix-Workstation, and want to prevent <em>identity correlation through circuit sharing</em> (which you should do), you have to manually configure them. This is not a Whonix specific problem. ^1^ ^2^ ^3^ </p>
+<p>Read also <a class="" href="https://sourceforge.net/p/whonix/wiki/Install%20Software/">Software installation on Whonix-Workstation</a>.</p>
+<h3 id="hidden-services">Hidden Services</h3>
+<p><a class="" href="https://lists.torproject.org/pipermail/tor-talk/2012-September/025432.html" rel="nofollow">Hidden services are automatically separated from each other.</a></p>
+<h3 id="footnotes">Footnotes</h3>
+<p><font size="-3"><br />
+,,<br />
+^1^ If you used to use only one SocksPort with the <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO" rel="nofollow">common torification methods</a>, the <a class="" href="https://lists.torproject.org/pipermail/tor-talk/2012-March/023535.html" rel="nofollow">same thing happened</a>.<br />
+^2^ Also the current (March 2012) <a class="" href="https://www.torproject.org/projects/torbrowser.html.en" rel="nofollow">Tor Browser Bundle</a> is affected, all Firefox Tabs can be correlated to the same identity until the circuit is automatically changed by Tor. <br />
+^3^ <a class="" href="https://tails.boum.org/" rel="nofollow">Tails</a>, which is officially listed on torproject.org was <a class="" href="https://lists.torproject.org/pipermail/tor-talk/2012-March/023535.html" rel="nofollow">also affected</a>. Tails done <a class="" href="https://tails.boum.org/todo/separate_Tor_streams/" rel="nofollow">Todo</a> item.<br />
+</font></p>
+<h2 id="how-to-mitigate-identity-correlation">How to mitigate identity correlation</h2>
+<h3 id="basic-protection">Basic Protection</h3>
+<p>Most applications which come with Whonix 0.2.1 and above are already configured to prevent <em>identity correlation through circuit sharing</em>, you really should read the introduction above.</p>
+<p>The only traffic going through TransPort by default is <a class="alink" href="/p/whonix/wiki/whonixcheck/">[whonixcheck]</a> when testing the TransPort. If that is of concern to you, it can be disabled in whonixcheck. Just comment out the "<em>check_tor "TransPort"</em>" in <em>/usr/local/bin/whonixcheck</em> in that case.</p>
+<p>All custom installed application's TCP traffic is routed through Tor's TransPort and all their DNS requests through Tor's DnsPort. This means different activities or "identities" in different applications (say browser, IRC, email) end up being routed through the same circuit, thus <em>identity correlation</em> is at risk.</p>
+<p>To protect against this, you have to set up per-application SOCKS ports in Whonix-Gateway.</p>
+<p>On Whonix-Gateway in <em>/etc/tor/torrc</em> (<a class="" href="https://github.com/adrelanos/Whonix/blob/stable/whonix_gateway/etc/tor/torrc" rel="nofollow">on github</a>) are already a lot custom socks ports prepared for custom installed applications:</p>
+<ul>
+<li>Without IsolateDestAddr and without IsolateDestPort: SocksPort 192.168.0.10:9150 to 9159</li>
+<li>With IsolateDestAddr, but without IsolateDestPort: SocksPort 192.168.0.10:9160 to 9169</li>
+<li>Without IsolateDestAddr, but with IsolateDestPort: SocksPort: 192.168.0.10:9170 to 9179</li>
+<li>With IsolateDestAddr and with IsolateDestPort: SocksPort: 192.168.0.10:9180 to 9189</li>
+<li>If they those are not enough, you can add your own ones.</li>
+</ul>
+<p>You can point your applications, where you want to prevent <em>identity correlation though circuit sharing</em>, to those SocksPorts. Each custom installed application has to be torified, for directions how to do that use the <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO" rel="nofollow">Torify HOWTO</a>.</p>
+<p>Additional comments regarding the Torify HOWTO:</p>
+<ul>
+<li>Warnings about protocol related warnings you must honor. You are still better off with Whonix, as it offers best possible <a class="" href="https://sourceforge.net/p/whonix/wiki/Whonix%27s%20Protocol-Leak-Protection%20and%20Fingerprinting-Protection/">Protocol-Leak-Protection and Fingerprinting-Protection</a>.</li>
+<li>Whonix's setup provides protection against IP leaks through <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#Protocolleaks" rel="nofollow">protocol leaks</a>.</li>
+<li>If you do not correctly torify, no connections will be possible.</li>
+<li>If you redirect more than one application to the same SocksPort, <em>identity correlation</em> is at risk.</li>
+<li>DNS related <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorFAQ#IkeepseeingthesewarningsaboutSOCKSandDNSandinformationleaks.ShouldIworry" rel="nofollow">warnings</a> still apply, though to a lesser extent - an attack could only make correlations but still couldn't figure out your IP. You can prevent that, be out commenting (# in front) DnsPort in /etc/tor/torrc on the Whonix-Gateway and by removing the DNS redirection firewall rule from /usr/local/bin/whonix_firewall. (<a class="" href="https://github.com/adrelanos/Whonix/blob/stable/whonix_gateway/usr/local/bin/whonix_firewall" rel="nofollow">on github</a>)<ul>
+<li>Do not use a <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/SupportPrograms#DNS" rel="nofollow">local DNS resolver</a>, as all DNS requests would be executed by the same circuit.</li>
+</ul>
+</li>
+<li>Other leaks, such as applications not honoring the proxy settings / wrapper, ICMP or UDP leaks do not apply to Whonix.</li>
+</ul>
+<h3 id="better-protection">Better Protection</h3>
+<p>For best protection against <em>identity correlation</em>:</p>
+<p>Read the advice above and on Whonix-Gateway:</p>
+<p>To deactivate TransPort and DnsPort...</p>
+<ul>
+<li>Set <em>WORKSTATION_TRANSPARENT_TCP=0</em> in <em>/usr/local/bin/whonix_firewall</em> (<a class="" href="https://github.com/adrelanos/Whonix/blob/stable/whonix_gateway/usr/local/bin/whonix_firewall" rel="nofollow">on github</a>)</li>
+<li>Set <em>WORKSTATION_TRANSPARENT_DNS=0</em> in in <em>/usr/local/bin/whonix_firewall</em></li>
+<li>Reload whonix_firewall (<em>sudo /usr/local/bin/whonix_firewall</em>) or simply reboot.</li>
+</ul>
+<p>Although not strictly required, you could additionally, comment out:</p>
+<ul>
+<li>TransPort in <em>/etc/tor/torrc</em></li>
+<li>DnsPort in <em>/etc/tor/torrc</em></li>
+<li>And restart Tor. (<em>sudo service tor restart</em>)</li>
+</ul>
+<p>This will disable transparent proxying. All applications not configured to use a SocksPort or forced to use a SocksPort (use uwt) will not be able to establish connections. This is the only way to ensure, that different SocksPorts are used and that also DNS is remotely resolved through that SocksPort.</p>
+<h3 id="total-protection">Total protection</h3>
+<p>Total protection is only possible, if you honor the advice above and only use one application per session and always revert to a fresh snapshot or use <a class="" href="http://sourceforge.net/p/whonix/wiki/TorBrowser/#more-than-one-tor-browser-in-whonix">more than one Whonix-Workstation</a>. <a class="alink" href="/p/whonix/wiki/Multiple%20Whonix-Workstations/">[Multiple Whonix-Workstations]</a> (using different internal IP's) are automatically separated by Tor (IsolateClientAddr is Tor's default).</p>
+<h3 id="limited-workarounds-for-tor-browser">Limited workarounds for Tor Browser</h3>
+<h4 id="second-tor-browser-with-its-own-socksport">Second Tor Browser with its own SocksPort</h4>
+<p>A good option would be to install a second browser and configure it to use its own SocksPort, see <a class="" href="http://sourceforge.net/p/whonix/wiki/TorBrowser/#more-than-one-tor-browser-in-whonix">More than one Tor Browser in Whonix</a>.</p>
+<h4 id="isolatedestaddr-and-isolatedestport-for-tor-browser-recommend-against">IsolateDestAddr and IsolateDestPort for Tor Browser (Recommend against!)</h4>
+<p><strong>(Recommend against!)</strong></p>
+<p>As a workaround you could enable IsolateDestAddr and IsolateDestPort for the Tor Browser. </p>
+<p>This comes at great performance costs, especially for websites with lots of 3rd party content. It will not isolate connections to different websites on a shared server and it will create new circuits for every IP address you connect to (e.g. it will isolate subdomains if they use different IPs). It will also let you stand out more from other Tor Browser users, because almost no one is using it that way. Generally, for these reasons you should not enable this feature. Instead close the browser and get a "new identity" through arm on the gateway if you want to separate activities inside Tor Browser.</p>
+<p>On Whonix-Gateway open <em>/etc/tor/torrc</em>.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">tor</span><span class="o">/</span><span class="n">torrc</span>
+</pre></div>
+<p>Comment out.</p>
+<div class="codehilite"><pre><span class="c">#SocksPort 192.168.0.10:9100</span>
+</pre></div>
+<p>Comment in.</p>
+<div class="codehilite"><pre><span class="n">SocksPort</span> 192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>10<span class="p">:</span>9100 <span class="n">IsolateDestAddr</span> <span class="n">IsolateDestPort</span>
+</pre></div>
+<h2 id="sources">Sources</h2>
+<p><font size="-3"></font></p>
+<ul>
+<li><a class="" href="https://gitweb.torproject.org/torspec.git/blob/HEAD:/proposals/171-separate-streams.txt" rel="nofollow">Separate streams across circuits by connection metadata</a></li>
+<li><a class="" href="https://lists.torproject.org/pipermail/tor-talk/2012-March/023496.html" rel="nofollow">tor-talk Operating system updates / software installation behind Tor Transparent Proxy</a></li>
+<li><a class="" href="https://lists.torproject.org/pipermail/tor-talk/2012-March/023536.html" rel="nofollow">tor-talk Awareness for identity correlation through circuit sharing is almost zero.</a></li>
+<li><a class="" href="https://lists.torproject.org/pipermail/tor-talk/2012-May/024401.html" rel="nofollow">tor-talk Tor's stream isolation features defaults Question</a></li>
+<li><a class="" href="https://lists.torproject.org/pipermail/tor-talk/2012-May/024403.html" rel="nofollow">tor-talk Tor's stream isolation features defaults Answer</a></li>
+<li><a class="" href="https://mailman.boum.org/pipermail/tails-dev/2012-August/001422.html" rel="nofollow">Tails-dev separate Tor streams</a></li>
+<li><a class="" href="https://tails.boum.org/todo/separate_Tor_streams/" rel="nofollow">Tails separate Tor streams</a></li>
+<li><a class="" href="https://mailman.boum.org/pipermail/tails-dev/2012-August/001532.html" rel="nofollow">Tails-dev Please review Tails stream isolation plans</a></li>
+<li><a class="" href="https://tails.boum.org/contribute/design/stream_isolation/" rel="nofollow">Tails Design: Tor stream isolation</a></li>
+</ul>
+<p></p>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/whonixcheck/">Wiki: whonixcheck</a><br>
+    
+      <a href="/p/whonix/wiki/Multiple%20Whonix-Workstations/">Wiki: Multiple Whonix-Workstations</a><br>
+    
+      <a href="/p/whonix/wiki/Documentation/">Wiki: Documentation</a><br>
+    
+      <a href="/p/whonix/wiki/OtherOperatingSystems/">Wiki: OtherOperatingSystems</a><br>
+    
+      <a href="/p/whonix/wiki/TorBrowser/">Wiki: TorBrowser</a><br>
+    
+      <a href="/p/whonix/wiki/rss/">Wiki: rss</a><br>
+    
+      <a href="/p/whonix/wiki/Technical%20Introduction/">Wiki: Technical Introduction</a><br>
+    
+      <a href="/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/">Wiki: Tunnel_Proxy_or_SSH_or_VPN_through_Tor</a><br>
+    
+      <a href="/p/whonix/wiki/Fingerprint/">Wiki: Fingerprint</a><br>
+    
+      <a href="/p/whonix/wiki/E-Mail/">Wiki: E-Mail</a><br>
+    
+      <a href="/p/whonix/wiki/Software/">Wiki: Software</a><br>
+    
+      <a href="/p/whonix/wiki/Dev_Mixmaster/">Wiki: Dev_Mixmaster</a><br>
+    
+      <a href="/p/whonix/wiki/HostingLocationHiddenServers/">Wiki: HostingLocationHiddenServers</a><br>
+    
+      <a href="/p/whonix/wiki/Voip/">Wiki: Voip</a><br>
+    
+      <a href="/p/whonix/wiki/Advanced%20Security%20Guide/">Wiki: Advanced Security Guide</a><br>
+    
+      <a href="/p/whonix/wiki/Whonix%27s%20Protocol-Leak-Protection%20and%20Fingerprinting-Protection/">Wiki: Whonix&#39;s Protocol-Leak-Protection and Fingerprinting-Protection</a><br>
+    
+      <a href="/p/whonix/wiki/FAQ/">Wiki: FAQ</a><br>
+    
+      <a href="/p/whonix/wiki/Deprecated/">Wiki: Deprecated</a><br>
+    
+      <a href="/p/whonix/wiki/Design-Shared/">Wiki: Design-Shared</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

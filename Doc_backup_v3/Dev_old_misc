@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-9 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / Dev_old_misc</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XXdnDTMDIZoagtIoWlesBhHTck { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-Dev_old_misc" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">Dev_old_misc
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><h1 id="stuff-that-doesnt-fit">Stuff that doesn't fit...</h1>
+<p>this is only temporary anyway, till we get a real bug tracker.</p>
+<h2 id="problem-getting-software-form-tails-solved">Problem getting software form Tails <a class="alink notfound" href="../SOLVED">[SOLVED]</a></h2>
+<ul>
+<li>(adrelanos) Following Tails is also very hard. I though about grabbing tails_htp. They have a git but that's <a class="alink notfound" href="../https%3A//mailman.boum.org/pipermail/tails-dev/2012-June/001252.html%20not%20protected%20by%20SSL%20or%20SSH">[https://mailman.boum.org/pipermail/tails-dev/2012-June/001252.html not protected by SSL or SSH]</a>. Only way to safely extract something out Tails is downloading the iso, verifying the iso, unpacking squashfs (btw: "sudo unsquashfs -x -dest /home/user/tails filesystem.squashfs" and grabbing it from there. They also don't have an apt repository yet and they are also not like upstreaming all their work.</li>
+<li>(anonymous) but they say git is signed, what's the problem? <a href="https://mailman.boum.org/pipermail/tails-dev/2012-June/001254.html" rel="nofollow">https://mailman.boum.org/pipermail/tails-dev/2012-June/001254.html</a><br />
+</li>
+<li>(adrelanos) Do you know how to verify it? I haven't found out.</li>
+<li>(anonymous) git tag -v; commits after the last signed tag are not to be trusted. There are tons of git tutorials and guides.</li>
+<li>(adrelanos) I was on the wrong path, understood "only the download iso is signed". "git tag -v 0.12" worked for me.</li>
+<li>(adrelanos) I'd also like to extract torsocks/libtorsocks from Tails, because they fixed the "The symbol res_query() was not found in any shared library. The error reported was: not found!" bug. Perhaps that's not necessary and we can use the Debian package, if they fixed that upstream.</li>
+</ul>
+<h2 id="misc-ubuntu-server-64-bit-answered"><a class="alink notfound" href="../MISC">[MISC]</a> Ubuntu server 64-bit <a class="alink notfound" href="../ANSWERED">[ANSWERED]</a></h2>
+<ul>
+<li>(adrelanos) Any objections using Ubuntu server 64-bit as T-W's operating system? At least for private builds? What I see so far: fingerprinting issues, the exit node and mirror can guess, that someone uses Whonix with 64-bit instant of 32-bit. Since the streams are now separated, I see no big issue with that. Anything else? As long as we have PAE as requirement, we could also switch to 64-bit? Do all PAE-featured CPU's also support 64-bit?</li>
+<li>(anonymous) I don't know. AMD64 is older than PAE. However, 32bit software runs without problems on 32bit and 64bit hosts, 64bit software no so much. Because we generally don't control what host OS people use I chose to base Whonix on 32bit. Vbox does support that mode for some time but I assumed that there are performance implications. Secondly 64bit software needs more RAM, we already run 3 OS (or more) on a system which eat RAM, better minimize that (KVM and other solutions improve RAM usage through page sharing or what it's called, VBox doesn't). Thirdly, according to Brad Spengler and/or PAX team amd64 is a brain dead instruction set and actually worse than x86, despite the large address space making ASLR more effective. They recommended to use grsec on x86 and I hope we can switch to a grsec kernel (wheezy has one, let's see if they maintain it).</li>
+<li>(adrelanos) Moved to faq <a href="https://trac.torproject.org/projects/tor/wiki/doc/Whonix/FAQ#Whydoyouusethe32bitoperatingsystemnot64bit" rel="nofollow">https://trac.torproject.org/projects/tor/wiki/doc/Whonix/FAQ#Whydoyouusethe32bitoperatingsystemnot64bit</a></li>
+</ul>
+<h2 id="02-misc-website-not-affiliated-with-torproject-notice-done"><a class="alink notfound" href="../0.2">[0.2]</a> <a class="alink notfound" href="../MISC">[MISC]</a> <a class="alink notfound" href="../WEBSITE">[WEBSITE]</a> Not affiliated with torproject notice <a class="alink notfound" href="../DONE">[DONE]</a></h2>
+<ul>
+<li>(adrelanos) Important link: <a class="alink notfound" href="../https%3A//www.torproject.org/docs/trademark-faq.html.en%20tpo%20trademark%20faq">[https://www.torproject.org/docs/trademark-faq.html.en tpo trademark faq]</a>. Less important link about being <a class="alink notfound" href="../https%3A//trac.torproject.org/projects/tor/ticket/2474%20experimental%20software">[https://trac.torproject.org/projects/tor/ticket/2474 experimental software]</a>].</li>
+<li>(adrelanos) I've been in e-mail contact with tpo and I wish I could publish the few mails, but I can not. My questions, if we can discuss it in public or if I can can publish the mails, remained unanswered. I don't want to publish them anyway, because I don't want to challenge them. This is also why I added a second sentence to the Whonix homepage root.<br />
+{{{<br />
+Whonix is a non-offical, community project. We are not affiliated with torproject.org. The Tor developers are not responsible for this project. See Disclaimer for more information.</li>
+</ul>
+<p>Whonix is produced independently from the Tor® anonymity software and carries no guarantee from The Tor Project about quality, suitability or anything else. <br />
+}}}<br />
+<em> (adrelanos) Also with Whonix 0.1.3 it happened, that people mirrored Whonix and offered it for download from their site without linking to our homepage. People might use Whonix without ever reading the notice. We<strong>must</strong> make it<strong>absolutely</strong> clear for anyone, that Whonix is not torproject.<br />
+</em> (adrelanos) For the (trademarkdomain user disappeared) website it might be best to add the non-affiliated-with-tpo notice to root page and to all sub pages. (People on forums/blog/etc. enjoy posting deep links.)<br />
+* (adrelanos) Here is my proposal for the Whonix message on Whonix-Gateway.<br />
+{{{</p>
+<h1 id="whonix-helpwelcome-message">Whonix help/welcome message</h1>
+<p>cp /home/$USERNAME/.bashrc.backup /home/$USERNAME/.bashrc<br />
+echo \
+'echo "Welcome to Whonix Tor-Gateway Version $TORBOX_VERSION!"<br />
+echo "Whonix is a non-offical, community project. We are not affiliated with torproject.org. The Tor developers are not responsible for this project. See Disclaimer for more information."<br />
+echo "Whonix is produced independently from the Tor® anonymity software and carries no guarantee from The Tor Project about quality, suitability or anything else."<br />
+echo "Whonix is based on Tor."<br />
+echo "Whonix is experimental software by means of concept and design. Do not rely on it for strong anonymity."<br />
+echo "Type: \"torbox\"  for help."<br />
+' | sudo -u $USERNAME tee -a /home/$USERNAME/.bashrc<br />
+}}}<br />
+<em> (adrelanos) For Whonix-Workstation I propose to add this notice to our torcheck script.<br />
+</em> (trademarkdomain user disappeared) All looks good to me. Will do on (trademarkdomain user disappeared) website.<br />
+ * (adrelanos) I think it were best if this notice must only be changed once (variable) and effects changing it on all sub pages. Only admins may change it.<br />
+   * (trademarkdomain user disappeared) Definitely. Good idea... I'm working on implementing only one HTML/CSS template source anyway, since I hate to have to manage &amp; modify several template versions. But for even easier updating of text blurbs like this, I can put this in the database. Abstracting it out of the HTML into the database might be done upfront at launch or a bit later, depending upon time &amp; launch motivation. Easily doable though.<br />
+* (adrelanos) Ok, not the most pretty solution, not the best places, but should be okay. Open for suggestions.</p>
+<h2 id="misc-better-marketing-done"><a class="alink notfound" href="../MISC">[MISC]</a> better Marketing <a class="alink notfound" href="../DONE">[DONE]</a></h2>
+<ul>
+<li>(adrelanos) Currently the main page is way too geeky, scary and complicated. I appreciate being upfront about security and other issues but we should perhaps orientate more on front pages of successful projects, such as Tor and Tails. Successful in having lots of developers, users, supporters and progress. Without having users the most promising implementation is not very useful or secure. Users attract interest, more user, more reviewers, devs and so on. Of course, we will always be upfront with the interested ones about open issues, but that are the ones who click to a sub page and who read the full documentation. When you look at the torproject.org you also won't see a "Uh, we actually have no defense against traffic confirmation, internet exchange point spying, don't pin SSL certificates, have no deterministic builds, no apparmor and a huge amount of other critical issues". It's a fact that most users don't read documentation. I'll aim to make offer a project which provides them with as much as security then possible, at very least more security than the Tor Browser Bundle. The interested ones and those who really care will always be very welcome and they will be offered additional information on how they can get best safety. And when they learned everything they may help us to improve the project even further (use multiple vm's/snampshots, physical isolation, etc.).</li>
+<li>(adrelanos) I plan to make big changes, a rewrite to the Whonix front page. News and You Can Help will be moved to the Readme.</li>
+</ul></div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

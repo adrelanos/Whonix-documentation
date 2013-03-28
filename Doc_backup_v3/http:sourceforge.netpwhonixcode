@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-10 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>
+  Whonix / Source Code
+    / [d6b2fe] 
+</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=allura%2Fcss%2Fforge%2Fhilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/p/whonix/code/feed.rss"/>
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="/p/whonix/code/feed.atom"/>
+
+      <style>.XcEIGHNrIIllyZOolZsmIpE { display:none }</style>
+
+    
+    
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'Git', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-code">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+			    
+          
+
+
+<div id="sidebar">
+  
+    <div>&nbsp;</div>
+  
+    
+    
+      
+        
+    
+      <ul class="sidebarmenu">
+      
+    
+    <li>
+      <a href="/p/whonix/code/commit_browser"><b data-icon="o" class="ico ico-folder"></b> <span>Browse Commits</span></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/fork"><b data-icon="R" class="ico ico-fork"></b> <span>Fork</span></a>
+    </li>
+  
+      
+        
+    
+      </ul>
+      
+    
+    
+      <h3 class="">Branches</h3>
+    
+  
+      
+        
+    
+      <ul class="sidebarmenu">
+      
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2Fdevelopment"><span class="has_small">development</span><small>982</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2Fgpgconf"><span class="has_small">gpgconf</span><small>975</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2Fkdelowfat"><span class="has_small">kdelowfat</span><small>885</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2Fmaster"><span class="has_small">master</span><small>509</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2Fstable"><span class="has_small">stable</span><small>754</small></a>
+    </li>
+  
+      
+        
+    
+      </ul>
+      
+    
+    
+      <h3 class="">Tags</h3>
+    
+  
+      
+        
+    
+      <ul class="sidebarmenu">
+      
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.1.3"><span class="has_small">0.1.3</span><small>5</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.2.1"><span class="has_small">0.2.1</span><small>5</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.3.0"><span class="has_small">0.3.0</span><small>144</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.3.1"><span class="has_small">0.3.1</span><small>153</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.4.0"><span class="has_small">0.4.0</span><small>223</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.4.1"><span class="has_small">0.4.1</span><small>224</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.4.2"><span class="has_small">0.4.2</span><small>227</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.4.3"><span class="has_small">0.4.3</span><small>228</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.4.4"><span class="has_small">0.4.4</span><small>229</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/?branch=ref%2F0.4.5"><span class="has_small">0.4.5</span><small>287</small></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/code/ref/master%7E/tags/"><span>More Tags</span></a>
+    </li>
+  
+      
+    
+    
+      </ul>
+      
+    
+    
+</div>
+          
+          
+			  
+			  
+          
+        
+        <div class="grid-20 pad">
+          <h2 class="dark title">
+Tree <a href="/p/whonix/code/ci/d6b2fe36c78f7a4702dec45e94a0e1ba8b683d15/">[d6b2fe]</a> 
+  
+  
+    <span class="scm-branch-label">master</span>
+  
+  
+ /
+
+  
+  
+
+
+            <!-- actions -->
+            <small>
+            
+
+
+<a href="/p/whonix/code/ci/d6b2fe36c78f7a4702dec45e94a0e1ba8b683d15/log/?path=">
+  <b data-icon="N" class="ico ico-history" title="History"> </b> History
+</a>
+
+<a href="/p/whonix/code/feed/">
+  <b data-icon="f" class="ico ico-feed" title="Feed"> </b>
+</a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+          <div>
+            
+  
+
+            
+  
+  
+    <div id="access_urls" class="btn-bar grid-19">
+      <div class="btn-set duo">
+        
+        <a href="#" class="btn" data-url="git clone git://git.code.sf.net/p/whonix/code whonix-code" title="Read Only">
+          RO
+        </a>
+        <a href="#" class="btn" data-url="git clone http://git.code.sf.net/p/whonix/code whonix-code" title="HTTP">
+          HTTP
+        </a>
+        
+      </div>
+      <span></span>
+      <input id="access_url" readonly type="text"
+             class="selectText"
+             value=""/>
+    </div>
+    <hr>
+  
+
+  <br style="clear:both"/>
+
+<table>
+
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Date</th>
+      <th>Author</th>
+      <th>Commit</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+    
+    <tr>
+      <td class="nowrap">
+        <a href="LICENSE">
+          <b data-icon="n" class="ico table"></b>
+          <span>LICENSE</span>
+        </a>
+      </td>
+      <td class="nowrap">
+    <span title="Sun Dec 02, 2012 12:31 AM UTC">
+      2012-12-02
+    </span>
+</td>
+      <td class="nowrap">
+        
+          
+  
+    <img src="https://secure.gravatar.com/avatar/57850b27642f1782f6193e9d830694a5?r=pg&amp;size=16"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss  x16">
+   adrelanos
+        
+      </td>
+      <td>
+        <a href="/p/whonix/code/ci/3f06a197baf8a9196735b44dd95f69a227d0595c/">
+          [3f06a1]
+          LICENSE: Moved picture licenses to Whonix-docum...
+        </a>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="nowrap">
+        <a href="README">
+          <b data-icon="n" class="ico table"></b>
+          <span>README</span>
+        </a>
+      </td>
+      <td class="nowrap">
+    <span title="Mon Mar 25, 2013 08:24 PM UTC">
+      3 days ago
+    </span>
+</td>
+      <td class="nowrap">
+        
+          
+  
+    <img src="https://secure.gravatar.com/avatar/a99fec86035fdb94d42f222e310b0957?r=pg&amp;size=16"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss  x16">
+   adrelanos
+        
+      </td>
+      <td>
+        <a href="/p/whonix/code/ci/d6b2fe36c78f7a4702dec45e94a0e1ba8b683d15/">
+          [d6b2fe]
+          updated information about git branches, fixed typo
+        </a>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="nowrap">
+        <a href="README.g">
+          <b data-icon="n" class="ico table"></b>
+          <span>README.g</span>
+        </a>
+      </td>
+      <td class="nowrap">
+    <span title="Sat Mar 02, 2013 02:56 AM UTC">
+      2013-03-02
+    </span>
+</td>
+      <td class="nowrap">
+        
+          
+  
+    <img src="https://secure.gravatar.com/avatar/a99fec86035fdb94d42f222e310b0957?r=pg&amp;size=16"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss  x16">
+   adrelanos
+        
+      </td>
+      <td>
+        <a href="/p/whonix/code/ci/72553c87931baf03bda08fe0f27d8f9bfb7f8bd8/">
+          [72553c]
+          updated
+        </a>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="nowrap">
+        <a href="adrelanos.asc">
+          <b data-icon="n" class="ico table"></b>
+          <span>adrelanos.asc</span>
+        </a>
+      </td>
+      <td class="nowrap">
+    <span title="Mon Jan 21, 2013 01:46 PM UTC">
+      2013-01-21
+    </span>
+</td>
+      <td class="nowrap">
+        
+          
+  
+    <img src="https://secure.gravatar.com/avatar/57850b27642f1782f6193e9d830694a5?r=pg&amp;size=16"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss  x16">
+   adrelanos
+        
+      </td>
+      <td>
+        <a href="/p/whonix/code/ci/56df3186125a8f7efefe30186731582bb7bc2556/">
+          [56df31]
+          adrelanos.asc: changed e-mail address from prop...
+        </a>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <h1 id="readme">Read Me</h1>
+  <pre>################
+# About Whonix #
+################
+
+Whonix (called TorBOX or aos in past) is an anonymous general purpose
+operating system based on Virtual Box, Debian GNU/Linux and Tor.
+By Whonix design, IP and DNS leaks are impossible. Not even malware
+with root rights can find out the user's real IP/location.
+
+This is because Whonix consists of two (virtual) machines. One machine
+solely runs Tor and acts as a gateway, which we call Whonix-Gateway.
+The other machine, which we call Whonix-Workstation, is on a completely
+isolated network. Only connections through Tor are possible.
+
+Due to trademark issues the project was renamed to Whonix.
+
+The project homepage with a full project description, threat model and
+documentation, build instructions can be found here:
+http://whonix.sf.net
+
+################
+# git branches #
+################
+
+In the master branch is almost nothing beside some general information
+about Whonix, adrelanos and adrelanos's gpg public key.
+
+Most new changes currently go into the development branch.
+
+Detailed information about the Whonix git branches can be found here:
+https://sourceforge.net/p/whonix/wiki/Dev_git/
+
+################
+# Legal        #
+################
+
+Whonix is produced independently from the Tor (r) anonymity software and
+carries no guarantee from The Tor Project about quality, suitability
+or anything else.
+
+####################
+# License          #
+####################
+
+See LICENSE in root of Whonix source for copyright, license and authors.
+
+#####################
+# How to contact me #
+#####################
+
+This is my personal user site. It acts as a brief introduction into Whonix
+and explains, how to contact me and what the caveats are.
+
+########################
+# Mirrors of this site #
+########################
+
+Sourceforge:
+* http://whonix.sf.net/adrelanos
+* Not even SSL.
+
+Github:
+* https://github.com/adrelanos/whonix
+* Github.com is accessible over SSL, see SSL security below.
+
+Torproject.org Wiki:
+* https://trac.torproject.org/projects/tor/wiki/doc/proper
+* Anyone can edit the torproject.org wiki and exchange content with malicious
+  one. Therefore check the history feature. Obviously I do trust Tor and
+  torproject.org. My wiki account "proper" should be genuine.
+
+Free Onion Hosting Service
+* http://su6ephfi7dtxnbtb.onion/
+* Anonymous admin.
+
+torhost.onion Free Onion Hosting Service
+* http://p4vm6o4n4hbfqxhy.onion/
+* Anonymous admin.
+
+################################
+# Mirrors of adrelanos GPG key #
+################################
+
+savannah.gnu.org profile page
+* https://savannah.gnu.org/people/viewgpg.php?user_id=89289
+* The following command is recommend to enforce downloading the key over SSL.
+* ## Not forced through Tor, unless you are using Whonix, torsocks or similar.
+* curl --tlsv1 --proto =https --output adrelanos.asc.4 https://savannah.gnu.org/people/viewgpg.php?user_id=89289
+
+gpg keyserver
+* No SSL.
+* Should really be only used as a mirror.
+* ## Not forced through Tor, unless you are using Whonix, torsocks or similar.
+* gpg --keyserver x-hkp://pool.sks-keyservers.net --recv-keys 9B157153925C303A42253AFB9C131AD3713AAEEF
+
+################
+# SSL security #
+################
+
+Note, that the SSL public certificate authority system is not to be trusted,
+since the recent major security breaks. (Comodo, DigiNotar)
+
+########################
+# Contact me by e-mail #
+########################
+
+I do not trust any e-mail providers. They can shut down or impersonate my
+account at any time. If that concerns you, read GPG security below.
+
+adrelanos at riseup period net
+
+################
+# GPG security #
+################
+
+GPG is, as it is, secure. The tricky thing is the web of trust model and
+being sure, you got the right GPG key.
+
+My GPG public key is not stored on any keyservers, because as an anonymous
+developer, I can't get my key signed. The key can be found here and within
+the file adrelanos.asc on github. Check the fingerprint of the key.
+
+All mirrors of my personal site, do also have the power to exchange my GPG
+key with a malicious one. It's unlikely, that all mirrors will cooperate
+and tamper with my GPG key.
+
+As soon as our new website is ready, my GPG key and
+GPG fingerprint will be mirrored on at least on three different sites
+(torproject wiki, github).
+
+After all, the GPG key also only proves, that a message was singed with a
+specific key id. It doesn't prove, if I am a genuine or evil developer or
+even a whole entity.
+
+See also:
+https://sourceforge.net/p/whonix/wiki/TrustingWhonixSigningKey/
+
+###################
+# GPG fingerprint #
+###################
+
+gpg --fingerprint 9B157153925C303A42253AFB9C131AD3713AAEEF
+
+pub   4096R/713AAEEF 2012-03-02
+      Key fingerprint = 9B15 7153 925C 303A 4225  3AFB 9C13 1AD3 713A AEEF
+uid                  proper (e-mail removed)
+sub   4096R/794279C4 2012-03-02
+
+##################
+# GPG public key #
+##################
+
+Due to signing this message "-----" got converted to "- -----". If you
+want to copy the public key below, please remove the "- " beforehand.
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=l8ma
+-----END PGP PUBLIC KEY BLOCK-----
+
+#######
+# End #
+#######</pre>
+
+
+          </div>
+			
+          
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+<script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_static_/js/spin.min.js"></script>
+<script type="text/javascript">(function() {
+  $('#access_urls .btn').click(function(evt){
+    evt.preventDefault();
+    var parent = $(this).parents('.btn-bar');
+    $(parent).find('input').val($(this).attr('data-url'));
+    $(parent).find('span').text($(this).attr('title')+' access');
+    $(this).parent().children('.btn').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('#access_urls .btn').first().click();
+
+  
+  var repo_status = document.getElementById('repo_status');
+  // The repo_status div will only be present if repo.status != 'ready'
+  if (repo_status) {
+    var opts = {
+        lines: 9, // The number of lines to draw
+        length: 4, // The length of each line
+        width: 2, // The line thickness
+        radius: 3, // The radius of the inner circle
+        rotate: 0, // The rotation offset
+        color: '#555', // #rgb or #rrggbb
+        speed: 1, // Rounds per second
+        trail: 60, // Afterglow percentage
+        shadow: false, // Whether to render a shadow
+        hwaccel: false, // Whether to use hardware acceleration
+        className: 'spinner', // The CSS class to assign to the spinner
+        zIndex: 2e9, // The z-index (defaults to 2000000000)
+        top: 10, // Top position relative to parent in px
+        left: 10 // Left position relative to parent in px
+    };
+    var spinner = new Spinner(opts).spin(repo_status);
+    function check_status() {
+        $.get('/p/whonix/code/status', function(data) {
+            if (data.status === 'ready') {
+                window.clearInterval(status_checker);
+                spinner.opts.speed = 0;
+                spinner.opts.opacity = 1;
+                spinner.spin(repo_status)
+                $('#repo_status h2').html('Repo status: ready. <a href=".">Click here to refresh this page.</a>');
+            }
+            else {
+                $('#repo_status h2 span').html(data.status);
+            }
+        });
+    }
+    // Check repo status every 15 seconds
+    var status_checker = window.setInterval(check_status, 15000);
+    
+  }
+}());
+</script>
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

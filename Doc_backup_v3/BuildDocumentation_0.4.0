@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-14 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / BuildDocumentation_0.4.0</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XItOefQxmBZzRkWQFWu { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-BuildDocumentation_0.4.0" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">BuildDocumentation_0.4.0
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#build-anonymity">Build Anonymity</a></li>
+<li><a href="#build-security">Build Security</a></li>
+<li><a href="#host-preparation">Host preparation</a><ul>
+<li><a href="#building-on-linux">Building on Linux</a></li>
+<li><a href="#building-on-windows">Building on Windows</a></li>
+<li><a href="#using-an-apt-cache-to-speed-up-downloading">Using an apt cache to speed up downloading</a></li>
+</ul>
+</li>
+<li><a href="#source-code-intro">Source Code Intro</a></li>
+<li><a href="#build-as-user-user">Build as user "user"</a></li>
+<li><a href="#get-the-whonix-source-code">Get the Whonix source code</a></li>
+<li><a href="#verify-the-whonix-source-code-with-gpg">Verify the Whonix source code with gpg</a></li>
+<li><a href="#create-the-images">Create the Images</a><ul>
+<li><a href="#preparations">Preparations</a></li>
+<li><a href="#vm-creation">VM Creation</a></li>
+</ul>
+</li>
+<li><a href="#debugging">Debugging</a></li>
+<li><a href="#how-to-use-the-ova-images">How to use the ova images</a></li>
+<li><a href="#final-steps-only-required-for-redistribution">Final Steps (Only Required For Redistribution)</a></li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<div class="codehilite"><pre><span class="c"># Copyright:</span>
+<span class="c"># adrelanos (aka proper)</span>
+<span class="c"># adrelanos (at) riseup (dot) net</span>
+<span class="c">#</span>
+<span class="c"># License:</span>
+<span class="c"># GPL v3 or any later</span>
+<span class="c">#</span>
+<span class="c"># Any changes you pull into this source will be also licensed</span>
+<span class="c"># under GPL v3 or any later. Additionally you grant adrelanos the right to</span>
+<span class="c"># re-license your work under a different license. If that is not acceptable,</span>
+<span class="c"># you can either fork this source under GPL v3 or any later or contact</span>
+<span class="c"># adrelanos. Contact adrelanos, if you require this source code under</span>
+<span class="c"># different license.</span>
+<span class="c">#</span>
+<span class="c"># Authors:</span>
+<span class="c"># adrelanos (aka proper)</span>
+<span class="c"># Big contributions from anonymous.</span>
+<span class="c"># Leaktest and other stuff contributed by smarm.</span>
+</pre></div>
+<p>This page documents how the binary distribution images are built. If you have any questions or need help let us know on <a class="alink" href="/p/whonix/wiki/Dev/">[Dev]</a>.</p>
+<p>Following these instructions will build version Whonix 0.4.5.1 based on Tor 0.2.3 and Debian Wheezy.</p>
+<p>Knowledge assumed: Virtualization and networking basic principles; operation of your platform; Linux knowledge: how to install Debian and basic command line knowledge.</p>
+<p>Only one prerequisites: you need a working internet connection.</p>
+<p>For discussion related to the development and build process of Whonix images go <a class="alink" href="/p/whonix/wiki/Dev/">[Dev]</a>.</p>
+<h1 id="build-anonymity">Build Anonymity</h1>
+<p>While downloading the required tools for building Whonix your internet service provider could if he want notice that you want to build Whonix. This is especially interesting, if you want to redistribute Whonix, but still want to stay anonymous. The full story can be read in the chapter <a class="" href="https://sourceforge.net/p/whonix/wiki/Security/#build-anonymity">Build Anonymity</a>.</p>
+<h1 id="build-security">Build Security</h1>
+<ul>
+<li>Build on a dedicated build system, install security updates...</li>
+<li>All install media and all downloaded/used code must be verified (including all software on the host).</li>
+<li>Hashes, fingerprints  in the scripts and the wiki is not to be trusted. Verify everything.</li>
+<li>Read <a class="alink" href="/p/whonix/wiki/Trust/">[Trust]</a></li>
+</ul>
+<h1 id="host-preparation">Host preparation</h1>
+<h2 id="building-on-linux">Building on Linux</h2>
+<p>We recommend you use a dedicated OS installation just for hosting the Whonix VMs. (See <a class="alink" href="/p/whonix/wiki/Security/">[Security]</a>)</p>
+<p>You need to use Debian. The build scripts could be adapted to run on other *NIX systems as well but currently they assume apt-get to be available. You need about 15 GB of free space.</p>
+<p>Install the latest security updates, install Virtual Box (and qemu-kvm which is required to mount the Virtual Box .vdi images). Reboot to apply kernel updates.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">virtualbox</span> <span class="n">qemu</span> <span class="n">genisoimage</span> <span class="n">apt</span><span class="o">-</span><span class="n">cacher</span><span class="o">-</span><span class="n">ng</span> <span class="n">grml</span><span class="o">-</span><span class="n">debootstrap</span> <span class="n">parted</span> <span class="n">kpartx</span> <span class="n">debootstrap</span> <span class="n">mksh</span> <span class="n">dialog</span> <span class="n">git</span>
+<span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+<h2 id="building-on-windows">Building on Windows</h2>
+<p>Building on Windows is no longer supported. Redistributed Whonix builds should be build on Linux. If you want to port the Whonix build scripts to Windows, please contact us. Running Whonix on a Windows host with Virtual Box installed should is still possible.</p>
+<h2 id="using-an-apt-cache-to-speed-up-downloading">Using an apt cache to speed up downloading</h2>
+<p>If you want to build multiple times (for debugging etc.), it makes sense to install a local apt proxy on your build machine.^1^ That safes download time and traffic.^2^ If you build Whonix on Whonix, apt-cacher-ng will go through Tor's TransPort.</p>
+<p><font size="-3"><br />
+,,<br />
+^1^ Thanks to <a class="" href="https://linuxexpresso.wordpress.com/2011/02/13/howto-apt-cacher-ng-on-ubuntu/" rel="nofollow">source</a>.<br />
+^2^ It would be possible to download without an apt-cacher. But why? If you want so ignore this chapter and change the mirror settings in grml configuration file.<br />
+</font></p>
+<p>Open /etc/apt/apt.conf.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">apt</span><span class="p">.</span><span class="n">conf</span>
+</pre></div>
+<p>Add the following.</p>
+<div class="codehilite"><pre><span class="c"># /etc/apt/apt.conf</span>
+<span class="n">Acquire</span><span class="p">::</span><span class="n">http</span> <span class="p">{</span> <span class="n">Proxy</span> <span class="s">&quot;http://127.0.0.1:3142&quot;</span><span class="p">;</span> <span class="p">};</span>
+</pre></div>
+<p>Restart apt-cacher-ng. Should not be required, but it was for me.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">service</span> <span class="n">apt</span><span class="o">-</span><span class="n">cacher</span><span class="o">-</span><span class="n">ng</span> <span class="n">restart</span>
+</pre></div>
+<p>Safe and test if it's working.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+</pre></div>
+<h1 id="source-code-intro">Source Code Intro</h1>
+<p>This chapter is dedicated to give an introduction into the Whonix source code. <strong>If you prefer to read and understand the source code just by reading scripts you may skip this optional chapter.</strong></p>
+<p>Moved to <a class="alink" href="/p/whonix/wiki/Dev_SourceCodeIntro/">[Dev_SourceCodeIntro]</a>.</p>
+<h1 id="build-as-user-user">Build as user "user"</h1>
+<p>You need a user account named "<em>user</em>". If you don't already have it, create it.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">adduser</span> <span class="n">user</span>
+</pre></div>
+<p>During the build process "<em>user</em>" also needs root.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">addgroup</span> <span class="n">user</span> <span class="n">sudo</span>
+</pre></div>
+<p>Log in as "<em>user</em>".</p>
+<p><font size="-3"><br />
+This is because the source code is far from perfect. The username "user" and /home/user/Whonix is hardcoded and expected as source folder. Bug: <a class="alink notfound" href="../https%3A//trac.torproject.org/projects/tor/wiki/doc/TorBOX/Dev%23SOURCECODEnolongerhardcodeuserfolder%20no%20longer%20hardcode%20user%20folder">[https://trac.torproject.org/projects/tor/wiki/doc/TorBOX/Dev#SOURCECODEnolongerhardcodeuserfolder no longer hardcode user folder]</a><br />
+</font></p>
+<h1 id="get-the-whonix-source-code">Get the Whonix source code</h1>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">adrelanos</span><span class="o">/</span><span class="n">Whonix</span>
+</pre></div>
+<h1 id="verify-the-whonix-source-code-with-gpg">Verify the Whonix source code with gpg</h1>
+<p>This is recommend but not required. See <a class="alink" href="/p/whonix/wiki/Trust/">[Trust]</a>.</p>
+<p>(1) <a class="" href="https://sourceforge.net/p/whonix/wiki/TrustingWhonixSigningKey/">Learn about Whonix signing key.</a>.</p>
+<p>(1.1) Get into the correct <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_git/">git branch</a>.</p>
+<div class="codehilite"><pre><span class="c">##Not required. Still using the master branch.</span>
+<span class="c">##Next Whonix version will reflect the new branching model.</span>
+<span class="c">#git checkout stable</span>
+</pre></div>
+<p>(2) Get a list of available git tags.</p>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">tag</span>
+</pre></div>
+<p>(3) Verify the tag you want to build.</p>
+<div class="codehilite"><pre><span class="c"># Replace with tag you want to build.</span>
+<span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">v</span> 0<span class="p">.</span>4<span class="p">.</span>5<span class="p">.</span>1
+</pre></div>
+<p>(4) Output should look like the following.</p>
+<div class="codehilite"><pre><span class="n">object</span> 13870<span class="n">efc29018065267788f9f23026e6ff489684</span>
+<span class="n">type</span> <span class="n">commit</span>
+<span class="n">tag</span> 0<span class="p">.</span>4<span class="p">.</span>5<span class="p">.</span>1
+<span class="n">tagger</span> <span class="n">adrelanos</span> <span class="o">&lt;</span><span class="n">invalid</span><span class="p">@</span><span class="n">invalid</span><span class="o">&gt;</span> 1348681401 <span class="o">-</span>0400
+
+0<span class="p">.</span>4<span class="p">.</span>5<span class="p">.</span>1
+<span class="n">gpg</span><span class="p">:</span> <span class="n">Signature</span> <span class="n">made</span> <span class="n">Wed</span> <span class="n">Sep</span> 26 17<span class="p">:</span>43<span class="p">:</span>26 2012 <span class="n">UTC</span> <span class="n">using</span> <span class="n">RSA</span> <span class="n">key</span> <span class="n">ID</span> 713<span class="n">AAEEF</span>
+<span class="n">gpg</span><span class="p">:</span> <span class="n">Good</span> <span class="n">signature</span> <span class="n">from</span> &quot;<span class="n">adrelanos</span> <span class="o">&lt;</span><span class="n">email</span> <span class="p">@</span> <span class="n">removed</span><span class="o">&gt;</span>&quot;
+</pre></div>
+<p>The warning.</p>
+<div class="codehilite"><pre><span class="n">gpg</span><span class="o">:</span> <span class="n">WARNING</span><span class="o">:</span> <span class="n">This</span> <span class="n">key</span> <span class="k">is</span> <span class="n">not</span> <span class="n">certified</span> <span class="k">with</span> <span class="n">a</span> <span class="n">trusted</span> <span class="n">signature</span><span class="o">!</span>
+<span class="n">gpg</span><span class="o">:</span>          <span class="n">There</span> <span class="k">is</span> <span class="n">no</span> <span class="n">indication</span> <span class="n">that</span> <span class="n">the</span> <span class="n">signature</span> <span class="n">belongs</span> <span class="n">to</span> <span class="n">the</span> <span class="n">owner</span><span class="o">.</span>
+</pre></div>
+<p>Is explained on the <a class="" href="https://sourceforge.net/p/whonix/wiki/TrustingWhonixSigningKey/">Whonix signing key</a> page and can be ignored.</p>
+<h1 id="create-the-images">Create the Images</h1>
+<h2 id="preparations">Preparations</h2>
+<p>(1) Git checkout, which version you want to build.</p>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">checkout</span> 0<span class="p">.</span>4<span class="p">.</span>5<span class="p">.</span>1
+</pre></div>
+<p>(2) Make the build script executable: </p>
+<div class="codehilite"><pre><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">~/</span><span class="n">Whonix</span><span class="o">/</span><span class="n">whonix_</span><span class="o">*</span>
+</pre></div>
+<p>(3) Make sure there aren't any VMs in Virtual Box already called "Whonix-Gateway" or "Whonix-Workstation" (TODO: automate that)</p>
+<p>(4) Check if /home/user/Whonix/usr/share/version for version number.</p>
+<h2 id="vm-creation">VM Creation</h2>
+<p>(1) Open a shell and type:</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">~/</span><span class="n">Whonix</span><span class="o">/</span><span class="n">whonix_build</span> <span class="o">-</span><span class="n">all</span>
+</pre></div>
+<p>(2) Check if all went ok.</p>
+<p>The scripts can fail for many reasons, please report back any issues!</p>
+<h1 id="debugging">Debugging</h1>
+<p><strong>OPTIONAL</strong> (Only in case something goes wrong or you want to audit or develop Whonix.)</p>
+<ul>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/OptionalConfigurations/#ssh-into-whonix-gateway">SSH into Whonix-Gateway</a></li>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/OptionalConfigurations/#mount-and-inspect-images">Mount and inspect images</a></li>
+</ul>
+<h1 id="how-to-use-the-ova-images">How to use the ova images</h1>
+<p>Reboot both VMs. Please read the <a class="alink" href="/p/whonix/wiki/Documentation/">[Documentation]</a>!</p>
+<h1 id="final-steps-only-required-for-redistribution">Final Steps (Only Required For Redistribution)</h1>
+<p>See <a class="" href="https://github.com/adrelanos/Whonix/tree/master/release" rel="nofollow">Release Folder</a> in Whonix source code.</p>
+<ul>
+<li><a class="alink" href="/p/whonix/wiki/LeakTests/">[LeakTests]</a>!</li>
+<li><a class="alink" href="/p/whonix/wiki/Test/">[Test]</a> the images before release! TODO: Needs big revision with all Whonix features.</li>
+<li>See if <a class="alink" href="/p/whonix/wiki/Documentation/">[Documentation]</a> still makes sense.</li>
+<li>Update the <a class="alink" href="/p/whonix/wiki/Changelog/">[Changelog]</a>.</li>
+<li>See <a href="https://github.com/adrelanos/Whonix/blob/master/release/whonix_release" rel="nofollow">https://github.com/adrelanos/Whonix/blob/master/release/whonix_release</a></li>
+<li>Upload the images.</li>
+<li>At least a few testers should test before posting a news. Testers may be found by posting a news.</li>
+<li>Check, if <a class="alink" href="/p/whonix/wiki/ManualTBupdate/">[ManualTBupdate]</a> is still up to date.</li>
+<li>Update <a class="alink" href="/p/whonix/wiki/Download/">[Download]</a>.</li>
+<li>Update <a class="alink" href="/p/whonix/wiki/Home/">[Home]</a>.</li>
+<li>
+<p>Finally announce: Post a news.</p>
+<ul>
+<li>
+<p>In Whonix Important and Feature Blog.</p>
+</li>
+<li>
+<p><a href="http://lists.debian.org/debian-derivatives/" rel="nofollow">http://lists.debian.org/debian-derivatives/</a></p>
+<ul>
+<li>debian-derivatives@lists.debian.org</li>
+</ul>
+</li>
+<li>
+<p><a href="https://lists.torproject.org/pipermail/tor-talk/" rel="nofollow">https://lists.torproject.org/pipermail/tor-talk/</a></p>
+<ul>
+<li>tor-talk@lists.torproject.org</li>
+</ul>
+</li>
+<li>
+<p><a href="https://lists.sourceforge.net/lists/listinfo/whonix-devel">https://lists.sourceforge.net/lists/listinfo/whonix-devel</a></p>
+<ul>
+<li>whonix-devel@lists.sourceforge.net</li>
+</ul>
+</li>
+<li>
+<p>full-disclosure@lists.grok.org.uk</p>
+</li>
+<li>
+<p><a href="https://mailman.stanford.edu/mailman/listinfo/liberationtech" rel="nofollow">https://mailman.stanford.edu/mailman/listinfo/liberationtech</a></p>
+<ul>
+<li>liberationtech@lists.stanford.edu</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/Dev/">Wiki: Dev</a><br>
+    
+      <a href="/p/whonix/wiki/Security/">Wiki: Security</a><br>
+    
+      <a href="/p/whonix/wiki/Dev_SourceCodeIntro_0.5.0/">Wiki: Dev_SourceCodeIntro_0.5.0</a><br>
+    
+      <a href="/p/whonix/wiki/Trust/">Wiki: Trust</a><br>
+    
+      <a href="/p/whonix/wiki/Documentation/">Wiki: Documentation</a><br>
+    
+      <a href="/p/whonix/wiki/LeakTests/">Wiki: LeakTests</a><br>
+    
+      <a href="/p/whonix/wiki/Test/">Wiki: Test</a><br>
+    
+      <a href="/p/whonix/wiki/Changelog/">Wiki: Changelog</a><br>
+    
+      <a href="/p/whonix/wiki/ManualTBupdate/">Wiki: ManualTBupdate</a><br>
+    
+      <a href="/p/whonix/wiki/Download/">Wiki: Download</a><br>
+    
+      <a href="/p/whonix/wiki/Home/">Wiki: Home</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

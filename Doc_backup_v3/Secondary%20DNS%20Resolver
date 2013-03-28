@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-3 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / Secondary DNS Resolver</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XMBIGosEHMIFOEIJMMAhQcAZFT { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-Secondary_DNS_Resolver" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">Secondary DNS Resolver
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#secondary-dns-resolver">Secondary DNS Resolver</a><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#authenticated-dns-over-tor">Authenticated DNS over Tor</a><ul>
+<li><a href="#dnssec-over-tor">DNSSEC over Tor</a><ul>
+<li><a href="#example-with-cznic-labs-dns-resolver">Example with CZ.NIC Labs DNS resolver</a><ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#starting">Starting</a></li>
+<li><a href="#using">Using</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#encrypted-dns-over-tor">Encrypted DNS over Tor</a><ul>
+<li><a href="#introduction_1">Introduction</a></li>
+<li><a href="#dnscrypt-by-opendns">DNSCrypt by OpenDNS</a></li>
+<li><a href="#httpsdnsd-by-jondos">httpsdnsd by JonDos</a><ul>
+<li><a href="#introduction_2">Introduction</a></li>
+<li><a href="#installation_1">Installation</a></li>
+<li><a href="#starting_1">Starting</a></li>
+<li><a href="#using_1">Using</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<h1 id="secondary-dns-resolver">Secondary DNS Resolver</h1>
+<h2 id="introduction">Introduction</h2>
+<p>By Whonix default, Tor is used for DNS resolution. If you suspect a Tor exit node to tamper with DNS, you can get a second opinion from another non-Tor DNS server. This may also be useful, in special cases  if you want to resolve types of DNS over Tor, which are unsupported by Tor itself, such as MX <font size="-3">(required for some <a class="alink" href="/p/whonix/wiki/Mixmaster/">[Mixmaster]</a> servers over Tor)</font> or DNSSEC.</p>
+<p>It's recommend against to use non-Tor DNS resolvers for an extended amount of time. Although it's technically possible to completely replace DNS resolution (not using Tor for DNS resolution anymore), it's recommend against. That would add too much power to a single DNS server. Using a permanent DNS server is recommend against just as using a permanent Tor exit node is recommend against.</p>
+<p>Note, that even if you correctly set up all settings, it might happen that this won't work. Sometimes Tor or the DNS server causes a timeout. This gets even worse, when you additionally tunnel the DNS request through an additional proxy (for example: Tor -&gt; JonDonym -&gt; DNS server).</p>
+<p>Read first: <a class="" href="https://sourceforge.net/p/whonix/wiki/Stream%20Isolation/">Stream Isolation</a>.</p>
+<p>Required knowledge: Difference between encryption and authentication.</p>
+<p>In the chapters below are examples how to use authenticated DNS (<a class="" href="https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions" rel="nofollow">DNSSEC</a>) or encrypted DNS (DNSCrypt or httpsdnsd). I haven't found any public DNS resolvers supporting both, encryption and authentication.</p>
+<p>Note that most applications, such as <a class="" href="https://sourceforge.net/p/whonix/wiki/TorBrowser/">Tor Browser</a>, will <strong>not</strong> <em>automatically</em> profit from setting up an alternative DNS resolver. This is because applications in Whonix are configured to use SocksPort instead of Trans- or DnsPort, see <a class="" href="https://sourceforge.net/p/whonix/wiki/Stream%20Isolation/">Stream Isolation</a> for details. Another reason is, that most applications do not yet make use of authenticated DNS (DNSSEC). However, you could use encrypted DNS when deconfiguring SocksPort and when using system resolver (TransPort).</p>
+<h2 id="authenticated-dns-over-tor">Authenticated DNS over Tor</h2>
+<h3 id="dnssec-over-tor">DNSSEC over Tor</h3>
+<h4 id="example-with-cznic-labs-dns-resolver">Example with CZ.NIC Labs DNS resolver</h4>
+<p><font size="-3"><br />
+<a class="" href="https://labs.nic.cz/page/993/dnssec-validation-over-tor--linux-/" rel="nofollow">source for this chapter: CZ NIC LABS</a><br />
+</font></p>
+<p>The <em>CZ.NIC Labs DNS resolver</em> has been chosen as an example. Feel free to use and other DNS resolver at your own choice.</p>
+<h5 id="installation">Installation</h5>
+<p>Install <a class="" href="https://unbound.net/" rel="nofollow">unbound</a> and <a class="" href="http://www.dest-unreach.org/socat/" rel="nofollow">socat</a>.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">unbound</span> <span class="n">socat</span>
+</pre></div>
+<p>Open <em>/etc/unbound/unbound.conf</em>.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">unbound</span><span class="o">/</span><span class="n">unbound</span><span class="p">.</span><span class="n">conf</span>
+</pre></div>
+<p><em>Add</em> the following lines.</p>
+<div class="codehilite"><pre><span class="c">#tcp-upstream goes under &quot;server:&quot; section</span>
+    <span class="n">tcp</span><span class="o">-</span><span class="n">upstream</span><span class="p">:</span> <span class="n">yes</span>
+
+<span class="c">#put forward-zone somewhere at the end of file</span>
+<span class="n">forward</span><span class="o">-</span><span class="n">zone</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">&quot;.&quot;</span>
+    <span class="n">forward</span><span class="o">-</span><span class="n">addr</span><span class="p">:</span> 0<span class="p">.</span>0<span class="p">.</span>0<span class="p">.</span>0<span class="p">@</span>5353
+</pre></div>
+<h5 id="starting">Starting</h5>
+<p>Open a terminal and start socat.</p>
+<div class="codehilite"><pre><span class="n">socat</span> <span class="n">TCP4</span><span class="o">-</span><span class="n">LISTEN</span><span class="p">:</span>5353<span class="p">,</span><span class="n">bind</span><span class="p">=</span><span class="n">localhost</span><span class="p">,</span><span class="n">reuseaddr</span><span class="p">,</span><span class="n">fork</span> <span class="n">SOCKS4A</span><span class="p">:</span>192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>10<span class="p">:</span>217<span class="p">.</span>31<span class="p">.</span>204<span class="p">.</span>130<span class="p">:</span>53<span class="p">,</span><span class="n">socksport</span><span class="p">=</span>9150
+</pre></div>
+<p>Open another terminal tab and restart unbound.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">service</span> <span class="n">unbound</span> <span class="n">restart</span>
+</pre></div>
+<h5 id="using">Using</h5>
+<p>Test with dig.</p>
+<div class="codehilite"><pre><span class="n">dig</span> <span class="o">+</span><span class="n">dnssec</span> <span class="n">nic</span><span class="p">.</span><span class="n">cz</span> <span class="p">@</span><span class="n">localhost</span>
+</pre></div>
+<p>Please refer to upstream documentation on how to interpret the DNSSEC test results.</p>
+<h2 id="encrypted-dns-over-tor">Encrypted DNS over Tor</h2>
+<h3 id="introduction_1">Introduction</h3>
+<p>This is different from DNSSEC.</p>
+<h3 id="dnscrypt-by-opendns">DNSCrypt by OpenDNS</h3>
+<p>Although the official <a class="" href="https://www.opendns.com/technology/dnscrypt/" rel="nofollow">DNSCrypt website</a> states, that a Linux version does not exit, this <a class="" href="http://www.webupd8.org/2012/02/encrypt-dns-traffic-in-linux-with.html" rel="nofollow">blog post</a> suggests there is one.</p>
+<p>This has nothing to do with <a class="" href="https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions" rel="nofollow">DNSSEC</a>, the differences of DNSSEC and DNSCrypt are well explained on the <a class="" href="https://www.opendns.com/technology/dnscrypt/" rel="nofollow">DNSCrypt website</a>.</p>
+<p>These instructions completely replace Tor's DNS resolver with opendns's dnscrypt for all users and the whole system. Not recommend for a longer amount of time, see warning above. Some hints are included how to do it only for a specific user account.</p>
+<p>(1). Download the <a class="" href="https://github.com/opendns/dnscrypt-proxy/downloads" rel="nofollow">dnscrypt source code</a> and unpack. You have to compile it. Get into the dnscrypt directory <em>cd dnscrypt-proxy-...</em>. Configure <em>./configure</em>, make <em>make</em>.</p>
+<p>(2). Start dnscrypt-proxy. ^1^ ^2^ ^3^ ^4^ ^5^ ^6^</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">dnscrypt</span><span class="o">-</span><span class="n">proxy</span> <span class="o">--</span><span class="n">tcp</span><span class="o">-</span><span class="n">only</span>
+</pre></div>
+<p><font size="-3"><br />
+,,<br />
+^1^ <em>--tcp-only</em> is required since Tor does not support UDP. The UDP DNS request will immediately get truncated reply and a RFC-compliant resolver should repeat same query via TCP in this case. This is the case for Ubuntu's default DNS resolver. You can get some more information on UDP/TCP/DNS on the unrelated <a class="" href="http://darkk.net.ru/redsocks/" rel="nofollow">redsocks</a> website.<br />
+^2^ To start it later in background (after debugging) add <em>--daemonize</em>.<br />
+^3^ <em>--help</em> to see all options.<br />
+^4^ Start up takes a few seconds "INFO Generating a new key pair", this is normal, wait. Until it's done, DNS will not work.<br />
+^5^ <em>--user=username</em> can and should be used to start the dnscrypt-proxy under a specific user account.<br />
+^6^ Since this instructions completely replace Tor's DNS resolver with opendns's dnscrypt for all users and the whole system, you could add <em>--local-port=5800</em> to let dnscrypt-proxy listen on port 5800. You would be able to add iptables rules to redirect only the DNS requests of a specific user account to opendns's dnscrypt, you can get some hints how to do that in the <em>httpsdnsd by JonDos</em> chapter below, which would be a very similar setup.<br />
+</font></p>
+<p>(3). Edit your resolv.conf <em>nano /etc/resolv.conf</em>, comment out everything and add <em>nameserver 127.0.0.1</em>.</p>
+<p>(4). Check if it's working, there are several <a class="" href="https://www.opendns.com/support/article/64" rel="nofollow">test pages</a> on opendns.com.</p>
+<p>(5). To shut it down you can use <em>sudo killall dnscrypt-proxy</em> and don't forget to revert the changes in /etc/resolv.conf.</p>
+<h3 id="httpsdnsd-by-jondos">httpsdnsd by JonDos</h3>
+<h4 id="introduction_2">Introduction</h4>
+<p>Source: <a class="" href="https://anonymous-proxy-servers.net/en/help/transocks.html" rel="nofollow">anonymous-proxy-servers.net</a> and also use it as a more verbose tutorial, but keep in mind that their tutorial is JonDonym specific, while this tutorial is Tor specific.</p>
+<p>Everything inside your Whonix-Workstation.</p>
+<h4 id="installation_1">Installation</h4>
+<p>Install dependencies.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libnet</span><span class="o">-</span><span class="n">ssleay</span><span class="o">-</span><span class="n">perl</span> <span class="n">libnet</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">perl</span> <span class="n">libnet</span><span class="o">-</span><span class="n">dns</span><span class="o">-</span><span class="n">perl</span> <span class="n">libxml</span><span class="o">-</span><span class="n">simple</span><span class="o">-</span><span class="n">perl</span> <span class="n">liblog</span><span class="o">-</span><span class="n">log4perl</span><span class="o">-</span><span class="n">perl</span>
+</pre></div>
+<p>Download httpsdnsd. (See source above in case download link changed.)</p>
+<div class="codehilite"><pre><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">anonymous</span><span class="o">-</span><span class="n">proxy</span><span class="o">-</span><span class="n">servers</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">httpsdnsd</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+</pre></div>
+<p>Unpack.</p>
+<div class="codehilite"><pre><span class="p">.</span>
+</pre></div>
+<p>Go into the httpsdnsd folder.</p>
+<div class="codehilite"><pre><span class="n">cd</span> <span class="n">httpsdnsd</span>
+</pre></div>
+<p>Install httpsdnsd. ^1^</p>
+<p><font size="-3"><br />
+,, ^1^ (It contains also a uninstall.sh, if you want to uninstall it later.)<br />
+</font></p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">install</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+<p>Add a new user for httpsdnsd.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">adduser</span> <span class="o">--</span><span class="n">system</span> <span class="o">--</span><span class="n">disabled</span><span class="o">-</span><span class="n">password</span> <span class="o">--</span><span class="n">group</span> <span class="n">httpsdns_daemon</span>
+</pre></div>
+<p>Editing /etc/resolv.conf is not required. (You still could out comment everything against DNS leaks.)</p>
+<p>Create a firewall script.</p>
+<div class="codehilite"><pre><span class="n">nano</span> <span class="n">dns</span><span class="o">-</span><span class="n">fw</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+<p>Insert these firewall rules.</p>
+<div class="codehilite"><pre><span class="c"># Flush old rules</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">F</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">F</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">X</span>
+
+<span class="c"># Redirect DNS traffic to httpdnsd.</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">-</span><span class="n">m</span> <span class="n">owner</span> <span class="o">--</span><span class="n">uid</span><span class="o">-</span><span class="n">owner</span> <span class="n">anonuser</span> <span class="o">--</span><span class="n">dport</span> 53 <span class="o">-</span><span class="n">j</span> <span class="n">REDIRECT</span> <span class="o">--</span><span class="n">to</span><span class="o">-</span><span class="n">ports</span> 4053
+
+<span class="c"># Accept connections to the httpdnsd.</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="nb">filter</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">-</span><span class="n">m</span> <span class="n">owner</span> <span class="o">--</span><span class="n">uid</span><span class="o">-</span><span class="n">owner</span> <span class="n">anonuser</span> <span class="o">--</span><span class="n">dport</span> 4053 <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+
+<span class="c"># Reject all other traffic for anonuser.</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="nb">filter</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">!</span> <span class="o">-</span><span class="n">o</span> <span class="n">lo</span> <span class="o">-</span><span class="n">m</span> <span class="n">owner</span> <span class="o">--</span><span class="n">uid</span><span class="o">-</span><span class="n">owner</span> <span class="n">anonuser</span> <span class="o">-</span><span class="n">j</span> <span class="n">REJECT</span>
+</pre></div>
+<p>Install Privoxy. ^1^ </p>
+<p><font size="-3"><br />
+,,<br />
+^1^ <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorBOX/OptionalConfigurations?version=95#httpsdnsdbyJonDos" rel="nofollow">torproject.org Wiki Version 95</a> of this site contains a working example using Polipo. Changed later to Privoxy, because Privoxy can be useful for other tasks as well. (Incoming: TransPort, http proxy; forwarding: http and socks.)<br />
+</font></p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">privoxy</span>
+</pre></div>
+<p>Open the privoxy configuration file.</p>
+<div class="codehilite"><pre><span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">config</span>
+</pre></div>
+<p>Add the following to your privoxy configuration file.</p>
+<div class="codehilite"><pre><span class="c"># Theoretically you can tunnel through any</span>
+<span class="c"># http or socks proxy. Local or remote proxy.</span>
+<span class="c"># Inside Whonix-Workstation, due to design,</span>
+<span class="c"># everything will be tunneled through Tor first.</span>
+
+<span class="c"># Using Tor's socks5 proxy, running on Whonix-Gateway. </span>
+<span class="c"># Change the port, see above...</span>
+<span class="n">forward</span><span class="o">-</span><span class="n">socks5</span> <span class="o">/</span> 192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>10<span class="p">:</span>9112 <span class="p">.</span>
+
+<span class="c"># Another example using a http proxy.</span>
+<span class="c"># (In this case, JonDo running on localhost.)</span>
+<span class="c"># forward / 127.0.0.1:4001</span>
+</pre></div>
+<p>Restart privoxy to enable the changes.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">privoxy</span> <span class="n">restart</span>
+</pre></div>
+<p>Privoxy is now listening on 127.0.0.1:8118. ^2^ </p>
+<p><font size="-3"><br />
+,,<br />
+^2^ For debugging you can enter this IP/port into Tor Browser as http proxy and try if you can still reach check.torproject.org. Deactivate after testing.<br />
+</font></p>
+<h4 id="starting_1">Starting</h4>
+<p>Run httpsdnsd. ^1^ ^2^ ^3^ ^4^</p>
+<p><font size="-3"><br />
+,,<br />
+^1^ For debugging, kill httpsdnsd and drop the <em>--runasdaemon</em>.<br />
+^2^ Run <em>httpsdnsd --help</em> or <em>man httpsdnsd</em> for help. <br />
+^3^ Httpsdnsd will by default listen on localhost port 4053 for DNS queries.<br />
+^4^ <em>--https_proxy_port=8118</em> will redirect traffic to port 8118, where Privoxy is listening. This is necessary because Tor offers a socks proxy and httpsdnsd requires a http proxy. Privoxy translates from http to socks. <br />
+</font></p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">httpsdnsd</span> <span class="o">--</span><span class="n">https_proxy_port</span><span class="p">=</span>8118 <span class="o">--</span><span class="n">runasdaemon</span>
+</pre></div>
+<p>Activate the firewall. Shouldn't show any errors.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">./</span><span class="n">dns</span><span class="o">-</span><span class="n">fw</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+<h4 id="using_1">Using</h4>
+<p>Open a console and switch to anonuser.</p>
+<div class="codehilite"><pre><span class="n">su</span> <span class="n">anonuser</span>
+</pre></div>
+<p>Resolve DNS.</p>
+<div class="codehilite"><pre><span class="n">nslookup</span> <span class="n">check</span><span class="p">.</span><span class="n">torproject</span><span class="p">.</span><span class="n">org</span>
+</pre></div>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/Dev_Mixmaster/">Wiki: Dev_Mixmaster</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

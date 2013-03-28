@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-6 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / DesignDocument</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XnOpTuhnjoFcngdIyJhGFec { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-DesignDocument" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">DesignDocument
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><h1 id="introduction">Introduction</h1>
+<p>The Whonix <a class="alink" href="/p/whonix/wiki/DesignDocument/">[DesignDocument]</a> Document is based on <a class="alink" href="/p/whonix/wiki/DesignDocumentBase/">[DesignDocumentBase]</a></p>
+<p><strong>Outdated: Superseded by <a class="alink" href="/p/whonix/wiki/Design/">[Design]</a> page.</strong></p>
+<div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#isolated-environment-which-will-only-communicate-with-the-external-network-via-tor-design-document">Isolated environment – which will only communicate with the external network via Tor - Design Document</a></li>
+<li><a href="#legal-notice">Legal Notice</a></li>
+<li><a href="#1-introduction">1. Introduction</a><ul>
+<li><a href="#11-privacy-and-anonymity">1.1. Privacy and Anonymity</a></li>
+<li><a href="#12-transparent-proxy-overview">1.2. Transparent Proxy Overview</a></li>
+<li><a href="#13-isolated-virtual-machine-advantages">1.3. Isolated (Virtual) Machine Advantages</a></li>
+<li><a href="#14-application-isolation-and-consistency">1.4. Application Isolation and Consistency</a></li>
+<li><a href="#2-tor-vm-design">2. Tor VM Design</a></li>
+<li><a href="#22-design-requirements">2.2. Design Requirements</a></li>
+</ul>
+</li>
+<li><a href="#3-tor-vm-implementation">3. Tor VM Implementation</a></li>
+<li><a href="#31-build-environment">3.1. Build Environment</a><ul>
+<li><a href="#32-virtual-machine-software">3.2. Virtual Machine Software</a></li>
+<li><a href="#33-tor-vm-build">3.3. Tor VM Build</a></li>
+<li><a href="#34-tor-configuration">3.4. Tor Configuration</a></li>
+<li><a href="#35-persistent-storage">3.5. Persistent Storage</a></li>
+<li><a href="#36-host-virtual-machine-integration">3.6. Host Virtual Machine Integration</a></li>
+<li><a href="#37-network-configuration">3.7. Network Configuration</a></li>
+<li><a href="#38-user-interface">3.8. User Interface</a></li>
+</ul>
+</li>
+<li><a href="#4-see-also">4. See also</a></li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<h1 id="isolated-environment-which-will-only-communicate-with-the-external-network-via-tor-design-document">Isolated environment – which will only communicate with the external network via Tor - Design Document</h1>
+<p>Original authors:<br />
+<strong><em>Martin Peck** </em></strong><br />
+<strong><em>Kyle Williams** </em></strong><br />
+<strong><em>Copyright © 2008-2009**The Tor Project, Inc</em></strong>.</p>
+<p><a class="" href="https://en.wikipedia.org/wiki/Fork_%28software_development%29" rel="nofollow">Forked</a> by <strong>adrelanos</strong> because the original developers were gone and no development was going on anymore.</p>
+<p>February 23, 2012</p>
+<h1 id="legal-notice">Legal Notice</h1>
+<p>You may distribute or modify this document according to the terms of the <a class="" href="http://www.gnu.org/licenses/fdl-1.2.txt" rel="nofollow">GNU Free Documentation License Version 1.2 or later</a>. <br />
+"BSD® is a registered trademark of UUnet Technologies, Inc." <br />
+"Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries." <br />
+"Tor® is a registered trademark of The Tor Project, Inc." <br />
+"VMware® is a registered trademark of VMware, Inc. in the United States and other jurisdictions." <br />
+"Windows® is a registered trademark of Microsoft Corporation in the United States and other countries."</p>
+<h1 id="1-introduction">1. Introduction</h1>
+<p>This document describes a transparent Tor™ proxy design for Ubuntu Linux and possibly other Linux distributions or BSD using a virtual machine platform. An overview of the transparent proxy approach is provided in addition to design goals and implementation detail.</p>
+<h2 id="11-privacy-and-anonymity">1.1. Privacy and Anonymity</h2>
+<p>Privacy is the ability to selectively disclose information about yourself and who you share it with. Tor is a privacy enhancing technology designed to provide low latency anonymity on the Internet against an adversary who can generate, modify, or delete traffic, run malicious Tor nodes, and perform other attacks against participants in the network.</p>
+<p>Using the nymity slider as reference Tor aims to provide Unlinkable Anonymity for its users. A poor implementation of Tor may expose the user to set reduction attacks eroding privacy to Linkable Anonymity. A more effective attack could further degrade user privacy to Persistent Pseudonymity via a unique identifier, for example. And worst case side channel attacks that reveal origin IP address can void all of the privacy intent of the Tor software. These side channel or catastrophic attacks completely defeat the privacy goals of Tor and indicate a failure of the implementation.</p>
+<h2 id="12-transparent-proxy-overview">1.2. Transparent Proxy Overview</h2>
+<p>A <a class="" href="http://wiki.noreply.org/noreply/TheOnionRouter/TransparentProxy%20transparent" rel="nofollow">Tor proxy</a> operates at the network and transport layers of of the OSI model instead of the usual application layer like SOCKS or HTTP. Intercepting and routing traffic in this manner avoids the risk of catastrophic side channel attacks that pose the most significant risk to privacy, particularly in a Windows environment.</p>
+<p>Usability is also improved as manual SOCKS or HTTP proxy configuration is no longer necessary in each anonymized application. Software that does not support any kind of proxy feature can also be supported in this manner without any additional effort.</p>
+<h2 id="13-isolated-virtual-machine-advantages">1.3. Isolated (Virtual) Machine Advantages</h2>
+<p>A isolated (virtual) machine environment can further improve the security position by providing defense in depth against attacks which rely on using local applications to make requests to Tor that can compromise anonymity. This benefit is mainly achieved through the use of isolated network stacks in the Tor-Gateway and the Tor-Workstation. Separate stacks ensure that by default applications on one the Tor-Workstation cannot communicate with any other unless explicitly configured to do so. This is in contrast to the usual localhost idiom which assumes connections to/from 127.0.0.1 are protected from external threats.</p>
+<p>Separate network stacks also simplify the implementation of a transparent proxy approach by using existing networking facilities to route traffic to the isolated (virtual) machine as a default gateway instead of using more complicated traffic classification and redirection within the host network stack. This is important in a Windows environment where capabilities like Linux® netfilter or BSD® packet filter do not exist.</p>
+<p>For Windows platforms offloading the TCP session intensive Tor process to a Linux guest with <a class="" href="http://monkey.org/~provos/libevent/" rel="nofollow">edge triggered IO</a> can significantly improve the performance of Tor and eliminate <a class="" href="http://wiki.noreply.org/noreply/TheOnionRouter/WindowsBufferProblems" rel="nofollow">socket buffer problems</a>.</p>
+<h2 id="14-application-isolation-and-consistency">1.4. Application Isolation and Consistency</h2>
+<p>The use of multiple Tor-Workstations to isolate application instances can protect against linkability of user communications by providing a consistent and trusted initial state for anonymous applications using a static (virtual) machine image to ensure that any changes made within that isolated environment are not persisted from one runtime instance to the next.</p>
+<p>This fixed (virtual) machine state is critical for using otherwise dangerous software like browser plugins that can write persistent and unique identifying information to hard disk and relay this information to an attacker.</p>
+<h2 id="2-tor-vm-design">2. Tor VM Design</h2>
+<p>The transparent Tor proxy virtual machine must provide a usable and secure interface to the Tor network that preserves the unlinkable anonymity intent of Tor. A number of design criteria are necessary to achieve this goal.<br />
+2.1. Threat Model</p>
+<p>A number of threats are expected when using the Tor network for anonymous communication over the Internet.</p>
+<p><strong>Attacker Intent</strong><br />
+<strong>*Identify User Endpoint</strong> <br />
+    One goal of the attacker within this threat model is to obtain the Tor user origin IP address.</p>
+<p><strong>*Identify User Verinym</strong> <br />
+    The attacker may desire uniquely identifying user information like name and address stored on the host computer.</p>
+<p><strong>*Reduce Privacy to Persistent Pseudonym</strong> <br />
+    While not as useful as the identifying information above the attacker may wish to uniquely track the individuals using Tor even if their true identities remain unknown.</p>
+<p><strong>*Link Anonymous Communications</strong> <br />
+    The attacker may also attempt to correlate anonymous communications from the same user with each other. </p>
+<p><strong>Attacker Capabilities and Methods</strong> <br />
+<strong>*Proxy Bypass</strong> <br />
+    If the attacker can inject some kind of content to invoke a client request that bypasses application proxy settings they can achieve their goal of determining user endpoint. Social engineering attacks which entice a user to make a request that may bypass proxy settings are also included in this class of techniques.</p>
+<p><strong>*DNS Requests</strong> <br />
+    The attacker may also attempt to have the user application make a DNS request that does not resolve through Tor in order to expose the origin endpoint. This can often be accomplished when proxy settings are otherwise honored correctly.</p>
+<p><strong>*Combined Local and Remote Attacks</strong> <br />
+    Another effective attack vector is the use of local and remote resources in a coordinated attack against a client system. One example of this approach is injecting a malicious Java applet into web requests which in turn uses the sun.net.spi.nameservice.dns.DNSNameService and related parameters to request explicit DNS resolution from a DNS server on the local subnet. Many transparent proxy implementations that rely on the default route alone to direct traffic through Tor are vulnerable to this and other similar techniques.</p>
+<p><strong>*Partitioning Attacks</strong> <br />
+    The attacker may observe distinguishing characteristics of Tor user traffic to partition the anonymity set of some users over time into progressively smaller and smaller sets. When this set becomes a set of one individual they can <a class="" href="https://torbutton.torproject.org/dev/design/#fingerprinting" rel="nofollow">track individual activity</a> and likely achieve their goal of identifying user endpoint.</p>
+<p><strong>*Linking Attacks via Persistent State</strong> <br />
+    The attacker may use files or application state stored on disk to link separate instances of Tor use with each other. Note that unique identifiers or configuration associated with applications or operating system components can be used to link communications from the same user if exposed to an attacker.</p>
+<p><strong>*Fingerprinting Attacks</strong> <br />
+    The attacker may obtain as much information as possible about the application and environment it is running in to obtain a set of parameters unique to each pseudonym targeted.</p>
+<p><strong>*Full Remote Code Execution Attacks</strong> <br />
+    Vulnerabilities in applications or configuration may be exploited remotely for arbitrary execution of the attackers code. This will typically grant access to most of the files and configuration on the operating system. </p>
+<p><strong>Indefensible Attacks</strong> <br />
+<strong>*Tor Attacks</strong> <br />
+    Attacks which Tor cannot defend against, like a global passive adversary or traffic confirmation attacks, are obviously outside the scope of even the most robust Tor implementation.</p>
+<p><strong>*Some Remote Exploit and Arbitrary Execution Attacks</strong> <br />
+    Attacks which leverage an application or operating system flaw to gain full remote code execution on the host system are not defensible. This highlights the need for secure hosts when relying on Tor for anonymity. An untrusted host cannot provide a trusted Tor instance, regardless of how robust the implementation may be otherwise.</p>
+<div class="codehilite"><pre><span class="n">The</span> <span class="n">multiple</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span> <span class="n">machine</span> <span class="n">model</span> <span class="n">provides</span> <span class="n">defense</span> <span class="n">in</span> <span class="n">depth</span> <span class="n">against</span> <span class="n">these</span> <span class="n">types</span> <span class="n">of</span> <span class="n">attacks</span> <span class="n">and</span> <span class="n">may</span> <span class="n">constrain</span> <span class="n">the</span> <span class="n">scope</span> <span class="n">of</span> <span class="n">any</span> <span class="n">compromise</span> <span class="n">to</span> <span class="n">the</span> <span class="n">single</span> <span class="n">virtual</span> <span class="n">machine</span> <span class="n">instance</span> <span class="n">affected</span> <span class="n">by</span> <span class="n">the</span> <span class="n">exploit</span><span class="p">.</span> <span class="n">It</span> <span class="n">is</span> <span class="n">possible</span> <span class="p">(</span><span class="n">though</span> <span class="n">hard</span> <span class="n">to</span> <span class="n">quantify</span> <span class="n">how</span> <span class="n">difficult</span><span class="p">)</span> <span class="n">to</span> <span class="n">escalate</span> <span class="n">from</span> <span class="n">a</span> <span class="n">compromised</span> <span class="n">machine</span> <span class="n">to</span> <span class="n">secondary</span> <span class="n">exploit</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Tor</span><span class="o">-</span><span class="n">Gateway</span> <span class="p">(</span><span class="n">or</span> <span class="n">the</span> <span class="n">host</span> <span class="n">OS</span><span class="p">),</span> <span class="n">again</span> <span class="n">rendering</span> <span class="n">all</span> <span class="n">protections</span> <span class="n">ineffective</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">user</span> <span class="n">is</span> <span class="n">suggested</span> <span class="n">to</span> <span class="n">harden</span> <span class="n">it</span><span class="o">'</span><span class="n">s</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span> <span class="n">machines</span> <span class="n">in</span> <span class="n">the</span> <span class="p">[</span><span class="n">Security</span> <span class="n">Guide</span><span class="p">].</span>
+</pre></div>
+<p><strong>*Some Correlation Attacks</strong> <br />
+    If a Tor user interacts with the same site or service when using Tor and not using Tor it is likely trivial for an attacker to correlate the anonymous activity with the original user, and thus achieve their goal of identifying origin endpoint. Users must be aware of the absolute necessity of keeping anonymous services separate from directly accessed services and never mix the two.</p>
+<div class="codehilite"><pre><span class="n">The</span> <span class="n">ability</span> <span class="n">to</span> <span class="k">switch</span> <span class="n">between</span> <span class="n">anonymous</span> <span class="n">and</span> <span class="n">direct</span> <span class="n">access</span> <span class="n">to</span> <span class="n">such</span> <span class="n">services</span> <span class="n">requires</span> <span class="n">a</span> <span class="n">strong</span> <span class="n">separation</span> <span class="n">of</span> <span class="n">state</span><span class="p">,</span> <span class="n">like</span> <span class="n">that</span> <span class="n">provided</span> <span class="n">by</span> <span class="p">[</span><span class="n">TorButton</span><span class="p">](</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">torbutton</span><span class="p">.</span><span class="n">torproject</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">design</span><span class="o">/</span><span class="p">),</span> <span class="n">which</span> <span class="n">is</span> <span class="n">too</span> <span class="n">complicated</span> <span class="n">and</span> <span class="n">restrictive</span> <span class="n">to</span> <span class="n">apply</span> <span class="n">to</span> <span class="n">the</span> <span class="n">entire</span> <span class="n">spectrum</span> <span class="n">of</span> <span class="n">applications</span> <span class="n">and</span> <span class="n">protocols</span> <span class="n">that</span> <span class="n">may</span> <span class="n">be</span> <span class="n">used</span> <span class="n">over</span> <span class="n">a</span> <span class="n">transparent</span> <span class="n">Tor</span> <span class="n">proxy</span> <span class="n">implementation</span><span class="p">.</span> <span class="n">For</span> <span class="n">this</span> <span class="n">reason</span> <span class="n">a</span> &quot;<span class="n">toggle</span>&quot; <span class="n">capability</span> <span class="n">is</span> <span class="n">explicitly</span> <span class="n">not</span> <span class="n">included</span> <span class="n">in</span> <span class="n">the</span> <span class="n">design</span> <span class="n">goals</span> <span class="k">for</span> <span class="n">this</span> <span class="n">implementation</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="p">[</span><span class="n">Warning</span><span class="p">]</span> <span class="n">page</span> <span class="n">in</span> <span class="n">Whonix</span> <span class="n">states</span> &quot;<span class="o">*</span><span class="n">Do</span> <span class="n">not</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">any</span> <span class="n">server</span> <span class="n">anonymously</span> <span class="n">and</span> <span class="n">non</span><span class="o">-</span><span class="n">anonymously</span> <span class="n">at</span> <span class="n">the</span> <span class="n">same</span> <span class="n">time</span>!<span class="o">*</span>&quot;<span class="p">.</span>
+</pre></div>
+<p><strong>Attacks Difficult to Defend Against Transparently</strong> <br />
+<strong>*Partitioning and Fingerprinting Attacks</strong> <br />
+    While side channel attacks can be thwarted effectively with a robust transparent Tor implementation it is more difficult to protect the content of the communications from partitioning or fingerprinting attacks. The use of TorButton and other such tools is encouraged to provide additional defense against these attacks. Application virtual machines may be difficult to implement for the full spectrum of applications in a way that defeats these attacks.</p>
+<p><strong>*The Faithless Endpoint</strong> <br />
+    Another difficult problem for Tor implementations is the opportunity for malicious exit nodes to observe and manipulate traffic from their router to compromise user privacy and security. The Faithless Endpoint details a number of risks that users may not be aware of.</p>
+<div class="codehilite"><pre><span class="n">Educating</span> <span class="n">the</span> <span class="n">user</span> <span class="n">about</span> <span class="n">these</span> <span class="n">risks</span> <span class="n">in</span> <span class="n">an</span> <span class="n">intuitive</span> <span class="n">manner</span> <span class="n">and</span> <span class="n">providing</span> <span class="n">them</span> <span class="n">tools</span> <span class="n">to</span> <span class="n">prevent</span> <span class="n">unintended</span> <span class="n">exposure</span> <span class="n">to</span> <span class="n">malicious</span> <span class="n">participants</span> <span class="n">in</span> <span class="n">the</span> <span class="n">Tor</span> <span class="n">network</span> <span class="n">is</span> <span class="n">a</span> <span class="n">complicated</span> <span class="n">effort</span><span class="p">.</span> <span class="n">It</span><span class="o">'</span><span class="n">s</span> <span class="n">not</span> <span class="n">possible</span> <span class="n">to</span> <span class="n">describe</span> <span class="n">and</span> <span class="n">circumvent</span> <span class="n">all</span> <span class="n">those</span> <span class="n">risks</span><span class="p">.</span> <span class="n">The</span> <span class="n">most</span> <span class="n">command</span> <span class="n">risks</span> <span class="n">are</span> <span class="n">described</span> <span class="n">in</span> <span class="n">the</span> <span class="p">[</span><span class="n">Documentation</span><span class="p">]</span> <span class="n">providing</span> <span class="n">workarounds</span><span class="p">.</span>
+</pre></div>
+<h2 id="22-design-requirements">2.2. Design Requirements</h2>
+<p>The risks identified in the threat model above drive a number of design criteria necessary to thwart or mitigate compromise of user privacy.</p>
+<p><strong>Transparent Proxy Requirements</strong> <br />
+<strong>1. Proxy All TCP and DNS Traffic</strong> <br />
+    All TCP and DNS traffic must be routed through the Tor-Gateway. This requires that no local subnets be exposed on the Tor-Workstation network stack once started to prevent the combined local and remote DNS exploits described above.</p>
+<p><strong>2. Filter Remaining Traffic</strong> <br />
+    Traffic that is not TCP or DNS must be dropped at the Tor VM instance to prevent forwarding potentially sensitive multicast, UDP, ICMP, or other datagrams to the upstream router(s). This ensures that certain protocols, like SMTP and NetBIOS, are filtered as soon as they leave the Tor-Workstation.</p>
+<p><strong>3. Fail Safely</strong> <br />
+    If the Tor-Gateway is unable to proxy traffic it must not let the traffic through unaltered, but instead drop it.</p>
+<p><strong>Virtual Machine Requirements</strong><br />
+<strong>1. Open Source</strong> <br />
+    While VMware® is one of the more friendly and stable VM implementations, it lacks the transparency necessary for a robust security position and also precludes bundling into a portable Tor VM.</p>
+<p><strong>2. NAT Adapter Support</strong> <br />
+    To support the widest range of client uses a NAT network adapter is required within the Virtual Machine implementation used by Tor VM. Most of the potential VM platforms support this mode of operation by default.</p>
+<p><strong>3. Low Host OS Overhead</strong> <br />
+    A VM platform that provides low host memory and CPU consumption improves the usability and stability of Tor VM in addition to making it suitable for a wider range of older or less powerful hardware users may have. This is particularly important for graphical applications and other media intensive virtual machine instances.</p>
+<p><strong>4. Isolation and Integrity Protections</strong> <br />
+    The ability to run multiple (virtual) machines for application runtime isolation and defense in depth against unknown application or guest operating system vulnerabilities is required. Kernel level VM acceleration is potentially useful, however, the expanded attack surface presented by such acceleration layers should be considered carefully. </p>
+<p><strong>Host and Tor-Gateway Requirements</strong><br />
+<strong>1. IP Routing Through Tor VM</strong> <br />
+    All operating systems that are able to run Tor should be able to route traffic in the manner required for transparent proxy through the (virtual) machine. Using the NAT adapter configuration there is no need to rely on VPN or DHCP resources for Tor VM functionality; basic IP interface configuration and IP routing facilities are all that is necessary.</p>
+<p><strong>2. Privilege Separation</strong> <br />
+    To obtain the most benefit of a transparent (virtual) machine implementation host access controls and privilege separation should be used to  constrain the capabilities of the implementation and the applications used with it. Newer Windows versions go beyond the typical owner / group based distinction into fine grained access control which may be useful.</p>
+<p><strong>User Interface Requirements</strong><br />
+<strong>1. Native GUI Controller</strong> <br />
+    Vidalia is an existing feature rich and well known controller for Tor on Windows and other operating systems that would provide much of the interface desired. This requires that an acceptably secure method of allowing control port access to the Tor-Gateway instance from the Host.</p>
+<div class="codehilite"><pre><span class="n">A</span> <span class="n">hashed</span> <span class="n">control</span> <span class="n">password</span> <span class="n">generated</span> <span class="n">randomly</span> <span class="n">at</span> <span class="n">start</span> <span class="n">is</span> <span class="n">used</span> <span class="n">by</span> <span class="n">Vidalia</span> <span class="n">to</span> <span class="n">authenticate</span> <span class="n">to</span> <span class="n">Tor</span><span class="p">.</span> <span class="n">This</span> <span class="n">is</span> <span class="n">passed</span> <span class="n">to</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">kernel</span> <span class="n">but</span> <span class="n">never</span> <span class="n">stored</span> <span class="n">on</span> <span class="n">disk</span><span class="p">.</span> <span class="n">This</span> <span class="n">would</span> <span class="n">allow</span> <span class="n">control</span> <span class="n">port</span> <span class="n">access</span> <span class="n">without</span> <span class="n">connection</span> <span class="n">behavior</span> <span class="n">changes</span> <span class="n">with</span> <span class="n">the</span> <span class="n">limitation</span> <span class="n">that</span> <span class="n">any</span> <span class="n">Vidalia</span> <span class="n">restart</span> <span class="n">requires</span> <span class="n">a</span> <span class="n">restart</span> <span class="n">of</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">as</span> <span class="n">well</span><span class="p">.</span>
+
+<span class="p">[</span><span class="n">TorController</span><span class="p">]</span>
+</pre></div>
+<h1 id="3-tor-vm-implementation">3. Tor VM Implementation</h1>
+<p>A solution that satisfies these requirements can be implemented using a variety of GNU/Linux and Win32 software. The open source licenses associated with these tools ensure that adequate scrutiny of the code base supporting a Tor virtual machine is possible for those who choose to evaluate it.</p>
+<h1 id="31-build-environment">3.1. Build Environment</h1>
+<p>The following dependencies are required for building the Tor VM image and supporting VM tools.</p>
+<div class="codehilite"><pre><span class="p">.</span>
+</pre></div>
+<h2 id="32-virtual-machine-software">3.2. Virtual Machine Software</h2>
+<p>Three virtual machine implementations were considered and tested: VMware, VirtualBox and Bochs. NAT adapter support is available in all implementations. The GPL license applied to VirtualBox and Bochs code base satisfies the open source requirement.</p>
+<p>Bochs provides full CPU emulation for much stronger host / guest isolation and does not require any changes to the guest kernel or system level drivers on the host.</p>
+<p>VirtualBox is much faster because it is a virtualizer and not an emulator, it also does not require any changes to the guest kernel or system level drivers on the host. For these reasons VirtualBox is preferred for the virtual machine implementation despite the increased CPU and memory overhead associated with full emulation.</p>
+<h2 id="33-tor-vm-build">3.3. Tor VM Build</h2>
+<p>How to build Whonix is documented in <a class="alink" href="/p/whonix/wiki/BuildDocumentation/">[BuildDocumentation]</a>.</p>
+<h2 id="34-tor-configuration">3.4. Tor Configuration</h2>
+<p>Configuration of Whonix is documented in Whonix source code whonnix_workstation/etc/tor/torrc.</p>
+<h2 id="35-persistent-storage">3.5. Persistent Storage</h2>
+<p>Many protections built into Tor to protect against various types of attacks against Tor client anonymity rely on a persistent data storage facility of some kind that preserves cached network status, saved keys and configuration, and other critical capabilities. There are a number of ways to configure the virtual disk storage for the VM based on the role of the node in the network and the environment where it resides. The Tor-Gateway has a hard drive, which Tor may use.</p>
+<h2 id="36-host-virtual-machine-integration">3.6. Host Virtual Machine Integration</h2>
+<p>Usability is a critical part of any Tor implementation. Providing a responsive and intuitive interface for the Tor implementation and the applications routing through it is a particularly difficult problem in the context of the threats detailed above.</p>
+<p>Any effective methods of improving usability should be considered.</p>
+<p><strong>Virtual Machine and Application Management</strong><br />
+<strong>Run As Service</strong><br />
+    The ability to run a persistent instance of the Tor-Gateway as a service on the host would also be useful.</p>
+<p><strong>VirtualBox additions</strong><br />
+    Kernel level virtual machine acceleration is particularly useful for running graphical applications with SVGA displays and high color depth. The VirtualBox additions can provide a useful performance increase for these graphical applications. </p>
+<p><strong>Multi-VM Model</strong></p>
+<div class="codehilite"><pre><span class="p">.</span>
+</pre></div>
+<h2 id="37-network-configuration">3.7. Network Configuration</h2>
+<p>A robust transparent Tor proxy implementation requires careful configuration of the routing and filtering of traffic on both the host and guest OS instances.</p>
+<p>Network Configuration of Whonix is documented in Whonix source code in /etc/network/interfaces.</p>
+<h2 id="38-user-interface">3.8. User Interface</h2>
+<div class="codehilite"><pre><span class="p">.</span>
+</pre></div>
+<h1 id="4-see-also">4. See also</h1>
+<ul>
+<li><a class="alink" href="/p/whonix/wiki/Documentation/">[Documentation]</a></li>
+<li><a class="alink" href="/p/whonix/wiki/Design/">[Design]</a></li>
+</ul>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/DesignDocument/">Wiki: DesignDocument</a><br>
+    
+      <a href="/p/whonix/wiki/DesignDocumentBase/">Wiki: DesignDocumentBase</a><br>
+    
+      <a href="/p/whonix/wiki/Design/">Wiki: Design</a><br>
+    
+      <a href="/p/whonix/wiki/BuildDocumentation/">Wiki: BuildDocumentation</a><br>
+    
+      <a href="/p/whonix/wiki/Documentation/">Wiki: Documentation</a><br>
+    
+      <a href="/p/whonix/wiki/Threat%20Model/">Wiki: Threat Model</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-5 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / Dev_SourceCodeIntro</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XmVluEInEyCWDOtydfeCtGY { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-Dev_SourceCodeIntro" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">Dev_SourceCodeIntro
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#gpg-keys">gpg keys</a></li>
+<li><a href="#debugging">Debugging</a></li>
+<li><a href="#less-important-goodies">Less Important Goodies</a><ul>
+<li><a href="#unpacking-ova-images">Unpacking .ova images</a></li>
+<li><a href="#converting-vmdk-images-to-img-images">Converting .vmdk images to .img images</a></li>
+</ul>
+</li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<h1 id="introduction">Introduction</h1>
+<p>This chapter is dedicated to give an introduction into the Whonix source code. <strong><em>If you prefer to read and understand the source code just by reading scripts you may skip this optional chapter.</em></strong> It can be quite difficult to get started with hacking existing big complex projects.</p>
+<p><strong><em>Files and folders overview</em></strong>:</p>
+<ul>
+<li><strong>whonix_gateway</strong> All files within that folder will be copied into Whonix-Gateway.</li>
+<li><strong>whonix_workstation</strong> All files within that folder will be copied into Whonix-Workstation.</li>
+<li><strong>whonix_shared</strong> All files within that folder will be copied into Whonix-Gateway and Whonix-Workstation.</li>
+</ul>
+<p><strong>Chroot Scripts</strong></p>
+<ul>
+<li>/whonix_gateway/usr/local/share/whonix/chroot-scripts are run inside Whonix-Gateway</li>
+<li>/whonix_workstation/usr/local/share/whonix/chroot-scripts are run inside Whonix-Workstation</li>
+<li>/whonix_shared/usr/local/share/whonix/chroot-scripts are un inside Whonix-Gateway and Whonix-Workstation</li>
+</ul>
+<p><strong>build-steps</strong></p>
+<p>This is a high level overview. Whonix-Example-Implementation can currently be build in eight steps. (There is also a whonix_build script, which automates these eight steps for your convenience.)</p>
+<ul>
+<li>15_prepare-build-machine</li>
+<li>20_create-debian-img</li>
+<li>25_backup-img</li>
+<li>30_copy-into-img </li>
+<li>35_run-chroot-scripts-img</li>
+<li>40_convert-img-to-vdi</li>
+<li>45_create-vbox-vm</li>
+<li>50_export-vbox-vm</li>
+</ul>
+<p><strong>debug-steps</strong></p>
+<p>Some stuff to help developers with testing and debugging.</p>
+<ul>
+<li>delete-vbox-vm</li>
+<li>download-source</li>
+<li>interactive-img</li>
+</ul>
+<p><strong>help-steps</strong></p>
+<p>Boring methods, which are required by the build-steps above.</p>
+<ul>
+<li>mount-img</li>
+<li>mount-vdi</li>
+<li>chroot-img</li>
+<li>unchroot-img</li>
+<li>unmount-img</li>
+<li>unmount-img-force</li>
+<li>unmount-vdi</li>
+<li>unmount-vdi-force</li>
+<li>pre gets sourced by all other scripts.</li>
+<li>variables gets sourced by all other scripts.</li>
+</ul>
+<p><strong>whonix_build</strong></p>
+<p>Is a script, which simply runs all other build-steps. Actually it's "optional". It has very little functionality beside running all other steps. You are free to run all steps one by one. That is useful for learning and for debugging purposes. In case you want to fix a bug or in case you want to upgrade the distribution or in case you want to switch the operating system or whatever you are better off running the steps manually. Run it with -help to see available switches. It has also -fast, -tg-fast and -tw-fast switch, which skips the slow 20_create-debian-img step.</p>
+<p><strong><em>Overview</em></strong>:</p>
+<p>(1.) 15_prepare-build-machine: installs build dependencies and applies a few other required settings for building from source.</p>
+<p>(2.) 20_create-debian-img: <a class="" href="http://grml.org/grml-debootstrap/" rel="nofollow">grml-debootstrap</a> creates virtual machine images in <strong>.img</strong> image format. It keeps care of creating the image, the partition table, grub boot manager, minimal system debootstrap and apt-get installing all Whonix packages. This step requires most time in the build process.</p>
+<p>(3.) 25_backup-img: A backup _copy of the .img gets created.</p>
+<p>(4.) 30_copy-into-img: Files get copied into image.</p>
+<p>(5.) 35_run-chroot-scripts-img: Chroot Scripts are applied.</p>
+<p>(6.) 40_convert-img-to-vdi: The <strong>.img</strong> image gets converted to a <strong>.vdi</strong> image. Actually not converted, a new file will be created and the old <strong>.img</strong> remains available until cleanup is run or manually deleted or grml-debootstrap runs again. </p>
+<p>The <strong>.img</strong> format is more "generic". Virtual Box does not support raw (<strong>.img</strong>) images, but <strong>.vdi</strong> and <strong>.vmdk</strong> (and others). </p>
+<p>(7.) 45_create-vbox-vm: A virtual machine (Virtual Box) will be created and the <strong>.vdi</strong> image will be attached.</p>
+<p>(8.) 50_export-vbox-vm: The virtual machines get exported to a <strong>.ova</strong> images. (Technically the <strong>.ova</strong> format seams to require <strong>.vmdk</strong> files. Therefore Virtual Box automatically creates it. So anyone using or extracting the <strong>.ova</strong> image will see, that it it includes a <strong>.vmdk</strong> image.)</p>
+<p><strong><em>Modularity:</em></strong></p>
+<p>Steps (2.), (5.), (6.), (7.) and (8.) could be easily replaced to add support for additional virtualizers, operating systems and so on. The numbers before the script names (20_..., 25_..., 30..., ...) are honored by whonix_build (run-parts), which runs these steps in lexical order. Therefore you can easily add steps to the beginning or the end or even wretch steps in between.</p>
+<p><strong><em>Summary:</em></strong></p>
+<p>Thus, given the nature of the build step orientated scripts, you can easily work on the the different aspects of Whonix. For example, once you have created a clean virtual machine with the operating system only, you can make a copy, run either the gateway or the workstation copy routine or Chroot Scripts as often as you need to test your changes and if something goes wrong, go back to backup. You don't have to build everything from scratch again. ^3^</p>
+<p><strong><em>Another Introduction:</em></strong></p>
+<p>It's really not that difficult after all. If you like, you could read <a class="alink" href="/p/whonix/wiki/Whonix%20Manual%20Installation/">[Whonix Manual Installation]</a>, which is a similar topic, which covers part of this in other words.</p>
+<p><font size="-3"><br />
+,,<br />
+^3^ If something would go wrong, you would have to reinstall the whole operating system every time again. That's why we use separate steps.<br />
+</font></p>
+<h1 id="gpg-keys">gpg keys</h1>
+<p>gpg keys for required for build Whonix are stored inside <em>/home/user/Whonix/whonix_[...]/usr/local/share/whonix/gpg-pubkeys</em>. These include.</p>
+<ul>
+<li>adrelanos.asc - Whonix maintainer key - used for <a class="alink" href="/p/whonix/wiki/whonixcheck/">[whonixcheck]</a> news verification</li>
+<li>erinn.asc - <a class="" href="https://www.torproject.org/docs/signing-keys.html.en" rel="nofollow">obtained from torproject.org</a> - Used to verify downloads of Tor Browser by <em>whonix_workstation/usr/local/bin/torbrowser</em>.</li>
+<li>sebastian.asc - same as erinn.asc.</li>
+</ul>
+<p>To find out what the keys are good for, simply grep the source code.</p>
+<div class="codehilite"><pre><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Whonix</span>
+<span class="n">grep</span> <span class="o">-</span><span class="n">r</span> <span class="n">adrelanos</span><span class="p">.</span><span class="n">asc</span> <span class="o">*</span>
+<span class="n">grep</span> <span class="o">-</span><span class="n">r</span> <span class="n">erinn</span><span class="p">.</span><span class="n">asc</span> <span class="o">*</span>
+<span class="n">grep</span> <span class="o">-</span><span class="n">r</span> <span class="n">sebastian</span><span class="p">.</span><span class="n">asc</span> <span class="o">*</span>
+</pre></div>
+<p>If you are in luck, you never have to update the keys yourself and the Whonix maintainer will keep it updated. Otherwise and also as a good precaution you can verify these keys manually. Follow the instructions form torproject.org to obtain the key. Then simply check if the keys match or update the old key with the new one.</p>
+<h1 id="debugging">Debugging</h1>
+<p>Stuff you may find helpful for debugging.</p>
+<ul>
+<li><a class="" href="https://sourceforge.net/p/whonix/wiki/File%20Transfer/#ssh-into-whonix-gateway">SSH into Whonix-Gateway</a></li>
+<li>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/File%20Transfer/#mount-and-inspect-images">Mount and inspect images</a></p>
+</li>
+<li>
+<p>Rebuild the .ova images, while skipping the slow <em>15_prepare-build-machine</em> and <em>20_create-debian-img</em> steps. (Of course, this assumes, that these steps where run at least once previously.)</p>
+</li>
+</ul>
+<p>The "<em>sudo ./build-steps/20_create-debian-img -tX</em>" step takes far most of the build creation time. As long as no packages have been added or removed, you can repeat all other steps from a backup, which has been automatically created for you, by using.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">./</span><span class="n">whonix_build</span> <span class="o">-</span><span class="n">fast</span>
+
+## <span class="n">Or</span> <span class="n">alternatively</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">only</span> <span class="n">want</span> <span class="n">to</span> <span class="n">rebuild</span> <span class="n">one</span> <span class="n">machine</span><span class="p">.</span>
+#<span class="n">sudo</span> <span class="o">./</span><span class="n">whonix_build</span> <span class="o">-</span><span class="n">tg</span><span class="o">-</span><span class="n">fast</span>
+#<span class="n">sudo</span> <span class="o">./</span><span class="n">whonix_build</span> <span class="o">-</span><span class="n">tw</span><span class="o">-</span><span class="n">fast</span>
+</pre></div>
+<ul>
+<li>Interactively chroot Whonix-Gateway.</li>
+</ul>
+<p>Open a bash shell inside the Whonix-Gateway <strong>.img</strong> image.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">./</span><span class="n">debug</span><span class="o">-</span><span class="n">steps</span><span class="o">/</span><span class="n">interactive</span><span class="o">-</span><span class="n">chroot</span><span class="o">-</span><span class="n">img</span> <span class="o">-</span><span class="n">tg</span>
+</pre></div>
+<ul>
+<li>Interactively chroot Whonix-Workstation.</li>
+</ul>
+<p>Open a bash shell inside the Whonix-Workstation <strong>.img</strong> image.</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">./</span><span class="n">debug</span><span class="o">-</span><span class="n">steps</span><span class="o">/</span><span class="n">interactive</span><span class="o">-</span><span class="n">chroot</span><span class="o">-</span><span class="n">img</span> <span class="o">-</span><span class="n">tw</span>
+</pre></div>
+<ul>
+<li>
+<p>Check Whonix version number.</p>
+<p>cat /home/user/Whonix/whonix_shared/usr/local/share/whonix/version</p>
+</li>
+</ul>
+<h1 id="less-important-goodies">Less Important Goodies</h1>
+<h2 id="unpacking-ova-images">Unpacking <strong>.ova</strong> images</h2>
+<p>If you want for some reason to unpack an <strong>.ova</strong>, for example to get the <strong>.vdmk</strong> image, you can use tar.</p>
+<div class="codehilite"><pre><span class="n">tar</span> <span class="o">-</span><span class="n">xvf</span> <span class="n">Whonix</span><span class="o">-</span><span class="n">Gateway</span><span class="p">.</span><span class="n">ova</span>
+<span class="n">Whonix</span><span class="o">-</span><span class="n">Gateway</span><span class="p">.</span><span class="n">ovf</span>
+<span class="n">Whonix</span><span class="o">-</span><span class="n">Gateway</span><span class="o">-</span><span class="n">disk1</span><span class="p">.</span><span class="n">vmdk</span>
+</pre></div>
+<h2 id="converting-vmdk-images-to-img-images">Converting <strong>.vmdk</strong> images to <strong>.img</strong> images</h2>
+<div class="codehilite"><pre><span class="c">#qemu-img info Whonix-Gateway-disk1.vmdk</span>
+
+<span class="n">qemu</span><span class="o">-</span><span class="n">img</span> <span class="n">convert</span> <span class="n">Whonix</span><span class="o">-</span><span class="n">Gateway</span><span class="o">-</span><span class="n">disk1</span><span class="p">.</span><span class="n">vmdk</span> <span class="o">-</span><span class="n">O</span> <span class="n">raw</span> <span class="n">Whonix</span><span class="o">-</span><span class="n">Gateway</span><span class="p">.</span><span class="n">img</span>
+
+<span class="c">#qemu-img info Whonix-Gateway.img</span>
+</pre></div>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/Whonix%20Manual%20Installation/">Wiki: Whonix Manual Installation</a><br>
+    
+      <a href="/p/whonix/wiki/whonixcheck/">Wiki: whonixcheck</a><br>
+    
+      <a href="/p/whonix/discussion/general/thread/42a98dc0/0bb8/">Post: update whonix</a><br>
+    
+      <a href="/p/whonix/wiki/BuildDocumentation_0.6.0/">Wiki: BuildDocumentation_0.6.0</a><br>
+    
+      <a href="/p/whonix/wiki/File%20Transfer/">Wiki: File Transfer</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

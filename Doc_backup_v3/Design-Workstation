@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-4 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / Design-Workstation</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XnwaaRNsNUzfuTnssbGfMolUAw { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-Design-Workstation" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">Design-Workstation
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#list-of-installed-packages">List of installed Packages</a></li>
+<li><a href="#files">Files</a><ul>
+<li><a href="#essential">Essential</a><ul>
+<li><a href="#network-configuration">Network Configuration</a></li>
+<li><a href="#dummytor">DummyTor</a></li>
+</ul>
+</li>
+<li><a href="#extra">Extra</a><ul>
+<li><a href="#second-optional-extra-firewall">second, optional, extra firewall</a></li>
+</ul>
+</li>
+<li><a href="#usability">Usability</a><ul>
+<li><a href="#swap">Swap</a></li>
+<li><a href="#environment-variables">Environment Variables</a></li>
+<li><a href="#aptconf">apt.conf</a></li>
+<li><a href="#http-to-socks-converter">http to socks converter</a></li>
+<li><a href="#sending-e-mails-without-registration">Sending e-mails without registration</a></li>
+<li><a href="#gnupg-configuration">GnuPG Configuration</a></li>
+<li><a href="#project-news-notification">Project News Notification</a></li>
+<li><a href="#torchat-configuration">TorChat Configuration</a></li>
+<li><a href="#irc-client">IRC Client</a></li>
+<li><a href="#web-browser">Web Browser</a></li>
+<li><a href="#rinetd">rinetd</a></li>
+<li><a href="#marker-file">Marker file</a></li>
+<li><a href="#terminal-help">Terminal Help</a></li>
+<li><a href="#desktop-environment">Desktop Environment</a></li>
+</ul>
+</li>
+<li><a href="#debugging">Debugging</a><ul>
+<li><a href="#leaktest-script">Leaktest script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#design-shared">Design-Shared</a></li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<h1 id="list-of-installed-packages">List of installed Packages</h1>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/Whonix-Workstation_packages" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/Whonix-Workstation_packages</a></li>
+</ul>
+<h1 id="files">Files</h1>
+<h2 id="essential">Essential</h2>
+<h3 id="network-configuration">Network Configuration</h3>
+<p>Configure the system resolver to use the Gateway to resolve DNS. (There can be no DNS leaks, because the Gateway firewall prevents that.) It shouldn't get used often, only for applications which are not configured to use stream isolation (SocksPort). Just as a general catch all for user installed applications to improve usability.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/resolv.conf" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/resolv.conf</a></li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/network/interfaces" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/network/interfaces</a></li>
+</ul>
+<h3 id="dummytor">DummyTor</h3>
+<p>Since the anonymizer software runs on the Gateway, users could still accidental install the anonymizer software on the Workstation. This would lead into connecting to the anonymity network over the anonymity network itself. In best case it just doesn't work or is very slow and in worst case it leads to unknown consequences. Prevent that.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Banning the Tor package from Whonix-Workstation to prevent Tor over Tor. <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_dummytor" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_dummytor</a></li>
+<li>Install an empty Tor package which does no more than simulating, that Tor is already installed and thus preventing the package manager from installing Tor, see also <a class="alink" href="/p/whonix/wiki/DummyTor/">[DummyTor]</a>.</li>
+<li>DummyTor package description file: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/dummytor/tor" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/dummytor/tor</a></li>
+<li>rinetd (see below) also prevents Tor from opening the default listener on port 9050. Therefore the Tor service will fail to start.</li>
+</ul>
+<h2 id="extra">Extra</h2>
+<h3 id="second-optional-extra-firewall">second, optional, extra firewall</h3>
+<p>Optional.</p>
+<p>Optional second, optional, extra firewall for advanced users as damage protection in case the Whonix-Gateway gets ever compromised (Tor exploit).</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Please read the script comments.</li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/whonix_firewall" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/whonix_firewall</a></li>
+</ul>
+<h2 id="usability">Usability</h2>
+<h3 id="swap">Swap</h3>
+<p>Let the kernel only swap if it is absolutely necessary.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/sysctl.d/whonix.conf" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/sysctl.d/whonix.conf</a></li>
+</ul>
+<h3 id="environment-variables">Environment Variables</h3>
+<p>Optional.</p>
+<p>It's useful to have an environment variable announcing "I am a Workstation", so applications such as TorButton and TorBirdy can act accordingly. (I.e. not starting Tor/Vidalia on the Workstation; not using 127.0.0.1 as proxy, but therefore the Gateway.)</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/environment" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/environment</a></li>
+</ul>
+<h3 id="aptconf">apt.conf</h3>
+<p>Optional.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Doesn't do anything by default. Just some comments. <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/apt/apt.conf.d/99whonix" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/apt/apt.conf.d/99whonix</a></li>
+<li>(apt is forced though Tor by apt-get uwt wrapper (Design-Shared) and by the firewall running on the Gateway.</li>
+</ul>
+<h3 id="http-to-socks-converter">http to socks converter</h3>
+<p>Optional.</p>
+<p>Some applications don't support socks, but http. It's useful to have a http to socks converter.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>None required to be installed by default.</li>
+<li>If someone likes to use polipo, the config file from torproject.org is shipped. (Only adapted to use the Whonix-Gateway. <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/polipo/config" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/polipo/config</a></li>
+</ul>
+<h3 id="sending-e-mails-without-registration">Sending e-mails without registration</h3>
+<p>Optional.</p>
+<p>Install a tool, which can send e-mails without registration.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Using Mixmaster. (Of course over Tor.)</li>
+<li>Implementation notes: <a href="https://sourceforge.net/p/whonix/wiki/Dev_Mixmaster/">https://sourceforge.net/p/whonix/wiki/Dev_Mixmaster/</a></li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/home/user/.Mix/mix.cfg" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/home/user/.Mix/mix.cfg</a></li>
+<li>Documented on <a class="alink" href="/p/whonix/wiki/Remailer/">[Remailer]</a> and <a class="alink" href="/p/whonix/wiki/Mixmaster/">[Mixmaster]</a> page.</li>
+</ul>
+<h3 id="gnupg-configuration">GnuPG Configuration</h3>
+<p>Optional.</p>
+<p>Using more secure defaults for GnuPG.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Using more secure defaults. <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/home/user/.gnupg/gpg.conf" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/home/user/.gnupg/gpg.conf</a></li>
+</ul>
+<h3 id="project-news-notification">Project News Notification</h3>
+<p>Optional.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Using rawdog, a privacy friendly rss reader to download Whonix News Blogs.</li>
+<li>rawdog Configuration: <a href="https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/home/user/.rawdog" rel="nofollow">https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/home/user/.rawdog</a> </li>
+<li>Documented on page <a class="alink" href="/p/whonix/wiki/rss/">[rss]</a> and <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">Download (Stay Tuned)</a> page.</li>
+<li>rawdog gets run by whonixcheck. (See <a class="alink" href="/p/whonix/wiki/Design-Shared/">[Design-Shared]</a>.)</li>
+<li>The user is asked to prefer to start Tor Browser using the Tor Browser Recommend shortcut on the Desktop: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/applications/whonix-tbrecommend.desktop" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/applications/whonix-tbrecommend.desktop</a></li>
+</ul>
+<h3 id="torchat-configuration">TorChat Configuration</h3>
+<p>Optional.</p>
+<p>Using TorChat on a already torified Workstation while preventing Tor over Tor isn't trivial. Therefore it's useful to ship required configuration files, preconfigured as much as possible by default to ease installation of TorChat.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>TorChat does <strong>not</strong> get installed by default.</li>
+<li>Due to popular request, Whonix makes it as easy as possible to use TorChat with Whonix.</li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/home/user/.torchat/torchat.ini" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/home/user/.torchat/torchat.ini</a></li>
+<li>Documented on <a class="alink" href="/p/whonix/wiki/Chat/">[Chat]</a> page.</li>
+<li>Banning the Tor package from Whonix-Workstation to prevent Tor over Tor. <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_dummytor" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_dummytor</a></li>
+</ul>
+<h3 id="irc-client">IRC Client</h3>
+<p>Optional.</p>
+<p>Secure IRC Client configuration and script for getting a new IRC identity.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Whonix comes with XChat configured for privacy.</li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/xchat-reset" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/xchat-reset</a></li>
+<li>Documented on <a class="alink" href="/p/whonix/wiki/XChat/">[XChat]</a> page.</li>
+<li>Configuration files. <a href="https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/xchat2" rel="nofollow">https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/xchat2</a></li>
+<li>Deactivating plugins. <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_xchat" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_xchat</a></li>
+</ul>
+<h3 id="web-browser">Web Browser</h3>
+<p>Secure Web Browser, which doesn't suffer from likability and browser fingerprinting.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Whonix comes with Tor Browser, which is maintained by The Tor Project.</li>
+<li>Reasons for TorBrowser can be found on the <a class="alink" href="/p/whonix/wiki/TorBrowser/">[TorBrowser]</a> page.</li>
+<li>Documented on <a class="alink" href="/p/whonix/wiki/TorBrowser/">[TorBrowser]</a> page.</li>
+<li>torbrowser update script: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/torbrowser" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/torbrowser</a></li>
+<li>Patched torbrowser startup script to make Tor Browser work without the bundled Tor and Vidalia: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/start-tor-browser" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/start-tor-browser</a> The torbrowser update script <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/torbrowser" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/torbrowser</a> keeps care to replace the upstream start-tor-browser file.</li>
+<li>Install Tor Browser while building Whonix: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_torbrowser" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_torbrowser</a></li>
+<li>Gpg keys to verify the downloaded Tor Browser:<ul>
+<li><a href="https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/gpg-pubkeys" rel="nofollow">https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/gpg-pubkeys</a></li>
+<li><a href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/#gpg-keys">https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/#gpg-keys</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="rinetd">rinetd</h3>
+<p>Optional.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>rinetd is configured to listen on local ports 9050 and 9150.<ul>
+<li>rinetd forwards port 127.0.0.1:9050 (Workstation) to 192.168.0.10:9050 (Gateway).</li>
+<li>Forwards port 127.0.0.1:9150 (Workstation) to 192.168.0.10:9150 (Gateway).</li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/rinetd.conf" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/rinetd.conf</a></li>
+<li>This prevents Tor over Tor by just installing Tor or by using the complete Tor Browser Bundle, which starts Vidalia and Tor. This is because, it listens on port 9050 and 9150 and therefore lets a default Tor or TBB fail to start.</li>
+<li>Should the Tor Browser update script ever break,<ul>
+<li>Whonix users can download (and verify) the stock Tor Browser Bundle (TBB) from torproject.org,</li>
+<li>unpack to /home/user/tor-browser_en-US and</li>
+<li>start it from the desktop menu shortcut or from the start menu.</li>
+<li>Starting with the stock startup script /home/user/tor-browser_en-US/start-tor-browser will fail closed. Vidalia will report, that Tor won't connect, because port 9150 is already blocked by rinetd. This will be fixed as soon as The Tor Project merges a proposed patch <a href="https://trac.torproject.org/projects/tor/ticket/5611" rel="nofollow">https://trac.torproject.org/projects/tor/ticket/5611</a> for the start-tor-browser startup script, which adds an optional environment variable, once set, only starts Tor Browser and not the bundled Tor/Vidalia.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="marker-file">Marker file</h3>
+<p>Optional.</p>
+<p>Add a marker file so scripts you write can find out, whether they are running on the Gateway or inside the Workstation. There are probable different implementations possible to reach that goal.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/whonix_workstation" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/whonix_workstation</a></li>
+</ul>
+<h3 id="terminal-help">Terminal Help</h3>
+<p>Optional.</p>
+<p>Add a welcome and help message also to virtual terminals. (Those which can get started in graphical environments such as KDE and Konsole.)</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Default Debian .bashrc at the top and Whonix specific addtions at the bottom. <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/home/user/.bashrc" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/home/user/.bashrc</a></li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/whonix" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/whonix</a></li>
+</ul>
+<h3 id="desktop-environment">Desktop Environment</h3>
+<p>Optional.</p>
+<p>It's useful to have a desktop preconfigured to make it as easy as possible for users who use Linux for the first time.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li>Based on KDE.</li>
+<li>kdm auto login: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/kde4/kdm/kdmrc" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/etc/kde4/kdm/kdmrc</a></li>
+<li>Icons: <a href="https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/icons" rel="nofollow">https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/icons</a></li>
+<li>Creating desktop icons: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_desktop-icons" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_desktop-icons</a></li>
+<li>Desktop Icons: <a href="https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/kde/share/applications" rel="nofollow">https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/kde/share/applications</a></li>
+<li>Deleting unwanted shortcut: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_knetattach" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_knetattach</a></li>
+<li>Desktop usability improvements: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_kde" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_kde</a></li>
+<li>Changing default skin and wallpaper: <a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/apps/plasma-desktop/init/00-defaultLayout.js" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/apps/plasma-desktop/init/00-defaultLayout.js</a></li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/config/dolphinrc" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/config/dolphinrc</a></li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/config/kickoffrc" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/config/kickoffrc</a></li>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/config/konsolerc" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/share/whonix/kde/share/config/konsolerc</a></li>
+<li><a class="alink" href="/p/whonix/wiki/Dev_KDE/">[Dev_KDE]</a></li>
+</ul>
+<h2 id="debugging">Debugging</h2>
+<h3 id="leaktest-script">Leaktest script</h3>
+<p>Optional.</p>
+<p>Have a script to try to produce a leak and check if there are any leaks.</p>
+<p>Whonix-Example-Implementation:</p>
+<ul>
+<li><a href="https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/leaktest" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/whonix_workstation/usr/local/bin/leaktest</a></li>
+<li><a href="https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/leaktest" rel="nofollow">https://github.com/adrelanos/Whonix/tree/development/whonix_workstation/usr/local/share/whonix/leaktest</a></li>
+<li><a class="alink" href="/p/whonix/wiki/LeakTests/">[LeakTests]</a></li>
+</ul>
+<h1 id="design-shared">Design-Shared</h1>
+<p>Changes from <a class="alink" href="/p/whonix/wiki/Design-Shared/">[Design-Shared]</a> also have to be added to the Gateway.</p>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/Design-Shared/">Wiki: Design-Shared</a><br>
+    
+      <a href="/p/whonix/wiki/LeakTests/">Wiki: LeakTests</a><br>
+    
+      <a href="/p/whonix/wiki/Dev_KDE/">Wiki: Dev_KDE</a><br>
+    
+      <a href="/p/whonix/wiki/TorBrowser/">Wiki: TorBrowser</a><br>
+    
+      <a href="/p/whonix/wiki/XChat/">Wiki: XChat</a><br>
+    
+      <a href="/p/whonix/wiki/Chat/">Wiki: Chat</a><br>
+    
+      <a href="/p/whonix/wiki/rss/">Wiki: rss</a><br>
+    
+      <a href="/p/whonix/wiki/Remailer/">Wiki: Remailer</a><br>
+    
+      <a href="/p/whonix/wiki/Mixmaster/">Wiki: Mixmaster</a><br>
+    
+      <a href="/p/whonix/wiki/DummyTor/">Wiki: DummyTor</a><br>
+    
+      <a href="/p/whonix/wiki/Design/">Wiki: Design</a><br>
+    
+      <a href="/p/whonix/wiki/Dev_SourceCode/">Wiki: Dev_SourceCode</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

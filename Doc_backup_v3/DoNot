@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-16 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / DoNot</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XARQacPjkUYjIfEfZNHpctxc { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-DoNot" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">DoNot
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#things-not-to-do">Things NOT to do</a><ul>
+<li><a href="#i-wonder-what-my-site-looks-like-when-im-anonymous">I wonder what my site looks like when I'm anonymous.</a></li>
+<li><a href="#login-into-your-real-life-facebook-account-and-think-you-are-anonymous">Login into your real life Facebook account and think you are anonymous.</a></li>
+<li><a href="#never-login-into-accounts-you-ever-used-without-tor">Never login into accounts you ever used without Tor.</a></li>
+<li><a href="#dont-login-into-your-bank-account-paypal-ebay-or-other-important-personal-accounts-unless">Don't login into your bank account, paypal, ebay or other important personal accounts unless...</a></li>
+<li><a href="#dont-alternate-tor-with-open-wifi">Don't alternate Tor with open WiFi.</a></li>
+<li><a href="#prevent-tor-over-tor-scenarios">Prevent Tor over Tor scenarios.</a></li>
+<li><a href="#dont-send-sensitive-data-without-end-to-end-encryption">Don't send sensitive data without end-to-end encryption.</a></li>
+<li><a href="#dont-disclose-identifying-data-about-yourself">Don't disclose identifying data about yourself.</a></li>
+<li><a href="#do-use-bridges-if-you-think-tor-usage-is-dangeroussuspicious-in-your-country">Do use bridges if you think Tor usage is dangerous/suspicious in your country.</a></li>
+<li><a href="#dont-use-different-online-identities-at-the-same-time">Don't use different online identities at the same time.</a></li>
+<li><a href="#dont-log-into-twitter-facebook-google-etc-longer-than-necessary">Don't log into Twitter, Facebook, Google, etc. longer than necessary.</a></li>
+<li><a href="#do-not-mix-modes-of-anonymity">Do not mix Modes of Anonymity!</a><ul>
+<li><a href="#mode1-user-anonymous-any-recipient">mode(1): user anonymous; any recipient</a></li>
+<li><a href="#mode2-user-knows-recipient-both-use-tor">mode(2): user knows recipient; both use Tor</a></li>
+<li><a href="#mode3-user-with-no-anonymity-using-tor-any-recipient">mode(3): user with no anonymity using Tor; any recipient</a></li>
+<li><a href="#mode4-user-with-no-anonymity-any-recipient">mode(4): user with no anonymity; any recipient</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</li>
+<li><a href="#dont-customize-settings-if-you-dont-know-their-consequences">Don't customize settings if you don't know their consequences.</a></li>
+<li><a href="#do-not-use-clearnet-and-tor-at-the-same-time">Do not use clearnet and Tor at the same time.</a></li>
+<li><a href="#do-not-connect-to-any-server-anonymously-and-non-anonymously-at-the-same-time">Do not connect to any server anonymously and non-anonymously at the same time!</a></li>
+<li><a href="#do-not-confuse-anonymity-with-pseudonymity">Do not confuse Anonymity with Pseudonymity.</a></li>
+<li><a href="#dont-be-the-first-one-to-spread-your-own-link">Don't be the first one to spread your own link.</a></li>
+<li><a href="#dont-open-random-files-or-links">Don't open random files or links.</a></li>
+<li><a href="#dont-do-mobile-phone-verification">Don't do (mobile) phone verification.</a></li>
+<li><a href="#why-this-page">Why this page?</a></li>
+<li><a href="#attribution">Attribution</a></li>
+</ul>
+</li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<h1 id="things-not-to-do">Things NOT to do</h1>
+<h2 id="i-wonder-what-my-site-looks-like-when-im-anonymous">I wonder what my site looks like when I'm anonymous.</h2>
+<p>"I wonder what my site looks like when I'm anonymous" <font size="-3">(<a class="" href="https://lists.torproject.org/pipermail/tor-dev/2012-April/003472.html" rel="nofollow">source</a>)</font></p>
+<p>It's best not to visit your own personal website where real names or pseudonyms (which have been ever tied to a non-Tor connection/IP) are attached.</p>
+<p>This is because how many people are visiting your personal website? 90% of all Tor users or just you or just very few people? That's a weak anonymity. Once you visit a website your Tor circuit gets dirty. The exit node knows that someone visited your website and if the site is not that popular, it's a good guess that this someone was you. It wouldn't be hard to assume that further connections originate that exit node come from your machine.</p>
+<p><font size="-3">Source: <a class="" href="https://trac.torproject.org/projects/tor/ticket/3455" rel="nofollow">Tor Browser should set SOCKS username for a request based on referer</a>.</font></p>
+<h2 id="login-into-your-real-life-facebook-account-and-think-you-are-anonymous">Login into your real life Facebook account and think you are anonymous.</h2>
+<p>Don't login into your personal Facebook account. No matter if your real name is attached or only a pseudonym. You most likely added your friends and they know who the account belongs to. Through your social network Facebook can guess who you are.</p>
+<p>No anonymity solution is magic. Online anonymity software may reliable hide your IP/location. But Facebook does no longer need your IP/location. They already know who you are, who your friends are, which private messages you send and so on. All those data is at least stored on Facebook server. No kind of software can delete that data. Only Facebook and crackers could.</p>
+<p>So if you log into your personal Facebook account you only get location privacy. No anonymity.</p>
+<p><font size="-3"><br />
+Quoted from <a class="" href="https://blog.torproject.org/blog/toggle-or-not-toggle-end-torbutton" rel="nofollow">The Tor Blog: To Toggle, or not to Toggle: The End of Torbutton</a>: <em>"mike, am i completely anonymized if i log onto my facebook account? im using firefox 3.6 with tor and no script on windows 7 machine. thank you."</em>.<br />
+</font></p>
+<h2 id="never-login-into-accounts-you-ever-used-without-tor">Never login into accounts you ever used without Tor.</h2>
+<p>Always assume that each time you visit a website, that they will log the IP/location which visited the website, at which time and what you did.</p>
+<p>Also assume, that each time you're online your ISP (Internet Service Provider) will log your online time, IP/location and perhaps traffic. Your ISP could also log to which IPs/locations you connected, how much traffic and what you send and revived. (Unless it's encrypted, then they'll see only garbage.) The following tables should give you an simplified overview how those logs could look like.</p>
+<p>ISP Log:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Time</th>
+<th>IP/location</th>
+<th>traffic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John Doe</td>
+<td>16 pm to 17 pm</td>
+<td>1.1.1.1</td>
+<td>500 megabytes</td>
+</tr>
+</tbody>
+</table>
+<p><a class="" href="https://en.wikipedia.org/wiki/Deep_packet_inspection" rel="nofollow">Extended</a> ISP Log:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Time</th>
+<th>IP/location</th>
+<th>traffic</th>
+<th>Destination</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John Doe</td>
+<td>16 pm to 17 pm</td>
+<td>1.1.1.1</td>
+<td>1 megabytes</td>
+<td>16.00 pm to 16.10 pm: google.com (searched for thing one, thing two...)</td>
+<td></td>
+</tr>
+<tr>
+<td>John Doe</td>
+<td>16 pm to 17 pm</td>
+<td>1.1.1.1</td>
+<td>490 megabytes</td>
+<td>16.10 pm to 16.20 pm: youtube.com (view video 1, video 2, ...)</td>
+<td></td>
+</tr>
+<tr>
+<td>John Doe</td>
+<td>16 pm to 17 pm</td>
+<td>1.1.1.1</td>
+<td>9 megabytes</td>
+<td>16.20 pm to 16.30 pm: facebook.com (encrypted traffic)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Website Log:</p>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>IP/location</th>
+<th>traffic</th>
+<th>Content</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16.00 pm to 16.10 pm</td>
+<td>1.1.1.1</td>
+<td>1 megabytes</td>
+<td>searched for thing one, thing two...</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>You'll see, when websites and ISP keep logs, no one needs Sherlock Holmes to conclude.</p>
+<p>If you mess up for one time, and login with a non-Tor connection/IP, which can be tied to you, then the whole account is compromised.</p>
+<h2 id="dont-login-into-your-bank-account-paypal-ebay-or-other-important-personal-accounts-unless">Don't login into your bank account, paypal, ebay or other important personal accounts unless...</h2>
+<p>Logging into your bank, paypal, ebay or other important personal accounts registered on your name where money is involved could risk, that your account gets suspended, due to "suspicious activity" by the fraud prevention system. This is because crackers sometimes use Tor for committing fraud. That's probable not what you want.</p>
+<p>It's not anonymous for reasons already explained. It's pseudonymous and offers circumvention (in case access to the site is blocked by your ISP) and location privacy. The difference of anonymity and pseudonymity is covered in a later chapter on this page.</p>
+<p>In many cases you will be able to contact the support and to get your account unblocked again or on request, even the fraud protection policy gets relaxed for your account.</p>
+<p>Whonix developer adrelanos is not against using Tor for circumvention and/or location privacy, you just should know the risk of your account getting (temporarily) suspended and the other things mentioned on this page and the other warnings from the Whonix documentation. So if you know what you are doing, feel free.</p>
+<h2 id="dont-alternate-tor-with-open-wifi">Don't alternate Tor with open WiFi.</h2>
+<p>You may think open WiFi is faster and equally safe as Tor since the IP/location can not be tied to your real name?</p>
+<p>Better use an open WiFi AND Tor, but not or.</p>
+<p>The approximate location of any IP address can be tied down to a city, region or even a street. Even if you are already away, you still gave away your city or approximate location since most people don't switch the continent.</p>
+<p>While this doesn't break your anonymity, the circle of suspects decreased from the world, a continent or the country to a region. This strongly hurts your anonymity. Keep as many pieces of information for yourself.</p>
+<h2 id="prevent-tor-over-tor-scenarios">Prevent Tor over Tor scenarios.</h2>
+<p><strong>Whonix specific.</strong></p>
+<p>When using a transparent proxy (Whonix includes one), it is possible to start a Tor session from the client as well as from the transparent proxy, creating a "Tor over Tor" scenario. </p>
+<p>This happens when installing Tor inside Whonix-Workstation or when using the Tor Browser Bundle without configuring it to use a SocksPort instead of the TransPort. (Covered in the <a class="" href="https://sourceforge.net/p/whonix/wiki/TorBrowser/">Tor Browser</a> article.)</p>
+<p>Doing so produces undefined and potentially unsafe behavior. In theory, however, you can get six hops instead of three, but it is not guaranteed that you'll get three different hops - you could end up with the same hops, maybe in reverse or mixed order. It is not clear if this is safe. It has never been discussed.</p>
+<p>You can <a class="" href="https://www.torproject.org/docs/faq.html.en#ChooseEntryExit" rel="nofollow">choose an entry/exit point</a>, but you get the best security that Tor can provide when you leave the route selection to Tor; overriding the entry / exit nodes can mess up your anonymity in ways we don't understand. Therefore Tor over Tor usage is highly discouraged.</p>
+<p><font size="-3">License of "Prevent Tor over Tor scenarios.": This was originally posted by adrelanos (proper) to the <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor" rel="nofollow">TorifyHOWTO</a> (<a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff" rel="nofollow">license</a>). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as this DoNot page.<br />
+</font></p>
+<h2 id="dont-send-sensitive-data-without-end-to-end-encryption">Don't send sensitive data without end-to-end encryption.</h2>
+<p>As already explained on the <a class="alink" href="/p/whonix/wiki/Warning/">[Warning]</a> page, Tor exit nodes can eavesdrop on communications and other Man-in-the-middle attacks can happen. The only way to get sensitive data from the sender to the recipient while withholding it from third parties, is using end-to-end encryption.</p>
+<h2 id="dont-disclose-identifying-data-about-yourself">Don't disclose identifying data about yourself.</h2>
+<p>Deanonymsation is not only possible with connections/IP addresses but by social threats too. Some recommendations to avoid deanonymisation collected by Anonymous:</p>
+<ul>
+<li>Do not include personal informations in your nickname</li>
+<li>Do not discuss personal informations, where you are from...</li>
+<li>Do not mention your gender, tattos, piercings or physical capacities.</li>
+<li>Do not mention your profession, hobbies or involvement in activist groups.</li>
+<li>Do not use special characters on keyboard, which are existent only in your language.</li>
+<li>Do not post informations to the regular internet while you are anonymous. Do not use Twitter and Facebook. This is easy to correlate.</li>
+<li>Do not post links to facebook images. The image name contains a personal ID.</li>
+<li>Do not connect to same destination at the same time. Try to alternate.</li>
+<li>IRC, other chats, forum, mailing list, etc. are public, keep that in mind.</li>
+<li>Heroes only exist in comic books keep that in mind! There are only young heroes and dead heroes.</li>
+</ul>
+<p>If it's a must to disclose identifying data about yourself, treat it as "sensitive data" in the point above.</p>
+<p><font size="-3">License: From the <a class="" href="https://anonymous-proxy-servers.net/en/help/anonymous-irc.html" rel="nofollow">JonDonym documentation</a> (<a class="" href="https://anonymous-proxy-servers.net/forum/viewtopic.php?p=31220&amp;sid=914c87f9be91ef7afaa638d1d7f2a881#p31220" rel="nofollow">Permission</a>).</font></p>
+<h2 id="do-use-bridges-if-you-think-tor-usage-is-dangeroussuspicious-in-your-country">Do use bridges if you think Tor usage is dangerous/suspicious in your country.</h2>
+<p>Quoted from the <a class="alink" href="/p/whonix/wiki/Bridges/">[Bridges]</a> page:<br />
+"<em>Bridges are important tools that work in many cases but they are <strong>not an absolute protection</strong> against the technical progress that an adversary could do to identify Tor users.</em>"</p>
+<h2 id="dont-use-different-online-identities-at-the-same-time">Don't use different online identities at the same time.</h2>
+<p>They easily correlate. <a class="" href="https://sourceforge.net/p/whonix/wiki/Warning/#whonix-doesnt-magically-separate-your-different-contextual-identities">Whonix doesn't magically separate your different contextual identities</a>.</p>
+<p>Also read the points below.</p>
+<h2 id="dont-log-into-twitter-facebook-google-etc-longer-than-necessary">Don't log into Twitter, Facebook, Google, etc. longer than necessary.</h2>
+<p>Restrict the time your are logged in accounts for Twitter, Facebook, Google and any other account based services (web forum etc.) to the time you are using them. After you are done with reading, posting and so on, log out. At least log out, shut down Tor Browser, change your Tor circuit using a <a class="" href="https://sourceforge.net/p/whonix/wiki/TorController/">Tor Controller</a>, wait a few seconds until the circuit changed, restart Tor Browser. For better security follow the <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/#recommendation-to-use-multiple-vm-snapshots">Recommendation to use multiple VM Snapshots</a> and/or to <a class="" href="https://sourceforge.net/p/whonix/wiki/Multiple%20Whonix-Workstations/">use multiple Whonix-Workstations</a>.</p>
+<p>This is because many websites include one or more of the many integration buttons, such as "I like" and "twitter this" and Google analytics, adsense etc. Those buttons tell the originating service that you visited that website because you were still logged into their service.</p>
+<p>Also note the chapter "Don't use different online identities at the same time." above.</p>
+<h2 id="do-not-mix-modes-of-anonymity">Do not mix Modes of Anonymity!</h2>
+<p>Let us begin with an overview of the different Modes of Anonymity:</p>
+<h3 id="mode1-user-anonymous-any-recipient">mode(1): user anonymous; any recipient</h3>
+<ul>
+<li>Scenario: post anonymously a message in a message board/mailing list/comment field</li>
+<li>Scenario: whistleblower and such</li>
+<li>You are anonymous.</li>
+<li>Your real IP/location stays hidden.</li>
+<li>Location privacy: your location remains secret.</li>
+</ul>
+<h3 id="mode2-user-knows-recipient-both-use-tor">mode(2): user knows recipient; both use Tor</h3>
+<ul>
+<li>Scenario: both sender and recipient know each other and both use Tor.</li>
+<li>They can communicate with each other without any third party being wise to their activity or even the the knowledge that they are communicating with each other.</li>
+<li>You are NOT anonymous.</li>
+<li>Your real IP/location stays hidden.</li>
+<li>Location privacy: your location remains secret.</li>
+</ul>
+<h3 id="mode3-user-with-no-anonymity-using-tor-any-recipient">mode(3): user with no anonymity using Tor; any recipient</h3>
+<ul>
+<li>Scenario: login with your real name into any services, such as webmail, Twitter, Facebook, etc...</li>
+<li>You are obviously NOT anonymous. As soon as you log into an account where you entered your real name the website knows your identity. Tor can not make you anonymous in these situations.</li>
+<li>Your real IP/location stays hidden.</li>
+<li>Location privacy. Your location remains secret.</li>
+</ul>
+<h3 id="mode4-user-with-no-anonymity-any-recipient">mode(4): user with no anonymity; any recipient</h3>
+<ul>
+<li>Scenario: normal browsing without Tor.</li>
+<li>You are NOT anonymous.</li>
+<li>Your real IP/location gets revealed.</li>
+<li>Your location gets revealed.</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>It's not wise to combine mode(1) and mode(2). For example, if you have an IM or email account and use that via mode(1), you are advised not to use the same account for mode(2). We have explained previously why this is an issue.</p>
+<p><strong>It's also not wise to mix two or more modes inside the same Tor session</strong>, as they could share the same exit node (identity correlation).</p>
+<p>It's also possible that other combinations of modes are dangerous and could lead to the leakage of personal information or your physical location.</p>
+<h3 id="license">License</h3>
+<p><font size="-3">License of "Do not mix Modes of Anonymity!": This was originally posted by adrelanos (proper) to the <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor" rel="nofollow">TorifyHOWTO</a> (<a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff" rel="nofollow">license</a>). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as this DoNot page.</font></p>
+<h2 id="dont-customize-settings-if-you-dont-know-their-consequences">Don't customize settings if you don't know their consequences.</h2>
+<p>Changing user interface settings for applications, which do not connect to the internet, mostly safe. For example, checking a box "don't show this tip of the day anymore" or "hide this menu bar" will have no effect on anonymity.</p>
+<p>Look into the Whonix documentation, if changing the settings you are interested in, is documented or recommend against. Try to live with the defaults.</p>
+<p>Changing settings for applications, which connect to the internet, even user interface settings, has to be thoroughly reviewed. For example removing a menu bar or using Full Screen in Tor Browser is recommend against. The latter is known to modify the screen size, which is bad for the web fingerprint.</p>
+<p>You should only modify network settings with great care if you know their consequences. For example, you should stay away from the advice related to "Firefox Tuning". <font size="-3">If you believe the settings are suboptimal, the changes should be proposed upstream, so they get changed for all Tor Browser users with the next release.</font></p>
+<h2 id="do-not-use-clearnet-and-tor-at-the-same-time">Do not use clearnet and Tor at the same time.</h2>
+<p>Using your non-Tor browser and Tor Browser at the same time, risks that you at some point confuse one for the other and deanonymize yourself.</p>
+<p>Using clearnet and Tor at the same time, highly risks, that you connect to any server anonymously and non-anonymously at the same time, which is recommend against. The reason for this is explained in the point below.</p>
+<p>If you really want not to follow this recommendation, use at least two different desktops to prevent confusing one browser for another.</p>
+<h2 id="do-not-connect-to-any-server-anonymously-and-non-anonymously-at-the-same-time">Do not connect to any server anonymously and non-anonymously at the same time!</h2>
+<p>It's highly recommended that you do not connect to any remote server in this manner. That is, do not create a Tor link and a non-Tor link to the same remote server at the same time. In the event your internet connection breaks down (and it will eventually), all your connections will break at the same time and it won't be hard for an adversary to put the pieces together and determine what public IP/location belongs to what Tor IP/connection, potentially identifying you directly.</p>
+<p><font size="-3">License of "Do not connect to any server anonymously and non-anonymously at the same time!": This was originally posted by adrelanos (proper) to the <a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor" rel="nofollow">TorifyHOWTO</a> (<a class="" href="https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff" rel="nofollow">license</a>). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as this DoNot page.</font></p>
+<h2 id="do-not-confuse-anonymity-with-pseudonymity">Do not confuse Anonymity with Pseudonymity.</h2>
+<p>This chapter explains the difference between anonymity and pseudonymity. Word definitions are always a difficult topic because a majority of people has to agree with it.</p>
+<p>An anonymous connection is defined as a connection to a destination server, where the destination server has no means to find out the origin (IP/location) of that connection nor to associate and an identifier ^1^ to it.</p>
+<p>A pseudonymous connection is defined as a connection to a destination server, where the destination server has no means to find out the origin (IP/location) of a connection, but can associate it with an identifier ^1^.</p>
+<p>In an ideal world, the Tor network, Tor Browser (and the underlying operating system, hardware, physical security, etc.) is perfect. For example the user could fetch a news website and neither the news website nor the website's ISP has any idea if that user has ever contacted the news website before.</p>
+<p>The opposite of this, when using software incorrectly, for example using Firefox instead o of the Tor-safe browser Tor Browser, the original (IP/location) of a connection is still hidden, but an identifier (for example Cookies) can be used to make that connection pseudonymous. The destination website could log for example "user with id 111222333444 viewed video title a at time b on date c, video title d at time e at date f.". These information can be used for profiling. Over time these profiles become more and more comprehensive, which reduces anonymity, i.e. in worst case it could lead to de-anonymization.</p>
+<p>As soon as someone logs into a website (for example into a forum or e-mail address) with a username the connection is by definition no longer anonymous, but pseudonymous. The origin of the connection (IP/location) is still hidden, but the connection can be associated with an identifier ^1^, i.e. in this case, an account name. Identifiers can be used to keep a log of various things. When a user wrote what, date and time of login and logout, what a user wrote, to whom the user wrote, IP address (useless, if it's a Tor exit node), browser fingerprint etc.</p>
+<p>Maxim Kammerer, developer of <a class="" href="http://dee.su/liberte" rel="nofollow">Liberté Linux</a>, has a interesting different opinion. <a class="" href="http://forum.dee.su/topic/anon-test-for-ll-on-ipcheck-info#65650000000264003" rel="nofollow">Quote</a> <a class="" href="http://www.webcitation.org/6EEeh3pNp" rel="nofollow">(w)</a> I don't want to withhold from you:</p>
+<blockquote>
+<p>I have not seen a compelling argument for anonymity, as opposed to pseudonymity. Enlarging anonymity sets is something that Tor developers do in order to publish incremental papers and justify funding. Most users only need to be pseudonymous, where their location is hidden. Having a unique browser does not magically uncover user's location, if that user does not use that browser for non-pseudonymous activities. Having good browser header results on anonymity checkers equally does not mean much, because there are many ways to uncover more client details (e.g., via Javascript oddities).</p>
+</blockquote>
+<p><font size="-3"><br />
+<a class="" href="https://blog.torproject.org/blog/effs-panopticlick-
+and-torbutton" rel="nofollow">Tor Blog: EFF's Panopticlick and Torbutton</a><br />
+</font></p>
+<p><font size="-3"><br />
+Fingerprinting defense isn't perfect yet in any browser. There are still open bugs.<br />
+</font><br />
+<font size="-3">(See <a class="" href="https://trac.torproject.org/projects/tor/query?status=accepted&amp;status=assigned&amp;status=needs_information&amp;status=needs_review&amp;status=new&amp;status=reopened&amp;order=priority&amp;col=id&amp;col=summary&amp;col=keywords&amp;col=status&amp;col=owner&amp;col=type&amp;col=priority&amp;keywords=tbb-linkability" rel="nofollow">tbb-linkability</a> and <a class="" href="https://trac.torproject.org/projects/tor/query?status=accepted&amp;status=assigned&amp;status=needs_review&amp;status=needs_revision&amp;status=new&amp;status=reopened&amp;order=priority&amp;col=id&amp;col=summary&amp;col=keywords&amp;col=status&amp;col=owner&amp;col=type&amp;col=priority&amp;keywords=tbb-fingerprinting" rel="nofollow">tbb-fingerprinting</a>.)</font></p>
+<p><font size="-3&gt;&lt;br&gt;
+^1^ An identifier could be for example a (Flash) Cookie with an unique number.&lt;br&gt;
+&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id="><br />
+^1^ An identifier could be for example a (Flash) Cookie with an unique number.<br />
+</font></p>
+<h2 id="dont-be-the-first-one-to-spread-your-own-link">Don't be the first one to spread your own link.</h2>
+<p>You created anonymously a blog or hidden service? Great. You have a twitter account with lots of followers, run a big clearnet news page or similar? Great. Do not get tempted to be one of the first ones who advertise your new anonymous project! The more you separate identities, the better. Of course, at some point you may or even must be "naturally" get aware of it, but be very careful at this point.</p>
+<h2 id="dont-open-random-files-or-links">Don't open random files or links.</h2>
+<p>Someone send you an pdf by mail or gave you a link to a pdf? That sender/mailbox/account/key could be compromised and the pdf could be prepared to infect your system. Don't open it with the tool you were expected to open it with. For example, don't open a pdf with a pdf viewer. If the content is public anyway, try using a free online pdf viewer.</p>
+<h2 id="dont-do-mobile-phone-verification">Don't do (mobile) phone verification.</h2>
+<p>Websites such as Google, Facebook and others will ask for a (mobile) phone number if you login over Tor. Unless, you are really clever or have an alternative, you shouldn't do it.</p>
+<p>Reason:<br />
+The number you give away will be logged. The SIM card is most likely registered on your name. And even if not, receiving an SMS gives away your location. Even if you anonymously bought a SIM card and do it from a point far away from your home, there is still a risk. The phone. Each time the phone logs into the mobile network, the provider will log the SIM card serial number ^1^ AND the phone serial number ^2^. If you bought the SIM card anonymously, but not the phone, it's not anonymous, because these two serials will get linked. If you want to do it, you need a spot far away from your home, a fresh phone, a fresh SIM card, and you must turn of the phone, leave and burn the phone and the SIM card right after doing it.</p>
+<p>You could try to find an online service receiving SMS for you. That would work and would be anonymous. The problem is, that it most likely won't work for Google and Facebook, because they actively blacklist such numbers for verification. Or you could try to find someone else receiving the SMS for you, but that would only mitigate the risk from you to the other person.</p>
+<p><font size="-3"><br />
+,,<br />
+^1^ <a class="" href="https://en.wikipedia.org/wiki/International_mobile_subscriber_identity" rel="nofollow">IMSI</a><br />
+^2^ <a class="" href="https://en.wikipedia.org/wiki/International_Mobile_Station_Equipment_Identity" rel="nofollow">IMEI</a><br />
+</font></p>
+<h2 id="why-this-page">Why this page?</h2>
+<p>You can skip "<em>Why this page?</em>".</p>
+<p><font size="-3">This page highly risks to state obvious things. Obvious to whom? Developers, hackers, geeks, etc. may call that common sense.</font></p>
+<p>Those groups tend to lose contact to actual non-techy users. It's good sometimes to read usability papers or feedback from people who do not post on mailing lists or in forums.</p>
+<p>For example:</p>
+<ul>
+<li><font size="-3"><a class="" href="https://lists.torproject.org/pipermail/tor-dev/2012-April/003472.html" rel="nofollow">tor-dev First-time tails/tor user feedback</a>)</font></li>
+<li><font size="-3"><a class="" href="http://petsymposium.org/2012/papers/hotpets12-1-usability.pdf" rel="nofollow">Eliminating Stop-Points in the Installation and Use of. Anonymity Systems</a></font></li>
+</ul>
+<h2 id="attribution">Attribution</h2>
+<p>Thanks to intrigeri and anonym, who provided feedback and suggestions for this page on the Tails-dev mailing list.</p>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+    <h4>Related</h4>
+    <p>
+    
+      <a href="/p/whonix/wiki/Warning/">Wiki: Warning</a><br>
+    
+      <a href="/p/whonix/wiki/Bridges/">Wiki: Bridges</a><br>
+    
+    </p>
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

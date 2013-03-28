@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-7 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Documentation / Connection Between Whonix-Gateway and Whonix-Workstation</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/allura/css/forge/hilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/tool/wiki/css/wiki.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fmarkitup_sf.css%3Bcss%2Fpage_list.css%3Bcss%2Fjquery.tagsinput.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XrGzHHPfmdOKalHBpGURlaY { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="feed.atom"/>
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="../feed.rss"/>
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="../feed.atom"/>
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-Connection_Between_Whonix-Gateway_and_Whonix-Workstation" id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-wiki">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">Connection Between Whonix-Gateway and Whonix-Workstation
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="../search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><div>
+<div class="markdown_content"><p><a class="" href="https://sourceforge.net/p/whonix/wiki/Home/#whonix-homepage">Whonix Homepage</a> | <img alt="" src="http://whonix.sourceforge.net/screenshots/BC_Rnd_32px.png" /> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/#donate">Donate</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned">News</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Screenshots/">Screenshots</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Videos/">Videos</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Download/">Download</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Documentation/">Documentation</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/About/">About</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/">Features</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Security%20Guide/">Security Guide</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/FAQ/">FAQ</a> | <a class="" href="https://sourceforge.net/p/whonix/discussion/">Forum</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contact/">Contact</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Bridges/">Bridges Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support">VPN/Tunnel Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/">Location/IP Hidden Servers</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/">Windows Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/BrowserPlugins/">Flash Support</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">You Can Help</a></p>
+<p><a class="" href="https://sourceforge.net/p/whonix/wiki/Contribute/">Contribiute</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Design/">Tech. Design</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/">Source Code / Hacking / Development Tickets</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Changelog/">Changelog</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/">Authorship</a> | <a class="" href="https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer">Disclaimer</a></p>
+<p><font size="-3">This is a wiki. Want to improve this page? Contact us!</font></p></div>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#connection-between-whonix-gateway-and-whonix-workstation">Connection between Whonix-Gateway and Whonix-Workstation</a><ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#motivation-for-secure-connections-between-whonix-gateway-and-whonix-workstation">Motivation for secure connections between Whonix-Gateway and Whonix-Workstation</a></li>
+<li><a href="#openvpn-vs-ssh">OpenVPN vs SSH</a></li>
+</ul>
+</li>
+<li><a href="#authenticated-connections-between-whonix-gateway-and-whonix-workstation">Authenticated connections between Whonix-Gateway and Whonix-Workstation</a><ul>
+<li><a href="#arp-spoofing-defense">ARP spoofing defense</a></li>
+<li><a href="#using-additional-isolated-network-interfaces">Using additional (isolated) network interfaces</a></li>
+</ul>
+</li>
+<li><a href="#encrypted-and-authenticated-connections-between-whonix-gateway-and-whonix-workstation">Encrypted and authenticated connections between Whonix-Gateway and Whonix-Workstation</a><ul>
+<li><a href="#using-ssh-not-testedrecommend">Using SSH (not tested/recommend)</a></li>
+<li><a href="#using-openvpn">Using OpenVPN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</div>
+<h1 id="connection-between-whonix-gateway-and-whonix-workstation">Connection between Whonix-Gateway and Whonix-Workstation</h1>
+<h2 id="introduction">Introduction</h2>
+<p><strong>This chapter is only important, if you do not use the Default/Download (host + VM + VM) version.</strong> You should read it if you are using Physical Isolation or for any kind of custom, non-stock configurations.</p>
+<h3 id="basics">Basics</h3>
+<p>By Whonix default, it is assumed, that Whonix-Gateway and Whonix-Workstation are connected by (virtual) LAN cable. Wireless technologies are recommend against, because a malware compromised Whonix-Workstation could jump to other wireless access point and subsequently connect without Tor. Using a (virtual) cable enforces, that Whonix-Workstation can only connect through Whonix-Gateway. For the same reason connections to Whonix-Gateway over internet are recommend against as well.</p>
+<p>By Whonix default, connections between Whonix-Workstation and Whonix-Gateway are not authenticated/encrypted. This is because of the assumption above. The connection between Whonix-Workstation and Whonix-Gateway is assumed to be secure. ^1^ Adding authentication/encryption by default would also greatly increase complexity of Whonix, which is what we want to avoid in the first place for reasons explained in earlier chapters.</p>
+<p>In case you want to run multiple Whonix-Workstations at the same time inside the same (virtual) isolated LAN, you should add authentication:</p>
+<ul>
+<li>Inside virtual LANs:<ul>
+<li>Authentication is enough.</li>
+<li>No encryption is required.<ul>
+<li>When no machines can be impersonanted, no MITM is possible inside the virtual LAN.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Inside real LANs:<ul>
+<li>You only need encryption if in your threat model includes the possibility for a MITM.</li>
+</ul>
+</li>
+</ul>
+<p>In case you want to connect to Whonix-Gateway over insecure networks (internet):</p>
+<ul>
+<li>You should add encryption and authentication.<ul>
+<li>Encryption is required, because otherwise a MITM could eavesdrop.</li>
+<li>Authentication ensures, you're connecting to the right machine.<ul>
+<li>Most encryption solutions, such as OpenVPN or ssh also provide authentication.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><font size="-3"><br />
+,,<br />
+^1^ Secure means, you assume that no one on your (virtual) LAN is going to MITM.<br />
+</font></p>
+<h3 id="motivation-for-secure-connections-between-whonix-gateway-and-whonix-workstation">Motivation for secure connections between Whonix-Gateway and Whonix-Workstation</h3>
+<p><strong>Only applies to non-stock configurations</strong>: if you run multiple Whonix-Workstations at the same time or if you want to connect to Whonix-Workstation over insecure networks (internet):</p>
+<p>A compromised Whonix-Workstation can impersonate Whonix-Gateway or any other Whonix-Workstation inside the same (virtual) LAN, perform active MITM attacks or passively eavesdrop.</p>
+<h3 id="openvpn-vs-ssh">OpenVPN vs SSH</h3>
+<p>Adding encryption can be done using OpenVPN or SSH. Using SSH and not OpenVPN, has the advantage, that you an later, still easily tunnel a VPN through Tor. If you don't plan to do this, using OpenVPN is probable easier. The disadvantage of using SSH is, that it's complicated to setup for this use case. You are probable better off using OpenVPN.</p>
+<h2 id="authenticated-connections-between-whonix-gateway-and-whonix-workstation">Authenticated connections between Whonix-Gateway and Whonix-Workstation</h2>
+<h3 id="arp-spoofing-defense">ARP spoofing defense</h3>
+<p>This is only been quickly researched. After reading the <a class="" href="https://en.wikipedia.org/wiki/ARP_spoofing" rel="nofollow">wikipedia article about ARP spoofing</a>, it looks like <em>Static ARP entries</em> could be used for authenticated connections between Whonix-Gateway and Whonix-Workstation.</p>
+<h3 id="using-additional-isolated-network-interfaces">Using additional (isolated) network interfaces</h3>
+<p>(This chapter is actually not authentication, solves the threat nonetheless.)</p>
+<p>A workaround, when using Virtual Box and running everything on the same host:</p>
+<ul>
+<li>One can also enable Virtual Network Adapter 3 and 4 and use uniquely named internal networks, for up to 3 Whonix-Workstations, which are isolated against each other.</li>
+</ul>
+<p>A workaround, for Whonix with Physical Isolation, where all machines in the same trusted place: </p>
+<ul>
+<li>That Whonix-Gateway already requires two network interfaces is a though requirement. (External and internal interface.) You could theoretically also add additional interfaces for additional internal LAN interfaces.</li>
+</ul>
+<h2 id="encrypted-and-authenticated-connections-between-whonix-gateway-and-whonix-workstation">Encrypted and authenticated connections between Whonix-Gateway and Whonix-Workstation</h2>
+<h3 id="using-ssh-not-testedrecommend">Using SSH (not tested/recommend)</h3>
+<p>You must not allow <a class="" href="http://serverfault.com/questions/56566/ssh-tunneling-only-access" rel="nofollow">ssh login</a>.</p>
+<p>Each Whonix-Workstation probable needs its own SSH account, with public key authentication and the SSH private key distributed to each T-W. Whonix-Gateway and all Whonix-Workstations need the correct SSH commands. Whonix-Gateway has to autostart SSH and to continuously listening for connections. And Whonix-Workstation has to autostart SSH as well and continuously reconnect (in case Whonix-Workstation started before Whonix-Gateway or Whonix-Gateway restarted) (perhaps using autossh or something similar). All Whonix-Workstations need to use the tunnel IP, to connect to the Whonix-Gateway. And the Whonix-Gateway should reject unencrypted gateway requests, and only accept forwarding to Tor over the SSH tunnel. And also answer only over the SSH tunnel. All Whonix-Workstations must use the SSH tunnel as gateway (redirect network level to socks using tranSOCKS_ev or similar). Perhaps also changes in the Whonix-Gateway firewall are required. Taking all the into account, it looks like, it's not impossible to use SSH for this task, but it's quite complicated.</p>
+<p>You are probable better off using OpenVPN.</p>
+<h3 id="using-openvpn">Using OpenVPN</h3>
+<p><strong>DRAFT! UNFINISHED!</strong></p>
+<p>Right now only supports two modes/security domains:</p>
+<ul>
+<li>Whonix-Workstations with the secret key (=trusted) and</li>
+<li>other workstation with no key/vpn configured.</li>
+</ul>
+<p>NOTE:</p>
+<ul>
+<li>Transparent proxying doesn't seem to work at all, therefore you need to configure all applications to use socks ports.</li>
+</ul>
+<p>On the gateway:</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">-</span><span class="nb">i</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">openvpn</span>
+
+# <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">symmetric</span> <span class="n">key</span>
+<span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">user</span> <span class="n">openvpn</span> <span class="o">--</span><span class="n">genkey</span> <span class="o">--</span><span class="n">secret</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>
+
+# <span class="n">copy</span> <span class="n">key</span> <span class="n">to</span> <span class="n">workstation</span> <span class="p">(</span><span class="n">Firewall</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">disabled</span> <span class="n">and</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span> <span class="n">installed</span> <span class="n">on</span> <span class="n">Whonix</span><span class="o">-</span><span class="n">Workstation</span> <span class="k">for</span> <span class="n">this</span> <span class="n">to</span> <span class="n">work</span><span class="p">)</span>
+<span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">user</span> <span class="n">scp</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span> <span class="n">user</span><span class="p">@</span>192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>10<span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>
+
+<span class="n">mv</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>
+<span class="n">chown</span> <span class="n">root</span><span class="p">:</span><span class="n">root</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>
+<span class="n">chmod</span> 700 <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>
+
+# <span class="n">create</span> <span class="n">server</span> <span class="n">configuration</span>
+<span class="n">echo</span> &quot;
+<span class="n">user</span> <span class="n">nobody</span>
+<span class="n">group</span> <span class="n">nogroup</span>
+<span class="n">daemon</span>
+<span class="n">dev</span> <span class="n">tun</span>
+<span class="n">ifconfig</span> 10<span class="p">.</span>8<span class="p">.</span>0<span class="p">.</span>1 10<span class="p">.</span>8<span class="p">.</span>0<span class="p">.</span>2
+<span class="n">secret</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>&quot; <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">server</span><span class="p">.</span><span class="n">conf</span>
+
+<span class="n">service</span> <span class="n">openvpn</span> <span class="n">restart</span>
+
+# <span class="n">Edit</span> <span class="n">torrc</span>
+# <span class="n">TODO</span><span class="p">:</span> <span class="n">only</span> <span class="n">selectively</span> <span class="n">change</span> <span class="n">listening</span> <span class="n">addresses</span><span class="p">.</span> <span class="n">TransPort</span> <span class="n">and</span> <span class="n">optionally</span> <span class="n">other</span> <span class="n">SocksPorts</span> <span class="n">have</span> <span class="n">to</span> <span class="n">remain</span> <span class="n">available</span><span class="p">,</span>
+#       <span class="k">if</span> <span class="n">unauthenticated</span> <span class="n">workstations</span> <span class="n">are</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span><span class="p">.</span>
+# <span class="n">NOTE</span><span class="p">:</span> <span class="n">we</span> <span class="n">are</span> <span class="n">using</span> <span class="n">a</span> <span class="n">hardcoded</span> <span class="n">default</span> <span class="n">IP</span> <span class="n">here</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">are</span> <span class="n">using</span> <span class="n">non</span> <span class="n">standard</span> <span class="n">settings</span> <span class="n">this</span> <span class="n">will</span> <span class="n">have</span> <span class="n">to</span> <span class="n">be</span> <span class="n">edited</span><span class="p">.</span>
+<span class="n">ed</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">tor</span><span class="o">/</span><span class="n">torrc</span> <span class="o">&lt;&lt;&lt;</span> $<span class="s">',s/192.168.0.10/10.8.0.1/g\nw'</span>
+
+# <span class="n">Edit</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">whonix_firewall</span>
+# <span class="n">TODO</span><span class="p">:</span> <span class="n">Put</span> <span class="n">this</span> <span class="n">automatically</span> <span class="n">where</span> <span class="n">it</span> <span class="n">actually</span> <span class="n">belongs</span>
+<span class="n">echo</span> <span class="s">'</span>
+<span class="s"># Allow openvpn in on port 1194</span>
+<span class="s">iptables -A INPUT -i $INT_IF -p udp --dport 1194 -j ACCEPT'</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">whonix_firewall</span>
+# <span class="n">TODO</span><span class="p">:</span> <span class="n">replace</span> <span class="n">hardcoded</span> &quot;<span class="n">eth1</span>&quot; <span class="n">with</span> <span class="n">a</span> <span class="n">wildcard</span>
+<span class="n">ed</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">whonix_firewall</span><span class="o">&lt;&lt;&lt;</span> $<span class="s">',s/INT_TIF=eth1/INT_TIF=tun0/g\nw'</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">whonix_firewall</span>
+</pre></div>
+<p>On the Workstation(s):</p>
+<p>TODO: Disable/tweak the new firewall</p>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">-</span><span class="nb">i</span>
+
+<span class="n">mv</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>
+<span class="n">chown</span> <span class="n">root</span><span class="p">:</span><span class="n">root</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>
+<span class="n">chmod</span> 700 <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>
+
+# <span class="n">should</span> <span class="n">be</span> <span class="n">in</span> <span class="n">the</span> <span class="n">default</span> <span class="n">installation</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">--</span><span class="n">yes</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">recommends</span> <span class="n">torsocks</span>
+
+<span class="n">echo</span> &quot;
+<span class="n">user</span> <span class="n">nobody</span>
+<span class="n">group</span> <span class="n">nogroup</span>
+<span class="n">daemon</span>
+<span class="n">remote</span> 192<span class="p">.</span>168<span class="p">.</span>0<span class="p">.</span>10
+<span class="n">dev</span> <span class="n">tun</span>
+<span class="n">ifconfig</span> 10<span class="p">.</span>8<span class="p">.</span>0<span class="p">.</span>2 10<span class="p">.</span>8<span class="p">.</span>0<span class="p">.</span>1
+<span class="n">secret</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">static</span><span class="p">.</span><span class="n">key</span>&quot; <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">server</span><span class="p">.</span><span class="n">conf</span>
+
+# <span class="n">Edit</span> <span class="n">resolv</span><span class="p">.</span><span class="n">conf</span>
+<span class="n">chattr</span> <span class="o">-</span><span class="nb">i</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">resolv</span><span class="p">.</span><span class="n">conf</span>
+<span class="n">echo</span> &quot;<span class="n">nameserver</span> 10<span class="p">.</span>8<span class="p">.</span>0<span class="p">.</span>1&quot; <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">resolv</span><span class="p">.</span><span class="n">conf</span>
+<span class="n">chattr</span> <span class="o">+</span><span class="nb">i</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">resolv</span><span class="p">.</span><span class="n">conf</span>
+</pre></div>
+<h1 id="footer">Footer</h1>
+<div>
+<div class="markdown_content"><p>This is a wiki. Want to improve this page? Contact us!</p>
+<p><font size="-3">Unless otherwise noted above, content of this particular page is copyrighted by <a class="" href="mailto:adrelanos%20at%20riseup%20dot%20net">adrelanos</a> and licensed under the same Free (as in speech) license as Whonix itself.</font></p></div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"/></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr class="grid-19" style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+  
+
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        $('.edit_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        $('.reply_post_form textarea', post).focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.promote_to_thread', post)){
+                    $('.promote_to_thread', post).click(function (ele) {
+                        $('.promote_to_thread_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%'
+          });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page"></div>
+    </form>
+  
+</div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $('.post-link')
+    .click(function(evt) {
+        var cval = $.cookie('_session_id');
+        evt.preventDefault();
+        $.post(this.href, {_session_id:cval}, function(val)
+            { window.location = val.location; },
+            'json');
+      });
+  /*]]>*/
+</script>
+  
+
+    
+      
+    
+    
+   
+    
+  </body>
+</html>

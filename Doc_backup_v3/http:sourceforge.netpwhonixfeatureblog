@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<!-- Server: sfn-web-12 -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Whonix / Feature Blog</title>
+    
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/modernizr.custom.90514.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/jquery-1.8.0.min.js"></script>
+
+<script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:regular' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=allura%2Fcss%2Fforge%2Fhilite.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/theme/sftheme/css/forge.css"
+                >
+    
+      <link rel="stylesheet"
+                type="text/css"
+                href="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/css?href=css%2Fpage_list.css"
+                >
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        #page-body.project---init-- #top_nav { display: none; }
+#page-body.project---init-- #nav_menu_holder { display: none; margin-bottom: 0; }
+#page-body.project---init-- #content_base {margin-top: 0; }
+      </style>
+    
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="feed.rss"/>
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="feed.atom"/>
+
+      <style>.XoNJLvOWzRLLlGuZjGGw { display:none }</style>
+
+    
+    
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'blog', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body id="forge">
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="/directory/">
+            <input type="text" id="words" name="q" placeholder="Search">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="/directory/" title="Browse our software.">Browse</a>
+            <a href="/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="/support" title="Contact us for help and feedback.">Help</a>
+            <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.geeknetmedia.com">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    <section id="page-body" class=" neighborhood-Projects project-whonix mountpoint-featureblog">
+	  <div class="grid-24" id="nav_menu_holder">
+            
+            
+
+
+  
+  <a href="/p/whonix/">
+    
+      <img src="/p/whonix//icon?2012-10-18 23:06:52+00:00" class="project_icon" alt="Project Logo">
+    
+	<h1 class="project_title">
+      
+        Whonix
+      
+	</h1>
+	</a>
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+  
+    <a href="/p/whonix/homelink/" class="ui-icon-tool-link">
+      Homepage
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/wiki/" class="ui-icon-tool-wiki">
+      Documentation
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/blog/" class="ui-icon-tool-blog">
+      Important Blog
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/featureblog/" class="ui-icon-tool-blog">
+      Feature Blog
+      
+        
+          <span class="diamond"></span>
+        
+      
+      
+      
+    </a>
+	
+    <a href="/projects/whonix/files/" class="ui-icon-tool-files">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/discussion/" class="ui-icon-tool-discussion">
+      User Help Forum
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/mailman/" class="ui-icon-tool-mailman">
+      Developer Mailing List
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/code/" class="ui-icon-tool-git">
+      Source Code
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/donate/" class="ui-icon-tool-link">
+      Donate
+      
+        
+      
+      
+      
+    </a>
+	
+    <a href="/p/whonix/awiki/" class="ui-icon-tool-wiki">
+      _
+      
+        
+      
+      
+      
+    </a>
+	
+	<div style="clear:both"></div>
+
+        
+      </div>
+      <div id="content_base">
+			  
+			    
+          
+
+
+<div id="sidebar">
+  
+    <div>&nbsp;</div>
+  
+    
+    
+      
+        
+    
+      <ul class="sidebarmenu">
+      
+    
+    <li class="active">
+      <a href="/p/whonix/featureblog/"><span>Home</span></a>
+    </li>
+  
+      
+        
+    
+    <li>
+      <a href="/p/whonix/featureblog/search"><span>Search</span></a>
+    </li>
+  
+      
+    
+    
+      </ul>
+      
+    
+    
+</div>
+          
+          
+			  
+			  
+          
+        
+        <div class="grid-20 pad">
+          <h2 class="dark title">Whonix / Feature Blog: Recent posts
+            <!-- actions -->
+            <small>
+            
+    <a href="feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+          <div>
+            
+            
+  
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/whonix-64-bit-custom-builds-freebsd-kernel-based-builds/">Whonix 64 bit custom builds; #FreeBSD Kernel based builds</a>
+  </h3>
+  <div class="markdown_content"><p>Since Whonix 0.6.1 (Developer Preview version), it's trivial to create 64 bit builds of Whonix. If you already know how to build Whonix from source code, only a very few steps are missing.</p>
+<p>Simply get into Whonix build-steps folder and open the 20_create-debian-img step.</p>
+<p>On Github:<br />
+<a href="https://github.com/adrelanos/Whonix/blob/development/build-steps/20_create-debian-img" rel="nofollow">https://github.com/adrelanos/Whonix/blob/development/build-steps/20_create-debian-img</a></p>
+<p>For example, you can comment out.</p>
+<div class="codehilite"><pre><span class="c">#local ARCH=&quot;i386&quot;... [read more](/p/whonix/featureblog/2013/03/whonix-64-bit-custom-builds-freebsd-kernel-based-builds/)</span>
+</pre></div>
+</div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Wed Mar 27, 2013 08:15 PM UTC">
+      24 hours ago
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+    
+      <hr />
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/heavily-simplified-source-code-and-build-documentation---developer-preview-061/">Heavily Simplified Source Code and Build Documentation - Developer Preview 0.6.1</a>
+  </h3>
+  <div class="markdown_content"><ul>
+<li>It's now using a step based build system with smaller files sorted by build steps and named by purpose. Check out the development branch on github.</li>
+</ul>
+<p><a href="https://github.com/adrelanos/Whonix/tree/development" rel="nofollow">https://github.com/adrelanos/Whonix/tree/development</a></p>
+<ul>
+<li>Instructions how to build Whonix from source code have been shrunk down and simplified.</li>
+</ul>
+<p><a href="https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/">https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/</a></p>
+<ul>
+<li>The Introduction into Whonix source code have been updated.... <a class="" href="/p/whonix/featureblog/2013/03/heavily-simplified-source-code-and-build-documentation---developer-preview-061/">read more</a></li>
+</ul></div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Tue Mar 26, 2013 10:55 PM UTC">
+      2 days ago
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+    
+      <hr />
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/new-design-chapter-comparison-of-tor-and-vpn-services/">New Design Chapter: Comparison of Tor and VPN services</a>
+  </h3>
+  <div class="markdown_content"><p><a href="https://sourceforge.net/p/whonix/wiki/ComparisonOfTorProxiesCGIproxiesProxyChainsAndVPNServices/#comparison-of-tor-and-vpn-services">https://sourceforge.net/p/whonix/wiki/ComparisonOfTorProxiesCGIproxiesProxyChainsAndVPNServices/#comparison-of-tor-and-vpn-services</a></p></div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Tue Mar 26, 2013 10:36 PM UTC">
+      2 days ago
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+    
+      <hr />
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/in-depth-detailed-technical-whonix-design/">In depth, Detailed Technical Whonix Design</a>
+  </h3>
+  <div class="markdown_content"><p>Ever wanted to know what each and every file in Whonix Source Code is good for? It's now all documented.</p>
+<ul>
+<li><a href="https://sourceforge.net/p/whonix/wiki/Design-Shared/">https://sourceforge.net/p/whonix/wiki/Design-Shared/</a></li>
+<li><a href="https://sourceforge.net/p/whonix/wiki/Design-Gateway/">https://sourceforge.net/p/whonix/wiki/Design-Gateway/</a></li>
+<li><a href="https://sourceforge.net/p/whonix/wiki/Design-Workstation/">https://sourceforge.net/p/whonix/wiki/Design-Workstation/</a></li>
+</ul>
+<p>The "old", more textual Whonix Design <a href="https://sourceforge.net/p/whonix/wiki/Design/">https://sourceforge.net/p/whonix/wiki/Design/</a> page will still get maintained and improved.... <a class="" href="/p/whonix/featureblog/2013/03/in-depth-detailed-technical-whonix-design/">read more</a></p></div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Tue Mar 26, 2013 04:18 PM UTC">
+      2 days ago
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+    
+      <hr />
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/github-source-code-commits-mailing-list/">#Github Source Code Commits Mailing List</a>
+  </h3>
+  <div class="markdown_content"><p>Whonix-commits read only mailing list:<br />
+<a href="https://lists.sourceforge.net/lists/listinfo/whonix-commits">https://lists.sourceforge.net/lists/listinfo/whonix-commits</a></p></div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Tue Mar 19, 2013 11:02 PM UTC">
+      2013-03-19
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+    
+      <hr />
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/secondary-twitter-account-for-source-code-commit-notification/">Secondary #Twitter Account for Source Code Commit Notification</a>
+  </h3>
+  <div class="markdown_content"><p>If you prefer Twitter, use the Secondary Twitter Account for Source Code Commit Notification:<br />
+<a href="https://twitter.com/WhonixSource" rel="nofollow">https://twitter.com/WhonixSource</a></p></div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Tue Mar 19, 2013 11:02 PM UTC">
+      2013-03-19
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+    
+      <hr />
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/advancend-users-file-transfer-ssh-into-mount-whonix-workstation-on-the-host/">Advancend Users: File Transfer, SSH into, mount Whonix-Workstation on the host</a>
+  </h3>
+  <div class="markdown_content"><p>Instructions how to SSH into Whonix-Workstation (host -&gt; ssh -&gt; Whonix-Gateway -&gt; ssh -&gt; Whonix-Workstation) have been added. You an use ssh, scp and sshfs, thus mount Whonix-Workstation folders on the host.</p>
+<p><a href="https://sourceforge.net/p/whonix/wiki/File%20Transfer/#ssh-into-whonix-workstation">https://sourceforge.net/p/whonix/wiki/File%20Transfer/#ssh-into-whonix-workstation</a></p></div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Tue Mar 19, 2013 12:45 PM UTC">
+      2013-03-19
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+    
+      <hr />
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/censorship---httpwhonixsourceforgenet-blocked-in-china/">#censorship - http://whonix.sourceforge.net blocked in #China</a>
+  </h3>
+  <div class="markdown_content"><p>According to @GreatFireChina - <a href="http://whonix.sourceforge.net">http://whonix.sourceforge.net</a> is blocked in China while <a href="http://sourceforge.net">http://sourceforge.net</a> is still reachable.</p>
+<ul>
+<li><a href="https://en.greatfire.org/whonix.sourceforge.net">https://en.greatfire.org/whonix.sourceforge.net</a></li>
+<li><a href="https://en.greatfire.org/sourceforge.net">https://en.greatfire.org/sourceforge.net</a></li>
+</ul></div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Tue Mar 12, 2013 06:58 PM UTC">
+      2013-03-12
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+    
+      <hr />
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/development-discussion---anonymizing-mac-addresses/">Development Discussion - Anonymizing MAC Addresses</a>
+  </h3>
+  <div class="markdown_content"><p><a href="https://sourceforge.net/p/whonix/wiki/MAC/">https://sourceforge.net/p/whonix/wiki/MAC/</a></p>
+<p>Does it make sense or am I overthinking it?</p></div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Sat Mar 09, 2013 03:18 AM UTC">
+      2013-03-09
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+    
+      <hr />
+    
+    
+<div style="margin-bottom: 10px">
+  <h3>
+    <a href="/p/whonix/featureblog/2013/03/why-isnt-whonix-based-on-your-favorite-most-secure-operating-system/">Why isn&#39;t Whonix based on &lt;your favorite most secure operating system&gt;?</a>
+  </h3>
+  <div class="markdown_content"><p>Added new chapter to Technical Design, Operating System.</p>
+<p><a href="https://sourceforge.net/p/whonix/wiki/OperatingSystem/#why-dont-you-use-your-favorite-most-secure-operating-system62-for-whonix">https://sourceforge.net/p/whonix/wiki/OperatingSystem/#why-dont-you-use-your-favorite-most-secure-operating-system62-for-whonix</a></p></div>
+  <em class="grid-19">
+    Posted by <a href="/u/adrelanos/">
+    
+  
+    <img src="https://secure.gravatar.com/avatar/e6d471603b9691707b0445c54f04d460?r=pg"
+         alt="adrelanos"
+         title="adrelanos"
+         class="emboss x16">
+  
+  </a> 
+    <span title="Thu Mar 07, 2013 11:28 PM UTC">
+      2013-03-07
+    </span>
+
+    
+    
+  </em>
+  
+  <div style="clear: both"></div>
+</div>
+  
+  <div style="margin: 10px">
+  
+  <div style="float: right">
+    
+  </div>
+  <div style="float: left">
+    <a class="pager_link" href="/p/whonix/featureblog/?page=1">&lt;&lt; Older Entries</a>
+  </div>
+  <div style="clear: both"></div>
+</div>
+
+          </div>
+			
+          
+        </div>
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="/about">About</a>
+            <a href="/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="/create/">Create a Project</a>
+            <a href="/directory/">Software Directory</a>
+            <a href="/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="/jobs?source=footer">Job Board</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <a href="http://slashdotmedia.com/opt-out-choices">Cookies/Opt Out</a>
+            <a href="http://slashdotmedia.com">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages">
+        
+    </div>
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1364319766/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+    
+      
+    
+    
+   
+    
+  </body>
+</html>
