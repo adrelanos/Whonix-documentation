@@ -1,0 +1,1 @@
+Moved to https://sourceforge.net/p/whonix/wiki/Pre%20Install%20Advice/
