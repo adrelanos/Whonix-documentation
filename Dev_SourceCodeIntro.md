@@ -1,0 +1,174 @@
+[[include ref=WikiHeader]]
+
+[TOC]
+
+# Introduction #
+This chapter is dedicated to give an introduction into the Whonix source code. ***If you prefer to read and understand the source code just by reading scripts you may skip this optional chapter.*** It can be quite difficult to get started with hacking existing big complex projects.
+
+***Files and folders overview***:
+
+* **whonix_gateway** All files within that folder will be copied into Whonix-Gateway.
+* **whonix_workstation** All files within that folder will be copied into Whonix-Workstation.
+* **whonix_shared** All files within that folder will be copied into Whonix-Gateway and Whonix-Workstation.
+
+**Chroot Scripts**
+
+* /whonix_gateway/usr/local/share/whonix/chroot-scripts are run inside Whonix-Gateway
+* /whonix_workstation/usr/local/share/whonix/chroot-scripts are run inside Whonix-Workstation
+* /whonix_shared/usr/local/share/whonix/chroot-scripts are run inside Whonix-Gateway and Whonix-Workstation
+
+**build-steps**
+
+This is a high level overview. Whonix-Example-Implementation can currently be build in eight steps. (There is also a whonix_build script, which automates these eight steps for your convenience.)
+
+* 15_prepare-build-machine
+* 20_create-debian-img
+* 25_backup-img
+* 30_copy-into-img 
+* 35_run-chroot-scripts-img
+* 40_convert-img-to-vdi
+* 45_create-vbox-vm
+* 50_export-vbox-vm
+
+**debug-steps**
+
+Some stuff to help developers with testing and debugging.
+
+* delete-vbox-vm
+* download-source
+* interactive-img
+
+**help-steps**
+
+Boring methods, which are required by the build-steps above.
+
+* mount-img
+* mount-vdi
+* chroot-img
+* unchroot-img
+* unmount-img
+* unmount-img-force
+* unmount-vdi
+* unmount-vdi-force
+* pre gets sourced by all other scripts.
+* variables gets sourced by all other scripts.
+
+**whonix_build**
+
+Is a script, which simply runs all other build-steps. Actually it's "optional". It has very little functionality beside running all other steps. You are free to run all steps one by one. That is useful for learning and for debugging purposes. In case you want to fix a bug or in case you want to upgrade the distribution or in case you want to switch the operating system or whatever you are better off running the steps manually. Run it with -help to see available switches. It has also -fast, -tg-fast and -tw-fast switch, which skips the slow 20_create-debian-img step.
+
+***Overview***:
+
+(1.) 15_prepare-build-machine: installs build dependencies and applies a few other required settings for building from source.
+ 
+(2.) 20_create-debian-img: [grml-debootstrap](http://grml.org/grml-debootstrap/) creates virtual machine images in **.img** image format. It keeps care of creating the image, the partition table, grub boot manager, minimal system debootstrap and apt-get installing all Whonix packages. This step requires most time in the build process.
+
+(3.) 25_backup-img: A backup _copy of the .img gets created.
+
+(4.) 30_copy-into-img: Files get copied into image.
+
+(5.) 35_run-chroot-scripts-img: Chroot Scripts are applied.
+
+(6.) 40_convert-img-to-vdi: The **.img** image gets converted to a **.vdi** image. Actually not converted, a new file will be created and the old **.img** remains available until cleanup is run or manually deleted or grml-debootstrap runs again. 
+
+The **.img** format is more "generic". Virtual Box does not support raw (**.img**) images, but **.vdi** and **.vmdk** (and others). 
+
+(7.) 45_create-vbox-vm: A virtual machine (Virtual Box) will be created and the **.vdi** image will be attached.
+
+(8.) 50_export-vbox-vm: The virtual machines get exported to a **.ova** images. (Technically the **.ova** format seams to require **.vmdk** files. Therefore Virtual Box automatically creates it. So anyone using or extracting the **.ova** image will see, that it it includes a **.vmdk** image.)
+
+***Modularity:***
+
+Steps (2.), (5.), (6.), (7.) and (8.) could be easily replaced to add support for additional virtualizers, operating systems and so on. The numbers before the script names (20_..., 25_..., 30..., ...) are honored by whonix_build (run-parts), which runs these steps in lexical order. Therefore you can easily add steps to the beginning or the end or even wretch steps in between.
+
+***Summary:***
+
+Thus, given the nature of the build step orientated scripts, you can easily work on the the different aspects of Whonix. For example, once you have created a clean virtual machine with the operating system only, you can make a copy, run either the gateway or the workstation copy routine or Chroot Scripts as often as you need to test your changes and if something goes wrong, go back to backup. You don't have to build everything from scratch again. ^3^
+
+***Another Introduction:***
+
+It's really not that difficult after all. If you like, you could read [Whonix Manual Installation], which is a similar topic, which covers part of this in other words.
+
+<font size="-3">
+,,
+^3^ If something would go wrong, you would have to reinstall the whole operating system every time again. That's why we use separate steps.
+</font>
+
+# gpg keys #
+gpg keys for required for build Whonix are stored inside */home/user/Whonix/whonix_\[...\]/usr/local/share/whonix/gpg-pubkeys*. These include.
+
+* adrelanos.asc - Whonix maintainer key - used for [whonixcheck] news verification
+* erinn.asc - [obtained from torproject.org](https://www.torproject.org/docs/signing-keys.html.en) - Used to verify downloads of Tor Browser by *whonix_workstation/usr/local/bin/torbrowser*.
+* sebastian.asc - same as erinn.asc.
+
+To find out what the keys are good for, simply grep the source code.
+
+    cd /home/user/Whonix
+    grep -r adrelanos.asc *
+    grep -r erinn.asc *
+    grep -r sebastian.asc *
+
+If you are in luck, you never have to update the keys yourself and the Whonix maintainer will keep it updated. Otherwise and also as a good precaution you can verify these keys manually. Follow the instructions form torproject.org to obtain the key. Then simply check if the keys match or update the old key with the new one.
+
+# Debugging #
+Stuff you may find helpful for debugging.
+
+* Build Configuration
+
+Skip downloading Tor Browser.
+
+    export "SKIP_TORBROWSER_DOWNLOAD="1"
+
+Skip updating command-not-found.
+
+    export "SKIP_UPDATE_COMMAND_NOT_FOUND="1"
+
+* [SSH into Whonix-Gateway](https://sourceforge.net/p/whonix/wiki/File%20Transfer/#ssh-into-whonix-gateway)
+* [Mount and inspect images](https://sourceforge.net/p/whonix/wiki/File%20Transfer/#mount-and-inspect-images)
+
+* Rebuild the .ova images, while skipping the slow *15_prepare-build-machine* and *20_create-debian-img* steps. (Of course, this assumes, that these steps where run at least once previously.)
+
+The "*sudo ./build-steps/20_create-debian-img -tX*" step takes far most of the build creation time. As long as no packages have been added or removed, you can repeat all other steps from a backup, which has been automatically created for you, by using.
+
+    sudo ./whonix_build -fast
+
+    ## Or alternatively, if you only want to rebuild one machine.
+    #sudo ./whonix_build -tg-fast
+    #sudo ./whonix_build -tw-fast
+
+* Interactively chroot Whonix-Gateway.
+
+Open a bash shell inside the Whonix-Gateway **.img** image.
+
+    sudo ./debug-steps/interactive-chroot-img -tg
+
+* Interactively chroot Whonix-Workstation.
+
+Open a bash shell inside the Whonix-Workstation **.img** image.
+
+    sudo ./debug-steps/interactive-chroot-img -tw
+
+* Check Whonix version number.
+
+Important before building builds for redistribution.
+
+    cat /home/user/Whonix/whonix_shared/usr/local/share/whonix/version
+
+# Less Important Goodies #
+## Unpacking **.ova** images ##
+If you want for some reason to unpack an **.ova**, for example to get the **.vdmk** image, you can use tar.
+
+    tar -xvf Whonix-Gateway.ova
+    Whonix-Gateway.ovf
+    Whonix-Gateway-disk1.vmdk
+
+## Converting **.vmdk** images to **.img** images ##
+
+    #qemu-img info Whonix-Gateway-disk1.vmdk
+
+    qemu-img convert Whonix-Gateway-disk1.vmdk -O raw Whonix-Gateway.img
+
+    #qemu-img info Whonix-Gateway.img
+
+# Footer #
+[[include ref=WikiFooter]]
