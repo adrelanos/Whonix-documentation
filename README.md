@@ -1,4 +1,0 @@
-Whonix-documentation
-====================
-
-Whonix Documentation
