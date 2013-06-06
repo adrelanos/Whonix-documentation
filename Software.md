@@ -52,6 +52,7 @@ Documentation:
 * [KDE upstream KGpg documentation](http://docs.kde.org/stable/en/kdeutils/kgpg/using-kgpg.html)
 * [openSUSE KGpg documentation](https://doc.opensuse.org/documentation/html/openSUSE_113/opensuse-apps/cha.crypto.html)
 * [OpenPGP key distribution strategies](https://sourceforge.net/p/whonix/wiki/OpenPGP/)
+* [parcimonie - privacy-friendly helper to refresh a GnuPG keyring](https://gaffer.ptitcanardnoir.org/intrigeri/code/parcimonie/) ([in debian](http://packages.debian.org/wheezy/parcimonie))
 
 ## E-Mail ##
 See [E-Mail].

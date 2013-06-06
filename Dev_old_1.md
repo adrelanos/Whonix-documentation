@@ -376,11 +376,50 @@ about strong adversaries makes no sense, you could argue that whole Tor has no p
 
 -   Latest statements: [https://sourceforge.net/p/whonix/wiki/FAQ/\#will-there-be-a-whonix-live-cd-or-dvd](https://sourceforge.net/p/whonix/wiki/FAQ/#will-there-be-a-whonix-live-cd-or-dvd) and [https://sourceforge.net/p/whonix/wiki/FAQ/\#is-there-something-like-whonix-live](https://sourceforge.net/p/whonix/wiki/FAQ/#is-there-something-like-whonix-live)
 
+### BUG UWT issues FIXED
+* (adrelanos) "sudo chmod -x /usr/local/bin/curl" is required, (i.e. deactivating the uwt Steam Isolation wrapper)
+     * (adrelanos) before "apt-file update" runs successfully.
+     * (adrelanos) before running "sudo apt-get install flashplugin-nonfree" runs successfully.
+     * (adrelanos) before running "update-command-not-found".
 
+* (adrelanos) It's probable the same root cause.
+* (adrelanos) Fortunately there is progress in [\#8053](https://trac.torproject.org/projects/tor/ticket/8053 "enhancement: add stream isolation support to torsocks (needs_review)"): "add stream isolation support to torsocks".
+* (adrelanos) Fixed due to rewritten uwtwrapper. Will appear in Whonix 0.6.2.
 
+### USABILITY SECURITY kubuntu-low-fat-settings OPEN NEEDS_TESTING
 
+* (adrelanos) Get kubuntu-low-fat-settings into Debian. UPDATE: or not. It's not easy to get it into Debian and would also require to change how it add itself to kde paths.
+* (adrelanos) I have a git branch kdelowfat where we simply add those  configuration enhancements to /usr/local/share/whonix/kde/. Still need to figure out which settings should be applied to Whonix. See [Dev_KDE].
+* (adrelanos) Merged. Just needs testing.
 
+### SECURITY TorChat .deb OPEN TODO
+* (adrelanos) patch TorChat upstream so it supports Tor on external machines (if some configuration option is set) - there is a [patch](https://github.com/prof7bit/TorChat/pull/26) on github already - not checked if it's related
+     * (adrelanos) patch TorChat upstream so it supports environment variables
+     * (adrelanos) UPDATE: since we now have rinetd listening on 127.0.0.1:9050, forwarding to Whonix-Gateway, and because TorChat only connects to hidden services (automatically stream isolated), TorChat most likely
 
+* (adrelanos) patch TorChat upstream so it supports blocking contacts and/or multiple instances
+     * (adrelanos) if the patches won't get accepted upstream in TorChat, fork TorChat on github and in meanwhile add the patches there
+     * (adrelanos) polish the .deb so it gets accepted into Debian
+     * (adrelanos) Whonix users can now use the .deb either form github or even Debian repository
+* (adrelanos) Unlikely, that I will work on it. Propose the missing feature upstream instead.
+
+### FEATURE TorChat Pidgin Plugin OPEN WAIT
+* (adrelanos) Once the TorChat Pidgin Plugin is stable enough and available as .deb it should be included into Whonix documentation or even be installed by default.
+* (adrelanos) before thinking about this feature, we'd need Pidgin first, and we need to find out how to disable privacy unsafe protocols first.
+
+### SECURITY Encryption/Authentication between T-G/T-W OPEN
+
+This is mainly useful when using multiple physical Whonix-Workstations.
+
+* (adrelanos) While I made the [Mobile device](https://trac.torproject.org/projects/tor/wiki/doc/Mobile) page, it came to my mind to combine it with Whonix. They could connect to T-G over OpenVPN and be transparently proxied. On the other hand, Orbot already supports transparent proxying as local redirection. Apart from the more complicated setup (router port forwarding, dynamic dns in many user cases), OpenVPN and a connection through the internet would be required. The only advantage were, that Tor is not running on Android, that it's running on a second machine. I haven't looked into Orbot, but I don't think that would be more secure than Orbot's local redirection. Once the mobile device is compromised it could jump onto any network anyway. Opinions on the security? And should we support that anyway? (There are also devices out, were Orbot is not available, but OpenVPN is.)
+* (adrelanos) We shouldn't add OpenVPN by default, as it would give up one of Whonix's advantages: [Tunneling Proxy/SSH/VPN through Tor (Tor -\> Proxy/SSH/VPN)](https://trac.torproject.org/projects/tor/wiki/doc/TorBOX/OptionalConfigurations#TunnelingProxySSHVPNthroughTorTor-ProxySSHVPN)
+* (adrelanos) Due to the recent question this is still interesting. One who uses multiple T-W's with only one T-G, might suffer from a single infected T-W. We have to keep in mind, that an infected T-W can choose any internal IP it wants. An infected T-W can also contact another T-W. A firewall for T-W only accepting connections from T-G's IP wouldn't help either, as it's easy to impersonate any IP's in LAN. An infected T-W impersonating T-G and forwarding to the real T-G would be an active mitm and fatal. When using virtual machines, the user would have the chance to setup multiple isolated virtual lans. Should we provide instructions how to do so? However, that is no option for bare metal. Can we somehow effectively prevent IP conflicts and/or use authentication?
+* (anonymous) I've added some relevant links and hints.
+* (adrelanos) We have too less documentation there. Using SSH is not impossible, but looks very complicated. I added a brief overview, about necessary step to the [article](https://trac.torproject.org/projects/tor/wiki/doc/TorBOX/SecurityAndHardening#RecommendationtousemultipleTor-Workstations). Using that in practice, actually giving instructions and testing looks very time consuming. OpenVPN may be a more realistic choice, it also requires creating and distributing keys (at least [ca directive](http://openvpn.net/index.php/open-source/documentation/howto.html#auth) has to be distributed. If we are not going to support connecting to T-G over a untrusted cable (see my first message in this thread), what we should probable do, as it makes no sense anyway, we also do not need encryption. Only authentication. I wonder if there are simpler solutions available?
+* (anonymous) I could need some testers here. It seems to be working now, to quickly test you can use e.g. \`links2 -socks-proxy 10.8.0.1:9100´, dig or edit the TBB and xchat proxy settings accordingly. As I understand it, multiple workstations can be securely added by creating additional per client keys and put new server.confs into /etc/openvpn on the gateway. I don't know OpenVPN well enough to be sure that this actually achieves our goal: prevent t-ws form impersonating t-g, eavesdropping on not ent-to-end encrypted traffic and messing with stream isolation. I know that by design no solution can actually prevent DOS, side channel and direct communications between compromised t-ws if using a LAN behind t-g and not just point to point connections. But these are comparably minor issues.
+* (adrelanos) You made some good points about DOS and so on, which I added. Very interesting. I am going to test, at least after Whonix 0.2.0 has been released. If we can implement this a generic way, automated (or simply with long passwords which have to be entered twice), without breaking anything (what I doubt, we'll at least break OpenVPN functionality on T-W), that could even be the default configuration. Authenticating and/or encrypting T-G - T-W is a fine thing. I am still wondering if there are easier methods than OpenVPN, because we don't 100% require encryption, only authentication.
+* (anonymous) TODO: test, improve, especially with multiple t-ws TODO: MAC address conflicts?
+-   (adrelanos) [https://sourceforge.net/p/whonix/wiki/Connection%20Between%20Whonix-Gateway%20and%20Whonix-Workstation/](https://sourceforge.net/p/whonix/wiki/Connection%20Between%20Whonix-Gateway%20and%20Whonix-Workstation/)
 
 
 

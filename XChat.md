@@ -17,6 +17,7 @@ If you want to reset your XChat identity, run *xchat-reset*. WARNING: this will 
     xchat-reset
 
 ## SASL ##
+### Whonix 0.5.6 (released) ###
 Some networks, some hidden IRC servers, such as freenode, require SASL to connect to them.
 
 All XChat plugins have been deactivated (hardening) and moved to /usr/lib/xchat/plugins.disabled. If you really need a plugin, such as perl for SASL, you can use the example below.
@@ -24,6 +25,13 @@ All XChat plugins have been deactivated (hardening) and moved to /usr/lib/xchat/
     sudo mv /usr/lib/xchat/plugins.disabled/perl.so /usr/lib/xchat/plugins/
 
 Setting up SASL is outside the scope of this document, have a look into [TorifyHOWTO/XChat](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/XChat).
+
+### Whonix 0.6.2 and above (in development) ###
+All XChat plugins have been deactivated (hardening) and deactivated using dpkg-divert. To re-enable them, use one of the following commands depending on which plugin you need.
+
+    sudo dpkg-divert --rename --remove /usr/lib/xchat/plugins/python.so
+    sudo dpkg-divert --rename --remove /usr/lib/xchat/plugins/tcl.so
+    sudo dpkg-divert --rename --remove /usr/lib/xchat/plugins/perl.so
 
 # IRC General #
 The [Ident Protocol](https://en.wikipedia.org/wiki/Ident) is automatically blocked because Whonix-Workstation is firewalled.

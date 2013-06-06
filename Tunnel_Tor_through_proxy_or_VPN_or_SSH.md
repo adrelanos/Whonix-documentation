@@ -22,20 +22,30 @@ If nothing above applies for you, skip this section.
 ## Tunnel Tor through proxy ##
 **user -> proxy -> Tor**
 
+Tor natively supports proxy settings.
+
 On Whonix-Gateway:
 
     sudo nano /etc/tor/torrc
 
-Depending on your proxy configuration, add the settings you'll need to your /etc/torrc. For more information on these settings, have a look in the [Tor manual](https://www.torproject.org/docs/tor-manual.html.en) and read the [FAQ](https://trac.torproject.org/projects/tor/wiki/doc/TorFAQ#MyInternetconnectionrequiresanHTTPorSOCKSproxy).
+Depending on your proxy configuration, add the settings you'll need to your /etc/tor/torrc. For more information on these settings, have a look in the [Tor manual](https://www.torproject.org/docs/tor-manual.html.en) and read the [FAQ](https://trac.torproject.org/projects/tor/wiki/doc/TorFAQ#MyInternetconnectionrequiresanHTTPorSOCKSproxy.).
 
     HTTPProxy host[:port]
     HTTPProxyAuthenticator username:password
     HTTPSProxy host[:port]
     HTTPSProxyAuthenticator username:password
+
     Socks4Proxy host[:port]
+
     Socks5Proxy host[:port]
     Socks5ProxyUsername username
     Socks5ProxyPassword password
+
+    FascistFirewall 0|1 
+
+    ReachableAddresses ADDR[/MASK][:PORT]… 
+    ReachableDirAddresses ADDR[/MASK][:PORT]… 
+    ReachableORAddresses ADDR[/MASK][:PORT]… 
 
 ## Tunnel Tor through SSH ##
 ** user -> SSH -> Tor**
@@ -59,7 +69,7 @@ Now we will tell the SSH client to start a socks5 proxy server listening on loca
 
     ssh -C -D 1080 your.ssh.server
 
-Now we have to tell Tor to use the new local ssh server. *nano /etc/torrc* and add
+Now we have to tell Tor to use the new local ssh server. *nano /etc/tor/torrc* and add
 
     ## In case SSH tunnel has been setup from Whonix-Gateway.
     Socks5Proxy 127.0.0.1:1080
@@ -86,8 +96,11 @@ If you are using VPN not,
 then be sure, that your VPN software is secure (ex: use OpenVPN, not pptp).
 
 ### Use a Fail Closed Mechanism ###
-**TODO**:
-VPN's generally fail open. This is not a Whonix specific problem. It is a general problem with VPNs. This means, if the VPN is unreachable, connections breaks down for whatever reasons and so on, in most cases, you can continue to connect to the internet without the VPN. In case of Whonix you would be left to the protections provided by Tor. This should probable matter to you, since you wanted to combine Tor with a VPN. A [Fail Closed Mechanism](https://sourceforge.net/p/whonix/wiki/VPN/) is under development and help is welcome.
+This is not a Whonix specific problem. It is a general problem with VPNs. Most users are simply not aware of it. VPN's generally fail open. VPN servers and VPN software can occasionally break down without announcement. This means, if the VPN is unreachable, connections breaks down for whatever reasons and so on, in most cases, you can continue to connect to the internet without the VPN.
+
+In case of Whonix you would be left to the protections provided by Tor. Whonix-Workstation will seamlessly continue to make "direct" connections through Tor once the VPN breaks down. If you are using the VPN only to circumvent the censorship of Tor, you may not care so much. On the other hand, if you believe a VPN improves your security, it would be rational to make sure, the VPN is always used instead only most of the time. 
+
+If you want to enforce, that the VPN gets always used, see [VPN-Firewall].
 
 ### How ##
 If you are forced to use a VPN server or if you are already using a VPN server, you most likely know how you can connect to it.
@@ -98,7 +111,7 @@ Or you can add the VPN into Whonix-Gateway. In that case you must know how to co
 
 When your VPN is properly set up, all your connections are forced through the VPN first. If you start Tor on top of that, tunneling Tor through the VPN will work.
 
-See also [A Free example VPN working with Whonix for testing purposes](https://sourceforge.net/p/whonix/wiki/TestVPN/).
+See also [Free example VPNs working with Whonix for testing purposes](https://sourceforge.net/p/whonix/wiki/TestVPN/).
 
 # Footer #
 [[include ref=WikiFooter]]

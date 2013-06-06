@@ -62,5 +62,10 @@ Or better create amd64 [builds yourself from source](https://sourceforge.net/p/w
 ## Optimized builds ##
 Since the the concept behind Whonix isn't tied to anything, you could create your own implementation. Perhaps using Gentoo with optimized build flags for your system. See [Whonix Framework](https://sourceforge.net/p/whonix/wiki/Technical%20Introduction/#whonix-framework), [OneVM] and [HardenedGentooTG].
 
+## PCI passthrough
+Might greatly improve graphics performance.; Might have security implications.
+
+Essentially this feature allows to directly use physical PCI devices on the host by the guest even if host doesn't have drivers for this particular device. See Virtual Box Manual: [PCI passthrough](http://www.virtualbox.org/manual/ch09.html#pcipassthrough).
+
 # Footer #
 [[include ref=WikiFooter]]

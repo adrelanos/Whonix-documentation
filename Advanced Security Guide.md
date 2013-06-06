@@ -149,6 +149,22 @@ This DMZ would restrict the Whonix-Gateway from accessing and from being accessi
 Should an incursion occur, it would prevent the adversary from exploring other systems and possibly compromising them. It won't  however do anything to protect your anonymity, because they could just ping some remote server and discover your real IP address. Or should other systems be compromised, it would be more difficult to compromise Whonix-Gateway.
 
 ## Host Firewall
+### Pre Install Advice
+Installing a host firewall has been already recommended in pre install advice.
+
+### Port Scan
+Using a port scanner service on the internet to test your local LAN's router/firewall is a good idea, if you are careful to find a legitimate one instead of somebody who only wants to sell you something and will give you false positives deceptively. That's good, but even better is to run a port scan application from an external IP to scan your own IP. Either remote login (ssh) on some external machine of your own or proxy through an external IP to scan your own IP. The details on how to do so are outside the scope of this document.
+
+However, if you are not using a stand-alone machine, but are on a LAN with other PCs, it is important to keep in mind that these testing services or your own port scan application from an external IP, actually only scan the local LAN's router/firewall, but these tests do not test your actual host's PC, which, if badly configured, could be susceptible to attacks from other machines within the LAN, behind the router. A false sense of security could be the result.
+
+For example if you share your LAN with flatmates, who are not so sophisticated in computer security, you should regard their machines as possible malicious (may be conquered by a botnet already). Therefore you can not trust the output of a port scan application running on their machine. If you have no spare machine of your own, you could eventually boot their computer from a Live CD, which includes a port scan application, to scan your machine. The details on how to do so are outside the scope of this document.
+
+### NAT Router
+Being behind an ordinary NAT router may be another tiny extra layer of security.
+
+### Dedicated connection
+If possible, not sharing the network (LAN, Wi-Fi, hotspot) with other possibly compromised machines is safer.
+
 ### Filtering Ports
 #### Introduction
 From time to time someone asks, which ports incoming/outgoing Whonix-Gateway requires. The answer is.
@@ -351,31 +367,48 @@ Experts only!
 
 All Whonix-Workstation traffic is by default forced through Whonix-Gateway. Alternatively, you could also build a chain of Anonymizing Gateways. Examples:
 
-Pre-Tor-VPN.
+Post-Tor-VPN.
 
-    Whonix-Workstation -> VPN-Gateway    -> Whonix-Gateway -> destination server
-    user               -> VPN            -> Tor            -> destination server
+    ## chain:
+    Whonix-Workstation -> VPN-Gateway    -> Whonix-Gateway -> clearnet
+    ## connection scheme:
+    user               -> Tor            -> VPN            -> destination server
 
 Post-Tor-VPN.
 
-    Whonix-Workstation -> Whonix-Gateway -> VPN-Gateway    -> destination server
-    user               -> Tor            -> VPN            -> destination server
+    ## chain:
+    Whonix-Workstation -> Whonix-Gateway -> VPN-Gateway    -> clearnet
+    ## connection scheme:
+    user               -> VPN            -> Tor            -> destination server
 
 Pre- and Post-Tor-VPN.
 
+    ## chain:
     Whonix-Workstation -> VPN-Gateway    -> Whonix-Gateway -> VPN-Gateway -> destination server
+    ## connection scheme:
     user               -> VPN            -> Tor            -> VPN         -> destination server
 
 It's not limited to VPN-Gateways. You could also replace the VPN with a Proxy-Gateway.
 
-Pre-Tor-Proxy.
+Post-Tor-Proxy.
 
-    Whonix-Workstation -> Proxy-Gateway  -> Whonix-Gateway -> destination server
-    user               -> Proxy          -> Tor            -> destination server
+    ## chain:
+    Whonix-Workstation -> Proxy-Gateway  -> Whonix-Gateway -> clearnet
+    ## connection scheme:
+    user               -> Tor            -> Proxy          -> destination server
 
 Or with a Post-Tor-Proxy, or with a Pre/Post-Tor-SSH. Or replace the proxy with JonDo or perhaps i2p. Virtually any combinations are possible.
 
-Whether that makes sense or not is controversially discussed and depends on your personal threat model, see [Tor plus VPN or Proxy](https://trac.torproject.org/projects/tor/wiki/doc/TorPlusVPN).
+It's important to understand, that the connection will be created in reverse order. This is best explained using and example.
+
+    ## chain:
+    Whonix-Workstation -> Proxy-Gateway  -> Whonix-Gateway -> VPN-Gateway -> clearnet
+    ## connection scheme:
+    user               -> VPN            -> Tor            -> Proxy       -> destination server
+
+If you think about, it becomes clear why the connection happens in reverse order. Whonix-Workstation has no way, but to go through the Proxy-Gateway. The Proxy-Gateway has no way, but to go through Whonix-Gateway. The last one in the chain, in this case, the VPN-Gateway, must obviously connect through clearnet. Thus, the VPN-Gateway uses clearnet, the Whonix-Gateway uses the VPN-Gateway to connect, the Proxy-Gateway uses Whonix-Gateway to connect and Whonix-Workstation uses the Proxy-Gateway to connect. Since the Proxy-Gateway has no way, but to go through Whonix-Gateway followed by VPN-Gateway, it's clear why it will be the last hop in front of the the destination server.
+
+Whether such combinations make sense or not is controversially discussed and depends on your personal threat model, see [Tor plus VPN or Proxy](https://trac.torproject.org/projects/tor/wiki/doc/TorPlusVPN).
 
 Legend:
 
@@ -391,7 +424,7 @@ Maybe useful as well: [Inspiration].
 
 You must know understand and edit /etc/network/interfaces on Whonix-Gateway and/or on Whonix-Workstation (and if not using physical isolation, the virtual internal network name in Virtual Box settings).
 
-It will be difficult, because there are no other Anonymizing Gateways (VPN/JonDo/i2p/Proxy/SSH/VPN) available for download, besides Whonix-Gateway which uses Tor to anonymize traffic, which you already know about. You have to look for instructions (there are some for a pfSense based VPN-Gateway you find using a search engines, but untested for leaks by adrelanos, which does not imply there are leaks) and/or build such a Anonymizing-Gateway yourself.
+It will be difficult, because there are no other Anonymizing Gateways (VPN/JonDo/i2p/Proxy/SSH/VPN) available for download, besides Whonix-Gateway which uses Tor to anonymize traffic, which you already know about. You have to look for instructions (there are some for a pfSense based VPN-Gateway you can find using a search engines, but untested for leaks by adrelanos, which does not imply, that there are leaks) and/or build such a Anonymizing-Gateway yourself.
 
 # Time Synchronization #
 This is still a topic for research.

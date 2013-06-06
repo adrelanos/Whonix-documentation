@@ -19,12 +19,13 @@ This chapter is dedicated to give an introduction into the Whonix source code. *
 
 **build-steps**
 
-This is a high level overview. Whonix-Example-Implementation can currently be build in eight steps. (There is also a whonix_build script, which automates these eight steps for your convenience.)
+This is a high level overview. Whonix-Example-Implementation can currently be build in nine steps. (There is also a whonix_build script, which automates these eight steps for your convenience.)
 
 * 15_prepare-build-machine
 * 20_create-debian-img
 * 25_backup-img
 * 30_copy-into-img 
+* 32_verify_copied_files
 * 35_run-chroot-scripts-img
 * 40_convert-img-to-vdi
 * 45_create-vbox-vm
@@ -67,19 +68,21 @@ Is a script, which simply runs all other build-steps. Actually it's "optional". 
 
 (4.) 30_copy-into-img: Files get copied into image.
 
-(5.) 35_run-chroot-scripts-img: Chroot Scripts are applied.
+(5.) 32_verify_copied_files: Verify that all files from Whonix source code have been copied into the image by using diff. This is just a sanity test.
 
-(6.) 40_convert-img-to-vdi: The **.img** image gets converted to a **.vdi** image. Actually not converted, a new file will be created and the old **.img** remains available until cleanup is run or manually deleted or grml-debootstrap runs again. 
+(6.) 35_run-chroot-scripts-img: Chroot Scripts are applied.
+
+(7.) 40_convert-img-to-vdi: The **.img** image gets converted to a **.vdi** image. Actually not converted, a new file will be created and the old **.img** remains available until cleanup is run or manually deleted or grml-debootstrap runs again. 
 
 The **.img** format is more "generic". Virtual Box does not support raw (**.img**) images, but **.vdi** and **.vmdk** (and others). 
 
-(7.) 45_create-vbox-vm: A virtual machine (Virtual Box) will be created and the **.vdi** image will be attached.
+(8.) 45_create-vbox-vm: A virtual machine (Virtual Box) will be created and the **.vdi** image will be attached.
 
-(8.) 50_export-vbox-vm: The virtual machines get exported to a **.ova** images. (Technically the **.ova** format seams to require **.vmdk** files. Therefore Virtual Box automatically creates it. So anyone using or extracting the **.ova** image will see, that it it includes a **.vmdk** image.)
+(9.) 50_export-vbox-vm: The virtual machines get exported to a **.ova** images. (Technically the **.ova** format seams to require **.vmdk** files. Therefore Virtual Box automatically creates it. So anyone using or extracting the **.ova** image will see, that it it includes a **.vmdk** image.)
 
 ***Modularity:***
 
-Steps (2.), (5.), (6.), (7.) and (8.) could be easily replaced to add support for additional virtualizers, operating systems and so on. The numbers before the script names (20_..., 25_..., 30..., ...) are honored by whonix_build (run-parts), which runs these steps in lexical order. Therefore you can easily add steps to the beginning or the end or even wretch steps in between.
+Steps (2.), (6.), (7.), (8.) and (9.) could be easily replaced to add support for additional virtualizers, operating systems and so on. The numbers before the script names (20_..., 25_..., 30..., ...) are honored by whonix_build (using [run-parts](http://manpages.ubuntu.com/manpages/raring/man8/run-parts.8.html)), which runs these steps in lexical order. Therefore you can easily add steps to the beginning or the end or even wretch steps in between.
 
 ***Summary:***
 
@@ -95,11 +98,12 @@ It's really not that difficult after all. If you like, you could read [Whonix Ma
 </font>
 
 # gpg keys #
-gpg keys for required for build Whonix are stored inside */home/user/Whonix/whonix_\[...\]/usr/local/share/whonix/gpg-pubkeys*. These include.
+gpg public keys required for building Whonix are stored inside */home/user/Whonix/whonix_\[...\]/usr/local/share/whonix/gpg-pubkeys*. These include.
 
 * adrelanos.asc - Whonix maintainer key - used for [whonixcheck] news verification
 * erinn.asc - [obtained from torproject.org](https://www.torproject.org/docs/signing-keys.html.en) - Used to verify downloads of Tor Browser by *whonix_workstation/usr/local/bin/torbrowser*.
 * sebastian.asc - same as erinn.asc.
+* torprojectarchive.asc - Torproject's archive key https://www.torproject.org/docs/debian.html.en
 
 To find out what the keys are good for, simply grep the source code.
 
@@ -107,26 +111,24 @@ To find out what the keys are good for, simply grep the source code.
     grep -r adrelanos.asc *
     grep -r erinn.asc *
     grep -r sebastian.asc *
+    grep -r torprojectarchive.asc *
 
-If you are in luck, you never have to update the keys yourself and the Whonix maintainer will keep it updated. Otherwise and also as a good precaution you can verify these keys manually. Follow the instructions form torproject.org to obtain the key. Then simply check if the keys match or update the old key with the new one.
+If you are in luck, you never have to update the keys yourself and the Whonix maintainer will keep them updated. Otherwise and also as a good precaution you can verify these keys manually. Follow the instructions form torproject.org to obtain the key. Then simply check if the keys match or update the old key with the new one.
 
-# Debugging #
+Torproject's archive key expires **2014-08-29**.
+
+    gpg --fingerprint A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
+    pub   2048R/886DDD89 2009-09-04 [expires: 2016-08-28]
+          Key fingerprint = A3C4 F0F9 79CA A22C DBA8  F512 EE8C BC9E 886D DD89
+    uid                  deb.torproject.org archive signing key
+    sub   2048R/219EC810 2009-09-04 [expires: 2014-08-29]
+
+# Debugging
 Stuff you may find helpful for debugging.
 
-* Build Configuration
-
-Skip downloading Tor Browser.
-
-    export "SKIP_TORBROWSER_DOWNLOAD="1"
-
-Skip updating command-not-found.
-
-    export "SKIP_UPDATE_COMMAND_NOT_FOUND="1"
-
-* [SSH into Whonix-Gateway](https://sourceforge.net/p/whonix/wiki/File%20Transfer/#ssh-into-whonix-gateway)
-* [Mount and inspect images](https://sourceforge.net/p/whonix/wiki/File%20Transfer/#mount-and-inspect-images)
-
-* Rebuild the .ova images, while skipping the slow *15_prepare-build-machine* and *20_create-debian-img* steps. (Of course, this assumes, that these steps where run at least once previously.)
+## Build Configuration
+### Skipping Build Steps
+Rebuild the .ova images, while skipping the slow *15_prepare-build-machine* and *20_create-debian-img* steps. (Of course, this assumes, that these steps where run at least once previously.)
 
 The "*sudo ./build-steps/20_create-debian-img -tX*" step takes far most of the build creation time. As long as no packages have been added or removed, you can repeat all other steps from a backup, which has been automatically created for you, by using.
 
@@ -136,6 +138,52 @@ The "*sudo ./build-steps/20_create-debian-img -tX*" step takes far most of the b
     #sudo ./whonix_build -tg-fast
     #sudo ./whonix_build -tw-fast
 
+### Skipping Chroot Scripts
+Some chroot-scripts, especially the 70_update_command_not_found and 70_torbrowser take very long, while they are non-critical. You can either run update-command-not-found and the Tor Browser Updater after Whonix has been build and booted, or if you don't wish to use them at all, just don't use it at all. Therefore you can conveniently disable them, to safe some time, which is useful for debug builds.
+
+    ## NOTE: these variables must be set and exported as ROOT!
+    ##       (Because the build script runs as root.)
+
+    export skip_scripts="70_update_command_not_found 70_torbrowser"
+
+This works for the following folders.
+
+* [/whonix_gateway/usr/local/share/whonix/chroot-scripts/](https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/usr/local/share/whonix/chroot-scripts/)
+* [/whonix_workstation/usr/local/share/whonix/chroot-scripts/](https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/chroot-scripts/)
+* [/whonix_shared/usr/local/share/whonix/chroot-scripts/](https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/)
+
+### Target Architecture
+Affects *build-steps/20_create-debian-img*.
+
+    ## NOTE: these variables must be set and exported as ROOT!
+    ##       (Because the build script runs as root.)
+
+    ## NOTE: Its impossible to create 64 bit builds on 32 bit hosts.
+    ##       (This is a limitation of (grml-)debootstrap.)
+
+    ## i386 is the default target architecture,
+    ## if WHONIX_TARGET_ARCH variable is not set or empty.
+    #export WHONIX_TARGET_ARCH="i386"
+  
+    ## Interesting target architecture for custom builds: 64 bit
+    ## Despite it's name, works on AMD and Intel.
+    #export WHONIX_TARGET_ARCH="amd64"
+
+    ## Also interesting target architectures for custom builds: Kernel of FreeBSD
+    ## Will not work out of the box for Whonix-Gateway, because Whonix Firewall
+    ## is based on iptables (Linux) and the FreeBSD does not support iptables,
+    ## its firewall is pf. The Whonix iptables rules would have to be rewritten in pf.
+    #export WHONIX_TARGET_ARCH="kfreebsd-amd64"
+    #export WHONIX_TARGET_ARCH="kfreebsd-i386"
+
+# SSH
+* [SSH into Whonix-Gateway](https://sourceforge.net/p/whonix/wiki/File%20Transfer/#ssh-into-whonix-gateway)
+* [SSH into Whonix-Workstation](https://sourceforge.net/p/whonix/wiki/File%20Transfer/#ssh-into-whonix-workstation)
+
+# Mount and inspect images
+[Mount and inspect images](https://sourceforge.net/p/whonix/wiki/File%20Transfer/#mount-and-inspect-images)
+
+## Interactive Chroot
 * Interactively chroot Whonix-Gateway.
 
 Open a bash shell inside the Whonix-Gateway **.img** image.

@@ -23,11 +23,11 @@ Derivatives of Debian are even encouraged to use Debian infrastructure, see [Der
 
 ## About Debian ##
 ### General ###
-As in 2012 Debian Squeeze is still Debian stable and Debian Wheezy is still Debian testing. Thus, as long as Wheezy does not get released as stable, Whonix is based on testing. Wheezy is used as codename in */etc/apt/sources.list*, not testing. Whonix developer adrelanos looks forward for Wheezy becoming the stable distribution.
+Whonix is based on Debian. To be specific, as in Whonix 0.5.6, Debian Wheezy is used as codename in */etc/apt/sources.list*, not stable. This is because when Whonix 0.4.5 was released, Debian Wheezy was still in testing and at that time a better choice, because Wheezy, in comparison to Squeeze, has hardening options activated, see [Debian Wiki Hardening](http://wiki.debian.org/Hardening). Next Whonix version 0.6.x will use stable in */etc/apt/sources.list/*.
 
-Although the [Debian security FAQ](http://www.debian.org/security/faq) states, that stable gets more attention from the security team, Wheezy is in adrelanos opinion a better choice. Wheezy, in comparison to Squeeze, has hardening options activated, see [Debian Wiki Hardening](http://wiki.debian.org/Hardening). It can't be so bad anyway, since many distributions are based on Debian testing and/or even Debian sid (unstable).
+Although the [Debian security FAQ](http://www.debian.org/security/faq) states, that stable gets more attention from the security team, Debian Testing couldn't be so bad either, since many distributions are based on Debian testing and/or even Debian sid (unstable).
 
-[checksec.sh](http://www.trapkit.de/tools/checksec.html) --kernel reports good kernel protection: GCC stack protector support, Enforce read-only kernel data, Restrict /dev/mem and /dev/kmem access are all enabled!
+[checksec.sh](http://www.trapkit.de/tools/checksec.html) --kernel reports good kernel protection: GCC stack protector support, Enforce read-only kernel data, Restrict /dev/mem and /dev/kmem access are all enabled.
 
 Related statements from the FAQ reasoning why Debian is the base for Whonix Example Implementation:
 

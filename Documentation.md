@@ -107,7 +107,7 @@ This documentation is a work in progress and a collective task. If you think it 
         * [Sending e-mails without registration through Webinterface, Introduction into Remailer](https://sourceforge.net/p/whonix/wiki/Remailer)
             * [Mixmaster, a Remailer over Tor](https://sourceforge.net/p/whonix/wiki/Mixmaster)
     * [rss reader (unfinished in Whonix - under development), subscribing to website and/or blog updates, rss to e-mail and rss to sms](https://sourceforge.net/p/whonix/wiki/rss/)
-    * [Anonymous Money, anonymously pay and receive money (DRAFT!)](https://sourceforge.net/p/whonix/wiki/Money/)
+    * [Anonymous Money, anonymously pay and receive money, Bitcoin, BTC (DRAFT!)](https://sourceforge.net/p/whonix/wiki/Money/)
     * [Phone Calls, Voice over IP, Voip (UNFINISHED!)](https://sourceforge.net/p/whonix/wiki/Voip/)
     * [Accessing Other Anonymizing Services over Tor](https://sourceforge.net/p/whonix/wiki/OtherAnonymizingNetworks/)
         * [i2p](https://sourceforge.net/p/whonix/wiki/i2p/)
@@ -205,6 +205,7 @@ video-recorder)
         * [Memory ballooning, Page Fusion, Memory overcommitment](https://sourceforge.net/p/whonix/wiki/Tuning/)
         * [64 bit architecture](https://sourceforge.net/p/whonix/wiki/Tuning/)
         * [Optimized builds](https://sourceforge.net/p/whonix/wiki/Tuning/)
+        * [PCI Passthrough](https://sourceforge.net/p/whonix/wiki/Tuning/)
     * [Manually Installing Whonix](https://sourceforge.net/p/whonix/wiki/Whonix%20Manual%20Installation/)
 
 * Other

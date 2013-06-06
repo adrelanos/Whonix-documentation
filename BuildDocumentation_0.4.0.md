@@ -178,16 +178,16 @@ Reboot both VMs. Please read the [Documentation]!
 # Final Steps (Only Required For Redistribution) #
 See [Release Folder](https://github.com/adrelanos/Whonix/tree/master/release) in Whonix source code.
 
-* [LeakTests]!
-* [Test] the images before release! TODO: Needs big revision with all Whonix features.
+* LeakTests!
+* \[Test\] the images before release! TODO: Needs big revision with all Whonix features.
 * See if [Documentation] still makes sense.
-* Update the [Changelog].
+* Update the Changelog.
 * See https://github.com/adrelanos/Whonix/blob/master/release/whonix_release
 * Upload the images.
 * At least a few testers should test before posting a news. Testers may be found by posting a news.
-* Check, if [ManualTBupdate] is still up to date.
-* Update [Download].
-* Update [Home].
+* Check, if ManualTBupdate is still up to date.
+* Update Download.
+* Update Home.
 * Finally announce: Post a news.
 
     * In Whonix Important and Feature Blog.

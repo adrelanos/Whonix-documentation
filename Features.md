@@ -121,18 +121,25 @@ Everything is explained in [Documentation].
 </font>
 
 # VPN / Tunnel support #
-All kinds of tunnels is possible and tested. Route something Tor through or route through something before connecting to Tor.
+All kinds of tunnels is possible and tested. Route something through Tor; or route through something before connecting to Tor; or both.
 
 * [Tunnel Support](https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support)
-    * [Tunnel Tor through proxy, VPN or SSH (proxy/VPN/SSH -> Tor)](https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/)
-        * [Tunnel Tor through proxy (proxy -> Tor)](https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/)
-        * [Tunnel Tor through SSH (SSH -> Tor)](https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/)
-        * [Tunnel Tor through VPN (VPN -> Tor)](https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/)
-    * [Tunnel Proxy/SSH/VPN through Tor (Tor -> Proxy/SSH/VPN)](https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/)
-        * [Tunnel proxy through Tor (Tor -> proxy)](https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/)
-        * [Tunnel SSH through Tor (Tor -> SSH)](https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/)
-        * [Tunnel VPN through Tor (Tor -> VPN)](https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/)
-    * [Example VPNs working with Whonix for testing purposes](https://sourceforge.net/p/whonix/wiki/TestVPN/)
+
+    * [Tunnel Tor through proxy, VPN or SSH (user -> proxy/VPN/SSH -> Tor)](https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/)
+        * [Tunnel Tor through proxy (user -> proxy -> Tor)](https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/)
+        * [Tunnel Tor through SSH (user -> SSH -> Tor)](https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/)
+        * [Tunnel Tor through VPN (user -> VPN -> Tor)](https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/)
+
+    * [Tunnel Proxy/SSH/VPN through Tor (user -> Tor -> Proxy/SSH/VPN)](https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/)
+        * [Tunnel proxy through Tor (user -> Tor -> proxy)](https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/)
+        * [Tunnel SSH through Tor (user -> Tor -> SSH)](https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/)
+        * [Tunnel VPN through Tor (user -> Tor -> VPN)](https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/)
+
+    * And if you combine both methods...
+        * user -> Proxy/SSH/VPN > Tor -> Proxy/SSH/VPN
+        * is possible as well.
+
+    * [Free Example VPNs working with Whonix for testing purposes](https://sourceforge.net/p/whonix/wiki/TestVPN/)
 
 <font size="-3">
 Replacing Tor with something is possible as well, although only for some combinations and networks. It's partially done but don't hold your breath for seeing those features finished, see [OtherAnonymizingNetworks](https://sourceforge.net/p/whonix/wiki/OtherAnonymizingNetworks/).

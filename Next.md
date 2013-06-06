@@ -61,5 +61,18 @@ Alternatively, if you want to set it to no proxy, you could additionally add bel
 
     export TOR_TRANSPROXY=1
 
+# uwt
+We no longer place uwt wrappers into /usr/local/bin/<uwt-wrapped-application>. Therefore we now use dpkg-divert /usr/bin/<uwt-wrapped-application> to /usr/bin/<uwt-wrapped-application> and symlink /usr/bin/<uwt-wrapped-application> to /usr/bin/uwtwrapper.
+
+Search for /usr/bin/* in documentation and update to /usr/bin/<uwt-wrapped-application>.real.
+
+apt-cacher-ng-uwt moved to /usr/share/whonix/.
+
+# Tor Controller
+Change documentation from arm to armwrapper.
+
+# Dummy Tor
+Update dummy tor design page.
+
 # Footer #
 [[include ref=WikiFooter]]

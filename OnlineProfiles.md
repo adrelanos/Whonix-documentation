@@ -29,6 +29,8 @@ If you don't get into trouble, by letting others to know, that you like or use W
 * [Secondary Twitter Account for alternative Source Code Commit Notifications](https://twitter.com/WhonixSource)
 * https://freecode.com/projects/whonix/
 * https://www.ohloh.net/p/Whonix/
+* irc.pirateparty.net: adrelanos
+* wordpress: http://en.forums.wordpress.com/profile/anonymousoperatingsystem https://anonymousoperatingsystem.wordpress.com/ (I preferred to have whonix.wordpress.com.)
 
 # Footer #
 [[include ref=WikiFooter]]

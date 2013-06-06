@@ -48,6 +48,7 @@
     * [Dev, development discussions, old and recent, bugs, features, etc.](https://sourceforge.net/p/whonix/wiki/Dev/)
     * [Git branches](https://sourceforge.net/p/whonix/wiki/Dev_git/)
     * [Changes to the Debian/KDE defaults](https://sourceforge.net/p/whonix/wiki/Dev_KDE/)
+    * [Some random thoughts about a future GNOME desktop, GNOME proxy](https://sourceforge.net/p/whonix/wiki/Dev_GNOME/)
     * [Introduction into the Whonix build method and source code](https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/)
     * [Automatic check and notification for operating system updates](https://sourceforge.net/p/whonix/wiki/Dev_UpdateNotifier/)
     * [Whonix News File Format](https://sourceforge.net/p/whonix/wiki/Dev_news/)
@@ -59,6 +60,9 @@
     * [(Award) Buttons from Third Parties](https://sourceforge.net/p/whonix/wiki/Dev_Buttons/)
     * [Fedora as host operating system or even VM operating system - development discussion](https://sourceforge.net/p/whonix/wiki/Fedora/)
     * [Network Manager (NM) in Whonix instead of ifupdown - development discussion](https://sourceforge.net/p/whonix/wiki/Dev_NetworkManager/)
+    * [Dev_Files](https://github.com/adrelanos/Whonix/blob/master/development/files_list)
+    * [Dev_Files_Short](https://github.com/adrelanos/Whonix/blob/master/development/files_list_short)
+    * [Dev_bash_trap]
 
 * Other related
     * [Documentation](https://sourceforge.net/p/whonix/wiki/Documentation/)
@@ -79,7 +83,7 @@
     * [OneVM - Whonix implementation with just a single VM (Tor runs on host)](https://sourceforge.net/p/whonix/wiki/OneVM/)
     * [Installing i2p on Whonix-Gateway (i2pBOX)](https://sourceforge.net/p/whonix/wiki/Inspiration/)
     * [JonDonym as Tor replacement (JonDoBOX)](https://sourceforge.net/p/whonix/wiki/Inspiration/)
-    * [VPN, VPN's as a Tor replacement (VPNBOX), Fail Closed Mechanism](https://sourceforge.net/p/whonix/wiki/Inspiration/)
+    * [VPN, VPN's as a Tor replacement (VPNBOX)](https://sourceforge.net/p/whonix/wiki/Inspiration/)
     * [Proxy, Proxies as a Tor replacement (ProxyBOX), Transparent Proxying Method, Proxy Settings Method](https://sourceforge.net/p/whonix/wiki/Inspiration/)
     * [Freenet on the Whonix-Gateway (FreenetBOX)](https://sourceforge.net/p/whonix/wiki/Inspiration/)
     * [RetroShare as Anonymizer](https://sourceforge.net/p/whonix/wiki/Inspiration/)

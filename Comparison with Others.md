@@ -11,8 +11,12 @@ Quick comparison of Whonix and Tails key virtues. If ever anything in this table
 Comparing:
 
 * Whonix 0.4.5
-* Tails 0.1.6.
+* Tails 0.16.
 * Qubes OS TorVM 0.1.beta1
+
+Legend:
+
+* ? - *Status currently not researched by adrelanos.* Help filling the gaps is welcome.
 
 ## Different views
 One has always to be very careful, when talking about others. Especially, when talking about advantages and disadvantages. Different opinions are accepted and listed here.
@@ -25,13 +29,14 @@ One has always to be very careful, when talking about others. Especially, when t
 | | Whonix | Tails | Tor Browser Bundle | Qubes OS TorVM
 ------------- |  ------------- | ------------- | ------------- | -------------
 Focus on anonymity, privacy and security | Yes | Yes | Yes | Yes
-Type | general purpose os available as VM images and physical isolation | LiveCD/DVD/USB | portable browser | general purpose os, VM plugin for Qubes OS, 
-Supported hardware | any ^1^ | x86 compatible and/or and Virtual Machines | Windows, Linux, Mac and Virtual Machines | any capable of running Qubes OS
+Type | general purpose os available as VM images and physical isolation | Live DVD / Live USB | portable browser | general purpose os, VM plugin for Qubes OS, 
+Supported hardware | x86 compatible and/or Virtual Box + ^1^ | x86 compatible and/or Virtual Machines | Windows, Linux, Mac and Virtual Machines | any capable of running Qubes OS
 Based on | Tor, Debian ^2^ and a Virtualizer ^3^ \[Virtual Box\] when not using Physical Isolation | Tor, Debian | Tor, Firefox | Tor, Qubes OS, Fedora
 Gateway and torify any operating system (advanced users) | Yes ^4^ | Not a Gateway. | Not a Gateway. | Probable (?) yes, when using [HVM](http://wiki.qubes-os.org/trac/wiki/HvmCreate)
-Live CD | No | Yes | No | No
+Live DVD | No | Yes | No | No
 Live USB | No | Yes | No | No
-USB bootable | Yes ^5^ | Yes | Yes ^5^ | Yes ^5^
+USB Bootable | Yes ^5^ | Yes | Yes ^5^ | Yes ^5^
+USB Installer Feature | No ^7^ | Yes ^8^ | ? | ?
 Requires Virtual Box | If not using Physical Isolation, yes. ^3^ | No | No | No
 Requires Qubes OS | No | No | No | Yes
 System requirements | higher | lower | lowest | highest
@@ -40,23 +45,25 @@ Persistence | Full | Optional for Live USB | Yes ^6^ | Full (?)
 Number of developers | one with lots of anonymous contributions | multiple | multiple | One (?)
 Maturity | project since 2012 | established, respected project for many years | established, respected project for many years | project since 2012 (?)
 Open Source | Yes | Yes | Yes | Yes
-Anonymous developers | Yes | Yes | No | (?)
+Anonymous Developers | Yes | Yes | No | (?)
 
 <font size="-3">
 ,,
-^1^ *Whonix Framework* workstation: self made builds can run on any real or virtual hardware. Intel VT-x or AMD-V will greatly speed up Virtual Machines. *Whonix Framework* gateway: anonymizer (Tor) must support that platform. 
+^1^ [Custom-Workstation](https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems): self made builds can run on any real or virtual hardware as long as they are behind a Whonix-Gateway. Tor Browser binaries are only available for a limited amount of platforms (Windows, Linux, BSD, Mac).
 ^2^ Whonix-Workstation: also [OtherOperatingSystems](https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/) are supported.; Whonix-Gateway: In long term we are also agnostic about any other secure distributions. The concept is agnostic, you could use another operating system as base, but it requires effort.
 ^3^ Default downloads are for Virtual Box. (Subject for change in future.) [PhysicalIsolation] is an security optional feature for advancend users. Experimental optional support for [VMware]. You can build your own images for other virtualizers, but it requires effort.
 ^4^ See [OtherOperatingSystems](https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/).
 ^5^ You can install your host operating system on USB. 
 ^6^ You can download files and keep them, save bookmarks and passwords depending on your settings.
+^7^ Whonix has no nice USB installer. Installing operating system on USB is recommend and left to the user.
+^8^ Tails has a nice USB installer.
 </font>
 
 ## Security
 ### General
 | | Whonix | Tails | Tor Browser Bundle | Qubes OS TorVM
 ------------- |  ------------- | ------------- | ------------- | -------------
-Amnesic | No ^7^ | Yes | No ^12^ | No
+Amnesic | No ^6^ | Yes ^7^ | No ^12^ | No
 Protection against IP/location discovery through root exploits ([Malware](https://en.wikipedia.org/wiki/Malware) with root rights) on the Workstation ^18^. | Yes ^a^ | No ^2^ | No ^2^ | Yes
 IP/DNS protocol leak protection | Full ^1^ | Depends ^5^ | Depends ^5^ | Full
 Takes advantage of Entry Guards | Yes | No | Yes | Yes (?)
@@ -82,8 +89,9 @@ Privacy enhanced IRC client configuration. | Yes | Yes | Not an IRC client. | No
 ^a^ Whonix has Protection against IP/location discovery through root exploits ([Malware](https://en.wikipedia.org/wiki/Malware) with root rights) inside Whonix-Workstation. But you really should not test it. In case Whonix-Workstation gets rooted, the adversary can not find out the users real IP/location. This is because Whonix-Workstation can only connect through the Whonix-Gateway. How difficult is it to compromise Whonix? See [Attack on Whonix](https://sourceforge.net/p/whonix/wiki/Comparison%20with%20Others/#attacks) and [Design]. More skill is required.
 ^1^ Such kinds of leaks are impossible ^a^ in Whonix, since the Whonix-Workstation is unaware of it's external IP.
 ^2^ In case Tails or TBB gets rooted, the adversary can simply bypass the firewall and get the user's real IP.
-^5^ See first example of [Whonix security in real world](https://sourceforge.net/p/whonix/wiki/Security%20in%20Real%20World/). When applications in Tails are configured wrong, due to a bug in Tails or the application, IP can leak. Quoted from the [Tails Security Page](https://tails.boum.org/security/index.en.html): *"Until an [audit](https://tails.boum.org/todo/applications_audit/) of the bundled network applications is done, information leakages at the protocol level should be considered as − at the very least − possible."*
-^7^ There are no special measures to limit what is written to disk. This includes (non exclusive list) user created files, backup files, temporary files, swap, chat history, browser history and so on. Whonix acts like an ordinary installed operating system. It can also not be prevented, that the host memory [swaps](https://en.wikipedia.org/wiki/Swap) to the host disk. There is a [Recommendation to use multiple VM Snapshots](https://sourceforge.net/p/whonix/wiki/Security%20Guide/#recommendation-to-use-multiple-vm-snapshots) and it is is [recommend](https://sourceforge.net/p/whonix/wiki/Advanced%20Security%20Guide/#full-disk-encryption) to apply Full Disk Encryption on the host.
+^5^ See first example of [Whonix security in real world](https://sourceforge.net/p/whonix/wiki/Security%20in%20Real%20World/). When applications in Tails are configured wrong, due to a bug in Tails or the application, IP can leak. Quoted from the [Tails Security Page](https://tails.boum.org/security/index.en.html): *"Until an [audit](https://tails.boum.org/todo/applications_audit/) of the bundled network applications is done, information leakages at the protocol level should be considered as - at the very least - possible."*
+^6^ There are no special measures to limit what is written to disk. This includes (non exclusive list) user created files, backup files, temporary files, swap, chat history, browser history and so on. Whonix acts like an ordinary installed operating system. It can also not be prevented, that the host memory [swaps](https://en.wikipedia.org/wiki/Swap) to the host disk. There is a [Recommendation to use multiple VM Snapshots](https://sourceforge.net/p/whonix/wiki/Security%20Guide/#recommendation-to-use-multiple-vm-snapshots) and it is is [recommend](https://sourceforge.net/p/whonix/wiki/Advanced%20Security%20Guide/#full-disk-encryption) to apply Full Disk Encryption on the host. This is the price, Whonix has to pay, because many features could be more easily added to Whonix by adrelanos or can be easily installed by the user.
+^7^ Done by design.
 ^8^ See [Cold boot attack](https://en.wikipedia.org/wiki/Cold_boot_attack). 
 ^12^ Although it does not try to store to disk, swap can still leak. 
 ^13^ [Tails separate Tor streams](https://tails.boum.org/todo/separate_Tor_streams/)
@@ -108,20 +116,24 @@ Privacy enhanced IRC client configuration. | Yes | Yes | Not an IRC client. | No
 Network/Web Fingerprint | [Whonix Fingerprint Page](https://sourceforge.net/p/whonix/wiki/Fingerprint/) | [Tails Fingerprint Page](https://tails.boum.org/doc/about/fingerprint/index.en.html) | TBB traffic is tunneled through Tor. Host traffic passes clearnet. | -
 Network fingerprint: ISP can trivially guess project type ^27^ | No. | No. | No. | (?)
 Network fingerprint: ISP can guess a non-persistent Tor directory is being used | No. | Yes, because [not yet](https://tails.boum.org/todo/persistence_preset_-_tor/) supporting persistent entry guards. | No. | (?)
-clearnet traffic | All Whonix-Gateway and Whonix-Workstation traffic is tunneled through Tor. Host traffic (operating system updates, eventually host browser etc.) uses clearnet. | None, unless other users sharing the same internet connection are not using Tails. | TBB traffic is tunneled through Tor. Host traffic (operating system updates, eventually untorified second browser etc.) uses clearnet. | Yes, Gateway is not torified.
-Network fingerprint: ISP can guess which anonymity software is being used because of ratio of Tor and clearnet traffic | Unknown. ^33^ | Can guess a Tor Live CD is being used, unless Unsafe Browser is in use or other people sharing same internet connections not using Tails. | ? | (?)
+Clearnet traffic | All Whonix-Gateway and Whonix-Workstation traffic is tunneled through Tor. Host traffic (operating system updates, eventually host browser etc.) uses clearnet. | None, unless other users sharing the same internet connection are not using Tails. | TBB traffic is tunneled through Tor. Host traffic (operating system updates, eventually untorified second browser etc.) uses clearnet. | Yes, Gateway is not torified.
+Network fingerprint: ISP can guess which anonymity software is being used because of ratio of Tor and clearnet traffic | Unknown. ^33^ | Can guess a Tor Live DVD is being used, unless Unsafe Browser is in use or other people sharing same internet connections not using Tails. | ? | (?)
 Network fingerprint: ISP can guess which anonymity software is being used because of [tordate](https://tails.boum.org/contribute/design/Time_syncing/) ^34^ | No, does not include tordate. | Yes, if clock is too much off when booting. ^34^ | No, not an operating system. | No, does not include tordate.
-web fingerprint ^28^ | Same as TBB. ^29^ | Tails specific. ^30^ | TBB. ^31^ | Does not include Tor Browser.
+Web fingerprint ^28^ | Same as TBB. ^29^ | See footnote ^30^ for latest status. | TBB. ^31^ | Does not include Tor Browser.
+Unsafe browser fingerprint ^35^ | ^36^ | ^37^ | ? | ?
 
 <font size="-3">
 ^27^ Find out if Whonix, Tails or TBB is running.
 ^28^ Fingerprint for the websites that you are visiting
 ^29^ Uses the original Tor Browser from torproject.org with the only difference, that Tor runs on Whonix-Gateway instead the locally shipped Tor.
-^30^ See [evaluate web fingerprint](https://tails.boum.org/todo/evaluate_web_fingerprint/).
+^30^ See documentation [For the websites that you are visiting](https://tails.boum.org/doc/about/fingerprint/index.en.html) and todo [evaluate web fingerprint](https://tails.boum.org/todo/evaluate_web_fingerprint/) for latest status.
 ^31^ Is the original Tor Browser Bundle from torproject.org.
-^32^ Live CD without persistent USB storage for the Tor data directory.^^ 
+^32^ Live DVD without persistent USB storage for the Tor data directory.^^ 
 ^33^ Whonix users might tend to have more traffic than TBB users, due to operating system updates of Whonix-Workstation and Whonix-Gateway through Tor. Unknown if this is specific enough to guess a transparent or isolating proxy is being used or if enough other Tor users run big enough amounts of traffic through Tor. Research before Whonix was created has shown that big amounts of filesharing traffic were run through Tor. Classical filesharing tends to have more upload than Whonix, but it's also unknown how many people disabled upload or moved to methods which do not involve much upload, such as file hosters.
 ^34^ Quoted from the [Tails Design about Time syncing](https://tails.boum.org/contribute/design/Time_syncing/#index5h1): "*Our initial time guess based on the Tor consensus is probably easier to fingerprint, though: a fresh Tor is started, and restarted again right after the consensus has been downloaded.*"
+^35^ Unsafe Browser: Tails and Liberte Linux contain a so called Unsafe Browser. The Unsafe Browser does not use Tor. Connects in the clear. It is useful to register on hotspots or to view content in the clear without Tor.
+^37^ When using VMs: The unsafe browser on the host is untouched. It does not get any better or worse by installing Whonix.; When using Physical Isolation: As in Whonix 0.5.6 there is no unsafe browser. A separate third machine with clearnet access could be used.
+^38^ Tails Todo: https://tails.boum.org/todo/improve_fingerprint_of_the_Unsafe_Browser/
 </font>
 
 ### Flash / Browser Plugin security
@@ -176,7 +188,7 @@ attack | Whonix Standard Download version host+vm+vm | Whonix Physical Isolation
 (6) exploit + vm exploit + Unsafe Browser | fail | safe | fail | fail | fail | fail | fail
 (7) exploit + vm exploit + exploit against physically isolated Whonix-Gateway | fail | fail | fail | fail | fail | fail | fail | fail
 (8) vm exploit | fail | safe | safe | fail | safe | fail | fail
-(9) vm exploit + exploit against physically isolated Whonix-Gateway | fail | fail | safe | fail | safe | fail | fail
+(9) vm exploit + exploit against physically isolated Whonix-Gateway | fail | fail | safe | fail ^7^ ^8^ | safe | fail ^7^ ^8^ | fail ^7^ ^8^
 (10) exploit against Tor process | fail | fail | fail | fail | fail | fail | fail
 (11) attack against the Tor network | fail | fail | fail | fail | fail | fail | fail
 
@@ -210,6 +222,8 @@ attack | Whonix Standard Download version host+vm+vm | Whonix Physical Isolation
 ^4^ Workstation doesn't know it's own external IP address.
 ^5^ Prevented by firewall.
 ^6^ VM replaces the IP with an internal LAN IP, which is safe.
+^7^ Fail, because it already failed against a VM exploit.
+^8^ Usually not run behind a physically isolated Whonix-Gateway.
 </font>
 
 ### Network Time related
@@ -256,27 +270,10 @@ small clock skew attack against NTP ^8^, operating system effects: | Whonix VMs:
 </font>
 
 ## Usability
-| | Whonix | Tails | Tor on the host | Qubes OS TorVM
-------------- |  ------------- | ------------- | ------------- | -------------
-Difficulty to install additional software while IP remains hidden ^1^ | easy ^2^ | medium ^3^ | hard ^4^ | easy
-Difficulty to initially install the anonymity software | medium ^5^ | easy | easy | easy (?)
-Required knowledge to prevent the user shooting it's own feet ^7^ | hard | hard | hard | hard
-Pre-installed applications | Not many. ^6^ | Nice selection. | None. | Not many. (?)
-Host clock too much off | No connection to the Tor network until clock gets manually fixed. | Uses [tordate](https://tails.boum.org/contribute/design/Time_syncing/) to fix it. | No connection to the Tor network until clock gets manually fixed. | No connection to the Tor network until clock gets manually fixed.
+Due to a [bug](https://sourceforge.net/p/allura/tickets/6207/) on sourceforge.net, this table has its own page: [Comparison with Others2].
 
-<font size="-3">
-,,
-^1^ To do it safely.
-^2^ Easy: In Whonix one could also install an [Tor-unsafe](https://blog.torproject.org/blog/bittorrent-over-tor-isnt-good-idea) BitTorrent client. In worst case it would be pseudonymous (IP still hidden) rather than anonymous.
-^3^ Medium: Tails has a firewall to block non-Tor traffic, but an [audit](https://tails.boum.org/todo/applications_audit/) at protocol level is still required. Quoted from the [Tails Security Page](https://tails.boum.org/security/index.en.html): *"Until an [audit](https://tails.boum.org/todo/applications_audit/) of the bundled network applications is done, information leakages at the protocol level should be considered as − at the very least − possible."*
-^4^ Hard: It's left to the user to prevent non-Tor traffic, DNS leaks and protocol level leaks.
-^5^ Text, screenshot or video instructions [available](https://sourceforge.net/p/whonix/wiki/Download/#install-whonix).
-^6^ This and the whole documentation will be improved in next Whonix version.
-^7^ Examples what not to do: [DoNot](https://sourceforge.net/p/whonix/wiki/DoNot/).
-</font>
-
-## Many other differences
-Please also read [Why don't you merge with Tails and join efforts?](https://sourceforge.net/p/whonix/wiki/FAQ/#why-dont-you-merge-with-tails-and-join-efforts).
+## Features
+Due to a [bug](https://sourceforge.net/p/allura/tickets/6207/) on sourceforge.net, this table has its own page: [Comparison with Others2].
 
 ## Conclusion
 Conclusion: different threat model, different implementation, different use cases, although some overlap. Different political and design decisions.

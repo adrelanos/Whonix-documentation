@@ -25,12 +25,13 @@ Other severe usability bugs:
 
 * [Improve Support for Tor Browser; option to disable IP check](https://sourceforge.net/p/allura/tickets/5661/)
 * [Prevent drafts from getting lost](https://sourceforge.net/p/allura/tickets/5662/)
+* [Long content pages broken](https://sourceforge.net/p/allura/tickets/6207/)
 
 ## Bug / Feature Request Tracker ##
-Still hosted in sf.net wiki:
-https://sourceforge.net/p/whonix/awiki/Dev/
+Now hosted on github:
+https://github.com/Whonix/Whonix/issues
 
-Which is awful (posts can get lost if IP changes).
+A bit suboptimal, since people have to create a second account just for github and it probable won't scale well enough in long term. Positive points are, that it works for many big projects such as Bitcoin and attracts a lot pull requests (for them). So lets see how that works.
 
 ## Conclusion ##
 In summary there where no open source hosting sites, which offer SSL everywhere and unlimited download of big files. An open source hosting facility providing free webspace and SSL everywhere would be much desirable, but doesn't exist. Since there is no founding and no webmaster, the decision was made to host the project on sf.net for now.

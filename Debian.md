@@ -9,7 +9,7 @@ This chapter documents an alternative and supplementary way to verify the Debian
 
 **Should work for Debian and any Debian derivative.**
 
-(1) Go to the [Debian Download Page](http://cdimage.debian.org/cdimage/wheezy_di_rc1/). Example, the [Debian Wheezy DVD i386 folder](http://cdimage.debian.org/cdimage/wheezy_di_rc1/i386/iso-dvd/).
+(1) Go to the [Debian Download Page](http://cdimage.debian.org/). Example, the [Debian Wheezy DVD i386 folder](http://cdimage.debian.org/cdimage/release/current/i386/iso-dvd/).
 
 (2) Download.
 

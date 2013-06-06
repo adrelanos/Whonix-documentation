@@ -71,10 +71,26 @@ Screenshot Creator: [adrelanos](adrelanos at riseup dot net). License: [CC0 1.0 
 </font>
 
 # Concept #
+## General ##
 <https://sourceforge.net/projects/whonix/screenshots/whonix.jpg>
 ![Whonix](https://sourceforge.net/projects/whonix/screenshots/whonix.jpg)
 <font size="-3">
-Screenshot Creator: [adrelanos](adrelanos at riseup dot net). License: [CC0 1.0 Universal (CC0 1.0) **Public Domain** Dedication](https://creativecommons.org/publicdomain/zero/1.0/)
+Picture Creator: Originally contributed by CJ, modified by [adrelanos](adrelanos at riseup dot net). License: [CC0 1.0 Universal (CC0 1.0) **Public Domain** Dedication](https://creativecommons.org/publicdomain/zero/1.0/)
+</font>
+
+## Stream Isolation ##
+<http://whonix.sourceforge.net/pictures/stream_isolation.1.0.jpg>
+![Stream Isolation Graphic](http://whonix.sourceforge.net/pictures/stream_isolation.1.0.jpg)
+
+<font size=-3>
+Stream Isolation Graphic has been contributed by:
+Cuan Knaggs – graphic and web design
+[revlover](http://revolver.za.net/)
+print media – web design – web development – cms – e-commerce
+</font>
+
+<font size=-3>
+License: [CC0 1.0 Universal (CC0 1.0) **Public Domain** Dedication](https://creativecommons.org/publicdomain/zero/1.0/)
 </font>
 
 # cli #

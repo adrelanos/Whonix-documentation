@@ -29,6 +29,15 @@ Compress. Upload.
 * At least a few testers should test before posting a news. Testers may be found by posting a news.
 * Check, if [ManualTBupdate] is still up to date.
 * Update [Download].
+
+* Only next version: Update gpg verification instructions. (Change from .sig to .asc.)
+* Only next version: chmod -x / +x no longer required for [BrowserPlugins] and [Dev_Flashtutorial].
+* Only next version: [whonixcheck]
+
+* Only next version: chmod -x / +x update [Tunnel_Proxy_or_SSH_or_VPN_through_Tor]
+* Update [Stream Isolation] chmod -x / +x no longer recommend, use /etc/whonix.d instead
+
+
 * Update [PhysicalIsolation].
 * Update [BuildDocumentation].
 * Update [Features].

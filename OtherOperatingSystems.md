@@ -226,7 +226,8 @@ Takes advantage of Entry Guards	| Yes | Yes
 Operating System Updates persist once updated | Yes | Depends if gets installed or is a Live CD.
 Hides hardware serials from malicious software | Yes ^16^ | Yes ^16^
 Collects (virtual) hardware serials | No | Depends on the custom operating system
-Includes Tor Browser | Yes | Your responsibility to install it
+Includes Tor Browser | Yes | Your responsibility to install Tor Browser.
+Includes Firefox privacy patches ([reference](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers)) and Tor Button (=Tor Browser) | Yes, because it uses Tor Browser (without Tor/Vidalia). | Your responsibility to install Tor Browser.
 Prevents Tor over Tor for Tor Browser | Yes | Your responsibility to prevent Tor over Tor.
 Stream isolation to prevent identity correlation through circuit sharing | Yes | Your responsibility to use Stream Isolation.
 Stream isolates Tor Browser | No ^14^ | No ^14^

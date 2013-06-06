@@ -59,7 +59,7 @@ To learn more about Tor, see the official [Tor website](https://www.torproject.o
 # Whonix is based on Debian, VirtualBox and Tor #
 Remember, Whonix is based on Debian, KDE, VirtualBox, Tor and Tor Browser. It is nothing very special. To oversimplify it: Whonix is just a collection of configuration files. ^1^
 
-No stripped down versions are used. For example, anything ^2^ you can do with Debian GNU/Linux, you can do with Whonix as well. Most Debian GNU/Linux problems and questions with Whonix you may have can probable be solved the same way as for "vanilla" Debian. Q: "How do I install xrandr on Debian GNU/Linux?" A: "The same way you would with regular Debian GNU/Linux. Might help to *apt-get install command-not-found*. Try *apt-get install xrandr*. It well tell which package is missing. Nothing special. Same goes for Tor etc. Whonix doesn't break anything, it doesn't stop you from using obfuscated [bridges](https://sourceforge.net/p/whonix/wiki/Bridges/) or any other fancy stuff etc.
+No stripped down versions are used. For example, anything ^2^ you can do with Debian GNU/Linux, you can do with Whonix as well. Most Debian GNU/Linux problems and questions with Whonix you may have can probable be solved the same way as for "vanilla" Debian. Q: "How do I install xrandr on Debian GNU/Linux?" A: "The same way you would with regular Debian GNU/Linux. Try *apt-get install xrandr*. Nothing special. Same goes for Tor etc. Whonix doesn't break anything, it doesn't stop you from using obfuscated [bridges](https://sourceforge.net/p/whonix/wiki/Bridges/) or any other fancy stuff etc.
 
 Tip: since Ubuntu is based on Debian, most things working on Ubuntu will also work on Debian. Most online help for Ubuntu also works for Debian.
 

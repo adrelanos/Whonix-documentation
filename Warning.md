@@ -72,9 +72,9 @@ Whonix makes it clear that you are using Tor
 
 Tor tries to prevent attackers from learning what destination websites you connect to. 
 
-**Unless** you are using the Optional Configuration [Hide the fact, that you are using Tor/Whonix from your ISP](https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/) **Your ISP or your local network administrator** can easily check that you're connecting to a Tor relay, and not a normal web server for example.
+**Unless** you are using the Optional Configuration [Hide the fact, that you are using Tor/Whonix from your ISP](https://sourceforge.net/p/whonix/wiki/Hide%20Tor%20and%20Whonix%20from%20your%20ISP/), **your ISP or your local network administrator** can easily check that you're connecting to a Tor relay, and not a normal web server for example.
 
-**Unless** you are using the Optional Configuration [Tunnel Tor through proxy, VPN or SSH](https://sourceforge.net/p/whonix/wiki/Tunnel_Tor_through_proxy_or_VPN_or_SSH/) **The destination server your are contacting through Tor** can know whether your communication comes out from a Tor exit node by consulting the publicly available list of exit nodes that might contact it. For example using the [Tor Bulk Exit List tool](https://check.torproject.org/cgi-bin/TorBulkExitList.py) of the Tor Project.
+**Unless** you are using the Optional Configuration [Tunnel Proxy/SSH/VPN through Tor](https://sourceforge.net/p/whonix/wiki/Tunnel_Proxy_or_SSH_or_VPN_through_Tor/), **the destination server your are contacting through Tor** can know whether your communication comes out from a Tor exit node by consulting the publicly available list of exit nodes that might contact it. For example using the [Tor Bulk Exit List tool](https://check.torproject.org/cgi-bin/TorBulkExitList.py) of the Tor Project.
 
 **So unless you are using Optional Configurations to prevent this, using Whonix doesn't make you look like any random Internet user.** The anonymity provided by Tor and Whonix works by trying to make all of their users look the same so it's not possible to identify who is who amongst them.
 

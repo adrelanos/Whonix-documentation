@@ -28,6 +28,14 @@ Whonix-Example-Implementation:
 * DummyTor package description file: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/dummytor/tor
 * rinetd (see below) also prevents Tor from opening the default listener on port 9050. Therefore the Tor service will fail to start.
 
+### KDE / GNOME - application wide proxy settings
+Whether KDE / GNOME will be used or not, in addition to stream isolation wrappers and other preconfigured applications for stream isolation, in addition it's useful to also configure KDE / GNOME - wide proxy settings. In case the user installs KDE or GNOME applications, which connect to the internet, which honor proxy settings, those won't go through Tor's TransPort, but through a dedicated SocksPort for further improved stream isolation. These settings are not system-wide, but KDE-wide / GNOME-wide.
+
+Whonix-Example-Implementation:
+
+* KDE: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/kde/share/config/kioslaverc
+* GNOME: Not yet implemented. [TODO](https://sourceforge.net/p/whonix/wiki/Dev_GNOME/)
+
 ## Extra
 ### second, optional, extra firewall
 Optional.
@@ -37,7 +45,8 @@ Optional second, optional, extra firewall for advanced users as damage protectio
 Whonix-Example-Implementation:
 
 * Please read the script comments.
-* https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/bin/whonix_firewall
+* Firewall script: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/bin/whonix_firewall
+* Configuration file: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/whonix_firewall.d/10_default
 
 ## Usability
 ### Swap
@@ -54,14 +63,15 @@ It's useful to have an environment variable announcing "I am a Workstation", so 
 
 Whonix-Example-Implementation:
 
-* https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/environment
+* https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/profile.d/20_whonix.sh
+* https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/profile.d/20_torbrowser.sh
 
 ### apt.conf
 Optional.
 
 Whonix-Example-Implementation:
 
-* Doesn't do anything by default. Just some comments. https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/apt/apt.conf.d/99whonix
+* Doesn't do anything by default. Just some comments. https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/apt/apt.conf.d/90whonix
 * (apt is forced though Tor by apt-get uwt wrapper (Design-Shared) and by the firewall running on the Gateway.
 
 ### http to socks converter
@@ -101,7 +111,10 @@ Optional.
 Whonix-Example-Implementation:
 
 * Using rawdog, a privacy friendly rss reader to download Whonix News Blogs.
-* rawdog Configuration: https://github.com/adrelanos/Whonix/tree/master/whonix_workstation/home/user/.rawdog 
+* Privacy friendly as in, once it downloaded the blog's content, there will be no incoming/outgoing traffic. The page can be viewed offline and contains no tracking scripts.
+* Non-ideal configuration. In rawdog config is a https link with a sourceforge rss feed, which unfortunately redirects to a non-https page, which rawdog follows. Thus, news isn't fetched over https and a man-in-the-middle could spread malicious news.
+
+* rawdog Configuration folder: https://github.com/adrelanos/Whonix/tree/master/whonix_workstation/home/user/.rawdog/
 * Documented on page [rss] and [Download (Stay Tuned)](https://sourceforge.net/p/whonix/wiki/Download/#stay-tuned) page.
 * rawdog gets run by whonixcheck. (See [Design-Shared].)
 * The user is asked to prefer to start Tor Browser using the Tor Browser Recommend shortcut on the Desktop: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/kde/share/applications/whonix-tbrecommend.desktop
@@ -143,6 +156,7 @@ Whonix-Example-Implementation:
 * torbrowser update script: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/bin/torbrowser
 * Patched torbrowser startup script to make Tor Browser work without the bundled Tor and Vidalia: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/start-tor-browser The torbrowser update script https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/bin/torbrowser keeps care to replace the upstream start-tor-browser file.
 * Install Tor Browser while building Whonix: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_torbrowser
+* Environment variables: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/profile.d/20_torbrowser.sh
 * Gpg keys to verify the downloaded Tor Browser:
     * https://github.com/adrelanos/Whonix/tree/master/whonix_workstation/usr/local/share/whonix/gpg-pubkeys
     * https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/#gpg-keys
@@ -161,7 +175,8 @@ Whonix-Example-Implementation:
         * Whonix users can download (and verify) the stock Tor Browser Bundle (TBB) from torproject.org,
         * unpack to /home/user/tor-browser_en-US and
         * start it from the desktop menu shortcut or from the start menu.
-        * Starting with the stock startup script /home/user/tor-browser_en-US/start-tor-browser will fail closed. Vidalia will report, that Tor won't connect, because port 9150 is already blocked by rinetd. This will be fixed as soon as The Tor Project merges a proposed patch https://trac.torproject.org/projects/tor/ticket/5611 for the start-tor-browser startup script, which adds an optional environment variable, once set, only starts Tor Browser and not the bundled Tor/Vidalia.
+        * As long as The Tor Project will still ship Vidalia with TBB: Starting with the stock startup script /home/user/tor-browser_en-US/start-tor-browser will fail closed. Vidalia will report, that Tor won't connect, because port 9150 is already blocked by rinetd. This will be fixed as soon as The Tor Project merges a proposed patch https://trac.torproject.org/projects/tor/ticket/5611 for the start-tor-browser startup script, which adds an optional environment variable, once set, only starts Tor Browser and not the bundled Tor/Vidalia.
+        * As soon as The Tor Project moved to tor-launcher and drops Vidalia: Starting stock TBB inside Whonix should work out of the box, because https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/profile.d/20_torbrowser.sh sets the required environment variables to deactivate tor-launcher.
 
 ### Marker file
 Optional.
@@ -179,32 +194,8 @@ Add a welcome and help message also to virtual terminals. (Those which can get s
 
 Whonix-Example-Implementation:
 
-* Default Debian .bashrc at the top and Whonix specific addtions at the bottom. https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/home/user/.bashrc
-* https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/bin/whonix
-
-### Desktop Environment
-Optional.
-
-It's useful to have a desktop preconfigured to make it as easy as possible for users who use Linux for the first time.
-
-Whonix-Example-Implementation:
-
-* Based on KDE.
-* kdm auto login: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/kde4/kdm/kdmrc
-* Icons Files: https://github.com/adrelanos/Whonix/tree/master/whonix_workstation/usr/local/share/whonix/icons
-* Desktop Icons: https://github.com/adrelanos/Whonix/tree/master/whonix_workstation/usr/local/share/whonix/kde/share/applications
-* Deleting unwanted shortcut: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_knetattach
-* Desktop usability improvements: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_kde
-* Changing default skin and wallpaper: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/kde/share/apps/plasma-desktop/init/00-defaultLayout.js
-* https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/kde/share/config/dolphinrc
-* https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/kde/share/config/kickoffrc
-* https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/kde/share/config/konsolerc
-* Setting KDEDIRS variable: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/X11/Xsession.d/50whonix
-* gateway specific
-    * Creating desktop icons: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/usr/local/share/whonix/chroot-scripts/70_desktop_icons
-* workstation specific
-    * Creating desktop icons: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_desktop_icons
-* [Dev_KDE]
+* Default Debian .bashrc at the top and Whonix specific additions at the bottom: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/home/user/.bashrc
+* Whonix-Workstation terminal help file: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/bin/whonix
 
 ## Debugging
 ### Leaktest script

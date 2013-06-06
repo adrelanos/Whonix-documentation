@@ -2,7 +2,7 @@
 
 [TOC]
 
-## On Whonix-Gateway ##
+# On Whonix-Gateway #
 To change the **keyboard layout** in Whonix-Gateway:
 
     sudo dpkg-reconfigure console-data
@@ -17,7 +17,7 @@ To change the **keyboard layout** in Whonix-Gateway:
     ## Does not work in Debian for some reason.
     #sudo dpkg-reconfigure keyboard-configuration
     
-## On Whonix-Workstation ##
+# On Whonix-Workstation #
 If you want to change the **keyboard layout** from the default "us" to something else:
 
     KDE -> Start menu button -> Applications -> Settings -> System Settings ->

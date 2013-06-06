@@ -32,7 +32,9 @@ Mounting Virtual Machine images:
 * See also [Build Anonymity](https://sourceforge.net/p/whonix/wiki/Build%20Anonymity/).
 
 # Transfer files from the Host into Whonix-Gateway or Whonix-Workstation through ISO images #
-On the host install genisoimage: 
+On the host...
+
+Install genisoimage: 
 
     sudo apt-get install genisoimage
 
@@ -40,9 +42,25 @@ To create an iso "files.iso" containing the content of "folder":
 
     mkisofs -o files.iso /path/to/folder
 
+Use the Virtual Box graphical user interface to mount your newly created iso a virtual VM CD/DVD drive.
+
+Inside Whonix-Workstation...
+
+Create the folder /media/cdrom.
+
+    sudo mkdir -p /media/cdrom
+
 Now attach the iso to the VM. Mount it with 
 
     sudo mount /dev/sr0 /media/cdrom
+
+Get into that folder.
+
+    cd /media/cdrom
+
+See your files.
+
+    dir
 
 This is intentionally one-way as the Whonix-Workstation is inherently untrusted and should remain isolated to prevent side-channel attacks and covert channel leaks.
 

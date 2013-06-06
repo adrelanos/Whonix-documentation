@@ -4,30 +4,45 @@
 
 # Stream Isolation #
 ## Introduction ##
-If you are not careful and install custom applications, you risk, that different activities, let's say Web (Chromium or similar) or IRC (mIRC or similar) go through the same circuit and exit node. Even though, the exit node would still not know your real IP/location, they can easily correlate those activities to the same pseudonym.
+If you do not explicitly take action against this and install custom applications, you risk, that different activities, let's say Web (Chromium or similar) or IRC (mIRC or similar) go through the Tor same circuit and exit node. Even though, you would still be anonymous, i.e. the Tor exit node would still not know your real IP/location, they can easily correlate those activities issued by different applications to the same pseudonym.
 
-Whonix 0.2.1 and above implement protection against *identity correlation through circuit sharing*, but you are still advised understand a bit of the technical background. Since Tor version 0.2.3, different Socks,- Dns-, or TransPorts go through different circuits, therefore preventing *identity correlation*. Whonix configures most applications, that come preinstalled with Whonix, to use different SocksPort, thus no *identity correlation* is at risk. Whonix uses either socks proxy settings to direct various applications to different SocksPorts or uwt (more information below).
+The following graphic illustrates, the difference of using Tor SocksPort's compared to using Tor's TransPort. Using dedicated SocksPort's per application results in taking different routes through the Tor network per application. Not necessarily all nodes (first, second, third) get replaced by Tor. Sometimes just the first, sometimes just the second, sometimes just the third, and sometimes multiple nodes change.
+
+![Stream Isolation Graphic](http://whonix.sourceforge.net/pictures/stream_isolation.1.0.jpg)
+
+Whonix 0.2.1 and above implement protection against *identity correlation through circuit sharing*, however, for better privacy, you are still advised understand a bit of the technical background. Since Tor version 0.2.3, different Socks,- Dns-, or TransPorts go through different circuits, therefore preventing *identity correlation*. Whonix configures most applications, that come preinstalled with Whonix, to use different SocksPort, thus no *identity correlation* is at risk. Whonix uses either socks proxy settings to direct various applications to different SocksPorts or uwt (more information below).
 
 Any other traffic (i.e. custom installed applications, misc applications, such as *nslookup*, go through Tor's Dns-, and/or TransPort (can be optionally disabled, see below).
 
 Applications in Whonix 0.2.1 and above configured to prevent *identity correlation through circuit sharing*:
 
-* Tor Browser (socks proxy settings) 
-* XChat (socks proxy settings)
-* Thunderbird with TorBirdy (not preinstalled, socks proxy settings, follow [Mozilla Thunderbird with TorBirdy](https://sourceforge.net/p/whonix/wiki/E-Mail)).
-* Instant Messenger (none preinstalled, port prepared, IP 192.168.0.10, port 9103)
-* apt-get (uwt wrapper)
-* gpg (uwt wrapper)
-* ssh (uwt wrapper) 
-* git (not preinstalled, uwt wrapper prepared)
-* [htpdate](https://sourceforge.net/p/whonix/wiki/Dev_timesync/) (socks proxy settings)
-* wget (uwt wrapper)
-* whonixcheck script (uses uwt and separate SocksPorts for wget)
-* BitCoin (not preinstalled, socks proxy settings, port prepared, port 9111)
-* privoxy (not preinstalled, socks proxy settings, port prepared, port 9112)
-* polipo (not preinstalled, socks proxy settings, port prepared, port 9113)
-* torbrowser update script (uses uwt and separate SocksPorts for wget and gpg)
-* apt-cacher-ng (not preinstalled, uses apt-get port, helper script with comments prepared, see */usr/local/bin/apt-cacher-ng_uwt*)
+
+| | pre-installed | pre-configured | type | port | instructions
+------------- |  ------------- | ------------- | ------------- | ------------- | -------------
+Tor Browser | yes  | yes | socks proxy settings | 9100 | [TorBrowser]
+XChat | yes | yes | socks proxy settings | - | [Chat]
+Thunderbird with TorBirdy | no | yes | socks proxy settings | - | [Mozilla Thunderbird with TorBirdy](https://sourceforge.net/p/whonix/wiki/E-Mail)
+Instant Messenger | no | no | socks proxy settings | port prepared, IP 192.168.0.10, port 9103 | [Chat]
+apt-get | yes | yes | uwt wrapper | - | -
+gpg | yes | yes | uwt wrapper | - | -
+ssh | yes | yes | uwt wrapper | - | -
+git | no | yes | uwt wrapper | - | -
+[htpdate](https://sourceforge.net/p/whonix/wiki/Dev_timesync/) | yes | yes | socks proxy settings | - | -
+wget | yes | yes | uwt wrapper | - | -
+curl | yes | yes | uwt wrapper | - | -
+whonixcheck | yes | yes | socks proxy  settings | - | -
+BitCoin | no | no | socks proxy settings | port prepared, IP 192.168.0.10, port 9111 | [Money]
+privoxy | no | no | socks proxy settings | port prepared, IP 192.168.0.10, port 9112 | -
+privoxy | no | no | socks proxy settings | port prepared, IP 192.168.0.10, port 9113 | -
+torbrowser update script | yes | yes | socks proxy settings | - | [TorBrowser]
+apt-cacher-ng | no | no | uwt wrapper | - | helper script with comments prepared, see */usr/local/bin/apt-cacher-ng_uwt*
+TorChat | no | yes | settings, socks proxy settings, connects only to hidden services | - | [Chat]
+mixmaster | yes | yes | settings (connects only to hidden services) | - | [Mixmaster]
+mixmaster-update | yes | yes | uwt wrapper | - | [Mixmaster]
+
+Whonix 0.6.2 and above: KDE application wide proxy settings (no KDE applications with network activity pre-installed, pre-configured socks proxy settings, port 9122)
+
+Whonix 0.6.2 and above: GNOME application wide proxy settings (no GNOME applications with network activity pre-installed, [not pre-configured](https://sourceforge.net/p/whonix/wiki/Dev_GNOME/), port prepared, port 9123)
 
 The required socks proxy settings were setup by the Whonix build scripts. uwt wrappers and are located on Whonix-Gateway and on Whonix-Workstation under */usr/local/bin/*. [uwt](https://trac.torproject.org/projects/tor/wiki/doc/torsocks) is a wrapper around torsocks, which is also already installed to /usr/local/bin/uwt.
 
@@ -80,7 +95,7 @@ To protect against this, you have to set up per-application SOCKS ports in Whoni
 
 On Whonix-Gateway in */etc/tor/torrc* ([on github](https://github.com/adrelanos/Whonix/blob/stable/whonix_gateway/etc/tor/torrc)) are already a lot custom socks ports prepared for custom installed applications:
 
-* Without IsolateDestAddr and without IsolateDestPort: SocksPort 192.168.0.10:9150 to 9159
+* Without IsolateDestAddr and without IsolateDestPort: SocksPort 192.168.0.10:9152 to 9159
 * With IsolateDestAddr, but without IsolateDestPort: SocksPort 192.168.0.10:9160 to 9169
 * Without IsolateDestAddr, but with IsolateDestPort: SocksPort: 192.168.0.10:9170 to 9179
 * With IsolateDestAddr and with IsolateDestPort: SocksPort: 192.168.0.10:9180 to 9189
@@ -102,6 +117,10 @@ Additional comments regarding the Torify HOWTO:
 For best protection against *identity correlation*:
 
 Read the advice above and on Whonix-Gateway:
+
+Deactivate KDE / GNOME - application wide proxy settings...
+
+* Whonix 0.6.2 and above: Because those proxy settings are not application specific, but rather force all KDE / GNOME applications through the same SocksPort (no KDE / GNOME applications which use the internet preinstalled by default), deactivating those KDE / GNOME - wide proxy settings gives better control about stream isolation.
 
 To deactivate TransPort and DnsPort...
 
@@ -143,6 +162,19 @@ Comment in.
 
     SocksPort 192.168.0.10:9100 IsolateDestAddr IsolateDestPort
 
+## Development ##
+Tests.
+
+Applications which internally use curl.
+
+    sudo update-command-not-found
+
+    sudo update-flashplugin-nonfree --install --verbose
+
+Applications which is uwt wrapped itself and internally uses ssh.
+
+    git push origin master
+
 ## Sources ##
 <font size=-3>
 
@@ -159,4 +191,11 @@ Comment in.
 </font>
 
 # Footer #
+<font size=-3>
+Stream Isolation Graphic has been contributed by:
+Cuan Knaggs – graphic and web design
+[revlover](http://revolver.za.net/)
+print media – web design – web development – cms – e-commerce
+</font>
+
 [[include ref=WikiFooter]]

@@ -3,7 +3,7 @@
 [TOC]
 
 # Manually Installing Whonix #
-This is just a draft, unfinished, just some ideas. For special setups and advanced users only. Only in case the [Download] version, [OtherOperatingSystems] or the [PhysicalIsolation] instructions are not suitable, for example if you like to use another distribution as base for Whonix-Gateway. [Build Anonymity] has not been considered.
+This is just a draft, unfinished, just some ideas. For special setups and advanced users only. Only in case the [Download] version, [OtherOperatingSystems], [PhysicalIsolation] or [BuildDocumentation] instructions are not suitable, for example if you like to use another distribution as base for Whonix-Gateway. [Build Anonymity] has not been considered.
 
 This assumes Whonix 0.6.0 or above. It would work with 0.5.6 as well (see wiki history), but in 0.6.0 it's easier because the build scripts layout has been improved.
 

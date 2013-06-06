@@ -16,9 +16,11 @@ Whonixcheck checks:
 * Status of Network Time Synchronization
     * see above
     * Only the status of the logfiles is read, there is no actual network traffic, that is done before.
+    * 0.6.2 and above: Checks status of Boot Clock Randomization, Time Sanity Check
+    * Check status of tails_htp
  * Tor connection
     * downloads https://check.torproject.org with curl through extra SocksPort
-    * downloads https://check.torproject.org with wget through TransPort
+    * downloads https://check.torproject.org with curl through TransPort
  * Tor Browser version
     * downloads https://check.torproject.org/RecommendedTBBVersions with curl through extra SocksPort
  * operating system updates

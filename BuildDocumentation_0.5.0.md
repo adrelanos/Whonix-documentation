@@ -155,16 +155,16 @@ This is recommend but not required. See [Trust].
 (3) Verify the tag you want to build.
 
     ## Replace with tag you want to build.
-    git tag -v 0.5.5
+    git tag -v 0.5.6
 
 (4) Output should look like the following.
 
     object 13870efc29018065267788f9f23026e6ff489684
     type commit
-    tag 0.5.5
+    tag 0.5.6
     tagger adrelanos <adrelanos at riseup dot net> 1348681401 -0400
 
-    0.5.5
+    0.5.6
     gpg: Signature made Wed Sep 26 17:43:26 2012 UTC using RSA key ID 713AAEEF
     gpg: Good signature from "adrelanos <adrelanos at riseup dot net"
 
@@ -176,8 +176,8 @@ The warning.
 
 (1.1) Get into the correct [git branch](https://sourceforge.net/p/whonix/wiki/Dev_git/).
 
-    ## 0.5.5
-    git checkout 0.5.5
+    ## 0.5.6
+    git checkout 0.5.6
 
     ## For stable hotfixes.
     #git checkout stable
@@ -194,7 +194,7 @@ Is explained on the [Whonix signing key](https://sourceforge.net/p/whonix/wiki/T
 ## Preparations ##
 (1) Git checkout, which version you want to build.
 
-    git checkout 0.5.5
+    git checkout 0.5.6
 
 (2) Make sure there aren't any VMs in Virtual Box already called "Whonix-Gateway" or "Whonix-Workstation" (TODO: automate that)
 
@@ -297,4 +297,4 @@ Pack. Upload.
         * liberationtech@lists.stanford.edu
 
 # Footer #
-[[include ref=WikiFooter]]
+[[include ref=WikiFooter]

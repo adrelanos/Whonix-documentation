@@ -86,7 +86,7 @@ This JonDonym chapter is a summary of the [JonDonym](https://sourceforge.net/p/w
 ### VPN
 Not suited for Whonix for the Default-Download-Version. This is a summary of [Comparison of Tor and VPN services](https://sourceforge.net/p/whonix/wiki/ComparisonOfTorProxiesCGIproxiesProxyChainsAndVPNServices/#comparison-of-tor-and-vpn-services).
 
-* Fail open, which is bad. Ok, that could be prevented developing a [Fail Closed Mechanism](https://sourceforge.net/p/whonix/wiki/VPN/#fail-closed-mechanism) or developing/using a VPN-Gateway.
+* Fail open, which is bad. Ok, that could be prevented using [VPN-Firewall] or even better developing/using a VPN-Gateway.
 * No distributed trust, just a single trusted provider.
 * Affected by identity correlation.
 * No free ones without restrictions.

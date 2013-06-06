@@ -51,6 +51,7 @@ Below is an example, how a project metadata file could look like.
     projectversion: 0.4.5
 
     metadataversion: 536
+    validuntil: 1369159330
 
     homepage: http://whonix.sourceforge.net/
 
@@ -73,7 +74,9 @@ The *projectversion* variable contains the version of the project and can be any
 
 The *metadataversion* variable is a consecutive number, i.e. after 536 follow 537. Each update of the metadata file increases that number. The client may not accept lower metadata version numbers, than the client already knows about. This should defeat rollback attacks.
 
-Defeating indefinite freeze attacks is technically a bit more difficult. Each metadata fetch against a different mirror has to go through it's own Tor circuit. Going through it's own Tor circuit, most times a different Tor exit will be used (and connections to hidden services are stream isolated so or so). This will result in using different ISP's to connect to the metadata mirror and as long as not all Tor exit nodes or all Tor exit nodes's ISPs or all metadata mirrors are compromised, no indefinite freeze attack can be successfully mounted.
+Defeating indefinite freeze attacks is technically a bit more difficult. Each metadata fetch against a different mirror has to go through it's own Tor circuit. Going through it's own Tor circuit, most times a different Tor exit will be used (and connections to hidden services are stream isolated so or so). This will result in using different ISP's to connect to the metadata mirror and as long as not all Tor exit nodes or all Tor exit nodes's ISPs or all metadata mirrors are compromised, no indefinite freeze attack can be successfully mounted. When fetching from hidden services, there are no ISP's involved, who could tamper with the metadata.
+
+The *validuntil* variable represents how long the file is valid, until the mirror is considered outdated. The number represents the time in [unixtime](https://en.wikipedia.org/wiki/Unix_time). If a mirror is considered outdated, a new mirror will be tried.
 
 Distributed trust for the signers has not yet been considered. The signers gpg key is fully trusted. To implement this, one could look into the TUF project, since the TUF project already contains code to define a threshold of signers.
 

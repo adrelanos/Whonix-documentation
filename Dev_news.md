@@ -1,7 +1,10 @@
+[[include ref=WikiHeader]]
+
 [TOC]
 
-# Whonix News File Format #
+# Whonix News File Format
 **Version 0.2**
+used by Whonix 0.5.6
 
 First line contains version and may not contain any spaces!
 
@@ -12,7 +15,8 @@ First line contains version and may not contain any spaces!
     some more news text
     ...
 
-# How to create a valid Whonix News File #
+# How to create a valid Whonix News File
+## Manually
 (1). safe as whonix_news
 
     .
@@ -25,19 +29,22 @@ First line contains version and may not contain any spaces!
 
     gpg --verify whonix_news.asc
 
-# Extra implementation info #
-Signing and verification (as sanity check) of https://github.com/adrelanos/Whonix/blob/development/release/whonix_news is automated by https://github.com/adrelanos/Whonix/blob/development/release/upload_whonix_news.
+## Using Maintainer Script
+https://github.com/adrelanos/Whonix/blob/master/release/upload_download_readme
 
-https://github.com/adrelanos/Whonix/blob/development/whonix_shared/usr/local/bin/whonixcheck-scripts/50_check-whonix-news will find out the current installing version by:
+# Extra implementation info
+Signing and verification (as sanity check) of [whonix_news](https://github.com/adrelanos/Whonix/blob/master/release/whonix_news) is automated by [upload_whonix_news](https://github.com/adrelanos/Whonix/blob/master/release/upload_whonix_news).
+
+[50_check-whonix-news](https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/whonixcheck-scripts/50_check-whonix-news) will find out the current installing version by:
 
     ## Read only FIRST line.
     read -r INSTALLED_WHONIX_VERSION < /usr/local/share/whonix/version
     ## Remove ALL spaces.
     INSTALLED_WHONIX_VERSION="${INSTALLED_WHONIX_VERSION//[[:space:]]}"
 
-While phrasing the whonix_news, it's not required to remove PGP Signature, because the function verify_whonix_news in https://github.com/adrelanos/Whonix/blob/development/whonix_shared/usr/local/bin/whonixcheck-scripts/50_check-whonix-news will use gpg --decrypt to get plain text, which will result in the Whonix News File Format.
+While phrasing the whonix_news, it's not required to remove the OpenPGP Signature, because the function verify_whonix_news in [50_check-whonix-news](https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/whonixcheck-scripts/50_check-whonix-news) will use *gpg --decrypt* to get plain text, which will result in the Whonix News File Format.
 
-# Changelog #
+# Changelog
 0.1 to 0.2
 
 * /usr/share/whonix/version changed to /usr/local/share/whonix/version

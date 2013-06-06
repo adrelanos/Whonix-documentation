@@ -220,6 +220,31 @@ Check iptables.
 
     sudo iptables --list | more
 
+### Extra ###
+Check if /var/run/bootclockrandomization/success exists.
+
+    nano /var/log/bootclockrandomization.log
+
+    sudo service bootclockrandomization status
+
+    echo $?
+
+Check if /var/run/timesanitycheck/success exists.
+
+    nano /var/log/timesanitycheck.log
+
+    sudo service timesanitycheck status
+
+    echo $?
+
+Check if /var/run/htpdate/success exists
+
+    nano /var/log/htpdate.log
+
+    sudo service htpdate status
+
+    echo $?
+
 ## Test on Whonix-Gateway ##
 Check the logs.
 

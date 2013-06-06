@@ -156,10 +156,10 @@ The warning of VMware Host Only networking may also apply to Whonix:
 
 *On a Windows 2000, Windows XP or Windows Server 2003 host computer, you can use host-only networking in combination with the Internet connection sharing feature in Windows to allow a virtual machine to use the host's dial-up networking adapter or other connection to the Internet. See your Windows documentation for details on configuring Internet connection sharing."*
 
-* (1) If you want to SSH or VNC your Whonix-Workstation your safest bet could be to do it from another Whonix-Workstation. If they are within the same virtual LAN, they can see each other.
-* (2) Or you could run those services using [hidden services](https://sourceforge.net/p/whonix/wiki/Security/#hidden-services) and to access them though another Whonix-Workstation...
+* (1) If you want to SSH or VNC your Whonix-Workstation your safest bet could be to do it from another Whonix-Workstation. When using Virtual Machines, if they are within the same virtual LAN, they can see each other. When using Physical Isolation, if they are within the same LAN, they can see each other.
+* (2) Or you could run those services using [hidden services](https://sourceforge.net/p/whonix/wiki/Security/#hidden-services) and to access them through another Whonix-Workstation...
 * (3) ...or from the host using the ordinary torification methods.
-* (4) Alternatively you could from the host SSH into Whonix-Gateway (see [File Transfer]) and from there SSH into Whonix-Workstation. (If you are interested in that approach and need more information, try searching for "Chaining SSH" or "SSH hopping".)
+* (4) Alternatively you could from the host SSH into Whonix-Gateway (see [File Transfer] for instructions) and from there SSH into Whonix-Workstation.
 
 In any case (3) and (4) you would weaken isolation between host and Whonix-Workstation.
 

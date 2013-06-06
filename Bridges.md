@@ -40,8 +40,7 @@ What bridges are and when to use them
 
 When using Tor with Whonix in its default configuration, anyone who can observe the traffic of your Internet connection (for example your Internet Service Provider and perhaps your government and law enforcement agencies) can know that you are using Tor.
 
-This may be an issue if you are in a country where the following
-applies:
+This may be an issue if you are in a country where the following applies:
 
 1. **Using Tor is blocked by censorship:** since all connections to the Internet are forced to go through Tor, this would render Whonix useless for everything except for working offline on documents, etc.
 
@@ -59,10 +58,7 @@ How to use bridges in Whonix
 ============================
 
 ## Using obfuscated obfs2, (private) and/or ordinary bridges
-
-Must be manually set up. Whonix does not yet include a *bridge mode* that guides you through the process of setting up bridges before connecting to Tor.
-
-Note that you must have at hand at least one bridge address before starting Whonix. For example, you can write it down on a piece of paper.
+Whonix does not yet include a *bridge mode* that guides you through the process of setting up bridges before connecting to Tor. You must add bridges manually to */etc/tor/torrc*.
 
 (Private) obfs2 bridges can currently be configured on Whonix-Gateway the same way, they would be configured when not using Whonix, i.e. just like on a server without graphical user interface. Have a look at */etc/tor/torrc*. ([on github](https://github.com/adrelanos/Whonix/blob/stable/whonix_gateway/etc/tor/torrc))
 

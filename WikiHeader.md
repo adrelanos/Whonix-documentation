@@ -4,6 +4,6 @@
 
 [Bridges Support](https://sourceforge.net/p/whonix/wiki/Bridges/) | [VPN/Tunnel Support](https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support) | [Location/IP Hidden Servers](https://sourceforge.net/p/whonix/wiki/HostingLocationHiddenServers/) | [Windows Support](https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems/) | [Flash Support](https://sourceforge.net/p/whonix/wiki/BrowserPlugins/) | [You Can Help](https://sourceforge.net/p/whonix/wiki/Contribute/)
 
-[Contribiute](https://sourceforge.net/p/whonix/wiki/Contribute/) | [Tech. Design](https://sourceforge.net/p/whonix/wiki/Design/) | [Source Code / Hacking / Development Tickets](https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/) | [Changelog](https://sourceforge.net/p/whonix/wiki/Changelog/) | [Authorship](https://sourceforge.net/p/whonix/wiki/Authorship/) | [Disclaimer](https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer)
+[Contribiute](https://sourceforge.net/p/whonix/wiki/Contribute/) | [Tech. Design](https://sourceforge.net/p/whonix/wiki/Design/) | [Source Code / Hacking / Development Tickets](https://sourceforge.net/p/whonix/wiki/Dev_SourceCode/) | [Changelog](https://sourceforge.net/p/whonix/wiki/Changelog/) | [Authorship](http://sourceforge.net/p/whonix/wiki/Authorship/#code-contributors) | [Disclaimer](https://sourceforge.net/p/whonix/wiki/Authorship/#disclaimer)
 
 <font size="-3">This is a wiki. Want to improve this page? Contact us!</font>

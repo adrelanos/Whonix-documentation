@@ -81,7 +81,8 @@ Doing so produces undefined and potentially unsafe behavior. In theory, however,
 
 You can [choose an entry/exit point](https://www.torproject.org/docs/faq.html.en#ChooseEntryExit), but you get the best security that Tor can provide when you leave the route selection to Tor; overriding the entry / exit nodes can mess up your anonymity in ways we don't understand. Therefore Tor over Tor usage is highly discouraged.
 
-<font size="-3">License of "Prevent Tor over Tor scenarios.": This was originally posted by adrelanos (proper) to the [TorifyHOWTO](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as this DoNot page.
+<font size="-3">License of "Prevent Tor over Tor scenarios.":
+This was originally posted by adrelanos (proper) to the [TorifyHOWTO](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor) ([w](http://www.webcitation.org/6GmyI6qMN)) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)) ([w](http://www.webcitation.org/6GmySlraB)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as this DoNot page.
 </font>
 
 ## Don't send sensitive data without end-to-end encryption. ##
@@ -158,7 +159,9 @@ It's not wise to combine mode(1) and mode(2). For example, if you have an IM or 
 It's also possible that other combinations of modes are dangerous and could lead to the leakage of personal information or your physical location.
 
 ### License ###
-<font size="-3">License of "Do not mix Modes of Anonymity!": This was originally posted by adrelanos (proper) to the [TorifyHOWTO](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as this DoNot page.</font>
+<font size="-3">License of "Do not mix Modes of Anonymity!":
+This was originally posted by adrelanos (proper) to the [TorifyHOWTO](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor) ([w](http://www.webcitation.org/6GmyI6qMN)) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)) ([w](http://www.webcitation.org/6GmySlraB)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as this DoNot page.
+</font>
 
 ## Don't customize settings if you don't know their consequences. ##
 Changing user interface settings for applications, which do not connect to the internet, mostly safe. For example, checking a box "don't show this tip of the day anymore" or "hide this menu bar" will have no effect on anonymity.
@@ -179,7 +182,9 @@ If you really want not to follow this recommendation, use at least two different
 ## Do not connect to any server anonymously and non-anonymously at the same time! ##
 It's highly recommended that you do not connect to any remote server in this manner. That is, do not create a Tor link and a non-Tor link to the same remote server at the same time. In the event your internet connection breaks down (and it will eventually), all your connections will break at the same time and it won't be hard for an adversary to put the pieces together and determine what public IP/location belongs to what Tor IP/connection, potentially identifying you directly.
 
-<font size="-3">License of "Do not connect to any server anonymously and non-anonymously at the same time!": This was originally posted by adrelanos (proper) to the [TorifyHOWTO](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as this DoNot page.</font>
+<font size="-3">License of "Do not connect to any server anonymously and non-anonymously at the same time!":
+This was originally posted by adrelanos (proper) to the [TorifyHOWTO](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO#ToroverTor) ([w](http://www.webcitation.org/6GmyI6qMN)) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)) ([w](http://www.webcitation.org/6GmySlraB)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as this DoNot page.
+</font>
 
 ## Do not confuse Anonymity with Pseudonymity. ##
 This chapter explains the difference between anonymity and pseudonymity. Word definitions are always a difficult topic because a majority of people has to agree with it.
@@ -188,7 +193,7 @@ An anonymous connection is defined as a connection to a destination server, wher
 
 A pseudonymous connection is defined as a connection to a destination server, where the destination server has no means to find out the origin (IP/location) of a connection, but can associate it with an identifier ^1^.
 
-In an ideal world, the Tor network, Tor Browser (and the underlying operating system, hardware, physical security, etc.) is perfect. For example the user could fetch a news website and neither the news website nor the website's ISP has any idea if that user has ever contacted the news website before.
+In an ideal world, the Tor network, Tor Browser (and the underlying operating system, hardware, physical security, etc.) is perfect. For example the user could fetch a news website and neither the news website nor the website's ISP has any idea if that user has ever contacted the news website before. ^2^
 
 The opposite of this, when using software incorrectly, for example using Firefox instead o of the Tor-safe browser Tor Browser, the original (IP/location) of a connection is still hidden, but an identifier (for example Cookies) can be used to make that connection pseudonymous. The destination website could log for example "user with id 111222333444 viewed video title a at time b on date c, video title d at time e at date f.". These information can be used for profiling. Over time these profiles become more and more comprehensive, which reduces anonymity, i.e. in worst case it could lead to de-anonymization.
 
@@ -199,17 +204,12 @@ Maxim Kammerer, developer of [Liberté Linux](http://dee.su/liberte), has a inte
 > I have not seen a compelling argument for anonymity, as opposed to pseudonymity. Enlarging anonymity sets is something that Tor developers do in order to publish incremental papers and justify funding. Most users only need to be pseudonymous, where their location is hidden. Having a unique browser does not magically uncover user's location, if that user does not use that browser for non-pseudonymous activities. Having good browser header results on anonymity checkers equally does not mean much, because there are many ways to uncover more client details (e.g., via Javascript oddities).
 
 <font size="-3">
-[Tor Blog: EFF's Panopticlick and Torbutton](https://blog.torproject.org/blog/effs-panopticlick-
-and-torbutton)
-</font>
-
-<font size="-3">
-Fingerprinting defense isn't perfect yet in any browser. There are still open bugs.
-</font>
-<font size="-3">(See [tbb-linkability](https://trac.torproject.org/projects/tor/query?status=accepted&status=assigned&status=needs_information&status=needs_review&status=new&status=reopened&order=priority&col=id&col=summary&col=keywords&col=status&col=owner&col=type&col=priority&keywords=tbb-linkability) and [tbb-fingerprinting](https://trac.torproject.org/projects/tor/query?status=accepted&status=assigned&status=needs_review&status=needs_revision&status=new&status=reopened&order=priority&col=id&col=summary&col=keywords&col=status&col=owner&col=type&col=priority&keywords=tbb-fingerprinting).)</font>
-
-<font size="-3>
+,,
+Footnotes:
 ^1^ An identifier could be for example a (Flash) Cookie with an unique number.
+^2^ Fingerprinting defense isn't perfect yet in any browser. There are still open bugs. ^3^
+^3^ See [tbb-linkability](https://trac.torproject.org/projects/tor/query?status=accepted&status=assigned&status=needs_information&status=needs_review&status=new&status=reopened&order=priority&col=id&col=summary&col=keywords&col=status&col=owner&col=type&col=priority&keywords=tbb-linkability) and [tbb-fingerprinting](https://trac.torproject.org/projects/tor/query?status=accepted&status=assigned&status=needs_review&status=needs_revision&status=new&status=reopened&order=priority&col=id&col=summary&col=keywords&col=status&col=owner&col=type&col=priority&keywords=tbb-fingerprinting).
+^4^ Reference: [Tor Blog: EFF's Panopticlick and Torbutton](https://blog.torproject.org/blog/effs-panopticlick-and-torbutton).
 </font>
 
 ## Don't be the first one to spread your own link. ##

@@ -56,7 +56,8 @@ Connections with proxies are almost always unencrypted ^1^, so that an eavesdrop
 </font>
 
 ### License ###
-<font size="-3">License of "Comparison of different proxy types": This was originally posted by adrelanos (proper) to the [TorifyHOWTO/proxy](https://trac.torproject.org/projects/tor/wiki/doc/proxy) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as the rest of the page.
+<font size="-3">License of "Comparison of different proxy types":
+This was originally posted by adrelanos (proper) to the [TorifyHOWTO/proxy](https://trac.torproject.org/projects/tor/wiki/doc/proxy) ([w](http://www.webcitation.org/6GmyeR7Y5)) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)) ([w](http://www.webcitation.org/6GmySlraB)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as the rest of the page.
 </font>
 
 <font size="-3">Thanks to [JonDos](https://anonymous-proxy-servers.net/) ([Permission](https://anonymous-proxy-servers.net/forum/viewtopic.php?p=31220&sid=ac8a6ca16eb768b3322be30b20375c97#p31220)). The "this" chapter of the "" contains content from the JonDonym documentation [Other Services](https://anonymous-proxy-servers.net/en/help/otherServices.html) page.</font>
@@ -154,7 +155,7 @@ As you would have to trust any of them the IP of all it's successors... The seco
 This must not apply for proxychains of SSH and/or encrypted VPN servers - has not been researched yet. But you can not get so many SSH and/or VPN servers for free (without hacking of course) and/or anonymous payment anyway.
 
 ### License ###
-<font size="-3">License of "Comparison of Tor and proxychains": This was originally posted by adrelanos (proper) to the [TorFAQ](https://trac.torproject.org/projects/tor/wiki/doc/TorFAQ#Arent10proxiesproxychainsbetterthanTorwithonly3hops-proxychainsvsTor) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as the rest of the page.
+<font size="-3">License of "Comparison of Tor and proxychains": This was originally posted by adrelanos (proper) to the [TorFAQ](https://trac.torproject.org/projects/tor/wiki/doc/TorFAQ#Arent10proxiesproxychainsbetterthanTorwithonly3hops-proxychainsvsTor) ([w](http://www.webcitation.org/6Gmyhtntt)) ([license](https://trac.torproject.org/projects/tor/wiki/doc/LegalStuff)) ([w](http://www.webcitation.org/6GmySlraB)). Adrelanos didn't surrender any copyrights and can therefore re-use it here. It is under the same license as the rest of the page.
 </font>
 
 ## Comparison of Tor and VPN services ##

@@ -68,7 +68,7 @@ Whonix developer adrelanos is very curious about [TorChat](https://github.com/pr
 
 Unfortunately, adrelanos can't recommend TorChat for Whonix. This is because the TorChat developer does currently not respond to other people, see [TorChat issues](https://github.com/prof7bit/TorChat/issues). Adrelanos believes communication and support is crucial for anonymity related projects.
 
-TorChat ships it's own copy of Tor, sets up a hidden service and the messenger on the host. Whonix runs Tor and applications on different machines. Tor on Whonix-Gateway and applications on Whonix-Workstation. There is not yet a way to run [TorChat with a pre-configured hidden service](https://github.com/prof7bit/TorChat/issues/24).
+TorChat ships it's own copy of Tor, sets up a hidden service and the messenger on the host. Whonix runs Tor and applications on different machines. Tor on Whonix-Gateway and applications on Whonix-Workstation. Warning: Since its recommend to [prevent Tor over Tor scenarios](https://sourceforge.net/p/whonix/wiki/DoNot/#prevent-tor-over-tor-scenarios), you shouldn't just install TorChat inside Whonix-Workstation without further configuration. See HowTo below for instructions on how to prevent Tor over Tor.
 
 ## HowTo ##
 ### Installation ###

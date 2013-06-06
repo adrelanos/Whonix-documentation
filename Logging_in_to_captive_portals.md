@@ -36,13 +36,17 @@ This wiki page is a fork of the Unsafe Browser page, from this exact source <htt
 -->
 
 # Logging in to captive portals #
+## When Using VMs ##
 Many publicly accessible Internet connections (usually available through a wireless network connection) require its users to register and login in order to get access to the Internet. This include both free and paid for services that may be found at Internet cafes, libraries, airports, hotels, universities etc. Normally in these situations, a so called *captive portal* intercepts any website request made and redirects the web browser to a login page. None of that works inside Whonix-Workstation, so a browser with unrestricted network access is necessary. The browser on the host operating system must be used for this purpose. Note that this means that **the browser on the host is NOT anonymous**, so use it carefully.
 
-Security recommendations:
+## When Using Physical Isolation ##
+As in Whonix 0.5.6, there is no unsafe browser on Whonix-Gateway. This is subject to change for next Whonix version.
 
+In meanwhile you could use a third machine, which has access to clearnet or boot the hardware which runs Whonix-Gateway with another operating system (from USB), which isn't torified.
+
+## Security recommendations ##
 * While this browser can be used unrestrictively for anything, it is *highly* recommended to only use it for the purpose stated above, i.e. to access and login on captive portals.
-
-* Do not run this browser at the same time as the normal, anonymous web browser. This makes it easy to not mistake one browser for the other, which could have catastrophic consequences.
+* Do not run this browser at the same time as the normal, anonymous web browser. This makes it easy to not mistake one browser for the other, which could have catastrophic consequences for your anonymity.
 
 # License #
     Whonix Logging in to captive portals wiki page Copyright (C) Amnesia <amnesia at boum dot org>

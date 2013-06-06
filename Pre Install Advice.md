@@ -93,14 +93,10 @@ There are of course other options. See [Why don't you use <your favorite most se
 ### LAN/Router Security ###
 In case Whonix-Gateway would be ever compromised, you should know that it can theoretically access any computer in your local network. Therefore, if you're the admin of your home network, it's recommend to lock down the webinterface of your home router, i.e. installing the latest firmware with latest security patches and using a secure password.
 
-### Portscan / Firewall
-It's wise to port scan your own system from time to time. Use your host web browser and visit one of the many free port scanning services (unless you are advanced and can scan yourself from an external machine). You shouldn't have any open ports, unless you know what you are doing.
-
-An ordinary NAT router should do fine at firewalling all incoming ports. If you don't have a NAT router, buying one can be a part of good security practice.
-
+### Host Firewall
 Having a simple host firewall (gufw - [Uncomplicated Firewall](https://en.wikipedia.org/wiki/Uncomplicated_Firewall) on Debian), denying all incoming ports, is recommend as well.
 
-On Debian.
+On the host, on Debian.
 
 (1) Install gufw.
 

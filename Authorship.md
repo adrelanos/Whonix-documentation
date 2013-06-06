@@ -41,6 +41,17 @@ At the moment only adrelanos develops and maintains Whonix. Help is welcome!
 * smarm: made many things in TorBOX guide much clearer; English languages fixes; created leaktest scripts; Thank you! (smarm [at] hushmail dot com)
 * cypherpunks/anonymous: Everyone can contribute! Feb 2012: added a shell script to automate set up TorBOX, changed guide to use VirtualBox instead of VMware, rewritten the iptables firewall and added a hardening section.
 
+# Arts Contriutors #
+* original TorBOX logo
+
+Made by CJ.
+
+* Whonix Stream Isolation Graphic
+
+Cuan Knaggs – graphic and web design
+[revlover](http://revolver.za.net)
+print media – web design – web development – cms – e-commerce
+
 # Contributors #
 In random order.
 
@@ -63,7 +74,7 @@ In random order.
 
 * documentation feedback
 
-# sources / credits #
+# Credits, Inspiration, Alternatives, Sources #
 ## credits ##
 **In random order.**
 
@@ -75,6 +86,7 @@ In random order.
 * [Tails](http://tails.boum.org/)
 * Some documentation pages forked from [Tails](http://tails.boum.org/) by adrelanos for Whonix. See [TailsDocFork](https://sourceforge.net/p/whonix/wiki/TailsDocFork/) for a list, which documentation pages have been forked.
 * The Tor Project
+* help-bash Mailing List
 
 ** For general thoughts on anonymity networks and threat models. **
 
@@ -111,6 +123,8 @@ In random order.
 * http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
 * http://unix.stackexchange.com/questions/12068/how-to-measure-time-of-program-execution-and-store-that-inside-a-variable
 * http://stackoverflow.com/questions/8426058/bash-get-the-parent-directory-of-current-directory
+* http://stackoverflow.com/questions/13426908/dialog-in-bash-is-not-grabbing-variables-correctly
+* http://mywiki.wooledge.org/
 
 ## Similar Projects ##
 Here is a list of projects with similar goals to Whonix. The list is here for reference. Those projects may have interesting thoughts, mistakes, security enhancements, features and so on. The useful stuff can be potentially ported to Whonix. Some projects inspired the development of Whonix (missing features, implementation reference etc.).

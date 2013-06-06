@@ -17,8 +17,11 @@ Whonix-Example-Implementation:
 
 * Whonix is based on Tor.
 * Tor configuration file: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/etc/tor/torrc
-* Whonix uses Tor from Debian repositories.
-* Tor's own repository is out commented by default in https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/etc/apt/sources.list.d/torproject.list so the user would simply have to comment it in, get Tor's signing key and could start using Tor's own repository.
+* Torproject's Debian repository added to package lists: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/etc/apt/sources.list.d/torproject.list
+* Torproject's archive public key: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/gpg-pubkeys/torprojectarchive.asc
+* Adding Torproject's archive public key to the apt package manager: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/40_add_torprojects_key
+* Updating package lists to fetch metadata from torproject's repository: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/50_update_package_lists
+* Installing Torprojects Debian package deb.torproject.org-keyring, which helps to keep Torprojects signing key current and installing tor tor-geoipdb tor-arm torsocks obfsproxy.: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/usr/local/share/whonix/chroot-scripts/70_tor
 * Increase file maximum, if required by the anonymizer: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/etc/sysctl.d/whonix.conf
 
 ### Network Configuration
@@ -44,7 +47,9 @@ Add a firewall, which only allows traffic the anonymizer to connect to the inter
 
 Whonix-Example-Implementation:
 
-* https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/usr/local/bin/whonix_firewall
+* Firewall script: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/usr/local/bin/whonix_firewall
+* configuration file: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/etc/whonix_firewall.d/10_default
+* .d-style configuration folder: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/etc/whonix_firewall.d/
 
 ## Debugging
 ### Firewall Removal

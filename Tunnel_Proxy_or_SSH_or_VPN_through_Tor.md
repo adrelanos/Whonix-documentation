@@ -35,10 +35,10 @@ Also note, that once Whonix-Workstation gets rooted by malware, the VPN/SSH/prox
 ### Leaks ###
 If setting up socksifier, proxy settings, transparent proxy with local redirection, SSH tunnel or a VPN in a leak free manner were easy, this means while ensuring nothing will bypass the VPN, SSH or proxy, there would have been no reason to develop Whonix in the first place.
 
-The methods described on this page are all tested and should all more or less work. Should there be any misconfiguration or leak bug, you are left to the protections by Whonix and Tor. This means, the leak will still go through Whonix-Gateway and therefore Tor. The methods on this page are not as safe as a Whonix-Gateway. There were development discussions and [some progress](https://sourceforge.net/p/whonix/wiki/Inspiration/), about chaining multiple Gateways, VPNBOX, JonDoBOX, i2pBOX, FreenetBOX and ProxyBOX, but nothing was finished to to lack of community interest, support and developers.
+The methods described on this page are all tested and should all more or less work. Should there be any misconfiguration or leak bug, you are left to the protections by Whonix and Tor. This means, the leak will still go through Whonix-Gateway and therefore forced through Tor. The methods on this page are not as safe as a Whonix-Gateway. There were development discussions and [some progress](https://sourceforge.net/p/whonix/wiki/Inspiration/), about chaining multiple Gateways, VPNBOX, JonDoBOX, i2pBOX, FreenetBOX and ProxyBOX, but nothing was finished to to lack of community interest, support and developers.
 
 ### Web Browser ###
-I don't know how anonymous it is to use (VPN ->) Tor -> VPN -> Tor Browser -> website. How many people show up with a VPN IP using Tor Browser? This setup is so special that I believe only very few people are doing it. For this reason, I recommend against.
+I don't know how anonymous it is to use (proxy/VPN/SSH ->) Tor -> Proxy/VPN/SSH -> Tor Browser -> website. How many people show up with a proxy, VPN or SSH IP using Tor Browser? This setup is so special that I believe only very few people are doing it. For this reason, I recommend against.
 
 On the other hand, due to browser fingerprinting, I can't really recommend to use another browser than Tor Browser either.
 
@@ -293,8 +293,12 @@ SocksPort is configured for [Stream Isolation](https://sourceforge.net/p/whonix/
 
 Rather, all applications, which are configured to use SocksPort, will not be tunneled through the VPN. They will be "only" tunneled through Tor. This is because, the VPN will not touch connections to *192.168.0.10*, which is the Whonix-Gateway. For example, if you wish to tunnel Tor Browser through Tor -> VPN, you have to remove all proxy settings from Tor Browser, see [Tor Browser Whonix Proxy Settings / user.js](https://sourceforge.net/p/whonix/wiki/TorBrowser/#whonix-proxy-settings-userjs). Check.torproject.org will tell you then "*You are not using Tor.*" and you'll see your VPN's IP. In fact your VPN was tunneled through Tor first. (Because Whonix-Workstation can not make any non-Tor connections by design, everything is tunneled over Tor.) When you stop your VPN for test reasons (*sudo /etc/init.d/openvpn stop*), it will show "*You are using Tor.*" again.
 
-#### VPN breakdown ####
-VPN servers and VPN software can occasionally break down without announcement. Whonix-Workstation will seamlessly continue to make "direct" connections through Tor once the VPN breaks down. This is not a Whonix specific problem. It is a general problem with VPNs. Most users are simply not aware of it. This happens also with the common setup, where the VPN simply runs on a host. If you want to enforce, that the VPN is always tunneled through Tor, have to use a modified routing table. It is currently in development and help is welcome, see [VPN](https://sourceforge.net/p/whonix/wiki/VPN/).
+#### Use a Fail Closed Mechanism ####
+This is not a Whonix specific problem. It is a general problem with VPNs. Most users are simply not aware of it. VPN's generally fail open. VPN servers and VPN software can occasionally break down without announcement. This means, if the VPN is unreachable, connections breaks down for whatever reasons and so on, in most cases, you can continue to connect to the internet without the VPN.
+
+Whonix-Workstation will seamlessly continue to make "direct" connections through Tor once the VPN breaks down. If you are using the VPN only to connect to websites which ban Tor, you may not care so much. On the other hand, if you believe a VPN improves your security, it would be rational to make sure, the VPN is always used instead only most of the time.
+
+If you want to enforce, that the VPN gets always used, see [VPN-Firewall].
 
 #### VPN and stream isolation ####
 While you are using a VPN behind Tor, you probable also may not be able to make use of the stream isolation feature ^1^, which is planed Tor Browser. This is because Tor Browser would not talk to Tor directly anymore. Tor Browser would connect to the VPN instead.
@@ -309,7 +313,7 @@ By design, a VPN routes all your applications (those without any proxy settings,
 ### How ###
 Just use general instructions on doing so and of course do it inside Whonix-Workstation. Don't forget to read all the notes above. Since everything is routed through Tor, the VPN can be easily tunneled through Tor.
 
-See also [A Free example VPN working with Whonix for testing purposes](https://sourceforge.net/p/whonix/wiki/TestVPN/).
+See also [Free example VPNs working with Whonix for testing purposes](https://sourceforge.net/p/whonix/wiki/TestVPN/).
 
 # Footer #
 [[include ref=WikiFooter]]

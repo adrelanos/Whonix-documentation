@@ -11,10 +11,11 @@ See [BuildDocumentation].
 
 # Developing / Hacking Whonix
 * [Developer Mailing List](https://sourceforge.net/p/whonix/mailman/)
-* [Introduction into Whonix Source Code](https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/) (git checkout the stable or development branch beforehand)
+* [Introduction into Whonix Source Code](https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/)
 * [Introduction into Whonix's simple git branch model](https://sourceforge.net/p/whonix/wiki/Dev_git/)
 * [Options to stay up to date on Whonix Source Code Changes](https://sourceforge.net/p/whonix/wiki/Dev_git/#subscribe-to-code-changes)
-* [Development Tickets](https://sourceforge.net/p/whonix/wiki/Dev/)
+* [Development Tickets, Bugs, Feature Requests, Roadmap](https://github.com/Whonix/Whonix/issues)
+* [Build Configuration](https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/#build-configuration)
 * [Optional Goodies](https://sourceforge.net/p/whonix/wiki/Dev_git/#goodies)
 * Detailed Design - What is each file good for?
     * [Design-Shared]

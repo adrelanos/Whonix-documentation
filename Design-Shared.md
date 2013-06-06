@@ -2,6 +2,9 @@
 
 [TOC]
 
+# Last updated git #
+4a70f4868d683a08b73c6236b36684220d704d97
+
 # Get Build Dependencies
 Install a tool to create Virtual Machine images (such as grml-debootstrap) and tools for mouting and apply other useful build configurations.
 
@@ -51,7 +54,8 @@ Copy configuration files and chroot scripts into the Virtual Machine image to tr
 
 Whonix-Example-Implementation:
 
-* https://github.com/adrelanos/Whonix/blob/master/build-steps/30_copy-into-img
+* Copying script: https://github.com/adrelanos/Whonix/blob/master/build-steps/30_copy-into-img
+* Verification script: https://github.com/adrelanos/Whonix/blob/master/build-steps/32_verify_copied_files
 * All files from whonix_gateway will get copied into Whonix-Gateway.
 * All files from whonix_workstation will get copied into Whonix-Workstation.
 * All files from whonix_shared will get copied into Whonix-Gateway and Whonix-Workstation.
@@ -110,7 +114,7 @@ Whonix-Example-Implementation:
 
 * Set FQDN to "host.localdomain" and set hostname to "host": https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/hosts
 
-* adding user account "user": https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/50_adduser_user
+* adding user account "user": https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/30_adduser_user
 * configuring hostname "host": https://github.com/adrelanos/Whonix/blob/master/build-steps/20_create-debian-img
 * Even though grml-debootstrap already creates /etc/hostname with content "host", it's useful for physical isolation users, who set up the wrong host while installing: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/hostname
 * More information about the shared user name "user": [Whonix's Protocol-Leak-Protection and Fingerprinting-Protection]
@@ -137,6 +141,7 @@ Whonix-Example-Implementation:
     * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/apt/sources.list
 * Disable the operating system's default automatic update mechanism.
     * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/apt/apt.conf.d/20noperiodic
+    * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/apper
 * Stop dpkg from asking questions whether new version of the Debian upstream package manager should be used. Always keep the old versions of configuration files to ensure, changes made by Whonix for privacy/anonymity won't get lost.
     * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/apt/apt.conf.d/20oldconfig 
 * Higher timeouts, more retries.
@@ -162,18 +167,25 @@ Start Hooks
 * tails_htp init script: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/init.d/htpdate
 * Using cron to start it every hour: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/cron.hourly/30_timesync
 * The file https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/timesync_hourly gets run by https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/cron.hourly/30_timesync cron every hour.
-* Whonix-Gateway specific
-    * Auto start timesync status notification after (auto) login Whonix-Gateway: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/profile.d/30_timesync.sh
-* Whonix-Workstation specific
+* Auto start Boot Clock Randomization: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/etc/init.d/bootclockrandomization
+
+* Auto start timesync status notification after (auto) login Whonix-Gateway: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/profile.d/30_timesync.sh
+
+* Workstation specific
     * Auto start timesync status notification after (auto) login Whonix-Workstation: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/home/user/.config/autostart/timesync.desktop
 
 Install Hooks
 
 * Adding tails_htp daemon user account and init script: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_htp
+* Install Boot Clock Randomization init script: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_bootclockrandomization
+* Install Time Sanity Check init script: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_timesanitycheck
 
 Supporting Files
 
-* Allow Network Time Synchronization without password. https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/whonix
+* /etc/sudoers.d/
+    * Allow Network Time Synchronization (tails htpdate) without password: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/htpdate
+    * Allow "sudo service bootclockrandomization status" without a password: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/bootclockrandomization
+    * Allow "sudo service timesanitycheck status" and "restart" without a password: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/timesanitycheck
 * Delay console output a bit when run after login. This ensures /etc/motd is shown earlier and introduces the status notifications gracefully. Better look and feel: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/delay
 * Icon. https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/icons/timesync.ico
 
@@ -197,18 +209,23 @@ Stream isolate different applications to prevent identity correlation through ci
 Whonix-Example-Implementation:
 
 * See [Stream Isolation].
-* [uwt](https://trac.torproject.org/projects/tor/wiki/doc/torsocks) is a wrapper arround torsocks. https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/uwt
-* Application wrappers. (If the application isn't installed, the wrapper doesn't do anything. So having one more installed than necessary, doesn't matter.)
-    * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/apt-get
-    * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/curl
-    * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/git
-    * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/gpg
-    * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/mixmaster-update
-    * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/rawdog
-    * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/ssh
-    * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/wget
+* [uwt](https://trac.torproject.org/projects/tor/wiki/doc/torsocks) is a wrapper arround torsocks: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/uwt
+* uwt / timeprivacy master wrapper: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/uwtwrapper
+* uwt configuration folder (.d-style): https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/whonix.d/
+* Application wrapper symlinks to the master wrapper (If the application isn't installed, the wrapper doesn't do anything. So having one more installed than necessary, doesn't matter.): https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_uwt
 
 ## Extra #
+### Time Privacy ###
+Applications such as gpg and git embed time stamps in their output. For improved privacy it may make sense to fake this data. The user should enable it oneself, otherwise it could be very surprising and may not do what the user wants. Experimental design and implementation. Disabled by default.
+
+Whonix-Example-Implementation:
+
+* Disabled by default.
+* timeprivacy script: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/timeprivacy
+* uwt / timeprivacy master wrapper: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/uwtwrapper
+* Time Privacy configuration folder (.d-style): https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/whonix.d/
+* Application wrapper symlinks to the master wrapper (If the application isn't installed, the wrapper doesn't do anything. So having one more installed than necessary, doesn't matter.): https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_uwt
+
 ### hdd configuration / swap / Disk uuid / dbus machine-id
 Since the virtual machine creation tool won't create a swap partition (which is actually good because it simplifies the setup) but the system could run out of memory, add a swap file. The is optional depending on the operating system and available RAM. Configure swap to be used as little as possible to improve speed.
 
@@ -247,7 +264,7 @@ General Information
 
 Start Hooks
 
-* The file https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/whonixcheck_hourly gets run by cron.hourly https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/cron.hourly/40_whonixcheck.
+* The file https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/whonixcheck_hourly gets run by cron.hourly https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/cron.hourly/40_whonixcheck
 * Allowing messages to tty (setting "mesg y") while an application was started in background (by cron): https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/profile.d/20_mesg.sh
 * Whonix-Gateway specific
     * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/profile.d/40_whonixcheck.sh gets run on every (automatic) login.
@@ -256,8 +273,8 @@ Start Hooks
 
 Supporting Files
 
-* Allows running apt-get update as user (non-root). https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/whonix
-* Allow wall (with -nobanner option) without password. https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/whonix
+* Allows running apt-get update as user (non-root): https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/apt-get-update
+* Allow wall (with -nobanner option) without password: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/wall
 * Version file to let the whonixcheck find out which version of Whonix is locally installed. https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/version
 * apt-get-update (which has an sudoers exception) runs apt-get update. https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/apt-get-update
 * When automatically run by autostart or cron, whonixcheck adds a random delay (to prevent having a predictable network (not web) fingerprint.
@@ -270,6 +287,48 @@ Script
 * The whonixcheck main script. https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/bin/whonixcheck
 * The folder with the various checks. https://github.com/adrelanos/Whonix/tree/master/whonix_shared/usr/local/bin/whonixcheck-scripts
 
+### Desktop Environment
+Optional.
+
+It's useful to have a desktop preconfigured to make it as easy as possible for users who use Linux for the first time.
+
+Whonix-Example-Implementation:
+
+* shared
+    * Based on KDE.
+    * [Dev_KDE]
+    * Desktop usability improvements
+        * kdm auto login: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/kde4/kdm/kdmrc
+        * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_kde
+        * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/dolphinrc
+        * Hiding unwanted knetattach shortcut: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_knetattach
+        * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/konsolerc
+    * Performance (kde-lowfat)
+        * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/kdedrc
+        * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/kdeglobals
+        * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/krunnerrc
+        * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/ksmserverrc
+        * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/kwinrc
+        * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/nepomukserverrc
+    * Security
+        * No sounds: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/kde/share/config/knotifyrc
+    * Supporting Files
+        * Icons Files: https://github.com/adrelanos/Whonix/tree/master/whonix_shared/usr/local/share/whonix/icons
+        * Desktop Icons: https://github.com/adrelanos/Whonix/tree/master/whonix_shared/usr/local/share/whonix/kde/share/applications
+        * Setting KDEDIRS variable: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/X11/Xsession.d/50whonix
+
+* gateway specific
+    * Changing default skin and wallpaper: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/usr/local/share/whonix/kde/share/apps/plasma-desktop/init/00-defaultLayout.js
+    * Start menu favorites: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/usr/local/share/whonix/kde/share/config/kickoffrc
+    * Desktop Icons: TODO
+    * Creating desktop icons: https://github.com/adrelanos/Whonix/blob/master/whonix_gateway/usr/local/share/whonix/chroot-scripts/70_desktopicons
+
+* workstation specific
+    * Changing default skin and wallpaper: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/kde/share/apps/plasma-desktop/init/00-defaultLayout.js
+    * Start menu favorites: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/kde/share/config/kickoffrc
+    * Desktop Icons: https://github.com/adrelanos/Whonix/tree/master/whonix_workstation/usr/local/share/whonix/kde/share/applications
+    * Creating desktop icons: https://github.com/adrelanos/Whonix/blob/master/whonix_workstation/usr/local/share/whonix/chroot-scripts/70_desktopicons
+
 ### sudoers
 Optional. For convenience. Only recommend for Virtual Machines.
 
@@ -279,7 +338,9 @@ Allow mixmaster-update without password. (No effect on Gateway, since mixmaster 
 
 Whonix-Example-Implementation:
 
-* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/whonix
+* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/reboot
+* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/arm
+* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/sudoers.d/mixmaster-update
 
 ### Console Autologin
 Optional. Only recommend for virtual machines.
@@ -307,11 +368,11 @@ Whonix-Example-Implementation:
 * https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/motd
 
 ### Deactivate display power saving in Virtual Machines
-Since it's confusing and not useful and not saving any energy. It's not saving energy either. (Needs to be applied on host.)
+Since it's confusing and not useful and not saving any energy. (Needs to be applied on host.)
 
 Whonix-Example-Implementation:
 
-* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/rc.local
+* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/etc/profile.d/20_disable_powersaving.sh
 
 ### boot manager configuration
 Optional. For higher boot resolution, it's required to run update-grub after changing grub configuration files.
@@ -360,12 +421,23 @@ Whonix-Example-Implementation:
 ### Sanity Checks
 Recommend, not strictly required.
 
-Some simple tests to check for example, if the package manager is fully functional, because some virtual machine creation tools build broken images. Package integrity checks.
+Some simple tests to check for example, if all files have been correctly copied into the image, if the package manager is fully functional, because some virtual machine creation tools build broken images. Package integrity checks.
 
 Whonix-Example-Implementation:
 
-* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/20_root_check
-* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/30_internal_checks
+* https://github.com/adrelanos/Whonix/blob/master/build-steps/32_verify_copied_files
+* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/10_root_check
+* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/20_sanity_checks
+
+### Misc
+Optional.
+
+Whonix-Example-Implementation:
+
+* Chroot Script Skeleton, not strictly required, might just be useful to explain how to create chroot-scripts: https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/70_skeleton
+* Create a list of all files inside Whonix source folder. https://github.com/adrelanos/Whonix/blob/master/release/list_source_files
+* List of all files inside Whonix source code with comments: https://github.com/adrelanos/Whonix/blob/master/development/files_list
+* Commented list of files inside Whonix source code that may require special treatment when creating a Whonix-Gateway/Workstation.deb (which is planed): https://github.com/adrelanos/Whonix/blob/master/development/files_list_short
 
 ### Variables
 Recommend, not strictly required.
@@ -374,7 +446,7 @@ It's useful to configure the system, not to ask any questions which require user
 
 Whonix-Example-Implementation:
 
-* https://github.com/adrelanos/Whonix/blob/master/whonix_shared/usr/local/share/whonix/chroot-scripts/40_variables
+* https://github.com/adrelanos/Whonix/blob/master/help-steps/variables
 
 ### Package Cache
 Optional.

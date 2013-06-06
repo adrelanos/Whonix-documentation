@@ -30,8 +30,6 @@ There instructions on cryptoanarchy.org look very promising. To use them with Wh
 
 (0). Install ocat <-- on Whonix-Workstation
 
-You perhaps don't have to compile form source anymore. In luck you can use the Debian package.
-
     sudo apt-get update
     sudo apt-get install onioncat
 

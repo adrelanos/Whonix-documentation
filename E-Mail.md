@@ -179,6 +179,9 @@ Is not a classical e-mail provider and deserves it's own chapter, see below.
 ^1^ Because they are also aware of online phone and messaging services and blacklisting the for verification upon knowledge.
 </font>
 
+## Anonymity Friendly E-Mail Provider List ##
+Another anonymity network provider (JonDos), maintains a list with in their opinion recommend e-mail providers. Whonix developer adrelanos does NOT check this list. Might still be useful. See [list](https://anonymous-proxy-servers.net/en/help/thunderbird.html), look for "Recommended Mail Provider".
+
 # I2P-Bote #
 Quoted from [wikipedia I2P](https://en.wikipedia.org/wiki/I2P):
 

@@ -34,10 +34,9 @@ In comparison to Tor, JonDo does not offer a TransPort or DnsPort. For that reas
 
 Read first: [A Free example VPN working with Whonix for testing purposes](https://sourceforge.net/p/whonix/wiki/OptionalConfigurations/#a-free-example-vpn-working-with-whonix-for-testing-purposes).
 
-## Fail Closed Mechanism ##
-Moved to https://sourceforge.net/p/whonix/wiki/VPN/
-
 ## VPN's as a Tor replacement (VPNBOX) ##
+Small update: there is now [VPN-Firewall].
+
 **Development stalled.** ***UNTESTED!*** [Dev] "#SupportforVPNsasTorreplacementOPTIONALFEATURE dev thread"
 
 In this chapter we explain, how you can replace Tor with a VPN. Regarding security see 'Introduction' on this page at the top. It's your responsibility to find a (non-logging, safe) free/paid VPN provider or to stick with Tor.

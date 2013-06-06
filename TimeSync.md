@@ -27,6 +27,10 @@ Other facts:
 * Almost no one and no operating system, is using Secure Network Time Synchronization or External Clocks by default. Most systems synchronize the system clock using unauthenticated NTP. An adversary tampering with NTP replies or malicious NTP server makes things even worse. Even if there were authenticated NTP there is a requirement for a distributed trust model.
 * A system not using NTP or using authenticated NTP stands out form most other users.
 
+Definitions:
+
+* Time Sanity Check in context of Whonix: Is an init.d script, which checks, if the system clock is between build timestamp and expiration date (17 MAY 2033 10:00:00).
+
 Attacks 
 A correct system clock is crucial for many reasons:
 
@@ -55,14 +59,21 @@ Whonix's Time Synchronization Mechanism:
 * Most Virtual Box time synchronization features get disabled by Whonix.
     * Guest additions time synchronization gets disabled in */etc/init.d/htpdate* at run time. See Virtual Box bug report [VBoxService --disable-timesync broken](https://www.virtualbox.org/ticket/10828). They say it's actually not a bug. It's a missing feature, that running instances of VBoxService can not be modified in their settings. Whonix would need to edit */etc/init.d/vboxadd-service* by adding *--disable-timesync* [source](https://www.virtualbox.org/ticket/2928). Whonix developer adrelanos does not see a reliable way to do so. If the guest additions get automatically updated in future the option would get overwritten. That's why Whonix added a line in */etc/init.d/htpdate* to turn it off completely. Guest additions time synchronization gets disabled, but the rest of the guest additions continues to work fine. Unless you have a better idea, it's an acceptable workaround.
     * built in time synchronization features get disabled by *VBoxManage setextradata "$VMNAME" "VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled" "1"* at build time.
-* When Whonix-Gateway or Whonix-Workstation get powered on, they still get their time from the host. The user is advised to modify the biossystemtimeoffset in Advanced Security Guide, chapter [Network Time Synchronization](https://sourceforge.net/p/whonix/wiki/Advanced%20Security%20Guide/#network-time-synchronization). ^6^
-* After Whonix-Gateway and Whonix-Workstation are connected to the Tor network, they use a modified [tails_htp](https://tails.boum.org/contribute/design/Time_syncing/) to set the system clock. ^7^
+
+* Whonix-Gateway and Whonix-Workstation
+    * When get powered on, they still get their time from the host. The user is advised to modify the biossystemtimeoffset in Advanced Security Guide, chapter [Network Time Synchronization](https://sourceforge.net/p/whonix/wiki/Advanced%20Security%20Guide/#network-time-synchronization). ^6^
+    * 0.6.2 and above: Time Sanity Check before tails_htp will be executed, this ensures, that the host clock is sane and not slow in 1980. User gets advised to fix its host clock in such cases.
+    * After they are connected to the Tor network, they use a modified [tails_htp](https://tails.boum.org/contribute/design/Time_syncing/) to set the system clock. ^7^
+    * 0.6.2 and above: Time Sanity Check after tails_htp was executed. This should catch eventual bigger bugs and attacks. User gets informed if it fails.
+
 * On Whonix-Workstation,
-    * every hour, at a random time, tails_htp will set the clock again.
-    * This is useful for machines running for long time periods without reboot.
+    * Using Boot Clock Randomization (Whonix 0.6.2 and above), i.e. after boot, the clock is set randomly between 5 and 180 seconds into the past or future. This is useful to enforce the design goal, that the host clock and Whonix-Workstation clock should always slightly differ. It's also useful to obfuscate the clock when tails_htp itself is running, because naturally at this time, tails_htp hasn't finished.
+    * Every hour, at a random time, tails_htp will set the clock again. This is useful for machines running for long time periods without reboot.
     * An adversary could guess if someone is running a hidden services with constant clock adjustments, that it's hosted inside a Whonix-Workstation. It's unknown if the clock adjustments by tails_htp are big enough to enable an adversary to guess that.
         * **TODO**: Open question... "*ntpd adjusts the clock in small steps so that the timescale is effectively continuous and without discontinuities*" - is that possible with an tails_htp like appraoch as well?
+
 * Whonix-Gateway
+    * Doesn't use Boot Clock Randomization. If the assumption is correct, that the ISP can detect clock jumps by observing Tor's TLS client hello, clock jumps should be avoided to prevent fingerprinting Whonix users.
     * Uses tails_htp after booting.
     * Using it at all is better against Attack (1) when using a bridge.
     * **TODO**: Open question, run tails_htp also every hour at a random time on Whonix-Gateway?
