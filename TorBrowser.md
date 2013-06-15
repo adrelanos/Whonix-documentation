@@ -140,13 +140,9 @@ For better isolation of different identities. For advanced users. Moved to the [
 
 # Update Tor Browser #
 ## Introduction ##
-There is no auto-update feature for Tor Browser. You will be notified about new Tor Browser versions by whonixcheck. Tor Browser's built in stock update check mechanism also works in Whonix. Additionally it might be also wise to subscribe to https://blog.torproject.org for news.
+There is no auto-update feature for Tor Browser. You will be notified about new Tor Browser versions by whonixcheck. Tor Browser's built in stock update notification mechanism also works in Whonix. Additionally it might be also wise to subscribe to https://blog.torproject.org for news.
 
 ## Updating ##
-**This will only work if you installed the fix in the chapter above!**
-
-After installing the fix, the torbrowser update script will say unknown currently installed version. Don't worry. Just update. The next torbrowser version check will know the currently installed version.
-
 Tor Browser version check and update (after confirmation) in Whonix can be done with:
 
     torbrowser -update

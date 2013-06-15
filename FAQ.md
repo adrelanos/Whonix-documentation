@@ -349,5 +349,8 @@ See [FAQ2].
 # Does DNSCrypt on the host or in my router, harm anonymity when using Tor/Whonix?
 See [FAQ2].
 
+# Whats the difference of installing a VPN on the host versus installing on Whonix-Gateway?
+See [FAQ2].
+
 # Footer #
 [[include ref=WikiFooter]]

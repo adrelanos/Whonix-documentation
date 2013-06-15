@@ -208,7 +208,11 @@ Whonix doesn't do anything against hardware backdoors.
 Physical attacks require an adversary the be physically preset, i.e. the be able to touch your computer.
 
 ## Full Disk Encryption ##
+Note, that as said on the warning page, Whonix is not designed as an amnesic operating system.
+
 To protect against theft or robbery, power off your machine at times when this is more likely (traveling) and use FDE (Full Disk Encryption) on the host.
+
+Also note, during creation of Whonix, a swap parition gets created and added to /etc/fstab.
 
 ## Side channel attacks ##
 Whonix does **not** defeat [hardware keylogger](https://en.wikipedia.org/wiki/Hardware_keylogger), miniature cameras, [TEMPEST](https://en.wikipedia.org/wiki/Tempest_%28codename%29).

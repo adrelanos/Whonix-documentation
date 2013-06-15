@@ -125,6 +125,7 @@ In random order.
 * http://stackoverflow.com/questions/8426058/bash-get-the-parent-directory-of-current-directory
 * http://stackoverflow.com/questions/13426908/dialog-in-bash-is-not-grabbing-variables-correctly
 * http://mywiki.wooledge.org/
+* http://askubuntu.com/questions/65245/apt-get-update-only-for-a-specific-repository
 
 ## Similar Projects ##
 Here is a list of projects with similar goals to Whonix. The list is here for reference. Those projects may have interesting thoughts, mistakes, security enhancements, features and so on. The useful stuff can be potentially ported to Whonix. Some projects inspired the development of Whonix (missing features, implementation reference etc.).

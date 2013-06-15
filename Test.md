@@ -181,7 +181,13 @@ Test whonixcheck.
 
 Test whonixcheck with debugging.
 
-    whonixcheck -v
+    whonixcheck --verbose
+
+Check the timezone.
+
+    cat /etc/timezone
+
+Must be *Etc/UTC*.
 
 # Advanced users / developers and testers only #
 ## On Whonix-Gateway and Whonix-Workstation ##
@@ -196,9 +202,17 @@ Run *dpkg-vendor --query vendor*.
 
 The output must be "Whonix".
 
+Check apt config and see if periodic updates are disabled.
+
+    apt-config dump
+
 Install test wise new kernel.
 
     .
+
+Remove test wise linux-image-486 kernel.
+
+    sudo apt-get remove linux-image-486
 
 Check content of */etc/network/interfaces*.
 

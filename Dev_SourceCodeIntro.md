@@ -218,5 +218,14 @@ If you want for some reason to unpack an **.ova**, for example to get the **.vdm
 
     #qemu-img info Whonix-Gateway.img
 
+# Porting #
+This are some random notes about porting Whonix update debs to rpm.
+
+What would have to be done:
+
+* create rpm package
+* add init scripts (currently done by debhelper)
+* add man pages (currently done by debhelper and ronn, see debian/rules)
+
 # Footer #
 [[include ref=WikiFooter]]

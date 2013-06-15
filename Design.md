@@ -63,6 +63,7 @@
     * [Dev_Files](https://github.com/adrelanos/Whonix/blob/master/development/files_list)
     * [Dev_Files_Short](https://github.com/adrelanos/Whonix/blob/master/development/files_list_short)
     * [Dev_bash_trap]
+    * [Other Virtualization Platforms](https://sourceforge.net/p/whonix/wiki/OtherVirtualizationPlatforms/)
 
 * Other related
     * [Documentation](https://sourceforge.net/p/whonix/wiki/Documentation/)

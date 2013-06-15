@@ -42,7 +42,7 @@ Table:
 # What is clearnet?
 This term has two meanings.
 
-a) Connecting to the regular internet not using Tor (other other anonymity networks), and/or
+a) Connecting to the regular internet not using Tor (or other anonymity networks), and/or
 b) Connecting to regular servers (which are not Tor hidden services) (using Tor or not)
 
 # Can I use DNSCrypt in Whonix?
@@ -69,6 +69,39 @@ Long answer:
 No, DNSCrypt on the host or in your router only affects your clearnet activities. Tor assumes your local network and ISP to be totally unsafe and untrustworthy. Neither Tor nor Whonix are affected by DNS settings on your host or in your router.
 
 Whether it is useful for your clearnet activities or not - that isn't clear. There are pro and contra arguments. If you ask me, it's useful foreign or untrusted Wifi networks (shared with others), since they could modify and/or read your DNS requests. Other than that, I think you just moving the trust from one party (ISP) to another (OpenDNS). If OpenDNS is more trustworthy, then it's good. What is more trusted, your ISP or OpenDNS - I don't know.
+
+# Whats the difference of installing a VPN on the host versus installing on Whonix-Gateway?
+This assumes, you already decided to use a VPN.
+
+If you did that after reading the [VPN / Tunnel Support](https://sourceforge.net/p/whonix/wiki/Features/#vpn-tunnel-support) documentation, and decided you want to use a VPN, continue reading, otherwise you can skip this FAQ entry.
+
+If the VPN is installed on the host:
+
+* all Whonix traffic goes: user -> VPN -> Tor -> destination
+* all host traffic goes through the VPN: user -> VPN -> destination
+
+If the VPN is installed on Whonix-Gateway:
+
+* all Whonix traffic goes: user -> VPN -> Tor -> destination
+* all host traffic goes in the clear: user -> destination
+
+When making the decision, you must ask yourself...
+
+What do I want the VPN to see?
+
+Only Tor traffic?
+Install the VPN on Whonix-Gateway.
+
+Tor traffic and host traffic?
+Install the VPN on the host.
+
+What do I want my ISP to see?
+
+Only VPN traffic?
+Install the VPN on Whonix-Gateway.
+
+Just no Tor traffic, but not host traffic?
+Install the VPN on Whonix-Gateway.
 
 # Footer #
 [[include ref=WikiFooter]]

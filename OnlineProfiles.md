@@ -30,7 +30,8 @@ If you don't get into trouble, by letting others to know, that you like or use W
 * https://freecode.com/projects/whonix/
 * https://www.ohloh.net/p/Whonix/
 * irc.pirateparty.net: adrelanos
-* wordpress: http://en.forums.wordpress.com/profile/anonymousoperatingsystem https://anonymousoperatingsystem.wordpress.com/ (I preferred to have whonix.wordpress.com.)
+* wordpress: http://en.forums.wordpress.com/profile/anonymousoperatingsystem https://anonymousoperatingsystem.wordpress.com/
+* stackexchange: [adrelanos](http://area51.stackexchange.com/users/88850/adrelanos)
 
 # Footer #
 [[include ref=WikiFooter]]

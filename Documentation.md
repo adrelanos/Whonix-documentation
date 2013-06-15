@@ -207,6 +207,7 @@ video-recorder)
         * [Optimized builds](https://sourceforge.net/p/whonix/wiki/Tuning/)
         * [PCI Passthrough](https://sourceforge.net/p/whonix/wiki/Tuning/)
     * [Manually Installing Whonix](https://sourceforge.net/p/whonix/wiki/Whonix%20Manual%20Installation/)
+    * [Other Virtualization Platforms](https://sourceforge.net/p/whonix/wiki/OtherVirtualizationPlatforms/)
 
 * Other
     * [Debian as Host Operating System Tips, Download, ISO gpg verification, Installation and Security](https://sourceforge.net/p/whonix/wiki/Debian/)

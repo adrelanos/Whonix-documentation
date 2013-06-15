@@ -22,6 +22,8 @@ http://www.vpngate.net/en/
 
 https://telex.cc/
 
+http://lahana.dreamcats.org/
+
 Questions:
 
  * Type? (VPN, proxy, ssh?)

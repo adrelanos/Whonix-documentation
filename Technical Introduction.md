@@ -28,9 +28,9 @@ The Tor network is Whonix's official and best supported anonymizing network. Who
 
 You can also avoid using virtualization by using [PhysicalIsolation], although that is not recommend, see [Comparison of different Whonix variants](https://sourceforge.net/p/whonix/wiki/Security/#comparison-of-different-whonix-variants) for more information.
 
-It's possible to use other virtualization platforms then Virtual Box, e.g. VMware, KVM, XEN, Qemu, Bochs, etc. Only [VMware](https://sourceforge.net/p/whonix/wiki/VMware/) has yet been documented.
+It's possible to use other virtualization platforms than Virtual Box, e.g. Qubes OS, VMware, KVM, XEN, Qemu, Bochs, etc. (See [OtherVirtualizationPlatforms].). Only highly experimental support for [VMware](https://sourceforge.net/p/whonix/wiki/VMware/) is available as a proof of concept.
 
-Other operating systems (e.g. Windows;*nix; BSD;etc.]) can potentially be used as host and/or guest operating system. See the [OtherOperatingSystems](https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems) for more information.
+Other operating systems (e.g. Windows; *nix; BSD; etc.) can potentially be used as host and/or guest operating system. See the [OtherOperatingSystems](https://sourceforge.net/p/whonix/wiki/OtherOperatingSystems) for more information.
 
 ## Whonix Concept ##
 Whonix is an [Isolating Proxy](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/IsolatingProxy) with an additional [Transparent Proxy](https://trac.torproject.org/projects/tor/wiki/doc/TransparentProxy), which can be optionally disabled. (See [Stream Isolation] chapter for even [Better Protection](https://sourceforge.net/p/whonix/wiki/Stream%20Isolation/#better-protection).

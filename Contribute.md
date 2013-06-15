@@ -103,14 +103,14 @@ I am not very experienced in maintaining social media representations. Even thou
 
 If you are willing to help or to maintain Whonix's Twitter account, Facebook page, Google+, YouTube or identic.ca account, please get in contact.
 
-# Packager for binary builds #
+# Release Manager #
 If you have no problem having your real name connected to the Whonix project and Tor, please continue reading.
 
-Building Whonix from source is very easy. Building the images takes a long time, if you must do it inside a virtual machine to stay anonymous. Also uploading it over Tor takes very long. Maybe this two points do not apply to you.
+Building Whonix from source is very easy and you get assistance. Building the images takes a long time, if you must do it inside a virtual machine to stay anonymous. Also uploading it over Tor takes very long. Maybe this two points do not apply to you.
 
-Creating the virtual machine images and uploading them would already be a big help. This would help establishing beta images, stable images, release candidates and so on.
+Creating the virtual machine images and uploading them would be a big help. This would help establishing beta images, stable images, release candidates and so on.
 
-It would be useful if you already build a reputation. Such as in another software project or with a reasonable well known website.
+It would be useful if you already have a reputation. Such as from another (software) project.
 
 # Spokesperson #
 Whonix developer adrelanos currently prefers to stay anonymous for reasons listed on the [Trust] page.

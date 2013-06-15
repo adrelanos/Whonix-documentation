@@ -190,7 +190,11 @@ Otherwise you have to change the variables in the configuration files. To find t
 
     git clone https://github.com/adrelanos/Whonix
 
-(10). Verify the git tag you want to use.
+(10). Get into Whonix source folder.
+
+    cd Whonix
+
+(11). Verify the git tag you want to use.
 
     ## 0.5.6 users
     git tag -v 0.5.6
@@ -198,17 +202,13 @@ Otherwise you have to change the variables in the configuration files. To find t
     ## 0.6.1 testers only!
     #git tag -v 0.6.1
 
-(11). Switch to the git tag you want to use.
+(12). Switch to the git tag you want to use.
 
     ## 0.5.6 users
     git checkout 0.5.6
 
     ## 0.6.1 testers only!
     #git checkout 0.6.1
-
-(12). Get into Whonix source folder.
-
-    cd Whonix
 
 (13). Make sure you have all packages installed which are listed in the file *Whonix-Gateway_packages*.
 

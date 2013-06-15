@@ -33,6 +33,7 @@ Compress. Upload.
 * Only next version: Update gpg verification instructions. (Change from .sig to .asc.)
 * Only next version: chmod -x / +x no longer required for [BrowserPlugins] and [Dev_Flashtutorial].
 * Only next version: [whonixcheck]
+* Only next version: [XChat]
 
 * Only next version: chmod -x / +x update [Tunnel_Proxy_or_SSH_or_VPN_through_Tor]
 * Update [Stream Isolation] chmod -x / +x no longer recommend, use /etc/whonix.d instead

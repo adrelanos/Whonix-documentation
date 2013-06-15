@@ -2,6 +2,9 @@
 
 [TOC]
 
+# WARNING
+**This page is intended for people interested in developing Whonix, NOT for users. It contains only partial-finished attempts adding new features to Whonix.**
+
 # Rudimentary Whonix Support for Other Anonymizing Networks #
 See https://sourceforge.net/p/whonix/wiki/OtherAnonymizingNetworks/
 

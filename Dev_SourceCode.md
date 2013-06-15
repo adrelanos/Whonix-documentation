@@ -4,7 +4,7 @@
 
 # Building
 ## Link to Source Code
-<a href="https://github.com/adrelanos/Whonix"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/Whonix/Whonix"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
 ## How to build Whonix from Source Code?
 See [BuildDocumentation].
@@ -26,6 +26,7 @@ See [BuildDocumentation].
 * [ChangelogNEXT]
 * [Useful stuff for debugging](https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/#debugging)
 * [Redistributing Whonix](https://sourceforge.net/p/whonix/wiki/Dev_Redistribution/)
+* [Porting (some random notes interesting for someone planing to port Whonix update debs to rpm)](https://sourceforge.net/p/whonix/wiki/Dev_SourceCodeIntro/#porting)
 
 # Footer #
 [[include ref=WikiFooter]]

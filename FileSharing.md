@@ -36,5 +36,7 @@ Quote: [Roger Dingledine](https://blog.torproject.org/blog/bittorrent-over-tor-i
 
 > *\[...\] We've been saying for years not to run Bittorrent over Tor, because the Tor network [can't handle the load](https://blog.torproject.org/blog/why-tor-is-slow); \[...\]*
 
+[libtorrent - socks proxy obedience](http://sourceforge.net/mailarchive/forum.php?thread_name=41dcd1d6b4a3635860722f7c74bf5f51%40mail.cs.umu.se&forum_name=libtorrent-discuss)
+
 # Footer #
 [[include ref=WikiFooter]]
