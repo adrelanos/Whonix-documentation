@@ -142,7 +142,67 @@ From [BuildDocumentation] general advice about Build Security and Host preparati
     ## Back to normal user.
     exit
 
-(5). Before running the whonix_createvm ^2^ script make sure eth1 and eth0 refer to the correct interfaces.
+(5). Install build dependencies. ^1^
+
+    sudo apt-get install git sudo
+
+<font size="-3">
+,,
+^1^ You need git to obtain the source code. Alternatively, you could also download a git tag as tar.gz archive using a (torified) browser: https://github.com/adrelanos/Whonix/tags
+</font>
+
+(6). You must build as user "user" and that user must be a member of the "sudo" group.
+
+    ## Become root.
+    su
+
+    ## adduser "user"
+    adduser user
+
+    ## add "user" to sudo group
+    addgroup user sudo
+
+    ## Back to normal user.
+    exit
+
+(7). On your Whonix-Gateway: It is assumed you created user account named "user".
+
+    su user
+    cd ~
+
+(8). Get latest source code. When 0.5.6 gets released there will be a signed release tag, if you wish a signed release tag of a snapshot in meanwhile please get in contact.
+
+    git clone https://github.com/adrelanos/Whonix
+
+(9). Get into Whonix source folder.
+
+    cd Whonix
+
+(10). Verify the git tag you want to use.
+
+    ## 0.5.6 users
+    git tag -v 0.5.6
+
+    ## 0.6.1 testers only!
+    #git tag -v 0.6.1
+
+(11). Switch to the git tag you want to use.
+
+    ## 0.5.6 users
+    git checkout 0.5.6
+
+    ## 0.6.1 testers only!
+    #git checkout 0.6.1
+
+(12). Make sure you have all packages installed which are listed in the file *Whonix-Gateway_packages*.
+
+    ## If you are experimenting with 64 bit Whonix-Gateway,
+    ## you will have to comment out the package linux-image-486
+    ## in the file Whonix-Gateway_packages.
+    apt-get install $(grep -vE "^\s*#" Whonix-Gateway_packages | tr "
+" " ")
+
+(13). Before running the whonix_createvm ^2^ script make sure eth1 and eth0 refer to the correct interfaces.
 
     ## May be helpful.
     dmesg | grep eth
@@ -157,66 +217,6 @@ Otherwise you have to change the variables in the configuration files. To find t
 ^2^ Do not get concerned about the "vm" within whonix_createvm. The name is historically and the functionality for building an Whonix-Gateway featuring Physical Isolation has been added later. 
 ^3^ Should be really only a very few files. We used variables for eth0 and eth1 wherever possible.
 </font>
-
-(6). Install build dependencies. ^1^
-
-    sudo apt-get install git sudo
-
-<font size="-3">
-,,
-^1^ You need git to obtain the source code. Alternatively, you could also download a git tag as tar.gz archive using a (torified) browser: https://github.com/adrelanos/Whonix/tags
-</font>
-
-(7). You must build as user "user" and that user must be a member of the "sudo" group.
-
-    ## Become root.
-    su
-
-    ## adduser "user"
-    adduser user
-
-    ## add "user" to sudo group
-    addgroup user sudo
-
-    ## Back to normal user.
-    exit
-
-(8). On your Whonix-Gateway: It is assumed you created user account named "user".
-
-    su user
-    cd ~
-
-(9). Get latest source code. When 0.5.6 gets released there will be a signed release tag, if you wish a signed release tag of a snapshot in meanwhile please get in contact.
-
-    git clone https://github.com/adrelanos/Whonix
-
-(10). Get into Whonix source folder.
-
-    cd Whonix
-
-(11). Verify the git tag you want to use.
-
-    ## 0.5.6 users
-    git tag -v 0.5.6
-
-    ## 0.6.1 testers only!
-    #git tag -v 0.6.1
-
-(12). Switch to the git tag you want to use.
-
-    ## 0.5.6 users
-    git checkout 0.5.6
-
-    ## 0.6.1 testers only!
-    #git checkout 0.6.1
-
-(13). Make sure you have all packages installed which are listed in the file *Whonix-Gateway_packages*.
-
-    ## If you are experimenting with 64 bit Whonix-Gateway,
-    ## you will have to comment out the package linux-image-486
-    ## in the file Whonix-Gateway_packages.
-    apt-get install $(grep -vE "^\s*#" Whonix-Gateway_packages | tr "
-" " ")
 
 (14). Most configuration files work well inside Virtual Machines and on hardware. Only minor things such as deactivating powersaving, passwordless reboot, shutdown etc. are only recommend for Virtual Machines. You can easily comment them out by putting a hash # in front of them. They are marked, to find them, grep can be used.
 

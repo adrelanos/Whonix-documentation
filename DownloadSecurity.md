@@ -12,7 +12,7 @@ Just downloading the images in the clear without any verification is the least s
 
 Sourceforge.net does not support SSL for downloads.
 
-Viewing the download page (https://sourceforge.net/projects/whonix/files/whonix-x.x.x/) while logged into sourceforge.net you can see the MD5 and SHA1 hash (provided by sourceforge.net) after clicking the **I** button (View details).
+Viewing the download page (https://sourceforge.net/projects/whonix/files/whonix-x.x.x/) while logged into sourceforge.net you can see the MD5 and SHA1 hash (provided by sourceforge.net) after clicking the **i** button (View details).
 
 Comparing the hash sums from the SSL protected page and verifying (comparing them) with what was downloaded is safer than no verification at all.
 
