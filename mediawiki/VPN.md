@@ -1,0 +1,2 @@
+Moved to https://sourceforge.net/p/whonix/wiki/VPN-Firewall/
+

@@ -1,0 +1,154 @@
+[[include ref=WikiHeader]]
+
+[TOC]
+
+= Mixmaster =
+
+== Introduction ==
+
+Motivation behind this: &quot;''What if there where a bookmark pointing to mail.local (or something like that) where you can simply enter an e-mail address, from sender (optional), subject and text, click send and mail is on it's way?''
+
+''No sign-up/registration/smtp server required. Could look like [https://www.awxcnx.de/mm-anon-email.htm this]. (Or [https://www.cotse.net/cgi-bin/mixmail.cgi this] or [https://webmixmaster.paranoici.org/mixemail-user.cgi this].)''&quot; ([https://mailman.boum.org/pipermail/tails-dev/2012-December/002384.html Development discussion])
+
+[https://en.wikipedia.org/wiki/Mixmaster_anonymous_remailer Mixmaster] is a Remailer. Please read the [Remailer] article first as introduction.
+
+There are two ways of using the Mixmaster network. Installing mixmaster in Debian, which is recommend but more difficult. Unfortunately, there is no nice graphical user interface for the Mixmaster for Debian GNU/Linux. There are web interfaces at the bottom of this page, I don't know yet how to use them.
+
+This is quite an unusual setup. At time of writing there where no references that ever anyone ever successfully used the mixmaster software to remail over Tor. Therefore it might make clear, that you are a Whonix user.
+
+== Mixmaster inside Whonix-Workstation ==
+
+=== Third Party Information ===
+
+==== Tutorial Videos ====
+
+There is a video without speech on Ubuntu, but steps on Debian are the same. No speech, but good video anyway.
+
+* https://www.youtube.com/watch?v=jmIHcrrkj2w
+
+There is also a video with speech explaining Mixmaster. Video comments:
+
+* Before 4:38 min he explains general things about Mixmaster. I don't agree, for reasons explained above. The video is already four years old.
+* Before 4:38 min he explains to manually install it. We don't have to do it, since it's available as Debian package.
+* You could watch https://www.youtube.com/dzbrFPO4604 beginning from 4:38 min.
+
+==== Documentation ====
+
+debian-administration.org: [http://www.debian-administration.org/articles/483 Using mixmaster to send anonymous email] from 2006 written by Jacob Appelbaum. Still contains useful information. <font size="-3"Even though */etc/mixmaster/remailer.conf* contains a *SENDMAIL* directive, a [Mixmaster Tutorial Third](http://www.plex86.org/linux2/Mixmaster-Tutorial-Third-Draft-Comments--This-message-did-not-originate-from-the-Sender-address-above.html) says Postfix is Mixmaster default. This directive does not required changing.</font>
+
+=== Installing ===
+
+==== Installation ====
+
+===== Whonix-Gateway =====
+
+/etc/tor/torrc contains.
+
+<pre>mapaddress 1.1.1.1 k54ids7luh523dbi.onion
+mapaddress 2.2.2.2 gbhpq7eihle4btsn.onion</pre>
+===== Whonix-Workstation =====
+
+Has mixmaster installed by default.
+
+/home/user/.Mix/mix.cfg contains.
+
+<pre>#SMTPRELAY      1.1.1.1
+SMTPRELAY       2.2.2.2</pre>
+/etc/hostname contains.
+
+<pre>host</pre>
+/etc/hosts contains.
+
+<pre>127.0.0.1 host.localdomain host</pre>
+This is because mixmaster leaks these information to the mixmaster node, it's better to have it uniform.
+
+=== Configuration ===
+
+A fresh list of Mixmaster nodes is required. You can either update using the ncurses interface or using the Debian method. Both are documented below.
+
+==== ncurses method ====
+
+In Terminal:
+
+<pre>sudo mixmaster
+
+## Press keys:
+# 1
+u      for update
+# 2
+*      to begin update
+# 3
+k      worked for me 
+# 4
+q      for quit (no longer run it as root)</pre>
+==== Debian method ====
+
+<pre>sudo mixmaster-update --verbose </pre>
+There is an exception in ''/etc/sudoers'' for mixmaster-update to allow running mixmaster-update without root.
+
+=== Using ===
+
+In Terminal:
+
+<pre>mixmaster</pre>
+and use the text interface. Perhaps watch the video as explained above.
+
+If you don't like the text interface you may use it by command line. If you want to read the manual.
+
+<pre>man mixmaster</pre>
+Mails can also be send by command line. See documentation article [[#mixmaster|Mixmaster]] for instructions how to use it.
+
+=== Debugging ===
+
+After sending when there is no error.
+
+<pre>Chain: breaka</pre>
+Error example.
+
+<pre>Error: SMTP relay not ready. 
+Error: SMTP relay not ready. 
+Error: Unable to execute sendmail. Check path!
+Error: SMTP relay not ready. 
+Error: SMTP relay not ready. 
+Error: Unable to execute sendmail. Check path!</pre>
+== Webinterface ==
+
+http://remailer.paranoici.org/scripts/webscripts.tar.gz
+
+* Online demo looks good.
+* GNUPL license needs clarification.
+
+http://www.cotse.net/mixweb.tgz
+
+* Online demo looks good.
+* Unfree license. Only free for non-commercial use. Although there is a promise not to sue one, commercial users are required to buy a license.
+* Therefore not suited as default in Whonix.
+
+http://pyanon.sourceforge.net
+
+* Looks great.
+* Requires Apache 2 with mod_python.
+* Therefore not suited as default in Whonix. (Users may want to use Apache for running a hidden service. Also quite big. Might be re-considered.)
+
+== Development ==
+
+Note: Mixmaster gets confused if there are # comments at the top of ''~/.Mix/mix.cfg''.
+
+[Stream Isolation] as in forcing Mixmaster traffic through a separate SocksPort has not yet been figured out and help is welcome. Mixmaster traffic goes through Tor's TransPort. Since we are only connecting to Mixmaster relays, which provide a hidden service, identity correlation should be prevented. To make sure, asked [https://lists.torproject.org/pipermail/tor-talk/2013-January/027116.html tor-talk: Are connections to two different hidden services stream isolated?].
+
+Other ideas:
+
+* Postfix has an option to skip MX lookups for a given hostname: look for &quot;square brackets&quot; in postconf(5).
+* [http://www.groovy.net/ww/2011/12/torfix Using Postfix with Tor]
+* [http://www.groovy.net/ww/2012/01/torfixbis Using Postfix with Tor (bis)]
+
+The [Deprecated] page contains information related to Mixmaster: MX DNS requests, MX capable DNS resolver, using Postfix and debugging Postfix.
+
+== Credits ==
+
+* [http://lists.mixmin.net/pipermail/remops/2012-December/000671.html Remops mailing list] helped creating this page with advice.
+
+= Footer =
+
+[[include ref=WikiFooter]]
+
