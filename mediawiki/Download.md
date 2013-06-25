@@ -85,9 +85,11 @@ Read and apply: [https://sourceforge.net/p/whonix/wiki/Pre%20Install%20Advice/ S
 
 == 2. Install ==
 
-Just import both Whonix .ova images into Virtual Box. Do not change any settings! (You could do that later.) Do not change MAC address!
+Just [https://sourceforge.net/p/whonix/wiki/Download/edit#download-whonix-virtual-machine-images download Whonix] and import <u>both</u> <font size="-3"><sup>1</sup></font> Whonix <u>.ova images</u> into '''Virtual Box'''. Do not change any settings! (You could do that later.) Do not change MAC address!
 
 The .ova images should be imported into Virtual Box. <font size="-3">There is also highly experimental support for [VMware], but only Virtual Box is fully supported, rather use Virtual Box.</font>
+
+<font size="-3"><sup>1</sup> You need both, Whonix-Gateway.ova and Whonix-Workstation.ova. Its a two machine setup, one .ova alone isn't useful.</font>
 
 === If you need more help with Installing ===
 

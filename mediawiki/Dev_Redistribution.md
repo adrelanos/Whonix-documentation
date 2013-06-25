@@ -6,7 +6,16 @@
 
 See [https://github.com/adrelanos/Whonix/tree/development/release Release Folder] in Whonix source code.
 
+Clean source code
+
+* get ride of .directory files inside the source code: dolphin -&gt; preferences -&gt; general -&gt; behavior -&gt; use common view properties for all folders
+* get ride of ~backup files: find ./ -name '*~' | xargs trash-put
+
+Other important stuff
+
 * Don't forget to update Whonix version number.
+* write proper debian/changelog with debchange
+* git add --force debian/changelog
 * [LeakTests]!
 * [Test] the images before release! TODO: Needs big revision with all Whonix features.
 * See if [Documentation] still makes sense.
@@ -31,6 +40,7 @@ Compress. Upload.
 * Only next version: [whonixcheck]
 * Only next version: [XChat]
 * Only next version: chmod -x / +x update [Tunnel_Proxy_or_SSH_or_VPN_through_Tor]
+* Only next version: point sf important blog to https://anonymousoperatingsystem.wordpress.com/category/important/feed/ and sf feature blog to https://anonymousoperatingsystem.wordpress.com/feed/ (set up as internal feed in https://sourceforge.net/p/whonix/admin/tools)
 * Update [Stream Isolation] chmod -x / +x no longer recommend, use /etc/whonix.d instead
 * Update [PhysicalIsolation].
 * Update [BuildDocumentation].

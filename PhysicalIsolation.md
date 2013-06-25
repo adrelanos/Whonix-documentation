@@ -341,5 +341,44 @@ The instructions are very similar, if not the very same, to those in "How To Ins
 # Further required reading #
 [Documentation]. The host security chapter applies to both computers!
 
+# Extra packages for better hardware support #
+Some packages for bare metal may or may not be missing. Here is an probable incomplete list of packages, which may or may not be useful for better hardware support. Some suggestions.
+
+    xorg
+    xserver-xorg-input-all
+    xserver-xorg-input-wacom
+    xserver-xorg-input-geode
+    xserver-xorg-input-vmmouse
+    xserver-xephyr
+
+    xserver-xorg-input-*
+    xserver-xorg-*
+
+    acpi-support-base
+    acpid
+    acpi
+
+    discover
+    discover-modprobe
+    discover-data
+
+    hwdata
+
+    mdetect
+
+    apt-cache show task-desktop
+    apt-cache show task-kde-desktop
+    apt-cache show task-laptop
+
+If you have EFI bios.
+
+    grub-efi-amd64
+
+To get a more complete list, install Debian (with KDE) on bare metal using the regular Debian installer medium.
+
+* diff "dpkg -l" with Whonix
+* diff "sudo lsmod" with Whonix
+* contribute your findings
+
 # Footer #
 [[include ref=WikiFooter]]

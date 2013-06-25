@@ -77,9 +77,11 @@ You can learn about the signing key on the [Trusting Whonix Signing Key](https:/
 Read and apply: [Security Advice before installing Whonix](https://sourceforge.net/p/whonix/wiki/Pre%20Install%20Advice/).
 
 ## 2. Install ##
-Just import both Whonix .ova images into Virtual Box. Do not change any settings! (You could do that later.) Do not change MAC address!
+Just [download Whonix](https://sourceforge.net/p/whonix/wiki/Download/edit#download-whonix-virtual-machine-images) and import <u>both</u> <font size="-3">^1^</font> Whonix <u>.ova images</u> into **Virtual Box**. Do not change any settings! (You could do that later.) Do not change MAC address!
 
 The .ova images should be imported into Virtual Box. <font size="-3">There is also highly experimental support for [VMware], but only Virtual Box is fully supported, rather use Virtual Box.</font>
+
+<font size="-3">^1^ You need both, Whonix-Gateway.ova and Whonix-Workstation.ova. Its a two machine setup, one .ova alone isn't useful.</font>
 
 ### If you need more help with Installing ###
 There is a tutorial with screenshots, see [Install].

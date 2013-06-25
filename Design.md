@@ -33,6 +33,9 @@
     * [Trust](https://sourceforge.net/p/whonix/wiki/Trust)
     * [About Developers](https://sourceforge.net/p/whonix/wiki/AboutDevelopers/)
     * [NEXT: In development for next Whonix version](https://sourceforge.net/p/whonix/wiki/Next/)
+    * [About Debian Packaging](https://sourceforge.net/p/whonix/wiki/AboutDebianPackaging/)
+    * [Flash Proxy](https://sourceforge.net/p/whonix/wiki/FlashProxy)
+    * [Control Port Filter Proxy](https://sourceforge.net/p/whonix/wiki/ControlPortFilterProxy)
 
 * Detailed Design
     * [Design-Gateway]

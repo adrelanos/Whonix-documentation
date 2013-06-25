@@ -2,6 +2,68 @@
 
 [TOC]
 
+# adretemp82
+
+Whonix-Gateway and Whonix-Workstation
+
+* whonix_shared/etc/apt/sources.list.whonix:
+    * out commented sources (deb-src)
+    * only using: "deb http://security.debian.org stable/updates main contrib non-free" and
+    * deb "http://ftp.us.debian.org/debian stable main contrib non-free"
+    * added comment: "#deb http://ftp.debian.org/debian/ stable-updates main contrib non-free"
+    * technical comments
+* If bare BARE_METAL is set to 1 (when using whonix_build with --bare-metal), skip scripts, which are not required for creating Whonix with physical isolation, so physical isolation users can also use the whonix_build script.
+* added tor-ctrl
+* new man page: tor-ctrl
+* whonixcheck, timsync: inform at cli, if we are still waiting for whonixcheck and/or timesync's results
+
+
+Whonix-Gateway
+
+* Control Port Filter Proxy: https://sourceforge.net/p/whonix/wiki/ControlPortFilterProxy
+* new man page: controlportfilt
+* added tor-ctrl
+* added firewall rules for Control Port Filter Proxy
+* Control Port Filter Proxy: Lie when we are asked "GETINFO net/listeners/socks".
+
+Source Code
+
+* removed dependency for bc, no longer required for whonixcheck/timesync (using expr instead)
+* added imagemagick, because its required for backgroundd
+* whonix_workstation/usr/share/whonix/postinst.d/70_gpgconf: added sanity test "sudo -u user gpg --gpgconf-test"
+* build source code: better way to parse command line options
+* deleted obsolete file whonix_shared/usr/share/whonix/postinst.d/70_grub (now solved in chroot.d post script)
+* deleted obsolete and neglected TODO file, see https://github.com/Whonix/Whonix/issues for TODO
+* installing from separate local apt repository when building from source code
+* build-steps/1100_prepare-build-machine and development/Whonix-Shared_packages: added haveged to build depends
+* build-steps/1200_create-debian-packages: create local signing key for local APT repository, yes a signing key is also required for local installation from local package repository, see script comments
+* help-steps/pre: added some colorful output
+* added colored outputs to the build scripts
+debian/control: set priority of whonix-x-(packages|files|postinst) and (dummy)tor to important and made the other ones optional. This has the advantage, that if the user tries to remove an essential package, apt-get will loudly complain, while less important packages can be removed.
+* debug-steps/interactive-chroot-img: mounting local APT repository, if already available (will fail open, if not)
+* new variable WHONIX_BUILD_APT_CODENAME
+* added buildconfig.d configuration folder
+* Extracted code for packaging Whonix in debian/rules and made a rules-helper.bsh script, which I can maintain better.
+* dummytor: renamed package tor to dummytor and use Provides: tor. This prevents Whonix-Gateway from fetching dummytor.
+* renamed whonix_shared/usr/share/whonix/chroot-scripts-post.d/70_sources to whonix_shared/usr/share/whonix/chroot-scripts-post.d/75_sources, so it runs after all apt-get install actions
+* renamed skip_scripts variable to WHONIX_BUILD_SKIP_SCRIPTS
+* added WHONIX_BUILD_SKIP_SCRIPTS support to build-steps
+* converted native debian package into non-native debian package; new help-steps/make-tarball for creating debian orig tarball
+* added debian/watch
+* whonix_gateway/usr/lib/whonix/whonixsetup/ft_m_1: no longer try to reload a Tor which is eventually not started
+* renamed VERSION variable to WHONIX_BUILD_WHONIX_VERSION
+* whonix_shared/usr/bin/whonix_repository: - support adding multiple keys in /usr/share/whonix/keys/whonix-keys.d/* - more simple and robust code for revoke_keys - tested everything
+* now using debuild - now also signing packages - (local repository was already signed)
+* moved local apt repository to whonix_binary folder so its no longer in the source folder and won't get included in the source tarball
+* added debug-steps/reprepro-wrapper
+* new variable WHONIX_BUILD_UPGRADE_BUILD_MACHINE to turn off apt-get update and apt-get dist-upgrade and setting dpkg --force-confold during build step "prepare build machine"
+* clean up /etc/apt/apt.conf.d/90whonix-build-confold at the end
+* deleted whonix_shared/etc/apt/apt.conf.d/20whonix-oldconfig, no longer required since we now have proper packaging
+* debian/rules: also parse /etc/init.d folders for gateway and workstation
+* add Whonix apt repository to /etc/sources.list.d/whonix.list using the whonix_repository tool renamed variable DISTRUST_WHONIX_APT_REPO to WHONIX_APT_REPOSITORY_DISTRUST_ENV renamed variable WHONIX_APT_REPOSITORY_DISTRUST to WHONIX_APT_REPOSITORY_DISTRUST_CONFIG
+* if the builder provides its own signing key in buildconfig.d WHONIX_LOCAL_SIGNING_KEY_FOLDER variable, use that key, otherwise use an automatically created signing key
+* added repository upload script
+
 # adretemp68
 Whonix-Gateway and Whonix-Workstation
 

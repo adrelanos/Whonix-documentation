@@ -80,46 +80,44 @@ Add to [Trust].
 ## Introduction
 At the moment, adrelanos is the only Whonix developer holding the Whonix APT repository OpenPGP signing key.
 
-Since Whonix 0.6.2, Whonix provides an auto updater. While building Whonix using the build script, a APT repository has been added to /etc/apt/sources.list.d/whonix.list ^1^ and Whonix's (adrelanos's) APT repository OpenPGP signing key has been added to apt-key.
+Since Whonix 0.6.2, Whonix provides an auto updater. While building Whonix using the build script, a APT repository has been added to /etc/apt/sources.list.d/whonix.list and Whonix's (adrelanos's) APT repository OpenPGP signing key has been added to apt-key by the whonix_repository tool.
 
 When updated Whonix deb packages are uploaded to Whonix's APT repository, they will automatically get installed, next time you are upgrading your system using "sudo apt-get update && sudo apt-get dist-upgrade". If this is not what you want, this can be optionally disabled. Below is a security discussion about the advantages, disadvantages and differences and instructions on how to disable Whonix's APT repository.
-
-^1^ TODO: /etc/apt/sources.list.d/whonix.list and Whonix APT repository has not been created yet. Adding Whonix's signing key and adding a mechanism to easily disable it is already done. Packaging Whonix is (nearly) done. Creating /etc/apt/sources.list.d/whonix.list and the Whonix APT repository on sourceforge are the next steps.
 
 ## When Building from Source Code
 When it comes to trust, there is a big difference if you are building Whonix from source code. When you build Whonix using the build script and verified the source code to be non-malicious and reasonable bug free, Whonix developers have no way to access your system. With Whonix's APT repository enabled however, Whonix developers holding a Whonix repository signing key could always release a malicious update and gain full access on your machines.
 
-If you distrust Whonix developers, you can omit adding Whonix's APT repository signing key to your build. Just add "export DISTRUST_WHONIX_APT_REPO=1" at the bottom of help-steps/variables or enter in the terminal window you are using Whonix, before you start building Whonix.
+If you distrust Whonix developers, you can omit adding Whonix's APT repository signing key and omit the creation of /etc/apt/sources.list.d/ to your build. Just create a file in <whonix_source_folder>/buildconfig.d and add "export WHONIX_APT_REPOSITORY_DISTRUST_ENV=1" at the bottom of help-steps/variables.
 
-    export DISTRUST_WHONIX_APT_REPO=1
+    export WHONIX_APT_REPOSITORY_DISTRUST_ENV=1
 
 To prevent Whonix's APT repository getting added if you later create an updated Whonix deb package, you should create <whonix_source_folder>/whonix_shared/etc/environment (while building or /etc/environment if you already build and forget this step) and add.
 
-    DISTRUST_WHONIX_APT_REPO=1
+    WHONIX_APT_REPOSITORY_DISTRUST_ENV=1
 
 (And/)or create a file <whonix_source_folder>/whonix_shared/etc/whonix.d/50_aptrepository_user and add.
 
-    WHONIX_APT_REPOSITORY_DISTRUST="1"
+    WHONIX_APT_REPOSITORY_DISTRUST_CONFIG="1"
 
 If you want to delete all related code, get into Whonix source code folder and delete the following two files.
 
-    rm --verbose whonix_shared/usr/share/whonix/postinst.d/70_whonix_deb_key
+    rm --verbose whonix_shared/usr/share/whonix/postinst.d/70_whonix_apt_key
     rm --verbose whonix_shared/usr/bin/whonix_repository
 
 ## When using the Whonix-Default-Download Version
-There is also a difference when using Whonix-Default-Download version. On one hand, when not using Whonix's APT repository, Whonix developers could sneak in a backdoor into the binary builds (download version) (the rest of the page above goes into this subject), which is worse enough. And on the other hand, while using Whonix's APT repository, Whonix developers could sneak in a backdoor at any time. Also notable, while the binary builds contain compiled code, which makes it easier to sneak a backdoor in, the the Whonix deb packages do not contain any compiled code yet (only configuration files, scripts, comments) (which might change at any time). As long as there is no compiled code inside Whonix deb packages, it might be easier for auditors, to catch a backdoor in update deb packages (unless its a targeted attack) compared to the binary builds (download version).
+There is also a difference when using Whonix-Default-Download version. On one hand, when not using Whonix's APT repository, Whonix developers could sneak in a backdoor into the binary builds (download version) (the rest of the page above goes into this subject), which is worse enough. And on the other hand, while using Whonix's APT repository, Whonix developers could sneak in a backdoor at any time. Also notable, while the binary builds contain binary packages (which are downloaded from Debian repository while building), which makes it easier to sneak a backdoor in, the the Whonix deb packages do not contain any compiled code yet (only configuration files, scripts, comments) (which might change with a malicious update). As long as there is no compiled code inside Whonix deb packages, it might be easier for auditors, to catch a backdoor in update deb packages (unless its a targeted attack) compared to the binary builds (download version).
 
 If Whonix is already installed, you can disable Whonix's APT repository using.
 
     whonix_repository --disable
 
-If you don't want to enable Whonix's APT repository after manually updating Whonix (manually downloading and installing updated Whonix deb packages), create a file /etc/environment.
+If you don't want to disable Whonix's APT repository after manually updating Whonix (manually downloading and installing updated Whonix deb packages), create a file /etc/environment.
 
     sudo nano /etc/environment
 
 And add.
 
-    export DISTRUST_WHONIX_APT_REPO=1
+    export WHONIX_APT_REPOSITORY_DISTRUST_ENV=1
 
 (And/)or create a file /etc/whonix.d/50_aptrepository_user.
 
@@ -127,7 +125,7 @@ And add.
 
 And add.
 
-    WHONIX_APT_REPOSITORY_DISTRUST="1"
+    WHONIX_APT_REPOSITORY_DISTRUST_CONFIG="1"
 
 The whonix_repository tool has also a man page, which summarizes how to use it.
 

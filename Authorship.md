@@ -126,6 +126,8 @@ In random order.
 * http://stackoverflow.com/questions/13426908/dialog-in-bash-is-not-grabbing-variables-correctly
 * http://mywiki.wooledge.org/
 * http://askubuntu.com/questions/65245/apt-get-update-only-for-a-specific-repository
+* http://blog.edwards-research.com/2010/01/quick-bash-trick-looping-through-output-lines/
+* http://stackoverflow.com/questions/17226404/how-to-convert-all-elements-of-a-bash-array-to-lowercase
 
 ## Similar Projects ##
 Here is a list of projects with similar goals to Whonix. The list is here for reference. Those projects may have interesting thoughts, mistakes, security enhancements, features and so on. The useful stuff can be potentially ported to Whonix. Some projects inspired the development of Whonix (missing features, implementation reference etc.).
