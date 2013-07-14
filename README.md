@@ -1,4 +1,10 @@
-# Whonix-documentation
+# DEPRECATED
+This repository was only used as long as Whonix wiki was still hosted on sourceforge.net.
+
+Documentation backups are now hosted here:
+https://github.com/WhonixBOT/WhonixWikiBackups
+
+# Kept for historical purposes only
 ## Download
 
     git clone https://github.com/adrelanos/Whonix-documentation.git
